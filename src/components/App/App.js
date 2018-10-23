@@ -9,6 +9,10 @@ export class App extends Component {
     //googleid, familyname, givenName, email
   };
 
+  logout = res => {
+    console.log(res);
+  };
+
   render() {
     return (
       <div className="App">
