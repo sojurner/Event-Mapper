@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 export class App extends Component {
-  handleClick = () => {
-    this.props.setUser();
+  responseGoogle = res => {
+    console.log(res);
+    //googleid, familyname, givenName, email
   };
 
   render() {
