@@ -4,6 +4,8 @@ import './App.css';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
+import * as keys from '../../utilities/apiCalls/apiKeys';
+import Map from '../Map/Map';
 export class App extends Component {
   constructor() {
     super();
@@ -27,17 +29,17 @@ export class App extends Component {
     console.log(res);
   };
 
-
   render() {
     return (
       <div className="App">
         <GoogleLogin
-          clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
+          clientId={keys.googleClientId}
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
         />
         <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout} />
+        <Map />
         <header className="App-header">
           <h1>Hello World</h1>
         </header>
@@ -50,4 +52,4 @@ const mapStateToProps = () => ({});
 
 const mapDispatchToProps = () => ({});
 
-export default connect( mapStateToProps, mapDispatchToProps )(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
