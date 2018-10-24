@@ -13,11 +13,12 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/package-lock.json
+src/utilities/apiCalls/apiKeys.js
+
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 # keys
-src/data/apiKeys.js
+src/utilities/apiCalls/apiKeys.js
