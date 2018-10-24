@@ -21,21 +21,17 @@ export class Map extends Component {
   }
 
   componentDidMount() {
-    this.setLatLng();
-    this.setEvents();
+    this.setLatLngEvents();
   }
 
-  setEvents = async () => {
-    const events = await getEvents();
-    await this.setState({ events });
-  };
-
-  setLatLng = async () => {
+  setLatLngEvents = async () => {
     await navigator.geolocation.getCurrentPosition(async location => {
       const { latitude, longitude } = location.coords;
+      const events = await getEvents(latitude, longitude);
       await this.setState({
-        latitude: latitude,
-        longitude: longitude
+        latitude,
+        longitude,
+        events
       });
     });
   };
