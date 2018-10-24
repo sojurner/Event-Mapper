@@ -32,8 +32,10 @@ class Map extends Component {
     const Map = ReactMapboxGl({
       accessToken: Token
     });
+    const { latitude, longitude } = this.state;
     return (
       <Map
+        center={[longitude, latitude]}
         style="mapbox://styles/mapbox/streets-v9"
         containerStyle={{
           height: '100vh',
@@ -41,7 +43,7 @@ class Map extends Component {
         }}
       >
         <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-          <Feature coordinates={[this.state.latitude, this.state.longitude]} />
+          <Feature coordinates={[0, 0]} />
         </Layer>
       </Map>
     );
