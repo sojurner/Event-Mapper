@@ -5,6 +5,8 @@ import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 import * as keys from '../../utilities/apiCalls/apiKeys';
 import Map from '../Map/Map';
+import { postUser } from '../../utilities/apiCalls/apiCalls';
+
 export class App extends Component {
   constructor() {
     super();
@@ -15,6 +17,7 @@ export class App extends Component {
 
   responseGoogle = res => {
     //googleid, familyname, givenName, email
+    postUser(res.profileObj);
     this.setState({ user: res });
   };
 

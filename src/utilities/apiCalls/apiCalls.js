@@ -1,5 +1,5 @@
 import { ticketMasterApiKey } from './apiKeys';
-import { eventsCleaner } from '../helpers/helpers';
+import { eventsCleaner, cleanedUser } from '../helpers/helpers';
 import Geohash from 'latlon-geohash';
 
 export const getEvents = async (lat, lng) => {
@@ -12,4 +12,17 @@ export const getEvents = async (lat, lng) => {
   const response = await fetch(url);
   const cleanedEvents = eventsCleaner(await response.json());
   return cleanedEvents;
+};
+
+export const postUser = async (userInfo) => {
+  const activeUser = await cleanedUser(userInfo);
+  console.log(activeUser);
+  
+  const url = 'https://event-mapper-api.herokuapp.com/api/v1/users';
+  const response = await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(activeUser),
+    headers: { 'Content-Type': 'application/json' }
+  });
+  const result = await response.json();
 };

@@ -33,3 +33,14 @@ export const eventsCleaner = events => {
 
   return parsedEvent;
 };
+
+export const cleanedUser = (userInfo) => {
+  const { email, familyName, givenName, googleId } = userInfo;
+  return { user:{
+    google_id: googleId,
+    given_name: givenName,
+    family_name: familyName,
+    email: email
+  }
+  };
+};
