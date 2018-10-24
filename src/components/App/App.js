@@ -15,7 +15,7 @@ export class App extends Component {
 
   responseGoogle = res => {
     //googleid, familyname, givenName, email
-    console.log(res);
+    this.setState({ user: res });
   };
 
   logout = res => {
