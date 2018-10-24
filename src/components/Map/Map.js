@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
-import { mbAccessToken as Token } from '../../data/apiKeys';
+import { connect } from 'react-redux';
+import ReactMapboxGl from 'react-mapbox-gl';
+import { Event } from '../Event/Event';
 
-class Map extends Component {
+import { getEvents } from '../../utilities/apiCalls/apiCalls';
+import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
+
+export class Map extends Component {
   constructor() {
     super();
     this.state = {
       latitude: 0,
-      longitude: 0
+      longitude: 0,
+      events: []
     };
   }
 
@@ -15,24 +20,31 @@ class Map extends Component {
     console.log(this.state);
   }
 
-  async componentDidMount() {
-    await navigator.geolocation.getCurrentPosition(async location => {
-      await this.renderMap(location);
-    });
+  componentDidMount() {
+    this.setLatLng();
+    this.setEvents();
   }
 
-  renderMap = location => {
-    this.setState({
-      latitude: location.coords.latitude,
-      longitude: location.coords.longitude
+  setEvents = async () => {
+    const events = await getEvents();
+    await this.setState({ events });
+  };
+
+  setLatLng = async () => {
+    await navigator.geolocation.getCurrentPosition(async location => {
+      const { latitude, longitude } = location.coords;
+      await this.setState({
+        latitude: latitude,
+        longitude: longitude
+      });
     });
   };
 
   render() {
     const Map = ReactMapboxGl({
-      accessToken: Token
+      accessToken: TOKEN
     });
-    const { latitude, longitude } = this.state;
+    const { latitude, longitude, events } = this.state;
     return (
       <Map
         center={[longitude, latitude]}
@@ -42,12 +54,15 @@ class Map extends Component {
           width: '100vw'
         }}
       >
-        <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-          <Feature coordinates={[0, 0]} />
-        </Layer>
+        <Event events={events} />
       </Map>
     );
   }
 }
 
-export default Map;
+const mapDispatchToProps = () => ({});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Map);
