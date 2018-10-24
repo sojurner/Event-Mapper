@@ -20,6 +20,7 @@ export class App extends Component {
 
   logout = res => {
     console.log(res);
+    this.setState({ user: null });
   };
 
   render() {
