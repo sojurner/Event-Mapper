@@ -35,13 +35,13 @@ export class Map extends Component {
       await this.setState({
         latitude: latitude,
         longitude: longitude
-    });
+      });
     });
   };
 
   render() {
     const Map = ReactMapboxGl({
-      accessToken: Token
+      accessToken: TOKEN
     });
     const { latitude, longitude } = this.state;
     return (
@@ -61,4 +61,11 @@ export class Map extends Component {
   }
 }
 
-export default Map;
+const mapStateToProps = () => ({});
+
+const mapDispatchToProps = () => ({});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Map);
