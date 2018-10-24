@@ -8,16 +8,14 @@ export const getEvents = async (lat, lng) => {
   const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketMasterApiKey}&geoPoint=${geoCode.slice(
     0,
     9
-  )}&radius=100&size=50`;
+  )}&radius=50&size=100`;
   const response = await fetch(url);
   const cleanedEvents = eventsCleaner(await response.json());
   return cleanedEvents;
 };
 
-export const postUser = async (userInfo) => {
+export const postUser = async userInfo => {
   const activeUser = await cleanedUser(userInfo);
-  console.log(activeUser);
-  
   const url = 'https://event-mapper-api.herokuapp.com/api/v1/users';
   const response = await fetch(url, {
     method: 'POST',
