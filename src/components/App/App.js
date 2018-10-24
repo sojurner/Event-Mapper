@@ -24,16 +24,23 @@ export class App extends Component {
   };
 
   render() {
+    const { user } = this.state;
     return (
       <div className="App">
+        {!user && (
         <GoogleLogin
           clientId={keys.googleClientId}
-          buttonText="Login"
+            buttonText="Login w/ Google"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
         />
+        )}
+        {user && (
+          <div>
         <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout} />
         <Map />
+          </div>
+        )}
         <header className="App-header">
           <h1>Hello World</h1>
         </header>
