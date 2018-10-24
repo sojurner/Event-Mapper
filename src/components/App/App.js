@@ -6,6 +6,13 @@ import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import * as keys from '../../utilities/apiCalls/apiKeys';
 import Map from '../Map/Map';
 export class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: null
+    };
+  }
+
   responseGoogle = res => {
     //googleid, familyname, givenName, email
     console.log(res);
