@@ -6,4 +6,12 @@ export const eventsCleaner = events => {
         genre: classification.genre.name
       };
     });
+
+    const venues = event._embedded.venues.map(venue => {
+      const { latitude, longitude } = venue.location;
+      return {
+        name: venue.name,
+        address: venue.address.line1,
+        lat: latitude,
+        lng: longitude
 };
