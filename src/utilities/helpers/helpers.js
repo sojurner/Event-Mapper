@@ -13,7 +13,9 @@ export const eventsCleaner = events => {
       const { latitude, longitude } = venue.location;
       return {
         name: venue.name,
-        address: venue.address.line1,
+        address: `${venue.address.line1} ${venue.city.name}, ${
+          venue.state.stateCode
+        } ${venue.postalCode}`,
         lat: latitude,
         lng: longitude
       };
