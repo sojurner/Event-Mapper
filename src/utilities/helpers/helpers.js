@@ -1,4 +1,9 @@
-export const eventsCleaner = (events) => {
-  const eventsArray = events._embedded.events;
-  return eventsArray;
+export const eventsCleaner = events => {
+  const parsedEvent = events._embedded.events.map(event => {
+    const classifications = event.classifications.map(classification => {
+      return {
+        segment: classification.segment.name,
+        genre: classification.genre.name
+      };
+    });
 };
