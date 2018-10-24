@@ -14,4 +14,18 @@ export const eventsCleaner = events => {
         address: venue.address.line1,
         lat: latitude,
         lng: longitude
+      };
+    });
+
+    return {
+      name: event.name,
+      classifications: classifications,
+      url: event.url,
+      img: event.images[0].url,
+      date: event.dates.start.dateTime,
+      venues: venues
+    };
+  });
+
+  return parsedEvent;
 };
