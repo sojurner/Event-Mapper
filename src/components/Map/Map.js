@@ -23,15 +23,19 @@ export class Map extends Component {
     this.setLatLng();
     this.setEvents();
   }
-    await navigator.geolocation.getCurrentPosition(async location => {
-      await this.renderMap(location);
-    });
-  }
 
-  renderMap = location => {
-    this.setState({
-      latitude: location.coords.latitude,
-      longitude: location.coords.longitude
+  setEvents = async () => {
+    const events = await getEvents();
+    await this.setState({ events });
+  };
+
+  setLatLng = async () => {
+    await navigator.geolocation.getCurrentPosition(async location => {
+      const { latitude, longitude } = location.coords;
+      await this.setState({
+        latitude: latitude,
+        longitude: longitude
+    });
     });
   };
 
