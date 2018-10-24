@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import * as keys from '../../data/keys';
+import * as keys from '../../data/apiKeys';
+import Map from '../Map/Map';
 export class App extends Component {
   responseGoogle = res => {
     console.log(res);
@@ -16,15 +17,14 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <button>
-          <GoogleLogin
-            clientId={keys.googleClientId}
-            buttonText="Login"
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
-          />
-          <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout} />
-        </button>
+        <GoogleLogin
+          clientId={keys.googleClientId}
+          buttonText="Login"
+          onSuccess={this.responseGoogle}
+          onFailure={this.responseGoogle}
+        />
+        <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout} />
+        <Map />
         <header className="App-header">
           <h1>Hello World</h1>
         </header>
