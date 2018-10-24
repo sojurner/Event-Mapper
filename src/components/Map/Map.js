@@ -19,7 +19,10 @@ export class Map extends Component {
     console.log(this.state);
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.setLatLng();
+    this.setEvents();
+  }
     await navigator.geolocation.getCurrentPosition(async location => {
       await this.renderMap(location);
     });
