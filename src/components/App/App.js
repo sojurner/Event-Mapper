@@ -6,15 +6,15 @@ import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
 export class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       events: {}
-    }
+    };
   }
 
   async componentDidMount() {
     const events = await getEvents();
-    this.setState({events})
+    this.setState({events});
     console.log(events);
   }
 
