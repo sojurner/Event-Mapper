@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
-import { mbAccessToken as Token } from '../../data/apiKeys';
 
-class Map extends Component {
+import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
+import { getEvents } from '../../utilities/apiCalls/apiCalls';
+
+export class Map extends Component {
   constructor() {
     super();
     this.state = {
       latitude: 0,
-      longitude: 0
+      longitude: 0,
+      events: []
     };
   }
 
