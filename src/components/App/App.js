@@ -28,17 +28,17 @@ export class App extends Component {
     return (
       <div className="App">
         {!user && (
-        <GoogleLogin
-          clientId={keys.googleClientId}
+          <GoogleLogin
+            clientId={keys.googleClientId}
             buttonText="Login w/ Google"
-          onSuccess={this.responseGoogle}
-          onFailure={this.responseGoogle}
-        />
+            onSuccess={this.responseGoogle}
+            onFailure={this.responseGoogle}
+          />
         )}
         {user && (
           <div>
-        <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout} />
-        <Map />
+            <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout} />
+            <Map />
           </div>
         )}
         <header className="App-header">
