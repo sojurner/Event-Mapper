@@ -15,7 +15,7 @@ export const postUser = async (userInfo) => {
   const url = 'https://event-mapper-api.herokuapp.com/api/v1/users';
   const response = await fetch(url, {
     method: 'POST',
-    body: activeUser,
+    body: JSON.stringify(activeUser),
     headers: { 'Content-Type': 'application/json' }
   });
   const result = await response.json();

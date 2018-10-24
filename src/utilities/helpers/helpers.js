@@ -36,10 +36,11 @@ export const eventsCleaner = events => {
 
 export const cleanedUser = (userInfo) => {
   const { email, familyName, givenName, googleId } = userInfo;
-  return {
+  return { user:{
     google_id: googleId,
     given_name: givenName,
     family_name: familyName,
     email: email
+  }
   };
 };
