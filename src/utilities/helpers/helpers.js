@@ -1,3 +1,5 @@
+import * as moment from 'moment';
+
 export const eventsCleaner = events => {
   const parsedEvent = events._embedded.events.map(event => {
     const classifications = event.classifications.map(classification => {
@@ -22,7 +24,7 @@ export const eventsCleaner = events => {
       classifications: classifications,
       url: event.url,
       img: event.images[0].url,
-      date: event.dates.start.dateTime,
+      date: moment(event.dates.start.dateTime).format('llll'),
       venues: venues
     };
   });
