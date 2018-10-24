@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import * as keys from '../../data/secretKeys';
+import * as keys from '../../data/keys';
 export class App extends Component {
   responseGoogle = res => {
     console.log(res);
