@@ -20,4 +20,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # keys
-src/data/secretKeys.js
+src/data/apiKeys.js
