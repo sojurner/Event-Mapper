@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
+import ReactMapboxGl from 'react-mapbox-gl';
+import { Event } from '../Event/Event';
 
-import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
+import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
 
 export class Map extends Component {
   constructor() {
@@ -43,7 +44,7 @@ export class Map extends Component {
     const Map = ReactMapboxGl({
       accessToken: TOKEN
     });
-    const { latitude, longitude } = this.state;
+    const { latitude, longitude, events } = this.state;
     return (
       <Map
         center={[longitude, latitude]}
@@ -53,19 +54,15 @@ export class Map extends Component {
           width: '100vw'
         }}
       >
-        <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-          <Feature coordinates={[0, 0]} />
-        </Layer>
+        <Event events={events} />
       </Map>
     );
   }
 }
 
-const mapStateToProps = () => ({});
-
 const mapDispatchToProps = () => ({});
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Map);
