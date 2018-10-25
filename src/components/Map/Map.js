@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactMapboxGl from 'react-mapbox-gl';
-import { Event } from '../Event/Event';
+import Events from '../Events/Events';
 
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
@@ -12,7 +12,8 @@ export class Map extends Component {
     this.state = {
       latitude: 0,
       longitude: 0,
-      events: []
+      events: [],
+      targetEvent: {}
     };
   }
 
@@ -32,11 +33,6 @@ export class Map extends Component {
     });
   };
 
-  showEventInfo = (event, name) => {
-    event.preventDefault();
-    console.log(name);
-  };
-
   render() {
     const Map = ReactMapboxGl({
       accessToken: TOKEN
@@ -52,7 +48,7 @@ export class Map extends Component {
           width: '100vw'
         }}
       >
-        <Event showEventInfo={this.showEventInfo} events={events} />
+        <Events events={events} />
       </Map>
     );
   }
