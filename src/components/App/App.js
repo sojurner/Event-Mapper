@@ -25,6 +25,14 @@ export class App extends Component {
     this.setState({ user: null });
   };
 
+  changeMap = (event, style) => {
+    event.preventDefault();
+    const { mapType } = this.state;
+    mapType !== style
+      ? this.setState({ mapType: style })
+      : this.setState({ mapType: 'streets' });
+  };
+
   render() {
     const { user } = this.state;
     return (
