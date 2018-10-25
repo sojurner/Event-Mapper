@@ -55,6 +55,11 @@ class Events extends Component {
   closeModal = () => {
     this.setState({ displayModal: false });
   };
+
+  handleFavoriteClick = () => {
+    console.log('favorite');
+  };
+
   render() {
     const { targetEvent } = this.state;
     const event = this.plotEvents();
