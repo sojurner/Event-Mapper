@@ -1,0 +1,48 @@
+.login-button,
+.logout-button {
+}
+
+.toggle-map-style,
+.toggle-map-style-active {
+  height: 1.6rem;
+  width: 3.4rem;
+  border-radius: 1rem;
+  margin: auto;
+  border: 2px solid rgb(175, 175, 175);
+  text-decoration-color: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.toggle-map-style {
+  background-color: rgb(238, 238, 238);
+}
+
+.toggle-map-style-active {
+  background-color: rgb(60, 57, 57);
+}
+
+.streets-button:hover {
+  background-color: gray;
+}
+
+.streets-button,
+.dark-button {
+  height: 1.55rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  align-self: start;
+  cursor: pointer;
+}
+
+.dark-button {
+  background-color: gray;
+  float: right;
+  cursor: pointer;
+}
+
+.dark-button:hover {
+  background-color: whitesmoke;
+}

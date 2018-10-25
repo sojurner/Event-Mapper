@@ -16,10 +16,6 @@ export class Map extends Component {
     };
   }
 
-  componentDidUpdate() {
-    console.log(this.state);
-  }
-
   componentDidMount() {
     this.setLatLngEvents();
   }
@@ -36,6 +32,11 @@ export class Map extends Component {
     });
   };
 
+  showEventInfo = (event, name) => {
+    event.preventDefault();
+    console.log(name);
+  };
+
   render() {
     const Map = ReactMapboxGl({
       accessToken: TOKEN
@@ -45,13 +46,13 @@ export class Map extends Component {
       <Map
         center={[longitude, latitude]}
         zoom={[13]}
-        style="mapbox://styles/mapbox/streets-v9"
+        style={`mapbox://styles/mapbox/${this.props.mapStyle}-v9`}
         containerStyle={{
           height: '100vh',
           width: '100vw'
         }}
       >
-        <Event events={events} />
+        <Event showEventInfo={this.showEventInfo} events={events} />
       </Map>
     );
   }
