@@ -3,8 +3,7 @@ import { Popup } from 'react-mapbox-gl';
 import './EventPopup.css';
 
 export const EventPopup = ({ targetEvent }) => {
-  const { name, classifications, img, venues } = targetEvent;
-  const { lat, lng } = venues[0];
+  const { name, img, lat, lng } = targetEvent;
   const coords = [lng, lat];
   return (
     <Popup
