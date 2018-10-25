@@ -1,0 +1,36 @@
+.toggle-map-style,
+.toggle-map-style-active {
+  height: 1.6rem;
+  width: 3.4rem;
+  border-radius: 1rem;
+  margin: auto;
+  border: 2px solid #afafaf;
+  text-decoration-color: none; }
+
+button:focus {
+  outline: 0; }
+
+.toggle-map-style {
+  background-color: #eeeeee; }
+
+.toggle-map-style-active {
+  background-color: #3c3939; }
+
+.streets-button:hover {
+  background-color: gray; }
+
+.streets-button,
+.dark-button {
+  height: 1.55rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  align-self: start;
+  cursor: pointer; }
+
+.dark-button {
+  background-color: gray;
+  float: right;
+  cursor: pointer; }
+
+.dark-button:hover {
+  background-color: whitesmoke; }

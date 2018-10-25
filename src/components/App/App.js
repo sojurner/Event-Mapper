@@ -11,7 +11,8 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: null
+      user: null,
+      mapType: 'streets'
     };
   }
 
