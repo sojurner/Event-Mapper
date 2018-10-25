@@ -13,9 +13,7 @@ export class Map extends Component {
     this.state = {
       latitude: 0,
       longitude: 0,
-      events: [],
-      targetEvent: {},
-      pageCount: 1
+      events: []
     };
   }
 
@@ -39,7 +37,6 @@ export class Map extends Component {
   };
 
   retrieveEvents = async (lat, lng) => {
-    const { events } = this.state;
     const events = await getEvents(lat, lng);
     await this.setState({ events });
   };
