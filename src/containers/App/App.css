@@ -34,3 +34,6 @@ button:focus {
 
 .dark-button:hover {
   background-color: whitesmoke; }
+
+.main-container {
+  display: flex; }
