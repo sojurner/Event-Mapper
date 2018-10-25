@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import Map from '../../components/Map/Map';
 import { loginUser } from '../../actions';
+import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
 import * as keys from '../../utilities/apiCalls/apiKeys';
@@ -49,7 +50,7 @@ export class App extends Component {
           />
         )}
         {user && (
-          <div>
+          <div className="main-container">
             <GoogleLogout
               className="logout-button"
               buttonText="Logout"
@@ -68,6 +69,7 @@ export class App extends Component {
               />
             </div>
             <Map mapStyle={this.state.mapType} />
+            <NavBar />
           </div>
         )}
       </div>
