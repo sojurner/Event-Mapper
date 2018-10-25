@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactMapboxGl from 'react-mapbox-gl';
-import { Event } from '../Event/Event';
+import Events from '../Events/Events';
 
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
@@ -13,7 +13,8 @@ export class Map extends Component {
     this.state = {
       latitude: 0,
       longitude: 0,
-      events: []
+      events: [],
+      targetEvent: {}
     };
   }
 
@@ -42,13 +43,13 @@ export class Map extends Component {
       <Map
         center={[longitude, latitude]}
         zoom={[13]}
-        style={"mapbox://styles/mapbox/streets-v9"}
+        style={`mapbox://styles/mapbox/${this.props.mapStyle}-v9`}
         containerStyle={{
           height: '100vh',
           width: '100vw'
         }}
       >
-        <Event events={events} />
+        <Events events={events} />
       </Map>
     );
   }
