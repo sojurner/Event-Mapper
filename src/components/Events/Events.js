@@ -17,13 +17,8 @@ class Events extends Component {
     };
   }
 
-  componentDidUpdate() {
-    console.log(this.state.targetEvent);
-  }
-
   plotEvents = () => {
     const { events } = this.props;
-    console.log(events);
     return events.map((eve, index) => {
       let coordinates = [eve.lng, eve.lat];
       return (
