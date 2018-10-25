@@ -48,12 +48,11 @@ class Events extends Component {
     this.setState({ displayPopup: false });
   };
 
-  openModal = () => {
-    this.setState({ displayModal: true });
-  };
-
-  closeModal = () => {
-    this.setState({ displayModal: false });
+  handleModalClick = (event, order) => {
+    event.preventDefault();
+    order === 'open'
+      ? this.setState({ displayModal: true })
+      : this.setState({ displayModal: false });
   };
 
   handleFavoriteClick = () => {
