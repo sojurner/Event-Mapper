@@ -34,7 +34,7 @@ export class App extends Component {
   };
 
   render() {
-    const { user } = this.state;
+    const { user, mapType } = this.state;
     return (
       <div className="App">
         {!user && (
@@ -47,8 +47,24 @@ export class App extends Component {
         )}
         {user && (
           <div>
-            <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout} />
-            <Map />
+            <GoogleLogout
+              className="logout-button"
+              buttonText="Logout"
+              onLogoutSuccess={this.logout}
+            />
+            <div
+              className={
+                mapType === 'streets'
+                  ? 'toggle-map-style'
+                  : 'toggle-map-style-active'
+              }
+            >
+              <button
+                class={`${mapType}-button`}
+                onClick={event => this.changeMap(event, 'dark')}
+              />
+            </div>
+            <Map mapStyle={this.state.mapType} />
           </div>
         )}
         <header className="App-header">
