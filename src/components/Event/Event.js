@@ -9,7 +9,7 @@ export const Event = ({ events }) => {
       <Marker
         key={`event-${index}`}
         coordinates={coordinates}
-        anchor="bottom"
+        anchor='bottom'
       />
     );
   });
