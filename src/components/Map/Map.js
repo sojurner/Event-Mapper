@@ -6,6 +6,7 @@ import Events from '../Events/Events';
 
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
+import { throws } from 'assert';
 
 export class Map extends Component {
   constructor() {
@@ -14,7 +15,8 @@ export class Map extends Component {
       latitude: 0,
       longitude: 0,
       events: [],
-      targetEvent: {}
+      targetEvent: {},
+      pageCount: 1
     };
   }
 
@@ -25,13 +27,18 @@ export class Map extends Component {
   setLatLngEvents = async () => {
     await navigator.geolocation.getCurrentPosition(async location => {
       const { latitude, longitude } = location.coords;
-      const events = await getEvents(latitude, longitude);
-      await this.setState({
+      this.retrieveEvents(latitude, longitude);
+      this.setState({
         latitude,
-        longitude,
-        events
+        longitude
       });
     });
+  };
+
+  retrieveEvents = async (lat, lng) => {
+    // const { events } = this.state;
+    const events = await getEvents(lat, lng);
+    await this.setState({ events });
   };
 
   render() {
