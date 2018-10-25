@@ -1,14 +1,8 @@
 import * as moment from 'moment';
 
 export const eventsCleaner = events => {
+  console.log(events);
   const parsedEvent = events._embedded.events.map(event => {
-    const classifications = event.classifications.map(classification => {
-      return {
-        segment: classification.segment.name,
-        genre: classification.genre.name
-      };
-    });
-
     const venues = event._embedded.venues.map(venue => {
       const { latitude, longitude } = venue.location;
       return {
@@ -23,7 +17,6 @@ export const eventsCleaner = events => {
 
     return {
       name: event.name,
-      classifications: classifications,
       url: event.url,
       img: event.images[0].url,
       date: moment(event.dates.start.dateTime).format('llll'),
@@ -31,16 +24,17 @@ export const eventsCleaner = events => {
     };
   });
 
-  return parsedEvent;
+  return { events: parsedEvent, page: events.page.totalPages };
 };
 
-export const cleanedUser = (userInfo) => {
+export const cleanedUser = userInfo => {
   const { email, familyName, givenName, googleId } = userInfo;
-  return { user:{
-    google_id: googleId,
-    given_name: givenName,
-    family_name: familyName,
-    email: email
-  }
+  return {
+    user: {
+      google_id: googleId,
+      given_name: givenName,
+      family_name: familyName,
+      email: email
+    }
   };
 };
