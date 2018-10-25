@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ReactMapboxGl from 'react-mapbox-gl';
 import { Event } from '../Event/Event';
 
@@ -14,10 +15,6 @@ export class Map extends Component {
       longitude: 0,
       events: []
     };
-  }
-
-  componentDidUpdate() {
-    console.log(this.state);
   }
 
   componentDidMount() {
@@ -45,7 +42,7 @@ export class Map extends Component {
       <Map
         center={[longitude, latitude]}
         zoom={[13]}
-        style="mapbox://styles/mapbox/streets-v9"
+        style={"mapbox://styles/mapbox/streets-v9"}
         containerStyle={{
           height: '100vh',
           width: '100vw'
@@ -57,9 +54,12 @@ export class Map extends Component {
   }
 }
 
+Map.propTypes = {
+  latitude: PropTypes.number,
+  longitude: PropTypes.number,
+  events: PropTypes.array
+};
+
 const mapDispatchToProps = () => ({});
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Map);
+export default connect(null, mapDispatchToProps)(Map);
