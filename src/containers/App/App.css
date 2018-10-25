@@ -1,32 +1,23 @@
-.login-button,
-.logout-button {
-}
-
 .toggle-map-style,
 .toggle-map-style-active {
   height: 1.6rem;
   width: 3.4rem;
   border-radius: 1rem;
   margin: auto;
-  border: 2px solid rgb(175, 175, 175);
-  text-decoration-color: none;
-}
+  border: 2px solid #afafaf;
+  text-decoration-color: none; }
 
 button:focus {
-  outline: 0;
-}
+  outline: 0; }
 
 .toggle-map-style {
-  background-color: rgb(238, 238, 238);
-}
+  background-color: #eeeeee; }
 
 .toggle-map-style-active {
-  background-color: #5d5a5a;
-}
+  background-color: #5d5a5a; }
 
 .streets-button:hover {
-  background-color: gray;
-}
+  background-color: gray; }
 
 .streets-button,
 .dark-button {
@@ -34,15 +25,15 @@ button:focus {
   width: 1.6rem;
   border-radius: 50%;
   align-self: start;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .dark-button {
   background-color: gray;
   float: right;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .dark-button:hover {
-  background-color: whitesmoke;
-}
+  background-color: whitesmoke; }
+
+.main-container {
+  display: flex; }

@@ -21,7 +21,6 @@ export const eventsCleaner = events => {
       favorite: false
     };
   });
-
   return parsedEvent;
 };
 

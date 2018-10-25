@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ReactMapboxGl from 'react-mapbox-gl';
 import Events from '../Events/Events';
 
@@ -15,10 +16,6 @@ export class Map extends Component {
       longitude: 0,
       events: []
     };
-  }
-
-  componentDidUpdate() {
-    console.log(this.state.events);
   }
 
   componentDidMount() {
@@ -37,6 +34,10 @@ export class Map extends Component {
   };
 
   retrieveEvents = async (lat, lng) => {
+<<<<<<< HEAD
+=======
+    // const { events } = this.state;
+>>>>>>> 95db2ac37a1b74e7b2b0ae76b03fe6ade38963ae
     const events = await getEvents(lat, lng);
     await this.setState({ events });
   };
@@ -62,9 +63,12 @@ export class Map extends Component {
   }
 }
 
+Map.propTypes = {
+  latitude: PropTypes.number,
+  longitude: PropTypes.number,
+  events: PropTypes.array
+};
+
 const mapDispatchToProps = () => ({});
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Map);
+export default connect(null, mapDispatchToProps)(Map);
