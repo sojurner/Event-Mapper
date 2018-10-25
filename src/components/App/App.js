@@ -16,8 +16,8 @@ export class App extends Component {
     };
   }
 
-  responseGoogle = res => {
-    postUser(res.profileObj);
+  responseGoogle = async res => {
+    await postUser(res.profileObj);
     this.setState({ user: res });
   };
 
@@ -60,7 +60,7 @@ export class App extends Component {
               }
             >
               <button
-                class={`${mapType}-button`}
+                className={`${mapType}-button`}
                 onClick={event => this.changeMap(event, 'dark')}
               />
             </div>

@@ -21,5 +21,5 @@ export const postUser = async userInfo => {
     body: JSON.stringify(activeUser),
     headers: { 'Content-Type': 'application/json' }
   });
-  const result = await response.json();
+  return await response.json();
 };

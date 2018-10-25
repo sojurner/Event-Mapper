@@ -17,13 +17,18 @@ class Events extends Component {
     };
   }
 
+  componentDidUpdate() {
+    console.log(this.state.targetEvent);
+  }
+
   plotEvents = () => {
     const { events } = this.props;
+    console.log(events);
     return events.map((eve, index) => {
-      let coordinates = [eve.venues[0].lng, eve.venues[0].lat];
+      let coordinates = [eve.lng, eve.lat];
       return (
         <Marker
-          onClick={this.openModal}
+          onClick={event => this.handleModalClick(event, 'open')}
           onMouseEnter={event => this.showEventInfo(event, eve)}
           onMouseLeave={this.closePopup}
           key={`event-${index}`}
@@ -48,16 +53,17 @@ class Events extends Component {
     this.setState({ displayPopup: false });
   };
 
-  openModal = () => {
-    this.setState({ displayModal: true });
-  };
-
-  closeModal = () => {
-    this.setState({ displayModal: false });
+  handleModalClick = (event, order) => {
+    event.preventDefault();
+    order === 'open'
+      ? this.setState({ displayModal: true })
+      : this.setState({ displayModal: false });
   };
 
   handleFavoriteClick = () => {
-    console.log('favorite');
+    const { targetEvent } = this.state;
+    const favoritedEvent = { ...targetEvent, favorite: !targetEvent.favorite };
+    this.setState({ targetEvent: favoritedEvent });
   };
 
   render() {
@@ -67,9 +73,13 @@ class Events extends Component {
       <div>
         {event}
         {this.state.displayPopup && <EventPopup targetEvent={targetEvent} />}
-        <Modal open={this.state.displayModal} onClose={this.closeModal} center>
+        <Modal
+          open={this.state.displayModal}
+          onClose={event => this.handleModalClick(event)}
+          center
+        >
           <EventModal
-            favoriteClick={this.handleFavoriteClick}
+            handleFavoriteClick={this.handleFavoriteClick}
             targetEvent={targetEvent}
           />
         </Modal>
