@@ -1,5 +1,5 @@
 // import React from 'react';
-// import Map from './Map';
+// import userReducer from './userReducer';
 
 it('renders without crashing', () => {
   expect(false).toEqual(false);

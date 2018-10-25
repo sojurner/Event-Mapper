@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './App.css';
+import PropTypes from 'prop-types';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import Map from '../../components/Map/Map';
+import { loginUser } from '../../actions';
+import NavBar from '../../components/NavBar/NavBar';
+import './App.css';
 
 import * as keys from '../../utilities/apiCalls/apiKeys';
-import Map from '../Map/Map';
 import { postUser } from '../../utilities/apiCalls/apiCalls';
 
 export class App extends Component {
@@ -17,7 +20,8 @@ export class App extends Component {
   }
 
   responseGoogle = async res => {
-    await postUser(res.profileObj);
+    const activeUser = await postUser(res.profileObj);
+    this.props.loginUser(activeUser);
     this.setState({ user: res });
   };
 
@@ -46,7 +50,7 @@ export class App extends Component {
           />
         )}
         {user && (
-          <div>
+          <div className="main-container">
             <GoogleLogout
               className="logout-button"
               buttonText="Logout"
@@ -65,21 +69,21 @@ export class App extends Component {
               />
             </div>
             <Map mapStyle={this.state.mapType} />
+            <NavBar />
           </div>
         )}
-        <header className="App-header">
-          <h1>Hello World</h1>
-        </header>
       </div>
     );
   }
 }
 
-const mapStateToProps = () => ({});
+App.propTypes = {
+  user: PropTypes.object,
+  loginUser: PropTypes.func
+};
 
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+  loginUser: (user) => dispatch(loginUser(user))
+});
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(null, mapDispatchToProps)(App);
