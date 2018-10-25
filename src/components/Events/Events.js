@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Marker } from 'react-mapbox-gl';
 
-import { EventPopup } from '../EventMarker/EventMarker';
+import { EventPopup } from '../EventPopup/EventPopup';
 
 import './Events.css';
 
