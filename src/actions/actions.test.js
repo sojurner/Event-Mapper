@@ -1,5 +1,5 @@
 // import React from 'react';
-// import Map from './Map';
+// import * from './';
 
 it('renders without crashing', () => {
   expect(false).toEqual(false);

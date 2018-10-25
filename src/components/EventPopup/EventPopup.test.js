@@ -1,5 +1,5 @@
 // import React from 'react';
-// import Map from './Map';
+// import EventPopup from './EventPopup';
 
 it('renders without crashing', () => {
   expect(false).toEqual(false);
