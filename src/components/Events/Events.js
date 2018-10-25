@@ -23,6 +23,7 @@ class Events extends Component {
       let coordinates = [eve.venues[0].lng, eve.venues[0].lat];
       return (
         <Marker
+          onClick={this.openModal}
           onMouseEnter={event => this.showEventInfo(event, eve)}
           onMouseLeave={this.closePopup}
           key={`event-${index}`}
