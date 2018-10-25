@@ -5,10 +5,11 @@ import Geohash from 'latlon-geohash';
 export const getEvents = async (lat, lng) => {
   const geoCode = Geohash.encode(lat, lng);
 
-  const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketMasterApiKey}&geoPoint=${geoCode.slice(
-    0,
-    9
-  )}&radius=50&size=100`;
+  const url = 'https://app.ticketmaster.com/discovery/v2/events.json?'+
+    `apikey=${ticketMasterApiKey}&`+
+    `geoPoint=${geoCode.slice(0, 9)}&`+
+    'radius=50&'+
+    'size=100';
   const response = await fetch(url);
   const cleanedEvents = eventsCleaner(await response.json());
   return cleanedEvents;
@@ -22,5 +23,5 @@ export const postUser = async userInfo => {
     body: JSON.stringify(activeUser),
     headers: { 'Content-Type': 'application/json' }
   });
-  const result = await response.json();
+  return await response.json();
 };
