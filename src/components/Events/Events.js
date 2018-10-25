@@ -48,6 +48,13 @@ class Events extends Component {
     this.setState({ displayPopup: false });
   };
 
+  openModal = () => {
+    this.setState({ displayModal: true });
+  };
+
+  closeModal = () => {
+    this.setState({ displayModal: false });
+  };
   render() {
     const { targetEvent } = this.state;
     const event = this.plotEvents();
