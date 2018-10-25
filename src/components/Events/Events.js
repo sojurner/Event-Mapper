@@ -20,10 +20,10 @@ class Events extends Component {
   plotEvents = () => {
     const { events } = this.props;
     return events.map((eve, index) => {
-      let coordinates = [eve.venues[0].lng, eve.venues[0].lat];
+      let coordinates = [eve.lng, eve.lat];
       return (
         <Marker
-          onClick={this.openModal}
+          onClick={event => this.handleModalClick(event, 'open')}
           onMouseEnter={event => this.showEventInfo(event, eve)}
           onMouseLeave={this.closePopup}
           key={`event-${index}`}
