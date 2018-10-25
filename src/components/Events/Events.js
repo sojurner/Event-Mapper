@@ -56,7 +56,9 @@ class Events extends Component {
   };
 
   handleFavoriteClick = () => {
-    console.log('favorite');
+    const { targetEvent } = this.state;
+    const favoritedEvent = { ...targetEvent, favorite: !targetEvent.favorite };
+    this.setState({ targetEvent: favoritedEvent });
   };
 
   render() {
