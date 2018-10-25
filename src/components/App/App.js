@@ -16,13 +16,11 @@ export class App extends Component {
   }
 
   responseGoogle = res => {
-    //googleid, familyname, givenName, email
     postUser(res.profileObj);
     this.setState({ user: res });
   };
 
   logout = res => {
-    console.log(res);
     this.setState({ user: null });
   };
 

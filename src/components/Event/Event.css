@@ -1,0 +1,7 @@
+.mapboxgl-marker {
+  background-image: url(http://landon-homes.net/wp-content/uploads/2015/04/map-pin.png);
+  background-position: center;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: 1rem; }

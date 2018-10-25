@@ -44,6 +44,7 @@ export class Map extends Component {
     return (
       <Map
         center={[longitude, latitude]}
+        zoom={[13]}
         style="mapbox://styles/mapbox/streets-v9"
         containerStyle={{
           height: '100vh',

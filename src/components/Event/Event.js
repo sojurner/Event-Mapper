@@ -1,20 +1,18 @@
 import React from 'react';
+import './Event.css';
 
-import { Layer, Feature } from 'react-mapbox-gl';
+import { Layer, Feature, Marker } from 'react-mapbox-gl';
 
 export const Event = ({ events }) => {
-  console.log(events);
   return events.map((event, index) => {
-    const coordinates = [event.venues[0].lat, event.venues[0].lng];
+    let coordinates = [event.venues[0].lng, event.venues[0].lat];
+    console.log(coordinates);
     return (
-      <Layer
+      <Marker
         key={`event-${index}`}
-        type="symbol"
-        id="marker"
-        layout={{ 'icon-image': 'marker-15' }}
-      >
-        <Feature coordinates={coordinates} />
-      </Layer>
+        coordinates={coordinates}
+        anchor="bottom"
+      />
     );
   });
 };
