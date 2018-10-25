@@ -1,6 +1,15 @@
 import React from 'react';
+
 import App from './App';
 
-it('renders without crashing', () => {
-  expect(false).toEqual(false);
+describe('App', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 });
