@@ -13,7 +13,8 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: null
+      user: null,
+      mapType: 'streets'
     };
   }
 
@@ -27,8 +28,16 @@ export class App extends Component {
     this.setState({ user: null });
   };
 
+  changeMap = (event, style) => {
+    event.preventDefault();
+    const { mapType } = this.state;
+    mapType !== style
+      ? this.setState({ mapType: style })
+      : this.setState({ mapType: 'streets' });
+  };
+
   render() {
-    const { user } = this.state;
+    const { user, mapType } = this.state;
     return (
       <div className="App">
         {!user && (
@@ -41,8 +50,24 @@ export class App extends Component {
         )}
         {user && (
           <div>
-            <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout} />
-            <Map />
+            <GoogleLogout
+              className="logout-button"
+              buttonText="Logout"
+              onLogoutSuccess={this.logout}
+            />
+            <div
+              className={
+                mapType === 'streets'
+                  ? 'toggle-map-style'
+                  : 'toggle-map-style-active'
+              }
+            >
+              <button
+                className={`${mapType}-button`}
+                onClick={event => this.changeMap(event, 'dark')}
+              />
+            </div>
+            <Map mapStyle={this.state.mapType} />
           </div>
         )}
       </div>
