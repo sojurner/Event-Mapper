@@ -67,6 +67,12 @@ class Events extends Component {
       <div>
         {event}
         {this.state.displayPopup && <EventPopup targetEvent={targetEvent} />}
+        <Modal open={this.state.displayModal} onClose={this.closeModal} center>
+          <EventModal
+            favoriteClick={this.handleFavoriteClick}
+            targetEvent={targetEvent}
+          />
+        </Modal>
       </div>
     );
   }
