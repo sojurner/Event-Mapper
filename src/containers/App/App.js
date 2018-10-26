@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import Map from '../../components/Map/Map';
 import { loginUser } from '../../actions';
 import NavBar from '../../components/NavBar/NavBar';
+import { Routes } from '../../components/Routes/Routes';
 import './App.css';
 
 import * as keys from '../../utilities/apiCalls/apiKeys';
@@ -15,7 +17,8 @@ export class App extends Component {
     super();
     this.state = {
       user: null,
-      mapType: 'streets'
+      mapType: 'streets',
+      displaySidebar: false
     };
   }
 
