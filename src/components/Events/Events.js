@@ -7,13 +7,14 @@ import { EventPopup } from '../EventPopup/EventPopup';
 
 import './Events.css';
 
-class Events extends Component {
+export class Events extends Component {
   constructor() {
     super();
     this.state = {
       targetEvent: {},
       displayPopup: false,
-      displayModal: false
+      displayModal: false,
+      hoverMessage: ''
     };
   }
 
