@@ -76,6 +76,11 @@ export class Events extends Component {
     this.setState({ targetEvent: favoritedEvent });
   };
 
+  handleHover = (event, hoverMessage) => {
+    event.preventDefault();
+    this.setState({ hoverMessage });
+  };
+
   render() {
     const { targetEvent } = this.state;
     const event = this.plotEvents();
