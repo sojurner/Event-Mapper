@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import Map from '../../components/Map/Map';
 import { loginUser } from '../../actions';
 import NavBar from '../../components/NavBar/NavBar';
 import { Routes } from '../../components/Routes/Routes';
@@ -25,7 +24,7 @@ export class App extends Component {
   responseGoogle = async res => {
     const activeUser = await postUser(res.profileObj);
     this.props.loginUser(activeUser);
-    this.setState({ user: res });
+    this.setState({ user: res.profileObj });
   };
 
   logout = res => {
@@ -68,7 +67,6 @@ export class App extends Component {
             />
           )}
           {displaySidebar && <NavBar />}
-
           {user && (
             <div className="main-container">
               {/* <GoogleLogout
