@@ -7,7 +7,7 @@ export const eventsCleaner = events => {
 
     return {
       name: name,
-      id: id,
+      e_id: id,
       url: url,
       img: images[0].url,
       date: moment(dates.start.dateTime).format('llll'),

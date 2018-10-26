@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import { Marker } from 'react-mapbox-gl';
+import { connect } from 'react-redux';
 import Modal from 'react-responsive-modal';
+
+import * as apiCalls from '../../utilities/apiCalls/apiCalls';
 
 import { EventModal } from '../EventModal/EventModal';
 import { EventPopup } from '../EventPopup/EventPopup';
 
 import './Events.css';
 
-class Events extends Component {
+export class Events extends Component {
   constructor() {
     super();
     this.state = {
       targetEvent: {},
       displayPopup: false,
-      displayModal: false
+      displayModal: false,
+      hoverMessage: ''
     };
   }
 
@@ -56,25 +60,51 @@ class Events extends Component {
       : this.setState({ displayModal: false });
   };
 
-  handleFavoriteClick = () => {
+  handleFavoriteClick = async () => {
+    const { first_name, last_name, gid, email, id } = this.props.activeUser;
     const { targetEvent } = this.state;
+    let userObj = {
+      given_name: first_name,
+      family_name: last_name,
+      google_id: gid,
+      email
+    };
     const favoritedEvent = { ...targetEvent, favorite: !targetEvent.favorite };
+    if (!targetEvent.favorite) {
+      const eventObj = { ...targetEvent };
+      delete eventObj.favorite;
+      const response = await apiCalls.setFavorite(userObj, eventObj, id);
+      console.log(response);
+    } else {
+    }
     this.setState({ targetEvent: favoritedEvent });
   };
 
+  handleHover = (event, hoverMessage) => {
+    event.preventDefault();
+    this.setState({ hoverMessage });
+  };
+
   render() {
-    const { targetEvent } = this.state;
+    const {
+      targetEvent,
+      hoverMessage,
+      displayPopup,
+      displayModal
+    } = this.state;
     const event = this.plotEvents();
     return (
       <div>
         {event}
-        {this.state.displayPopup && <EventPopup targetEvent={targetEvent} />}
+        {displayPopup && <EventPopup targetEvent={targetEvent} />}
         <Modal
-          open={this.state.displayModal}
+          open={displayModal}
           onClose={event => this.handleModalClick(event)}
           center
         >
           <EventModal
+            handleHover={this.handleHover}
+            hoverMessage={hoverMessage}
             handleFavoriteClick={this.handleFavoriteClick}
             targetEvent={targetEvent}
           />
@@ -84,4 +114,13 @@ class Events extends Component {
   }
 }
 
-export default Events;
+const mapStateToProps = state => ({
+  activeUser: state.activeUser
+});
+
+const mapDispatchToProps = () => ({});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Events);

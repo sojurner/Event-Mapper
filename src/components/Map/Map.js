@@ -67,4 +67,7 @@ Map.propTypes = {
 
 const mapDispatchToProps = () => ({});
 
-export default connect(null, mapDispatchToProps)(Map);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Map);
