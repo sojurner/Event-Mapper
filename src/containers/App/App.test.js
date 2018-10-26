@@ -18,4 +18,29 @@ describe('App', () => {
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should match snapshot when user is logged in', () => {
+    wrapper.setState({ user: { name: 'paul' } });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call mapDispatchToProps', () => {
+    const mockDispatch = jest.fn();
+    const mapped = mapDispatchToProps(mockDispatch);
+
+    mapped.loginUser();
+
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+
+  it('should call postUser with correct Params', async () => {
+    window.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(user.mockStateUser)
+      })
+    );
+
+    wrapper.responseGoogle();
+    expect(window.fetch).toHaveBeenCalledWith();
+  });
 });
