@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import Map from '../../components/Map/Map';
 import { loginUser } from '../../actions';
@@ -15,18 +16,19 @@ export class App extends Component {
     super();
     this.state = {
       user: null,
-      mapType: 'streets'
+      mapType: 'streets',
+      redirect: false
     };
   }
 
-  responseGoogle = async res => {
+  login = async res => {
     const activeUser = await postUser(res.profileObj);
     this.props.loginUser(activeUser);
-    this.setState({ user: res });
+    this.setState({ user: res, redirect: true });
   };
 
   logout = res => {
-    this.setState({ user: null });
+    this.setState({ user: null, redirect: false });
   };
 
   changeMap = (event, style) => {
@@ -38,40 +40,51 @@ export class App extends Component {
   };
 
   render() {
-    const { user, mapType } = this.state;
-    return (
-      <div className="App">
-        {!user && (
+    const { mapType, redirect } = this.state;
+    const loginDisplay = () => (
+      <div className='placement-container'>
+        <div className='login-container'>
+          <h1>EVENT MAPPER</h1>
           <GoogleLogin
             clientId={keys.googleClientId}
-            buttonText="Login w/ Google"
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
+            className = "login-button"
+            buttonText="Login with Google"
+            onSuccess={this.login}
+            onFailure={this.login}
           />
-        )}
-        {user && (
-          <div className="main-container">
-            <GoogleLogout
-              className="logout-button"
-              buttonText="Logout"
-              onLogoutSuccess={this.logout}
-            />
-            <div
-              className={
-                mapType === 'streets'
-                  ? 'toggle-map-style'
-                  : 'toggle-map-style-active'
-              }
-            >
-              <button
-                className={`${mapType}-button`}
-                onClick={event => this.changeMap(event, 'dark')}
-              />
-            </div>
-            <Map mapStyle={this.state.mapType} />
-            <NavBar />
-          </div>
-        )}
+        </div>
+      </div>
+    );
+    const homeDisplay = () => (
+      <div className="main-container">
+        <Map mapStyle={this.state.mapType} />
+        <GoogleLogout
+          className="logout-button"
+          buttonText="Logout"
+          onLogoutSuccess={this.logout}
+        />
+        <div
+          className={
+            mapType === 'streets'
+              ? 'toggle-map-style'
+              : 'toggle-map-style-active'
+          }
+        >
+          <button
+            className={`${mapType}-button`}
+            onClick={event => this.changeMap(event, 'dark')}
+          />
+        </div>
+        <NavBar />
+      </div>
+    );
+        
+    return (
+      <div className="App">
+        {redirect === true && (<Redirect to={'/app'} />)}
+        {redirect === false && (<Redirect to={'/'} />)}
+        <Route exact path={'/'} component={loginDisplay}></Route>
+        <Route path={'/app'} component={homeDisplay}></Route>
       </div>
     );
   }
@@ -86,4 +99,4 @@ const mapDispatchToProps = (dispatch) => ({
   loginUser: (user) => dispatch(loginUser(user))
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));
