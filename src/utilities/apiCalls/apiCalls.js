@@ -4,10 +4,11 @@ import Geohash from 'latlon-geohash';
 
 export const getEvents = async (lat, lng, pageCount) => {
   const geoCode = Geohash.encode(lat, lng);
-  const url = 'https://app.ticketmaster.com/discovery/v2/events.json?'+
-    `apikey=${ticketMasterApiKey}&`+
-    `geoPoint=${geoCode.slice(0, 9)}&`+
-    'radius=5&'+
+  const url =
+    'https://app.ticketmaster.com/discovery/v2/events.json?' +
+    `apikey=${ticketMasterApiKey}&` +
+    `geoPoint=${geoCode.slice(0, 9)}&` +
+    'radius=5&' +
     'size=200';
   const response = await fetch(url);
   const cleanedEvents = eventsCleaner(await response.json());
@@ -23,4 +24,20 @@ export const postUser = async userInfo => {
     headers: { 'Content-Type': 'application/json' }
   });
   return await response.json();
+};
+
+export const setFavorite = async (user, event, id) => {
+  console.log(user);
+  console.log(event);
+  const url = `https://event-mapper-api.herokuapp.com/api/v1/users/${id}/events`;
+  const response = await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify({ event: event, user: user }),
+    headers: { 'Content-Type': 'application/json' }
+  });
+  return await response.json();
+};
+
+export const removeFavorite = async favoriteInfo => {
+  const url = 'https:// event-mapper-api.herokuapp.com/api/v1/';
 };
