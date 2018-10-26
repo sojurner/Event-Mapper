@@ -20,63 +20,63 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <t
-          accessType="online"
-          buttonText="Login w/ Google"
-          clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
-          cookiePolicy="single_host_origin"
-          disabledStyle={
-            Object {
-              "opacity": 0.6,
-            }
-          }
-          fetchBasicProfile={true}
-          isSignedIn={false}
-          jsSrc="https://apis.google.com/js/client:platform.js"
-          onFailure={[Function]}
-          onRequest={[Function]}
-          onSuccess={[Function]}
-          prompt=""
-          scope="profile email"
-          tag="button"
-          type="button"
-          uxMode="popup"
+        false,
+        <Redirect
+          push={false}
+          to="/"
         />,
-        null,
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />,
+        <Route
+          component={[Function]}
+          path="/app"
+        />,
       ],
       "className": "App",
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "accessType": "online",
-          "buttonText": "Login w/ Google",
-          "clientId": "241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com",
-          "cookiePolicy": "single_host_origin",
-          "disabledStyle": Object {
-            "opacity": 0.6,
-          },
-          "fetchBasicProfile": true,
-          "isSignedIn": false,
-          "jsSrc": "https://apis.google.com/js/client:platform.js",
-          "onFailure": [Function],
-          "onRequest": [Function],
-          "onSuccess": [Function],
-          "prompt": "",
-          "scope": "profile email",
-          "tag": "button",
-          "type": "button",
-          "uxMode": "popup",
+          "push": false,
+          "to": "/",
         },
         "ref": null,
         "rendered": null,
         "type": [Function],
       },
-      null,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/app",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -87,63 +87,63 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <t
-            accessType="online"
-            buttonText="Login w/ Google"
-            clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
-            cookiePolicy="single_host_origin"
-            disabledStyle={
-              Object {
-                "opacity": 0.6,
-              }
-            }
-            fetchBasicProfile={true}
-            isSignedIn={false}
-            jsSrc="https://apis.google.com/js/client:platform.js"
-            onFailure={[Function]}
-            onRequest={[Function]}
-            onSuccess={[Function]}
-            prompt=""
-            scope="profile email"
-            tag="button"
-            type="button"
-            uxMode="popup"
+          false,
+          <Redirect
+            push={false}
+            to="/"
           />,
-          null,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+          />,
+          <Route
+            component={[Function]}
+            path="/app"
+          />,
         ],
         "className": "App",
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "accessType": "online",
-            "buttonText": "Login w/ Google",
-            "clientId": "241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com",
-            "cookiePolicy": "single_host_origin",
-            "disabledStyle": Object {
-              "opacity": 0.6,
-            },
-            "fetchBasicProfile": true,
-            "isSignedIn": false,
-            "jsSrc": "https://apis.google.com/js/client:platform.js",
-            "onFailure": [Function],
-            "onRequest": [Function],
-            "onSuccess": [Function],
-            "prompt": "",
-            "scope": "profile email",
-            "tag": "button",
-            "type": "button",
-            "uxMode": "popup",
+            "push": false,
+            "to": "/",
           },
           "ref": null,
           "rendered": null,
           "type": [Function],
         },
-        null,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/app",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": "div",
     },
@@ -189,34 +189,19 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         false,
-        <div
-          className="main-container"
-        >
-          <t
-            buttonText="Logout"
-            className="logout-button"
-            disabledStyle={
-              Object {
-                "opacity": 0.6,
-              }
-            }
-            jsSrc="https://apis.google.com/js/client:platform.js"
-            onLogoutSuccess={[Function]}
-            tag="button"
-          />
-          <div
-            className="toggle-map-style"
-          >
-            <button
-              className="streets-button"
-              onClick={[Function]}
-            />
-          </div>
-          <Connect(Map)
-            mapStyle="streets"
-          />
-          <Connect(NavBar) />
-        </div>,
+        <Redirect
+          push={false}
+          to="/"
+        />,
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />,
+        <Route
+          component={[Function]}
+          path="/app"
+        />,
       ],
       "className": "App",
     },
@@ -226,104 +211,39 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
-          "children": Array [
-            <t
-              buttonText="Logout"
-              className="logout-button"
-              disabledStyle={
-                Object {
-                  "opacity": 0.6,
-                }
-              }
-              jsSrc="https://apis.google.com/js/client:platform.js"
-              onLogoutSuccess={[Function]}
-              tag="button"
-            />,
-            <div
-              className="toggle-map-style"
-            >
-              <button
-                className="streets-button"
-                onClick={[Function]}
-              />
-            </div>,
-            <Connect(Map)
-              mapStyle="streets"
-            />,
-            <Connect(NavBar) />,
-          ],
-          "className": "main-container",
+          "push": false,
+          "to": "/",
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "buttonText": "Logout",
-              "className": "logout-button",
-              "disabledStyle": Object {
-                "opacity": 0.6,
-              },
-              "jsSrc": "https://apis.google.com/js/client:platform.js",
-              "onLogoutSuccess": [Function],
-              "tag": "button",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <button
-                className="streets-button"
-                onClick={[Function]}
-              />,
-              "className": "toggle-map-style",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "className": "streets-button",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "button",
-            },
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "mapStyle": "streets",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
-        "type": "div",
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/app",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -336,34 +256,19 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           false,
-          <div
-            className="main-container"
-          >
-            <t
-              buttonText="Logout"
-              className="logout-button"
-              disabledStyle={
-                Object {
-                  "opacity": 0.6,
-                }
-              }
-              jsSrc="https://apis.google.com/js/client:platform.js"
-              onLogoutSuccess={[Function]}
-              tag="button"
-            />
-            <div
-              className="toggle-map-style"
-            >
-              <button
-                className="streets-button"
-                onClick={[Function]}
-              />
-            </div>
-            <Connect(Map)
-              mapStyle="streets"
-            />
-            <Connect(NavBar) />
-          </div>,
+          <Redirect
+            push={false}
+            to="/"
+          />,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+          />,
+          <Route
+            component={[Function]}
+            path="/app"
+          />,
         ],
         "className": "App",
       },
@@ -373,104 +278,39 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": Array [
-              <t
-                buttonText="Logout"
-                className="logout-button"
-                disabledStyle={
-                  Object {
-                    "opacity": 0.6,
-                  }
-                }
-                jsSrc="https://apis.google.com/js/client:platform.js"
-                onLogoutSuccess={[Function]}
-                tag="button"
-              />,
-              <div
-                className="toggle-map-style"
-              >
-                <button
-                  className="streets-button"
-                  onClick={[Function]}
-                />
-              </div>,
-              <Connect(Map)
-                mapStyle="streets"
-              />,
-              <Connect(NavBar) />,
-            ],
-            "className": "main-container",
+            "push": false,
+            "to": "/",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "buttonText": "Logout",
-                "className": "logout-button",
-                "disabledStyle": Object {
-                  "opacity": 0.6,
-                },
-                "jsSrc": "https://apis.google.com/js/client:platform.js",
-                "onLogoutSuccess": [Function],
-                "tag": "button",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <button
-                  className="streets-button"
-                  onClick={[Function]}
-                />,
-                "className": "toggle-map-style",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "streets-button",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "button",
-              },
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "mapStyle": "streets",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
-          "type": "div",
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/app",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",
