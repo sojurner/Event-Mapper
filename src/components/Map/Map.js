@@ -14,9 +14,7 @@ export class Map extends Component {
     this.state = {
       latitude: 0,
       longitude: 0,
-      events: [],
-      targetEvent: {},
-      pageCount: 1
+      events: []
     };
   }
 
