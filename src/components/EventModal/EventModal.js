@@ -1,14 +1,35 @@
 import React from 'react';
 
-export const EventModal = ({ targetEvent, handleFavoriteClick }) => {
+import './EventModal.css';
+
+export const EventModal = ({
+  targetEvent,
+  handleFavoriteClick,
+  handleHover,
+  hoverMessage
+}) => {
   const { name, img, date, venue_name, favorite, address } = targetEvent;
-  console.log(targetEvent);
   return (
     <div>
-      <i
-        className={favorite ? 'fas fa-star' : 'far fa-star'}
-        onClick={handleFavoriteClick}
-      />
+      {!favorite ? (
+        <i
+          className="fas fa-eye"
+          onClick={handleFavoriteClick}
+          onMouseEnter={e => handleHover(e, 'Add to Watch-list')}
+          onMouseLeave={e => handleHover(e, '')}
+        >
+          <span className="hover-msg">{hoverMessage}</span>
+        </i>
+      ) : (
+        <i
+          className="far fa-eye"
+          onClick={handleFavoriteClick}
+          onMouseEnter={e => handleHover(e, 'Remove from Watch-list')}
+          onMouseLeave={e => handleHover(e, '')}
+        >
+          <span className="hover-msg">{hoverMessage}</span>
+        </i>
+      )}
       <h1>Event: {name}</h1>
       <h4>Date: {date}</h4>
       <img src={`${img}`} height={400} />
