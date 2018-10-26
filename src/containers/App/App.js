@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { loginUser } from '../../actions';
 import NavBar from '../../components/NavBar/NavBar';
@@ -21,14 +22,14 @@ export class App extends Component {
     };
   }
 
-  responseGoogle = async res => {
+  login = async res => {
     const activeUser = await postUser(res.profileObj);
     this.props.loginUser(activeUser);
     this.setState({ user: res.profileObj });
   };
 
   logout = res => {
-    this.setState({ user: null });
+    this.setState({ user: null, redirect: false });
   };
 
   changeMap = (event, style) => {
