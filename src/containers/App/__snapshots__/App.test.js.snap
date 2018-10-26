@@ -17,9 +17,11 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
+      "children": <main
+        className="App"
+      >
         <t
           accessType="online"
           buttonText="Login w/ Google"
@@ -41,47 +43,11 @@ ShallowWrapper {
           tag="button"
           type="button"
           uxMode="popup"
-        />,
-        null,
-      ],
-      "className": "App",
+        />
+      </main>,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "accessType": "online",
-          "buttonText": "Login w/ Google",
-          "clientId": "241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com",
-          "cookiePolicy": "single_host_origin",
-          "disabledStyle": Object {
-            "opacity": 0.6,
-          },
-          "fetchBasicProfile": true,
-          "isSignedIn": false,
-          "jsSrc": "https://apis.google.com/js/client:platform.js",
-          "onFailure": [Function],
-          "onRequest": [Function],
-          "onSuccess": [Function],
-          "prompt": "",
-          "scope": "profile email",
-          "tag": "button",
-          "type": "button",
-          "uxMode": "popup",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      null,
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -109,6 +75,8 @@ ShallowWrapper {
             type="button"
             uxMode="popup"
           />,
+          null,
+          false,
           null,
         ],
         "className": "App",
@@ -144,8 +112,382 @@ ShallowWrapper {
           "type": [Function],
         },
         null,
+        false,
+        null,
       ],
-      "type": "div",
+      "type": "main",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <main
+          className="App"
+        >
+          <t
+            accessType="online"
+            buttonText="Login w/ Google"
+            clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
+            cookiePolicy="single_host_origin"
+            disabledStyle={
+              Object {
+                "opacity": 0.6,
+              }
+            }
+            fetchBasicProfile={true}
+            isSignedIn={false}
+            jsSrc="https://apis.google.com/js/client:platform.js"
+            onFailure={[Function]}
+            onRequest={[Function]}
+            onSuccess={[Function]}
+            prompt=""
+            scope="profile email"
+            tag="button"
+            type="button"
+            uxMode="popup"
+          />
+        </main>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <t
+              accessType="online"
+              buttonText="Login w/ Google"
+              clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
+              cookiePolicy="single_host_origin"
+              disabledStyle={
+                Object {
+                  "opacity": 0.6,
+                }
+              }
+              fetchBasicProfile={true}
+              isSignedIn={false}
+              jsSrc="https://apis.google.com/js/client:platform.js"
+              onFailure={[Function]}
+              onRequest={[Function]}
+              onSuccess={[Function]}
+              prompt=""
+              scope="profile email"
+              tag="button"
+              type="button"
+              uxMode="popup"
+            />,
+            null,
+            false,
+            null,
+          ],
+          "className": "App",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "accessType": "online",
+              "buttonText": "Login w/ Google",
+              "clientId": "241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com",
+              "cookiePolicy": "single_host_origin",
+              "disabledStyle": Object {
+                "opacity": 0.6,
+              },
+              "fetchBasicProfile": true,
+              "isSignedIn": false,
+              "jsSrc": "https://apis.google.com/js/client:platform.js",
+              "onFailure": [Function],
+              "onRequest": [Function],
+              "onSuccess": [Function],
+              "prompt": "",
+              "scope": "profile email",
+              "tag": "button",
+              "type": "button",
+              "uxMode": "popup",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          null,
+          false,
+          null,
+        ],
+        "type": "main",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`App should match snapshot when displaySidebar is true 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App
+    loginUser={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <main
+        className="App"
+      >
+        <t
+          accessType="online"
+          buttonText="Login w/ Google"
+          clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
+          cookiePolicy="single_host_origin"
+          disabledStyle={
+            Object {
+              "opacity": 0.6,
+            }
+          }
+          fetchBasicProfile={true}
+          isSignedIn={false}
+          jsSrc="https://apis.google.com/js/client:platform.js"
+          onFailure={[Function]}
+          onRequest={[Function]}
+          onSuccess={[Function]}
+          prompt=""
+          scope="profile email"
+          tag="button"
+          type="button"
+          uxMode="popup"
+        />
+        <Connect(NavBar) />
+      </main>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <t
+            accessType="online"
+            buttonText="Login w/ Google"
+            clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
+            cookiePolicy="single_host_origin"
+            disabledStyle={
+              Object {
+                "opacity": 0.6,
+              }
+            }
+            fetchBasicProfile={true}
+            isSignedIn={false}
+            jsSrc="https://apis.google.com/js/client:platform.js"
+            onFailure={[Function]}
+            onRequest={[Function]}
+            onSuccess={[Function]}
+            prompt=""
+            scope="profile email"
+            tag="button"
+            type="button"
+            uxMode="popup"
+          />,
+          null,
+          <Connect(NavBar) />,
+          null,
+        ],
+        "className": "App",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "accessType": "online",
+            "buttonText": "Login w/ Google",
+            "clientId": "241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com",
+            "cookiePolicy": "single_host_origin",
+            "disabledStyle": Object {
+              "opacity": 0.6,
+            },
+            "fetchBasicProfile": true,
+            "isSignedIn": false,
+            "jsSrc": "https://apis.google.com/js/client:platform.js",
+            "onFailure": [Function],
+            "onRequest": [Function],
+            "onSuccess": [Function],
+            "prompt": "",
+            "scope": "profile email",
+            "tag": "button",
+            "type": "button",
+            "uxMode": "popup",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        null,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        null,
+      ],
+      "type": "main",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <main
+          className="App"
+        >
+          <t
+            accessType="online"
+            buttonText="Login w/ Google"
+            clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
+            cookiePolicy="single_host_origin"
+            disabledStyle={
+              Object {
+                "opacity": 0.6,
+              }
+            }
+            fetchBasicProfile={true}
+            isSignedIn={false}
+            jsSrc="https://apis.google.com/js/client:platform.js"
+            onFailure={[Function]}
+            onRequest={[Function]}
+            onSuccess={[Function]}
+            prompt=""
+            scope="profile email"
+            tag="button"
+            type="button"
+            uxMode="popup"
+          />
+          <Connect(NavBar) />
+        </main>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <t
+              accessType="online"
+              buttonText="Login w/ Google"
+              clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
+              cookiePolicy="single_host_origin"
+              disabledStyle={
+                Object {
+                  "opacity": 0.6,
+                }
+              }
+              fetchBasicProfile={true}
+              isSignedIn={false}
+              jsSrc="https://apis.google.com/js/client:platform.js"
+              onFailure={[Function]}
+              onRequest={[Function]}
+              onSuccess={[Function]}
+              prompt=""
+              scope="profile email"
+              tag="button"
+              type="button"
+              uxMode="popup"
+            />,
+            null,
+            <Connect(NavBar) />,
+            null,
+          ],
+          "className": "App",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "accessType": "online",
+              "buttonText": "Login w/ Google",
+              "clientId": "241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com",
+              "cookiePolicy": "single_host_origin",
+              "disabledStyle": Object {
+                "opacity": 0.6,
+              },
+              "fetchBasicProfile": true,
+              "isSignedIn": false,
+              "jsSrc": "https://apis.google.com/js/client:platform.js",
+              "onFailure": [Function],
+              "onRequest": [Function],
+              "onSuccess": [Function],
+              "prompt": "",
+              "scope": "profile email",
+              "tag": "button",
+              "type": "button",
+              "uxMode": "popup",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          null,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          null,
+        ],
+        "type": "main",
+      },
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -185,25 +527,18 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
-        false,
+      "children": <main
+        className="App"
+      >
+        <i
+          class="fas fa-bars streets"
+          onClick={[Function]}
+        />
         <div
           className="main-container"
         >
-          <t
-            buttonText="Logout"
-            className="logout-button"
-            disabledStyle={
-              Object {
-                "opacity": 0.6,
-              }
-            }
-            jsSrc="https://apis.google.com/js/client:platform.js"
-            onLogoutSuccess={[Function]}
-            tag="button"
-          />
           <div
             className="toggle-map-style"
           >
@@ -212,145 +547,28 @@ ShallowWrapper {
               onClick={[Function]}
             />
           </div>
-          <Connect(Map)
+          <Routes
             mapStyle="streets"
           />
-          <Connect(NavBar) />
-        </div>,
-      ],
-      "className": "App",
+        </div>
+      </main>,
     },
     "ref": null,
-    "rendered": Array [
-      false,
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <t
-              buttonText="Logout"
-              className="logout-button"
-              disabledStyle={
-                Object {
-                  "opacity": 0.6,
-                }
-              }
-              jsSrc="https://apis.google.com/js/client:platform.js"
-              onLogoutSuccess={[Function]}
-              tag="button"
-            />,
-            <div
-              className="toggle-map-style"
-            >
-              <button
-                className="streets-button"
-                onClick={[Function]}
-              />
-            </div>,
-            <Connect(Map)
-              mapStyle="streets"
-            />,
-            <Connect(NavBar) />,
-          ],
-          "className": "main-container",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "buttonText": "Logout",
-              "className": "logout-button",
-              "disabledStyle": Object {
-                "opacity": 0.6,
-              },
-              "jsSrc": "https://apis.google.com/js/client:platform.js",
-              "onLogoutSuccess": [Function],
-              "tag": "button",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <button
-                className="streets-button"
-                onClick={[Function]}
-              />,
-              "className": "toggle-map-style",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "className": "streets-button",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "button",
-            },
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "mapStyle": "streets",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
       "props": Object {
         "children": Array [
           false,
+          <i
+            class="fas fa-bars streets"
+            onClick={[Function]}
+          />,
+          false,
           <div
             className="main-container"
           >
-            <t
-              buttonText="Logout"
-              className="logout-button"
-              disabledStyle={
-                Object {
-                  "opacity": 0.6,
-                }
-              }
-              jsSrc="https://apis.google.com/js/client:platform.js"
-              onLogoutSuccess={[Function]}
-              tag="button"
-            />
             <div
               className="toggle-map-style"
             >
@@ -359,10 +577,9 @@ ShallowWrapper {
                 onClick={[Function]}
               />
             </div>
-            <Connect(Map)
+            <Routes
               mapStyle="streets"
             />
-            <Connect(NavBar) />
           </div>,
         ],
         "className": "App",
@@ -375,19 +592,20 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "class": "fas fa-bars streets",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "i",
+        },
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
             "children": Array [
-              <t
-                buttonText="Logout"
-                className="logout-button"
-                disabledStyle={
-                  Object {
-                    "opacity": 0.6,
-                  }
-                }
-                jsSrc="https://apis.google.com/js/client:platform.js"
-                onLogoutSuccess={[Function]}
-                tag="button"
-              />,
               <div
                 className="toggle-map-style"
               >
@@ -396,33 +614,14 @@ ShallowWrapper {
                   onClick={[Function]}
                 />
               </div>,
-              <Connect(Map)
+              <Routes
                 mapStyle="streets"
               />,
-              <Connect(NavBar) />,
             ],
             "className": "main-container",
           },
           "ref": null,
           "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "buttonText": "Logout",
-                "className": "logout-button",
-                "disabledStyle": Object {
-                  "opacity": 0.6,
-                },
-                "jsSrc": "https://apis.google.com/js/client:platform.js",
-                "onLogoutSuccess": [Function],
-                "tag": "button",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
             Object {
               "instance": null,
               "key": undefined,
@@ -452,19 +651,11 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "gid": undefined,
                 "mapStyle": "streets",
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {},
               "ref": null,
               "rendered": null,
               "type": [Function],
@@ -473,7 +664,154 @@ ShallowWrapper {
           "type": "div",
         },
       ],
-      "type": "div",
+      "type": "main",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <main
+          className="App"
+        >
+          <i
+            class="fas fa-bars streets"
+            onClick={[Function]}
+          />
+          <div
+            className="main-container"
+          >
+            <div
+              className="toggle-map-style"
+            >
+              <button
+                className="streets-button"
+                onClick={[Function]}
+              />
+            </div>
+            <Routes
+              mapStyle="streets"
+            />
+          </div>
+        </main>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            false,
+            <i
+              class="fas fa-bars streets"
+              onClick={[Function]}
+            />,
+            false,
+            <div
+              className="main-container"
+            >
+              <div
+                className="toggle-map-style"
+              >
+                <button
+                  className="streets-button"
+                  onClick={[Function]}
+                />
+              </div>
+              <Routes
+                mapStyle="streets"
+              />
+            </div>,
+          ],
+          "className": "App",
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "class": "fas fa-bars streets",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="toggle-map-style"
+                >
+                  <button
+                    className="streets-button"
+                    onClick={[Function]}
+                  />
+                </div>,
+                <Routes
+                  mapStyle="streets"
+                />,
+              ],
+              "className": "main-container",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="streets-button"
+                    onClick={[Function]}
+                  />,
+                  "className": "toggle-map-style",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "streets-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "button",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "gid": undefined,
+                  "mapStyle": "streets",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "main",
+      },
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
