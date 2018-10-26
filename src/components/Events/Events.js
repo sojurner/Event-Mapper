@@ -56,9 +56,23 @@ export class Events extends Component {
       : this.setState({ displayModal: false });
   };
 
-  handleFavoriteClick = () => {
+  handleFavoriteClick = async () => {
+    const { first_name, last_name, gid, email, id } = this.props.activeUser;
     const { targetEvent } = this.state;
+    let userObj = {
+      given_name: first_name,
+      family_name: last_name,
+      google_id: gid,
+      email
+    };
     const favoritedEvent = { ...targetEvent, favorite: !targetEvent.favorite };
+    if (!targetEvent.favorite) {
+      const eventObj = { ...targetEvent };
+      delete eventObj.favorite;
+      const response = await apiCalls.setFavorite(userObj, eventObj, id);
+      console.log(response);
+    } else {
+    }
     this.setState({ targetEvent: favoritedEvent });
   };
 
