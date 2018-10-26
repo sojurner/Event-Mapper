@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import App from '../../containers/App/App';
 import Map from '../Map/Map';
 import Profile from '../Profile/Profile';
 import Favorites from '../../containers/Favorites/Favorites';
