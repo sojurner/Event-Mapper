@@ -13,10 +13,10 @@ export class NavBar extends Component {
         <NavLink className="nav-link" exact to={`/`}>
           Home
         </NavLink>
-        <NavLink className="nav-link" to={`/profile`}>
+        <NavLink className="nav-link" to={`/${gid}/profile`}>
           Profile
         </NavLink>
-        <NavLink className="nav-link" to={`/favorites`}>
+        <NavLink className="nav-link" to={`/${gid}/favorites`}>
           Favorites
         </NavLink>
       </nav>
