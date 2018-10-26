@@ -82,7 +82,12 @@ export class Events extends Component {
   };
 
   render() {
-    const { targetEvent } = this.state;
+    const {
+      targetEvent,
+      hoverMessage,
+      displayPopup,
+      displayModal
+    } = this.state;
     const event = this.plotEvents();
     return (
       <div>
