@@ -12,10 +12,10 @@ export class NavBar extends Component {
         <div className='nav-container'>
           <h1>{`Hello, ${first_name}`}</h1>
           <div className='button-container'>
-            <Link to={`/${gid}/profile`}>
+            <Link to={`/app/${gid}/profile`}>
               <button className='main-button'>Your Profile</button>
             </Link>
-            <Link to={`/${gid}/favorites`}>
+            <Link to={`/app/${gid}/favorites`}>
               <button className='main-button'>Favorites</button>
             </Link>
           </div>
@@ -27,10 +27,10 @@ export class NavBar extends Component {
       return (
         <div className='nav-container'>
           <div className='button-container'>
-            <Link to={`/${gid}/profile`}>
+            <Link to={`/app/${gid}/profile`}>
               <button className='main-button'>Your Profile</button>
             </Link>
-            <Link to={`/${gid}`}>
+            <Link to={`/app`}>
               <button className='main-button'>Current Events</button>
             </Link>
           </div>
@@ -41,10 +41,10 @@ export class NavBar extends Component {
     const profile = () => {
       return (
         <div className='nav-container'>
-          <Link to={`/${gid}/favorites`}>
+          <Link to={`/app/${gid}/favorites`}>
             <button className='main-button'>Favorites</button>
           </Link>
-          <Link to={`/${gid}`}>
+          <Link to={`/app`}>
             <button className='main-button'>Current Events</button>
           </Link>
         </div>
@@ -53,9 +53,9 @@ export class NavBar extends Component {
 
     return (
       <div className='main-nav'>
-        <Route exact path={`/`} component={loggedIn}></Route>
-        <Route exact path={`/${gid}/favorites`} component={favorites}></Route>
-        <Route exact path={`/${gid}/profile`} component={profile}></Route>
+        <Route exact path={`/app`} component={loggedIn}></Route>
+        <Route exact path={`/app/${gid}/favorites`} component={favorites}></Route>
+        <Route exact path={`/app/${gid}/profile`} component={profile}></Route>
       </div>
     );
   }
