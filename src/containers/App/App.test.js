@@ -1,17 +1,18 @@
-<<<<<<< HEAD:src/components/App/App.test.js
 import React from 'react';
 
-import App from './App';
-=======
-// import React from 'react';
-// import App from './App';
->>>>>>> 95db2ac37a1b74e7b2b0ae76b03fe6ade38963ae:src/containers/App/App.test.js
+import { App, mapDispatchToProps } from './App';
+import * as user from '../../data/mockUser';
+
+jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
+  Map: () => ({})
+}));
 
 describe('App', () => {
   let wrapper;
+  let mockLogin = jest.fn();
 
   beforeEach(() => {
-    wrapper = shallow(<App />);
+    wrapper = shallow(<App loginUser={mockLogin} />);
   });
 
   it('should match snapshot', () => {
