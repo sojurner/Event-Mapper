@@ -40,42 +40,59 @@ export class App extends Component {
       : this.setState({ mapType: 'streets' });
   };
 
+  displaySidebar = () => {
+    this.setState({ displaySidebar: !this.state.displaySidebar });
+  };
+
   render() {
-    const { user, mapType } = this.state;
+    const { user, mapType, displaySidebar } = this.state;
     return (
-      <div className="App">
-        {!user && (
-          <GoogleLogin
-            clientId={keys.googleClientId}
-            buttonText="Login w/ Google"
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
-          />
-        )}
-        {user && (
-          <div className="main-container">
-            <GoogleLogout
-              className="logout-button"
-              buttonText="Logout"
-              onLogoutSuccess={this.logout}
+      <Router>
+        <main className="App">
+          {!user && (
+            <GoogleLogin
+              clientId={keys.googleClientId}
+              buttonText="Login w/ Google"
+              onSuccess={this.responseGoogle}
+              onFailure={this.responseGoogle}
             />
-            <div
-              className={
-                mapType === 'streets'
-                  ? 'toggle-map-style'
-                  : 'toggle-map-style-active'
+          )}
+          {user && (
+            <i
+              class={
+                !displaySidebar
+                  ? `fas fa-bars ${mapType}`
+                  : 'far fa-window-close'
               }
-            >
-              <button
-                className={`${mapType}-button`}
-                onClick={event => this.changeMap(event, 'dark')}
-              />
+              onClick={this.displaySidebar}
+            />
+          )}
+          {displaySidebar && <NavBar />}
+
+          {user && (
+            <div className="main-container">
+              {/* <GoogleLogout
+                className="logout-button"
+                buttonText="Logout"
+                onLogoutSuccess={this.logout}
+              /> */}
+              <div
+                className={
+                  mapType === 'streets'
+                    ? 'toggle-map-style'
+                    : 'toggle-map-style-active'
+                }
+              >
+                <button
+                  className={`${mapType}-button`}
+                  onClick={event => this.changeMap(event, 'dark')}
+                />
+              </div>
+              <Routes gid={user.googleId} mapStyle={mapType} />
             </div>
-            <Map mapStyle={this.state.mapType} />
-            <NavBar />
-          </div>
-        )}
-      </div>
+          )}
+        </main>
+      </Router>
     );
   }
 }
@@ -85,8 +102,11 @@ App.propTypes = {
   loginUser: PropTypes.func
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  loginUser: (user) => dispatch(loginUser(user))
+export const mapDispatchToProps = dispatch => ({
+  loginUser: user => dispatch(loginUser(user))
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
