@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Marker } from 'react-mapbox-gl';
+import { connect } from 'react-redux';
 import Modal from 'react-responsive-modal';
+
+import * as apiCalls from '../../utilities/apiCalls/apiCalls';
 
 import { EventModal } from '../EventModal/EventModal';
 import { EventPopup } from '../EventPopup/EventPopup';
@@ -92,13 +95,15 @@ export class Events extends Component {
     return (
       <div>
         {event}
-        {this.state.displayPopup && <EventPopup targetEvent={targetEvent} />}
+        {displayPopup && <EventPopup targetEvent={targetEvent} />}
         <Modal
-          open={this.state.displayModal}
+          open={displayModal}
           onClose={event => this.handleModalClick(event)}
           center
         >
           <EventModal
+            handleHover={this.handleHover}
+            hoverMessage={hoverMessage}
             handleFavoriteClick={this.handleFavoriteClick}
             targetEvent={targetEvent}
           />
@@ -108,4 +113,13 @@ export class Events extends Component {
   }
 }
 
-export default Events;
+const mapStateToProps = state => ({
+  activeUser: state.activeUser
+});
+
+const mapDispatchToProps = () => ({});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Events);
