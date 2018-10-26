@@ -34,10 +34,6 @@ export class Map extends Component {
   };
 
   retrieveEvents = async (lat, lng) => {
-<<<<<<< HEAD
-=======
-    // const { events } = this.state;
->>>>>>> 95db2ac37a1b74e7b2b0ae76b03fe6ade38963ae
     const events = await getEvents(lat, lng);
     await this.setState({ events });
   };
@@ -71,4 +67,7 @@ Map.propTypes = {
 
 const mapDispatchToProps = () => ({});
 
-export default connect(null, mapDispatchToProps)(Map);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Map);
