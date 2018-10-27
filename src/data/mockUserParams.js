@@ -7,3 +7,18 @@ export const responseGoogle2 = {
   headers: { 'Content-Type': 'application/json' },
   method: 'POST'
 };
+
+export const getEvents =
+  'https://app.ticketmaster.com/discovery/v2/events.json?apikey=GddBLHQGZLJjPNWsNxOrYRAoBx8Hdqrf&geoPoint=9wjr4et3f&radius=5&size=200';
+
+export const postUser = {
+  body: '{"user":{"email":"pykim0591@gmail.com"}}',
+  headers: { 'Content-Type': 'application/json' },
+  method: 'POST'
+};
+
+export const setFavorite = {
+  body: '{}',
+  headers: { 'Content-Type': 'application/json' },
+  method: 'POST'
+};

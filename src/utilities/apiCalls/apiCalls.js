@@ -2,7 +2,7 @@ import { ticketMasterApiKey } from './apiKeys';
 import { eventsCleaner, cleanedUser } from '../helpers/helpers';
 import Geohash from 'latlon-geohash';
 
-export const getEvents = async (lat, lng, pageCount) => {
+export const getEvents = async (lat, lng) => {
   const geoCode = Geohash.encode(lat, lng);
   const url =
     'https://app.ticketmaster.com/discovery/v2/events.json?' +
@@ -23,7 +23,8 @@ export const postUser = async userInfo => {
     body: JSON.stringify(activeUser),
     headers: { 'Content-Type': 'application/json' }
   });
-  return await response.json();
+  const result = await response.json();
+  return result;
 };
 
 export const setFavorite = async (user, event, id) => {
@@ -35,7 +36,8 @@ export const setFavorite = async (user, event, id) => {
     body: JSON.stringify({ event: event, user: user }),
     headers: { 'Content-Type': 'application/json' }
   });
-  return await response.json();
+  const result = await response.json();
+  return result;
 };
 
 export const removeFavorite = async favoriteInfo => {
