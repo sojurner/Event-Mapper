@@ -51,13 +51,19 @@ export class App extends Component {
       <Router>
         <div>
           {user && (
-            <div
-              className={
-                mapType === 'streets'
-                  ? 'toggle-map-style'
-                  : 'toggle-map-style-active'
-              }
-            >
+            <div>
+              <div
+                className={
+                  mapType === 'streets'
+                    ? 'toggle-map-style'
+                    : 'toggle-map-style-active'
+                }
+              >
+                <button
+                  className={`${mapType}-button`}
+                  onClick={event => this.changeMap(event, 'dark')}
+                />
+              </div>
               <i
                 className={
                   !displaySidebar
@@ -66,13 +72,9 @@ export class App extends Component {
                 }
                 onClick={this.displaySidebar}
               />
-              <button
-                className={`${mapType}-button`}
-                onClick={event => this.changeMap(event, 'dark')}
-              />
             </div>
           )}
-          {displaySidebar && <NavBar />}
+          {displaySidebar && <NavBar logout={this.logout} />}
           <Routes
             redirect={redirect}
             changeMap={this.changeMap}

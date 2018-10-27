@@ -1,29 +1,30 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-import Map from '../Map/Map';
 import Profile from '../Profile/Profile';
-import Favorites from '../../containers/Favorites/Favorites';
+import WatchList from '../../containers/WatchList/WatchList';
+
 import { LoginDisplay } from '../LoginDisplay/LoginDisplay';
 import { HomeDisplay } from '../HomeDisplay/HomeDisplay';
 
 export const Routes = ({
   user,
   mapType,
-  displaySidebar,
-  stateSidebar,
-  changeMap,
-  logout,
+  // displaySidebar,
+  // stateSidebar,
+  // changeMap,
+  // logout,
   login,
   redirect
 }) => {
-  console.log(user);
+  console.log();
   return (
     <div className="App">
-      <Route path={`/app/${user}/favorites`} component={Favorites} />
-      <Route path={`/app/${user}/profile`} component={Profile} />
-      {redirect === true && <Redirect to={'/app'} />}
-      {redirect === false && <Redirect to={'/'} />}
+      {!window.location.href.includes('app') &&
+        redirect === true &&
+        user.id && <Redirect to={`/app/${user.id}`} />}
+      {window.location.href.includes('app') &&
+        redirect === false && <Redirect to={`/`} />}
       <Route
         exact
         path={'/'}
@@ -31,22 +32,25 @@ export const Routes = ({
           return <LoginDisplay login={login} />;
         }}
       />
-      <Route
-        exact
-        path={'/app'}
-        render={() => {
-          return (
-            <HomeDisplay
-              changeMap={changeMap}
-              displaySidebar={displaySidebar}
-              stateSidebar={stateSidebar}
-              mapType={mapType}
-              logout={logout}
-              user={user}
-            />
-          );
-        }}
-      />
+      {user && (
+        <nav>
+          <Route
+            exact
+            path={`/app/${user.id}`}
+            render={() => {
+              return <HomeDisplay mapType={mapType} />;
+            }}
+          />
+          <Route
+            exact
+            path={`/app/${user.id}/watchlist`}
+            render={() => {
+              return <WatchList />;
+            }}
+          />
+          <Route path={`/app/${user.id}/profile`} component={Profile} />
+        </nav>
+      )}
     </div>
   );
 };

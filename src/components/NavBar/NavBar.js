@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { GoogleLogout } from 'react-google-login';
 import PropTypes from 'prop-types';
 import './NavBar.css';
 
@@ -10,68 +11,22 @@ export class NavBar extends Component {
     return (
       <nav className="nav-container">
         <h1 className="greeting">{`Hello, ${first_name}`}</h1>
-        <NavLink className="nav-link" exact to={`/app`}>
+        <NavLink className="nav-link" exact to={`/app/${id}`}>
           Home
         </NavLink>
         <NavLink className="nav-link" to={`/app/${id}/profile`}>
           Profile
         </NavLink>
-        <NavLink className="nav-link" to={`/app/${id}/favorites`}>
+        <NavLink className="nav-link" to={`/app/${id}/watchlist`}>
           Favorites
         </NavLink>
+        <GoogleLogout
+          className="nav-link"
+          buttonText="Logout"
+          onLogoutSuccess={this.props.logout}
+        />
       </nav>
     );
-    // const loggedIn = () => {
-    //   return (
-    //     <div className='nav-container'>
-    //       <h1>{`Hello, ${first_name}`}</h1>
-    //       <div className='button-container'>
-    //         <Link to={`/app/${gid}/profile`}>
-    //           <button className='main-button'>Your Profile</button>
-    //         </Link>
-    //         <Link to={`/app/${gid}/favorites`}>
-    //           <button className='main-button'>Favorites</button>
-    //         </Link>
-    //       </div>
-    //     </div>
-    //   );
-    // };
-
-    // const favorites = () => {
-    //   return (
-    //     <div className='nav-container'>
-    //       <div className='button-container'>
-    //         <Link to={`/app/${gid}/profile`}>
-    //           <button className='main-button'>Your Profile</button>
-    //         </Link>
-    //         <Link to={`/app`}>
-    //           <button className='main-button'>Current Events</button>
-    //         </Link>
-    //       </div>
-    //     </div>
-    //   );
-    // };
-
-    // const profile = () => {
-    //   return (
-    //     <div className='nav-container'>
-    //       <Link to={`/app/${gid}/favorites`}>
-    //         <button className='main-button'>Favorites</button>
-    //       </Link>
-    //       <Link to={`/app`}>
-    //         <button className='main-button'>Current Events</button>
-    //       </Link>
-    //     </div>
-    //   );
-    // };
-
-    //   return (
-    //     <div className='main-nav'>
-    //       <Route exact path={`/app`} component={loggedIn}></Route>
-    //       <Route exact path={`/app/${gid}/favorites`} component={favorites}></Route>
-    //       <Route exact path={`/app/${gid}/profile`} component={profile}></Route>
-    //     </div>
-    //   );
   }
 }
 
