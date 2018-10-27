@@ -17,3 +17,8 @@ export const setWatchEvent = event => ({
   type: 'SET_WATCH_EVENT',
   event
 });
+
+export const removeFromWatchlist = event => ({
+  type: 'REMOVE_FROM_WATCH_LIST',
+  event
+});
