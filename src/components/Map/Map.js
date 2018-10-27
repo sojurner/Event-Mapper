@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactMapboxGl from 'react-mapbox-gl';
 import Events from '../Events/Events';
+import { setEvents } from '../../actions/index.js';
 
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
@@ -42,6 +43,7 @@ export class Map extends Component {
       accessToken: TOKEN
     });
     const { latitude, longitude, events } = this.state;
+    this.props.setEvents(events)
     return (
       <Map
         center={[longitude, latitude]}
@@ -61,10 +63,11 @@ export class Map extends Component {
 Map.propTypes = {
   latitude: PropTypes.number,
   longitude: PropTypes.number,
-  events: PropTypes.array
+  events: PropTypes.array,
+  setEvents: PropTypes.func
 };
 
-export const mapDispatchToProps = () => ({
+export const mapDispatchToProps = (dispatch) => ({
   setEvents: events => dispatch(setEvents(events))
 });
 
