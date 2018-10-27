@@ -35,3 +35,18 @@ export const cleanedUser = userInfo => {
     }
   };
 };
+
+export const eventServerCleaner = (user, event) => {
+  const { first_name, last_name, gid, email, id } = user;
+  const userObj = {
+    given_name: first_name,
+    family_name: last_name,
+    google_id: gid,
+    email
+  };
+
+  const eventObj = { ...event };
+  delete eventObj.favorite;
+
+  return { userObj, eventObj };
+};
