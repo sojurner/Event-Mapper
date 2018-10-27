@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Route, Redirect, withRouter } from 'react-router-dom';
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import Map from '../../components/Map/Map';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { loginUser } from '../../actions';
+import Map from '../../components/Map/Map';
 import NavBar from '../../components/NavBar/NavBar';
+import { Routes } from '../../components/Routes/Routes';
 import './App.css';
 
 import * as keys from '../../utilities/apiCalls/apiKeys';
@@ -17,6 +17,7 @@ export class App extends Component {
     this.state = {
       user: null,
       mapType: 'streets',
+      displaySidebar: false,
       redirect: false
     };
   }
@@ -24,7 +25,7 @@ export class App extends Component {
   login = async res => {
     const activeUser = await postUser(res.profileObj);
     this.props.loginUser(activeUser);
-    this.setState({ user: res, redirect: true });
+    this.setState({ user: activeUser, redirect: true });
   };
 
   logout = res => {
@@ -39,64 +40,63 @@ export class App extends Component {
       : this.setState({ mapType: 'streets' });
   };
 
+  displaySidebar = () => {
+    console.log('');
+    this.setState({ displaySidebar: !this.state.displaySidebar });
+  };
+
   render() {
-    const { mapType, redirect } = this.state;
-    const loginDisplay = () => (
-      <div className='placement-container'>
-        <div className='login-container'>
-          <h1>EVENT MAPPER</h1>
-          <GoogleLogin
-            clientId={keys.googleClientId}
-            className = "login-button"
-            buttonText="Login with Google"
-            onSuccess={this.login}
-            onFailure={this.login}
-          />
-        </div>
-      </div>
-    );
-    const homeDisplay = () => (
-      <div className="main-container">
-        <Map mapStyle={this.state.mapType} />
-        <GoogleLogout
-          className="logout-button"
-          buttonText="Logout"
-          onLogoutSuccess={this.logout}
-        />
-        <div
-          className={
-            mapType === 'streets'
-              ? 'toggle-map-style'
-              : 'toggle-map-style-active'
-          }
-        >
-          <button
-            className={`${mapType}-button`}
-            onClick={event => this.changeMap(event, 'dark')}
-          />
-        </div>
-        <NavBar />
-      </div>
-    );
-        
+    const { mapType, redirect, displaySidebar, user } = this.state;
     return (
-      <div className="App">
-        {redirect === true && (<Redirect to={'/app'} />)}
-        {redirect === false && (<Redirect to={'/'} />)}
-        <Route exact path={'/'} component={loginDisplay}></Route>
-        <Route path={'/app'} component={homeDisplay}></Route>
-      </div>
+      <Router>
+        <div>
+          {user && (
+            <div
+              className={
+                mapType === 'streets'
+                  ? 'toggle-map-style'
+                  : 'toggle-map-style-active'
+              }
+            >
+              <i
+                className={
+                  !displaySidebar
+                    ? `fas fa-bars ${mapType}`
+                    : 'far fa-window-close'
+                }
+                onClick={this.displaySidebar}
+              />
+              <button
+                className={`${mapType}-button`}
+                onClick={event => this.changeMap(event, 'dark')}
+              />
+            </div>
+          )}
+          {displaySidebar && <NavBar />}
+          <Routes
+            redirect={redirect}
+            changeMap={this.changeMap}
+            displaySidebar={this.displaySidebar}
+            stateSidebar={displaySidebar}
+            user={user}
+            mapType={mapType}
+            login={this.login}
+          />
+        </div>
+      </Router>
     );
   }
 }
-
 App.propTypes = {
   user: PropTypes.object,
   loginUser: PropTypes.func
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  loginUser: (user) => dispatch(loginUser(user))
+export const mapDispatchToProps = dispatch => ({
+  loginUser: user => dispatch(loginUser(user))
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);

@@ -6,7 +6,6 @@ import Events from '../Events/Events';
 
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
-import { throws } from 'assert';
 
 export class Map extends Component {
   constructor() {
@@ -65,7 +64,7 @@ Map.propTypes = {
   events: PropTypes.array
 };
 
-const mapDispatchToProps = () => ({});
+export const mapDispatchToProps = () => ({});
 
 export default connect(
   null,
