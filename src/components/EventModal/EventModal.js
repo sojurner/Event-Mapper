@@ -9,7 +9,6 @@ export const EventModal = ({
   hoverMessage
 }) => {
   const { name, img, date, venue_name, favorite, address } = targetEvent;
-  console.log(favorite);
   return (
     <div>
       {!favorite ? (
