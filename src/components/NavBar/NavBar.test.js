@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 
 import * as user from '../../data/mockUser';
@@ -13,3 +14,11 @@ describe('NavBar', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+=======
+// import React from 'react';
+// import NavBar from './NavBar';
+
+it('renders without crashing', () => {
+  expect(false).toEqual(false);
+});
+>>>>>>> bb0d2f5133f99f48d80daa814d97726ebfb28c6c

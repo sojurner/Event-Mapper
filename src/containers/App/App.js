@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { loginUser } from '../../actions';
+import Map from '../../components/Map/Map';
 import NavBar from '../../components/NavBar/NavBar';
 import { Routes } from '../../components/Routes/Routes';
 import './App.css';
@@ -17,18 +17,19 @@ export class App extends Component {
     this.state = {
       user: null,
       mapType: 'streets',
-      displaySidebar: false
+      displaySidebar: false,
+      redirect: false
     };
   }
 
-  responseGoogle = async res => {
+  login = async res => {
     const activeUser = await postUser(res.profileObj);
     this.props.loginUser(activeUser);
-    this.setState({ user: res.profileObj });
+    this.setState({ user: activeUser, redirect: true });
   };
 
   logout = res => {
-    this.setState({ user: null });
+    this.setState({ user: null, redirect: false });
   };
 
   changeMap = (event, style) => {
@@ -40,61 +41,27 @@ export class App extends Component {
   };
 
   displaySidebar = () => {
+    console.log('');
     this.setState({ displaySidebar: !this.state.displaySidebar });
   };
 
   render() {
-    const { user, mapType, displaySidebar } = this.state;
+    const { mapType, redirect, displaySidebar, user } = this.state;
     return (
       <Router>
-        <main className="App">
-          {!user && (
-            <GoogleLogin
-              clientId={keys.googleClientId}
-              buttonText="Login w/ Google"
-              onSuccess={this.responseGoogle}
-              onFailure={this.responseGoogle}
-            />
-          )}
-          {user && (
-            <i
-              class={
-                !displaySidebar
-                  ? `fas fa-bars ${mapType}`
-                  : 'far fa-window-close'
-              }
-              onClick={this.displaySidebar}
-            />
-          )}
-          {displaySidebar && <NavBar />}
-          {user && (
-            <div className="main-container">
-              {/* <GoogleLogout
-                className="logout-button"
-                buttonText="Logout"
-                onLogoutSuccess={this.logout}
-              /> */}
-              <div
-                className={
-                  mapType === 'streets'
-                    ? 'toggle-map-style'
-                    : 'toggle-map-style-active'
-                }
-              >
-                <button
-                  className={`${mapType}-button`}
-                  onClick={event => this.changeMap(event, 'dark')}
-                />
-              </div>
-              <Routes gid={user.googleId} mapStyle={mapType} />
-            </div>
-          )}
-        </main>
+        <Routes
+          redirect={redirect}
+          changeMap={this.changeMap}
+          displaySidebar={this.displaySidebar}
+          stateSidebar={displaySidebar}
+          user={user}
+          mapType={mapType}
+          login={this.login}
+        />
       </Router>
     );
   }
 }
-
 App.propTypes = {
   user: PropTypes.object,
   loginUser: PropTypes.func

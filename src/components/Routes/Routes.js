@@ -1,23 +1,51 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import Map from '../Map/Map';
 import Profile from '../Profile/Profile';
 import Favorites from '../../containers/Favorites/Favorites';
+import { LoginDisplay } from '../LoginDisplay/LoginDisplay';
+import { HomeDisplay } from '../HomeDisplay/HomeDisplay';
 
-export const Routes = ({ gid, mapStyle }) => {
-  console.log(gid);
+export const Routes = ({
+  user,
+  mapType,
+  displaySidebar,
+  stateSidebar,
+  changeMap,
+  logout,
+  login,
+  redirect
+}) => {
+  console.log(user);
   return (
-    <div className="main-nav">
+    <div className="App">
+      <Route exact path={`/${user}/favorites`} component={Favorites} />
+      <Route exact path={`/${user}/profile`} component={Profile} />
+      {redirect === true && <Redirect to={'/app'} />}
+      {redirect === false && <Redirect to={'/'} />}
       <Route
         exact
-        path={`/`}
+        path={'/'}
         render={() => {
-          return <Map mapStyle={mapStyle} />;
+          return <LoginDisplay login={login} />;
         }}
       />
-      <Route exact path={`/${gid}/favorites`} component={Favorites} />
-      <Route exact path={`/${gid}/profile`} component={Profile} />
+      <Route
+        exact
+        path={'/app'}
+        render={() => {
+          return (
+            <HomeDisplay
+              changeMap={changeMap}
+              displaySidebar={displaySidebar}
+              stateSidebar={stateSidebar}
+              mapType={mapType}
+              logout={logout}
+            />
+          );
+        }}
+      />
     </div>
   );
 };
