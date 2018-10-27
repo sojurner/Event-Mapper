@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import Modal from 'react-responsive-modal';
 
 import * as apiCalls from '../../utilities/apiCalls/apiCalls';
+import * as clean from '../../utilities/helpers/helpers';
+import * as invoke from '../../actions';
 
 import { EventModal } from '../EventModal/EventModal';
 import { EventPopup } from '../EventPopup/EventPopup';
@@ -61,22 +63,19 @@ export class Events extends Component {
   };
 
   handleFavoriteClick = async () => {
-    const { first_name, last_name, gid, email, id } = this.props.activeUser;
+    const { activeUser, addToWatchList } = this.props;
     const { targetEvent } = this.state;
-    let userObj = {
-      given_name: first_name,
-      family_name: last_name,
-      google_id: gid,
-      email
-    };
-    const favoritedEvent = { ...targetEvent, favorite: !targetEvent.favorite };
     if (!targetEvent.favorite) {
-      const eventObj = { ...targetEvent };
-      delete eventObj.favorite;
-      const response = await apiCalls.setFavorite(userObj, eventObj, id);
-      console.log(response);
+      const body = clean.eventServerCleaner(activeUser, targetEvent);
+      const response = await apiCalls.setFavorite(
+        body.userObj,
+        body.eventObj,
+        activeUser.id
+      );
+      if (!response.error) addToWatchList(response);
     } else {
     }
+    const favoritedEvent = { ...targetEvent, favorite: !targetEvent.favorite };
     this.setState({ targetEvent: favoritedEvent });
   };
 
@@ -115,10 +114,14 @@ export class Events extends Component {
 }
 
 const mapStateToProps = state => ({
-  activeUser: state.activeUser
+  activeUser: state.activeUser,
+  watchList: state.watchList,
+  events: state.events
 });
 
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = dispatch => ({
+  addToWatchList: event => dispatch(invoke.addToWatchList(event))
+});
 
 export default connect(
   mapStateToProps,
