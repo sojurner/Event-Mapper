@@ -18,7 +18,7 @@ export class NavBar extends Component {
           Profile
         </NavLink>
         <NavLink className="nav-link" to={`/app/${id}/watchlist`}>
-          Favorites
+          Watchlist
         </NavLink>
         <GoogleLogout
           className="nav-link"
