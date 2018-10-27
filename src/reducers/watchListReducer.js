@@ -3,7 +3,7 @@ export const watchListReducer = (state = [], action) => {
     case 'ADD_TO_WATCH_LIST':
       return [...state, action.event];
     case 'REMOVE_FROM_WATCH_LIST':
-      state.filter(event => event.id !== action.id);
+      return state.filter(event => event.id !== action.id);
     default:
       return state;
   }

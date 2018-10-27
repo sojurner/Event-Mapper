@@ -5,10 +5,13 @@ import Geohash from 'latlon-geohash';
 
 export const getEvents = async (lat, lng) => {
   const geoCode = Geohash.encode(lat, lng);
+  let days = 7;
+  let date = new Date();
+  let last = new Date(date.getTime() + days * 24 * 60 * 60 * 1000);
   const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketMasterApiKey}&geoPoint=${geoCode.slice(
     0,
     9
-  )}&onSaleEndDateTime=${moment.utc()}&size=200`;
+  )}&radius=200&size=100`;
   const response = await fetch(url);
   const cleanedEvents = eventsCleaner(await response.json());
   return cleanedEvents;
@@ -27,8 +30,6 @@ export const postUser = async userInfo => {
 };
 
 export const setFavorite = async (user, event, id) => {
-  console.log(user);
-  console.log(event);
   const url = `https://event-mapper-api.herokuapp.com/api/v1/users/${id}/events`;
   const response = await fetch(url, {
     method: 'POST',
@@ -39,6 +40,22 @@ export const setFavorite = async (user, event, id) => {
   return result;
 };
 
-export const removeFavorite = async favoriteInfo => {
-  const url = 'https:// event-mapper-api.herokuapp.com/api/v1/';
+export const removeFromWatchlist = async (userId, eventId) => {
+  //userid
+  const url = `https://event-mapper-api.herokuapp.com/api/v1/users/${userId}/events/${eventId}`;
+  const response = await fetch(url, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' }
+  });
+
+  const result = await response.json();
+  return result;
+};
+
+export const getUserWatchlist = async userId => {
+  const url = `https:// event-mapper-api.herokuapp.com/api/v1/users/${userId}/events`;
+  const response = await fetch(url);
+
+  const result = await response.json();
+  return result;
 };
