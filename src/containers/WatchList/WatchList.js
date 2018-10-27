@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 export const WatchList = () => {
-  console.log('linked');
-  return <div>TESTIGN</div>;
+  return (
+    <div>TESTIGN</div>
+  );
 };
 
 export default WatchList;
