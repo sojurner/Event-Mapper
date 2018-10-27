@@ -12,3 +12,8 @@ export const setEvents = events => ({
   type: 'SET_EVENTS',
   events
 });
+
+export const setWatchEvent = event => ({
+  type: 'SET_WATCH_EVENT',
+  event
+});
