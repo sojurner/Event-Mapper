@@ -31,22 +31,25 @@ export const Routes = ({
           return <LoginDisplay login={login} />;
         }}
       />
+      {user && (
+        <nav>
       <Route
         exact
-        path={'/app'}
+            path={`/app/${user.id}`}
         render={() => {
-          return (
-            <HomeDisplay
-              changeMap={changeMap}
-              displaySidebar={displaySidebar}
-              stateSidebar={stateSidebar}
-              mapType={mapType}
-              logout={logout}
-              user={user}
+              return <HomeDisplay mapType={mapType} />;
+            }}
             />
-          );
+          <Route
+            exact
+            path={`/app/${user.id}/watchlist`}
+            render={() => {
+              return <WatchList />;
         }}
       />
+          <Route path={`/app/${user.id}/profile`} component={Profile} />
+        </nav>
+      )}
     </div>
   );
 };
