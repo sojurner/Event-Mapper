@@ -64,7 +64,9 @@ Map.propTypes = {
   events: PropTypes.array
 };
 
-export const mapDispatchToProps = () => ({});
+export const mapDispatchToProps = () => ({
+  setEvents: events => dispatch(setEvents(events))
+});
 
 export default connect(
   null,

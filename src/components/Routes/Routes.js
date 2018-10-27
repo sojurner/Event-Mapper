@@ -17,7 +17,6 @@ export const Routes = ({
   login,
   redirect
 }) => {
-  console.log();
   return (
     <div className="App">
       {!window.location.href.includes('app') &&
