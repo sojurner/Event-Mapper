@@ -41,7 +41,6 @@ export class App extends Component {
   };
 
   displaySidebar = () => {
-    console.log('');
     this.setState({ displaySidebar: !this.state.displaySidebar });
   };
 
