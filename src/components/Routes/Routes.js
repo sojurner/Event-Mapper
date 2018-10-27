@@ -17,6 +17,7 @@ export const Routes = ({
   login,
   redirect
 }) => {
+  console.log();
   return (
     <div className="App">
       {!window.location.href.includes('app') &&
@@ -33,20 +34,20 @@ export const Routes = ({
       />
       {user && (
         <nav>
-      <Route
-        exact
+          <Route
+            exact
             path={`/app/${user.id}`}
-        render={() => {
+            render={() => {
               return <HomeDisplay mapType={mapType} />;
             }}
-            />
+          />
           <Route
             exact
             path={`/app/${user.id}/watchlist`}
             render={() => {
               return <WatchList />;
-        }}
-      />
+            }}
+          />
           <Route path={`/app/${user.id}/profile`} component={Profile} />
         </nav>
       )}
