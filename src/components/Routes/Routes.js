@@ -20,8 +20,8 @@ export const Routes = ({
   console.log(user);
   return (
     <div className="App">
-      <Route exact path={`/${user}/favorites`} component={Favorites} />
-      <Route exact path={`/${user}/profile`} component={Profile} />
+      <Route path={`/app/${user}/favorites`} component={Favorites} />
+      <Route path={`/app/${user}/profile`} component={Profile} />
       {redirect === true && <Redirect to={'/app'} />}
       {redirect === false && <Redirect to={'/'} />}
       <Route
@@ -42,6 +42,7 @@ export const Routes = ({
               stateSidebar={stateSidebar}
               mapType={mapType}
               logout={logout}
+              user={user}
             />
           );
         }}

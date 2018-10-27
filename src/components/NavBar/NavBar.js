@@ -6,17 +6,17 @@ import './NavBar.css';
 
 export class NavBar extends Component {
   render() {
-    const { gid, first_name } = this.props.activeUser;
+    const { id, first_name } = this.props.activeUser;
     return (
       <nav className="nav-container">
         <h1 className="greeting">{`Hello, ${first_name}`}</h1>
-        <NavLink className="nav-link" exact to={`/`}>
+        <NavLink className="nav-link" exact to={`/app`}>
           Home
         </NavLink>
-        <NavLink className="nav-link" to={`/${gid}/profile`}>
+        <NavLink className="nav-link" to={`/app/${id}/profile`}>
           Profile
         </NavLink>
-        <NavLink className="nav-link" to={`/${gid}/favorites`}>
+        <NavLink className="nav-link" to={`/app/${id}/favorites`}>
           Favorites
         </NavLink>
       </nav>

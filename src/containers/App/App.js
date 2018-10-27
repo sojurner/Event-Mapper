@@ -49,15 +49,40 @@ export class App extends Component {
     const { mapType, redirect, displaySidebar, user } = this.state;
     return (
       <Router>
-        <Routes
-          redirect={redirect}
-          changeMap={this.changeMap}
-          displaySidebar={this.displaySidebar}
-          stateSidebar={displaySidebar}
-          user={user}
-          mapType={mapType}
-          login={this.login}
-        />
+        <div>
+          {user && (
+            <div
+              className={
+                mapType === 'streets'
+                  ? 'toggle-map-style'
+                  : 'toggle-map-style-active'
+              }
+            >
+              <i
+                className={
+                  !displaySidebar
+                    ? `fas fa-bars ${mapType}`
+                    : 'far fa-window-close'
+                }
+                onClick={this.displaySidebar}
+              />
+              <button
+                className={`${mapType}-button`}
+                onClick={event => this.changeMap(event, 'dark')}
+              />
+            </div>
+          )}
+          {displaySidebar && <NavBar />}
+          <Routes
+            redirect={redirect}
+            changeMap={this.changeMap}
+            displaySidebar={this.displaySidebar}
+            stateSidebar={displaySidebar}
+            user={user}
+            mapType={mapType}
+            login={this.login}
+          />
+        </div>
       </Router>
     );
   }
