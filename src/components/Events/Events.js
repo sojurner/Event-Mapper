@@ -46,8 +46,11 @@ export class Events extends Component {
     });
   };
 
-  showEventInfo = (event, targetEvent) => {
+  showEventInfo = (event, targEvent) => {
     event.preventDefault();
+    const targetEvent = this.props.events.find(
+      eve => eve.e_id === targEvent.e_id
+    );
     this.setState({ targetEvent, displayPopup: true });
   };
 
@@ -63,10 +66,14 @@ export class Events extends Component {
   };
 
   handleFavoriteClick = async () => {
-    const { activeUser, addToWatchList } = this.props;
+    const { activeUser, addToWatchList, setWatchEvent } = this.props;
     const { targetEvent } = this.state;
+    let watchListEvent;
     if (!targetEvent.favorite) {
+      setWatchEvent(targetEvent);
       const body = clean.eventServerCleaner(activeUser, targetEvent);
+      watchListEvent = { ...targetEvent, favorite: true };
+      this.setState({ targetEvent: watchListEvent });
       const response = await apiCalls.setFavorite(
         body.userObj,
         body.eventObj,
@@ -74,9 +81,9 @@ export class Events extends Component {
       );
       if (!response.error) addToWatchList(response);
     } else {
+      watchListEvent = { ...targetEvent, favorite: false };
+      this.setState({ targetEvent: watchListEvent });
     }
-    const favoritedEvent = { ...targetEvent, favorite: !targetEvent.favorite };
-    this.setState({ targetEvent: favoritedEvent });
   };
 
   handleHover = (event, hoverMessage) => {
@@ -120,7 +127,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addToWatchList: event => dispatch(invoke.addToWatchList(event))
+  addToWatchList: event => dispatch(invoke.addToWatchList(event)),
+  setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
 });
 
 export default connect(
