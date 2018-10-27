@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 import Profile from '../Profile/Profile';
-import { WatchList } from '../../containers/WatchList/WatchList';
+import WatchList from '../../containers/WatchList/WatchList';
 
 import { LoginDisplay } from '../LoginDisplay/LoginDisplay';
 import { HomeDisplay } from '../HomeDisplay/HomeDisplay';
