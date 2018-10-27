@@ -1,5 +1,4 @@
 import React from 'react';
-import { GoogleLogout } from 'react-google-login';
 import Map from '../Map/Map';
 import NavBar from '../NavBar/NavBar';
 
@@ -11,12 +10,7 @@ export const HomeDisplay = ({
   logout,
   user
 }) => (
-  <div className="main-container">
+  <div>
     <Map mapStyle={mapType} />
-    <GoogleLogout
-      className="logout-button"
-      buttonText="Logout"
-      onLogoutSuccess={logout}
-    />
   </div>
 );
