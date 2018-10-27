@@ -19,33 +19,61 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <Routes
-        changeMap={[Function]}
-        displaySidebar={[Function]}
-        login={[Function]}
-        mapType="streets"
-        redirect={false}
-        stateSidebar={false}
-        user={null}
-      />,
+      "children": <div>
+        <Routes
+          changeMap={[Function]}
+          displaySidebar={[Function]}
+          login={[Function]}
+          mapType="streets"
+          redirect={false}
+          stateSidebar={false}
+          user={null}
+        />
+      </div>,
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "changeMap": [Function],
-        "displaySidebar": [Function],
-        "login": [Function],
-        "mapType": "streets",
-        "redirect": false,
-        "stateSidebar": false,
-        "user": null,
+        "children": Array [
+          null,
+          false,
+          <Routes
+            changeMap={[Function]}
+            displaySidebar={[Function]}
+            login={[Function]}
+            mapType="streets"
+            redirect={false}
+            stateSidebar={false}
+            user={null}
+          />,
+        ],
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Array [
+        null,
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "changeMap": [Function],
+            "displaySidebar": [Function],
+            "login": [Function],
+            "mapType": "streets",
+            "redirect": false,
+            "stateSidebar": false,
+            "user": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
     "type": [Function],
   },
@@ -55,33 +83,61 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <Routes
-          changeMap={[Function]}
-          displaySidebar={[Function]}
-          login={[Function]}
-          mapType="streets"
-          redirect={false}
-          stateSidebar={false}
-          user={null}
-        />,
+        "children": <div>
+          <Routes
+            changeMap={[Function]}
+            displaySidebar={[Function]}
+            login={[Function]}
+            mapType="streets"
+            redirect={false}
+            stateSidebar={false}
+            user={null}
+          />
+        </div>,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "changeMap": [Function],
-          "displaySidebar": [Function],
-          "login": [Function],
-          "mapType": "streets",
-          "redirect": false,
-          "stateSidebar": false,
-          "user": null,
+          "children": Array [
+            null,
+            false,
+            <Routes
+              changeMap={[Function]}
+              displaySidebar={[Function]}
+              login={[Function]}
+              mapType="streets"
+              redirect={false}
+              stateSidebar={false}
+              user={null}
+            />,
+          ],
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [
+          null,
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "changeMap": [Function],
+              "displaySidebar": [Function],
+              "login": [Function],
+              "mapType": "streets",
+              "redirect": false,
+              "stateSidebar": false,
+              "user": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       "type": [Function],
     },
@@ -125,33 +181,70 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <Routes
-        changeMap={[Function]}
-        displaySidebar={[Function]}
-        login={[Function]}
-        mapType="streets"
-        redirect={false}
-        stateSidebar={true}
-        user={null}
-      />,
+      "children": <div>
+        <Connect(NavBar) />
+        <Routes
+          changeMap={[Function]}
+          displaySidebar={[Function]}
+          login={[Function]}
+          mapType="streets"
+          redirect={false}
+          stateSidebar={true}
+          user={null}
+        />
+      </div>,
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "changeMap": [Function],
-        "displaySidebar": [Function],
-        "login": [Function],
-        "mapType": "streets",
-        "redirect": false,
-        "stateSidebar": true,
-        "user": null,
+        "children": Array [
+          null,
+          <Connect(NavBar) />,
+          <Routes
+            changeMap={[Function]}
+            displaySidebar={[Function]}
+            login={[Function]}
+            mapType="streets"
+            redirect={false}
+            stateSidebar={true}
+            user={null}
+          />,
+        ],
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Array [
+        null,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "changeMap": [Function],
+            "displaySidebar": [Function],
+            "login": [Function],
+            "mapType": "streets",
+            "redirect": false,
+            "stateSidebar": true,
+            "user": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
     "type": [Function],
   },
@@ -161,33 +254,70 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <Routes
-          changeMap={[Function]}
-          displaySidebar={[Function]}
-          login={[Function]}
-          mapType="streets"
-          redirect={false}
-          stateSidebar={true}
-          user={null}
-        />,
+        "children": <div>
+          <Connect(NavBar) />
+          <Routes
+            changeMap={[Function]}
+            displaySidebar={[Function]}
+            login={[Function]}
+            mapType="streets"
+            redirect={false}
+            stateSidebar={true}
+            user={null}
+          />
+        </div>,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "changeMap": [Function],
-          "displaySidebar": [Function],
-          "login": [Function],
-          "mapType": "streets",
-          "redirect": false,
-          "stateSidebar": true,
-          "user": null,
+          "children": Array [
+            null,
+            <Connect(NavBar) />,
+            <Routes
+              changeMap={[Function]}
+              displaySidebar={[Function]}
+              login={[Function]}
+              mapType="streets"
+              redirect={false}
+              stateSidebar={true}
+              user={null}
+            />,
+          ],
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [
+          null,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "changeMap": [Function],
+              "displaySidebar": [Function],
+              "login": [Function],
+              "mapType": "streets",
+              "redirect": false,
+              "stateSidebar": true,
+              "user": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       "type": [Function],
     },
@@ -231,49 +361,20 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <Routes
-        changeMap={[Function]}
-        displaySidebar={[Function]}
-        login={[Function]}
-        mapType="streets"
-        redirect={false}
-        stateSidebar={false}
-        user={
-          Object {
-            "name": "paul",
-          }
-        }
-      />,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "changeMap": [Function],
-        "displaySidebar": [Function],
-        "login": [Function],
-        "mapType": "streets",
-        "redirect": false,
-        "stateSidebar": false,
-        "user": Object {
-          "name": "paul",
-        },
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": <Routes
+      "children": <div>
+        <div
+          className="toggle-map-style"
+        >
+          <i
+            className="fas fa-bars streets"
+            onClick={[Function]}
+          />
+          <button
+            className="streets-button"
+            onClick={[Function]}
+          />
+        </div>
+        <Routes
           changeMap={[Function]}
           displaySidebar={[Function]}
           login={[Function]}
@@ -285,27 +386,256 @@ ShallowWrapper {
               "name": "paul",
             }
           }
-        />,
+        />
+      </div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="toggle-map-style"
+          >
+            <i
+              className="fas fa-bars streets"
+              onClick={[Function]}
+            />
+            <button
+              className="streets-button"
+              onClick={[Function]}
+            />
+          </div>,
+          false,
+          <Routes
+            changeMap={[Function]}
+            displaySidebar={[Function]}
+            login={[Function]}
+            mapType="streets"
+            redirect={false}
+            stateSidebar={false}
+            user={
+              Object {
+                "name": "paul",
+              }
+            }
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <i
+                className="fas fa-bars streets"
+                onClick={[Function]}
+              />,
+              <button
+                className="streets-button"
+                onClick={[Function]}
+              />,
+            ],
+            "className": "toggle-map-style",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "fas fa-bars streets",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "streets-button",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "changeMap": [Function],
+            "displaySidebar": [Function],
+            "login": [Function],
+            "mapType": "streets",
+            "redirect": false,
+            "stateSidebar": false,
+            "user": Object {
+              "name": "paul",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <div>
+          <div
+            className="toggle-map-style"
+          >
+            <i
+              className="fas fa-bars streets"
+              onClick={[Function]}
+            />
+            <button
+              className="streets-button"
+              onClick={[Function]}
+            />
+          </div>
+          <Routes
+            changeMap={[Function]}
+            displaySidebar={[Function]}
+            login={[Function]}
+            mapType="streets"
+            redirect={false}
+            stateSidebar={false}
+            user={
+              Object {
+                "name": "paul",
+              }
+            }
+          />
+        </div>,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "changeMap": [Function],
-          "displaySidebar": [Function],
-          "login": [Function],
-          "mapType": "streets",
-          "redirect": false,
-          "stateSidebar": false,
-          "user": Object {
-            "name": "paul",
-          },
+          "children": Array [
+            <div
+              className="toggle-map-style"
+            >
+              <i
+                className="fas fa-bars streets"
+                onClick={[Function]}
+              />
+              <button
+                className="streets-button"
+                onClick={[Function]}
+              />
+            </div>,
+            false,
+            <Routes
+              changeMap={[Function]}
+              displaySidebar={[Function]}
+              login={[Function]}
+              mapType="streets"
+              redirect={false}
+              stateSidebar={false}
+              user={
+                Object {
+                  "name": "paul",
+                }
+              }
+            />,
+          ],
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <i
+                  className="fas fa-bars streets"
+                  onClick={[Function]}
+                />,
+                <button
+                  className="streets-button"
+                  onClick={[Function]}
+                />,
+              ],
+              "className": "toggle-map-style",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fas fa-bars streets",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "streets-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "changeMap": [Function],
+              "displaySidebar": [Function],
+              "login": [Function],
+              "mapType": "streets",
+              "redirect": false,
+              "stateSidebar": false,
+              "user": Object {
+                "name": "paul",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       "type": [Function],
     },
