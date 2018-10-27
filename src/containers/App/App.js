@@ -88,6 +88,7 @@ export class App extends Component {
     );
   }
 }
+
 App.propTypes = {
   user: PropTypes.object,
   loginUser: PropTypes.func
