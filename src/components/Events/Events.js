@@ -66,7 +66,7 @@ export class Events extends Component {
   };
 
   handleFavoriteClick = async () => {
-    const { activeUser, addToWatchList, setWatchEvent } = this.props;
+    const { activeUser, addToWatchList, setWatchEvent, watchList } = this.props;
     const { targetEvent } = this.state;
     let watchListEvent;
     if (!targetEvent.favorite) {
@@ -79,8 +79,16 @@ export class Events extends Component {
         body.eventObj,
         activeUser.id
       );
-      if (!response.error) addToWatchList(response);
+      if (!response.error) addToWatchList(response.event);
     } else {
+      const matchingEvent = watchList.find(
+        item => item.e_id === targetEvent.e_id
+      );
+      console.log(matchingEvent);
+      const response = await apiCalls.removeFromWatchlist(
+        activeUser.id,
+        matchingEvent.id
+      );
       watchListEvent = { ...targetEvent, favorite: false };
       this.setState({ targetEvent: watchListEvent });
     }
@@ -128,6 +136,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addToWatchList: event => dispatch(invoke.addToWatchList(event)),
+  // removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
   setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
 });
 
