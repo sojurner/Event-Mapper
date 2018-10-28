@@ -3,6 +3,11 @@ export const loginUser = user => ({
   user
 });
 
+export const setUserLocation = coordinates => ({
+  type: 'SET_USER_LOCATION',
+  coordinates
+});
+
 export const addToWatchList = event => ({
   type: 'ADD_TO_WATCH_LIST',
   event
