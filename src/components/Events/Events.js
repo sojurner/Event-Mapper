@@ -84,7 +84,6 @@ export class Events extends Component {
       const matchingEvent = watchList.find(
         item => item.e_id === targetEvent.e_id
       );
-      console.log(matchingEvent);
       const response = await apiCalls.removeFromWatchlist(
         activeUser.id,
         matchingEvent.id
