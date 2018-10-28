@@ -106,7 +106,8 @@ App.propTypes = {
 };
 
 export const mapDispatchToProps = dispatch => ({
-  loginUser: user => dispatch(loginUser(user))
+  loginUser: user => dispatch(loginUser(user)),
+  setUserLocation: coordinates => dispatch(setUserLocation(coordinates))
 });
 
 export default connect(
