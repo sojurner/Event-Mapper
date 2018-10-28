@@ -10,15 +10,19 @@
   animation: slideInRight 0.3s linear;
   color: #817b7b; }
 
+.active {
+  background-color: #c9c9c9; }
+
 .nav-link {
   text-decoration-line: none;
-  font-size: 2rem;
+  font-size: 1.2rem;
   padding: 1rem 0 1rem 1rem;
   color: #6d6d6d; }
 
 .nav-link:hover {
   border-left: 4px solid #797979;
-  background-color: #c9c9c9; }
+  background-color: #c9c9c9;
+  color: #ffffff; }
 
 .greeting {
   margin: 4rem auto 2rem auto; }
