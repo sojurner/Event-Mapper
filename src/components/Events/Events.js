@@ -23,11 +23,6 @@ export class Events extends Component {
     };
   }
 
-  // retrieveEvents = async (lat, lng) => {
-  //   const events = await getEvents(lat, lng);
-  //   this.props.setEvents(events);
-  // };
-
   plotEvents = () => {
     const { events } = this.props;
     return events.map((eve, index) => {
@@ -67,7 +62,13 @@ export class Events extends Component {
   };
 
   handleFavoriteClick = async () => {
-    const { activeUser, addToWatchList, setWatchEvent, watchList } = this.props;
+    const {
+      activeUser,
+      addToWatchList,
+      setWatchEvent,
+      watchList,
+      removeFromWatchlist
+    } = this.props;
     const { targetEvent } = this.state;
     let watchListEvent;
     if (!targetEvent.favorite) {
@@ -86,6 +87,7 @@ export class Events extends Component {
         item => item.e_id === targetEvent.e_id
       );
       await call.removeFromWatchlist(activeUser.id, matchingEvent.id);
+      removeFromWatchlist(matchingEvent);
       watchListEvent = { ...targetEvent, favorite: false };
       this.setState({ targetEvent: watchListEvent });
     }
@@ -133,7 +135,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addToWatchList: event => dispatch(invoke.addToWatchList(event)),
-  // removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
+  removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
   setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
 });
 
