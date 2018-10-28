@@ -99,7 +99,7 @@ class FilterBar extends Component {
 
         <section ref={this.textContent} className={`suggestion-list`}>
           {suggestions.map((city, index) => {
-            if (index < 5 && location.length > 1) {
+            if (index < 7 && location.length > 1) {
               return (
                 <p
                   className={
