@@ -46,14 +46,14 @@ describe('App', () => {
       })
     );
 
-    await wrapper.instance().responseGoogle(user.mockUser);
+    await wrapper.instance().login(user.mockUser);
 
     expect(window.fetch).toHaveBeenCalledWith(
       params.responseGoogle1,
       params.responseGoogle2
     );
     expect(mockLogin).toHaveBeenCalled();
-    expect(wrapper.state().user).toEqual(user.mockUser.profileObj);
+    expect(wrapper.state().user).toEqual(user.mockStateUser);
   });
 
   it('should change state of user when logut is called', () => {
