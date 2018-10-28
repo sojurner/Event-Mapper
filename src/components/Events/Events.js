@@ -84,10 +84,7 @@ export class Events extends Component {
       const matchingEvent = watchList.find(
         item => item.e_id === targetEvent.e_id
       );
-      const response = await call.removeFromWatchlist(
-        activeUser.id,
-        matchingEvent.id
-      );
+      await call.removeFromWatchlist(activeUser.id, matchingEvent.id);
       watchListEvent = { ...targetEvent, favorite: false };
       this.setState({ targetEvent: watchListEvent });
     }
