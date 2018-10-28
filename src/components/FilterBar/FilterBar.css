@@ -1,0 +1,24 @@
+.suggestion:hover {
+  background-color: #b3b3b3;
+  color: #fafafa; }
+
+.location-input {
+  margin: auto; }
+
+.suggestion-list {
+  color: #856c4b;
+  width: 8.5rem;
+  cursor: pointer;
+  position: absolute;
+  z-index: 100; }
+
+.suggestion {
+  border: 0.8px solid gray;
+  padding: 0.3rem;
+  margin: 0; }
+
+.active-suggestion {
+  border: 0.8px solid gray;
+  padding: 0.3rem;
+  margin: 0;
+  background-color: #b3b3b3; }
