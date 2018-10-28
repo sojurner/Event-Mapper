@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { loginUser } from '../../actions';
+import { loginUser, setUserLocation } from '../../actions';
 import Map from '../../components/Map/Map';
 import NavBar from '../../components/NavBar/NavBar';
 import { Routes } from '../../components/Routes/Routes';
@@ -21,6 +21,17 @@ export class App extends Component {
       redirect: false
     };
   }
+
+  componentDidMount() {
+    this.setLatLngEvents();
+  }
+
+  setLatLngEvents = async () => {
+    await navigator.geolocation.getCurrentPosition(async location => {
+      const { latitude, longitude } = location.coords;
+      await this.props.setUserLocation({ latitude, longitude });
+    });
+  };
 
   login = async res => {
     const activeUser = await postUser(res.profileObj);
