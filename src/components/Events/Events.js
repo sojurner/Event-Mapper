@@ -23,6 +23,11 @@ export class Events extends Component {
     };
   }
 
+  // retrieveEvents = async (lat, lng) => {
+  //   const events = await getEvents(lat, lng);
+  //   this.props.setEvents(events);
+  // };
+
   plotEvents = () => {
     const { events } = this.props;
     return events.map((eve, index) => {
