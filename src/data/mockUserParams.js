@@ -9,7 +9,7 @@ export const responseGoogle2 = {
 };
 
 export const getEvents =
-  'https://app.ticketmaster.com/discovery/v2/events.json?apikey=GddBLHQGZLJjPNWsNxOrYRAoBx8Hdqrf&geoPoint=9wjr4et3f&radius=5&size=200';
+  'https://app.ticketmaster.com/discovery/v2/events.json?apikey=GddBLHQGZLJjPNWsNxOrYRAoBx8Hdqrf&geoPoint=9wjr4et3f&radius=200&size=100';
 
 export const postUser = {
   body: '{"user":{"email":"pykim0591@gmail.com"}}',
@@ -21,4 +21,12 @@ export const setFavorite = {
   body: '{}',
   headers: { 'Content-Type': 'application/json' },
   method: 'POST'
+};
+
+export const removeEvent =
+  'https://event-mapper-api.herokuapp.com/api/v1/users/undefined/events/undefined';
+
+export const removeEventOptions = {
+  headers: { 'Content-Type': 'application/json' },
+  method: 'DELETE'
 };

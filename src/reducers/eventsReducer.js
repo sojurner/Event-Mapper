@@ -1,11 +1,13 @@
 export const eventsReducer = (state = [], action) => {
   switch (action.type) {
     case 'SET_EVENTS':
-      return action.events;
+      return action.events || state;
+
     case 'SET_WATCH_EVENT':
       const event = state.find(event => event.e_id === action.event.e_id);
       event.favorite = !event.favorite;
-      return [...state, event];
+      return state;
+
     default:
       return state;
   }

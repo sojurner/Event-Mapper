@@ -25,6 +25,37 @@ export const eventsResponse = [
     lat: '39.74724',
     lng: '-105.010166',
     distance: 0.75,
+    favorite: true
+  }
+];
+
+export const eventStoreResponse = [
+  {
+    name: 'P!NK: BEAUTIFUL TRAUMA WORLD TOUR',
+    e_id: 'G5vzZ4amDV3z0',
+    url: 'https://www.altitudetickets.com/events/detail/pink-2019',
+    img:
+      'https://s1.ticketm.net/dam/a/1dd/d5e86d93-5e1a-49d9-b530-70fefc0f21dd_877061_RETINA_PORTRAIT_3_2.jpg',
+    date: 'Mon, Apr 1, 2019 7:30 PM',
+    venue_name: 'Pepsi Center',
+    address: '1000 Chopper Circle Denver, CO 80204',
+    lat: '39.74724',
+    lng: '-105.010166',
+    distance: 0.75,
+    favorite: false
+  },
+  {
+    name: 'Childish Gambino',
+    e_id: 'G5vzZ4aV5O3CO',
+    url: 'https://www.altitudetickets.com/events/detail/childish-gambino',
+    img:
+      'https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg',
+    date: 'Tue, Dec 4, 2018 7:30 PM',
+    venue_name: 'Pepsi Center',
+    address: '1000 Chopper Circle Denver, CO 80204',
+    lat: '39.74724',
+    lng: '-105.010166',
+    distance: 0.75,
     favorite: false
   }
 ];
@@ -711,3 +742,21 @@ export const mockEventsResponse = {
   },
   page: { size: 2, totalElements: 991, totalPages: 496, number: 0 }
 };
+export const userWatchlist = [
+  {
+    id: 3,
+    name: 'EnParejaDos - con Adrian Uribe y Consuelo Duval',
+    e_id: 'G5vzZ48H7Q7cH',
+    url: 'https://www.altitudetickets.com/events/detail/adrian-uribe',
+    img:
+      'https://s1.ticketm.net/dam/a/b1e/5d94da98-9bde-4608-a1ed-937950668b1e_790071_CUSTOM.jpg',
+    date: 'Fri, Nov 30, 2018 8:00 PM',
+    venue_name: 'Paramount Theatre',
+    address: '1621 Glenarm Denver, CO 80202',
+    lat: '39.744362',
+    lng: '-104.990271',
+    distance: '0.55',
+    created_at: '2018-10-26T19:22:39.218Z',
+    updated_at: '2018-10-26T19:22:39.218Z'
+  }
+];
