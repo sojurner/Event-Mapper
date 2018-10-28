@@ -3,7 +3,7 @@ import { Marker } from 'react-mapbox-gl';
 import { connect } from 'react-redux';
 import Modal from 'react-responsive-modal';
 
-import * as apiCalls from '../../utilities/apiCalls/apiCalls';
+import * as call from '../../utilities/apiCalls/apiCalls';
 import * as clean from '../../utilities/helpers/helpers';
 import * as invoke from '../../actions';
 
@@ -74,7 +74,7 @@ export class Events extends Component {
       const body = clean.eventServerCleaner(activeUser, targetEvent);
       watchListEvent = { ...targetEvent, favorite: true };
       this.setState({ targetEvent: watchListEvent });
-      const response = await apiCalls.setFavorite(
+      const response = await call.setFavorite(
         body.userObj,
         body.eventObj,
         activeUser.id
@@ -85,7 +85,7 @@ export class Events extends Component {
         item => item.e_id === targetEvent.e_id
       );
       console.log(matchingEvent);
-      const response = await apiCalls.removeFromWatchlist(
+      const response = await call.removeFromWatchlist(
         activeUser.id,
         matchingEvent.id
       );
