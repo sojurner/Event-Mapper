@@ -35,7 +35,6 @@ export class Map extends Component {
 
   retrieveEvents = async (lat, lng) => {
     const events = await getEvents(lat, lng);
-    console.log(events);
     await this.setState({ events });
   };
 
