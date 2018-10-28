@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Map } from './Map';
-import Events from '../Events/Events';
-import * as mock from '../../data/mockEvents';
+import * as events from '../../data/mockEvents';
+import moment from 'moment';
 
 jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
   Map: () => ({})
@@ -20,7 +20,8 @@ describe('Map', () => {
       <Map
         latitude={mockLat}
         longitude={mockLng}
-        events={mock.eventsResponse}
+        events={events.eventsResponse}
+        setEvents={jest.fn()}
       />
     );
   });
@@ -29,14 +30,28 @@ describe('Map', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call window.fetch with correct Params', async () => {
-    navigator.geolocation = { getCurrentPosition: () => jest.fn() };
+  it('should call window.fetch with correct Params', () => {
+    navigator.geolocation = {
+      getCurrentPosition: () => {
+        return { location: { coords: { latitude: 23, longitude: -104 } } };
+      }
+    };
 
-    await wrapper.instance().setLatLngEvents();
+    wrapper.instance().setLatLngEvents();
 
     expect(wrapper.state().latitude).toEqual(0);
     expect(wrapper.state().longitude).toEqual(0);
   });
 
-  it('should retrieve events', () => {});
+  it('should retrieve events', async () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        json: () => Promise.resolve(events.mockEventsResponse)
+      });
+    });
+
+    wrapper.instance().retrieveEvents(35, -103);
+
+    expect(window.fetch).toHaveBeenCalled();
+  });
 });

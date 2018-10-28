@@ -40,7 +40,7 @@ ShallowWrapper {
           aria-current="page"
           className="nav-link"
           exact={true}
-          to="/"
+          to="/app/3"
         >
           Home
         </NavLink>,
@@ -48,7 +48,7 @@ ShallowWrapper {
           activeClassName="active"
           aria-current="page"
           className="nav-link"
-          to="/117977763637801404146/profile"
+          to="/app/3/profile"
         >
           Profile
         </NavLink>,
@@ -56,10 +56,21 @@ ShallowWrapper {
           activeClassName="active"
           aria-current="page"
           className="nav-link"
-          to="/117977763637801404146/favorites"
+          to="/app/3/watchlist"
         >
-          Favorites
+          Watchlist
         </NavLink>,
+        <t
+          buttonText="Logout"
+          className="nav-link"
+          disabledStyle={
+            Object {
+              "opacity": 0.6,
+            }
+          }
+          jsSrc="https://apis.google.com/js/client:platform.js"
+          tag="button"
+        />,
       ],
       "className": "nav-container",
     },
@@ -87,7 +98,7 @@ ShallowWrapper {
           "children": "Home",
           "className": "nav-link",
           "exact": true,
-          "to": "/",
+          "to": "/app/3",
         },
         "ref": null,
         "rendered": "Home",
@@ -102,7 +113,7 @@ ShallowWrapper {
           "aria-current": "page",
           "children": "Profile",
           "className": "nav-link",
-          "to": "/117977763637801404146/profile",
+          "to": "/app/3/profile",
         },
         "ref": null,
         "rendered": "Profile",
@@ -115,12 +126,30 @@ ShallowWrapper {
         "props": Object {
           "activeClassName": "active",
           "aria-current": "page",
-          "children": "Favorites",
+          "children": "Watchlist",
           "className": "nav-link",
-          "to": "/117977763637801404146/favorites",
+          "to": "/app/3/watchlist",
         },
         "ref": null,
-        "rendered": "Favorites",
+        "rendered": "Watchlist",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "buttonText": "Logout",
+          "className": "nav-link",
+          "disabledStyle": Object {
+            "opacity": 0.6,
+          },
+          "jsSrc": "https://apis.google.com/js/client:platform.js",
+          "onLogoutSuccess": undefined,
+          "tag": "button",
+        },
+        "ref": null,
+        "rendered": null,
         "type": [Function],
       },
     ],
@@ -143,7 +172,7 @@ ShallowWrapper {
             aria-current="page"
             className="nav-link"
             exact={true}
-            to="/"
+            to="/app/3"
           >
             Home
           </NavLink>,
@@ -151,7 +180,7 @@ ShallowWrapper {
             activeClassName="active"
             aria-current="page"
             className="nav-link"
-            to="/117977763637801404146/profile"
+            to="/app/3/profile"
           >
             Profile
           </NavLink>,
@@ -159,10 +188,21 @@ ShallowWrapper {
             activeClassName="active"
             aria-current="page"
             className="nav-link"
-            to="/117977763637801404146/favorites"
+            to="/app/3/watchlist"
           >
-            Favorites
+            Watchlist
           </NavLink>,
+          <t
+            buttonText="Logout"
+            className="nav-link"
+            disabledStyle={
+              Object {
+                "opacity": 0.6,
+              }
+            }
+            jsSrc="https://apis.google.com/js/client:platform.js"
+            tag="button"
+          />,
         ],
         "className": "nav-container",
       },
@@ -190,7 +230,7 @@ ShallowWrapper {
             "children": "Home",
             "className": "nav-link",
             "exact": true,
-            "to": "/",
+            "to": "/app/3",
           },
           "ref": null,
           "rendered": "Home",
@@ -205,7 +245,7 @@ ShallowWrapper {
             "aria-current": "page",
             "children": "Profile",
             "className": "nav-link",
-            "to": "/117977763637801404146/profile",
+            "to": "/app/3/profile",
           },
           "ref": null,
           "rendered": "Profile",
@@ -218,12 +258,30 @@ ShallowWrapper {
           "props": Object {
             "activeClassName": "active",
             "aria-current": "page",
-            "children": "Favorites",
+            "children": "Watchlist",
             "className": "nav-link",
-            "to": "/117977763637801404146/favorites",
+            "to": "/app/3/watchlist",
           },
           "ref": null,
-          "rendered": "Favorites",
+          "rendered": "Watchlist",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "buttonText": "Logout",
+            "className": "nav-link",
+            "disabledStyle": Object {
+              "opacity": 0.6,
+            },
+            "jsSrc": "https://apis.google.com/js/client:platform.js",
+            "onLogoutSuccess": undefined,
+            "tag": "button",
+          },
+          "ref": null,
+          "rendered": null,
           "type": [Function],
         },
       ],
