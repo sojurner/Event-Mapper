@@ -1,6 +1,18 @@
-// import React from 'react';
-// import EventPopup from './EventPopup';
+import React from 'react';
+import { EventPopup } from './EventPopup';
+import { mockTargetEventFalse } from '../../data/mockEvents';
 
-it('renders without crashing', () => {
-  expect(false).toEqual(false);
+jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
+  Map: () => ({})
+}));
+
+describe('EventPopup', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<EventPopup targetEvent={mockTargetEventFalse} />);
+  });
+
+  it('should matchSnapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 });
