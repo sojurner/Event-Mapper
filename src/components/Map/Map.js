@@ -3,47 +3,40 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactMapboxGl from 'react-mapbox-gl';
 import Events from '../Events/Events';
-import { setEvents } from '../../actions/index.js';
+import { setEvents, setUserLocation } from '../../actions/index.js';
 
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
 
 export class Map extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      latitude: 0,
-      longitude: 0,
-      events: []
+      latitude: props.userLocation.latitude,
+      longitude: props.userLocation.longitude
     };
   }
 
   componentDidMount() {
-    this.setLatLngEvents();
+    const { latitude, longitude } = this.props.userLocation;
+    this.retrieveEvents(latitude, longitude);
   }
-
-  setLatLngEvents = async () => {
-    await navigator.geolocation.getCurrentPosition(async location => {
-      const { latitude, longitude } = location.coords;
-      await this.retrieveEvents(latitude, longitude);
-      this.setState({
-        latitude,
-        longitude
-      });
-    });
-  };
 
   retrieveEvents = async (lat, lng) => {
     const events = await getEvents(lat, lng);
-    await this.setState({ events });
+    this.props.setEvents(events);
   };
 
   render() {
     const Map = ReactMapboxGl({
       accessToken: TOKEN
     });
-    const { latitude, longitude, events } = this.state;
-    this.props.setEvents(events);
+    let { latitude, longitude } = this.state;
+    const { userLocation } = this.props;
+    if (userLocation.latitude) {
+      latitude = userLocation.latitude;
+      longitude = userLocation.longitude;
+    }
     return (
       <Map
         center={[longitude, latitude]}
@@ -54,7 +47,7 @@ export class Map extends Component {
           width: '100vw'
         }}
       >
-        <Events events={events} />
+        <Events retrieveEvents={this.retrieveEvents} />
       </Map>
     );
   }
@@ -67,11 +60,15 @@ Map.propTypes = {
   setEvents: PropTypes.func
 };
 
+export const mapStateToProps = state => ({
+  userLocation: state.userLocation
+});
+
 export const mapDispatchToProps = dispatch => ({
   setEvents: events => dispatch(setEvents(events))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Map);

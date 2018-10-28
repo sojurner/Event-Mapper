@@ -1,6 +1,7 @@
 import * as moment from 'moment';
 
 export const eventsCleaner = events => {
+  if (!events._embedded) return;
   const parsedEvent = events._embedded.events.map(event => {
     const { name, id, url, images, dates } = event;
     const { venues } = event._embedded;
@@ -21,7 +22,17 @@ export const eventsCleaner = events => {
       favorite: false
     };
   });
-  return parsedEvent;
+  function removeDuplicates(arr, prop) {
+    let obj = {};
+    return Object.keys(
+      arr.reduce((prev, next) => {
+        if (!obj[next[prop]]) obj[next[prop]] = next;
+        return obj;
+      }, obj)
+    ).map(i => obj[i]);
+  }
+
+  return removeDuplicates(parsedEvent, 'venue_name');
 };
 
 export const cleanedUser = userInfo => {
