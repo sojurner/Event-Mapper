@@ -25,7 +25,7 @@ export class Map extends Component {
   setLatLngEvents = async () => {
     await navigator.geolocation.getCurrentPosition(async location => {
       const { latitude, longitude } = location.coords;
-      this.retrieveEvents(latitude, longitude);
+      await this.retrieveEvents(latitude, longitude);
       this.setState({
         latitude,
         longitude
@@ -35,6 +35,7 @@ export class Map extends Component {
 
   retrieveEvents = async (lat, lng) => {
     const events = await getEvents(lat, lng);
+    console.log(events);
     await this.setState({ events });
   };
 
@@ -43,7 +44,7 @@ export class Map extends Component {
       accessToken: TOKEN
     });
     const { latitude, longitude, events } = this.state;
-    this.props.setEvents(events)
+    this.props.setEvents(events);
     return (
       <Map
         center={[longitude, latitude]}
@@ -67,7 +68,7 @@ Map.propTypes = {
   setEvents: PropTypes.func
 };
 
-export const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = dispatch => ({
   setEvents: events => dispatch(setEvents(events))
 });
 

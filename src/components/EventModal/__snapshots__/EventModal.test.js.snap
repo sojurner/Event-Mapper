@@ -1,0 +1,735 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventModal should matchSnapshot when favorite is false 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventModal
+    handleFavoriteClick={[MockFunction]}
+    handleHover={[MockFunction]}
+    hoverMessage="help me"
+    targetEvent={
+      Object {
+        "address": "1510 Clarkson Denver, CO 80218",
+        "date": "Wed, Oct 31, 2018 6:30 PM",
+        "distance": 0.5,
+        "e_id": "G5vzZ4C58cdb-",
+        "favorite": false,
+        "img": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+        "lat": "39.740611",
+        "lng": "-104.977194",
+        "name": "Danzig - 30 Year Anniversary Tour",
+        "url": "http://concerts.livenation.com/event/1E0054E2D0B43621",
+        "venue_name": "Fillmore Auditorium (Denver)",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <i
+          className="fas fa-eye"
+          onClick={[MockFunction]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <span
+            className="hover-msg"
+          >
+            help me
+          </span>
+        </i>,
+        <h1>
+          Event: 
+          Danzig - 30 Year Anniversary Tour
+        </h1>,
+        <h4>
+          Date: 
+          Wed, Oct 31, 2018 6:30 PM
+        </h4>,
+        <img
+          alt="current event"
+          height={400}
+          src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+        />,
+        <p>
+          Location: 
+          Fillmore Auditorium (Denver)
+        </p>,
+        <p>
+          Address: 
+          1510 Clarkson Denver, CO 80218
+        </p>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <span
+            className="hover-msg"
+          >
+            help me
+          </span>,
+          "className": "fas fa-eye",
+          "onClick": [MockFunction],
+          "onMouseEnter": [Function],
+          "onMouseLeave": [Function],
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "help me",
+            "className": "hover-msg",
+          },
+          "ref": null,
+          "rendered": "help me",
+          "type": "span",
+        },
+        "type": "i",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Event: ",
+            "Danzig - 30 Year Anniversary Tour",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Event: ",
+          "Danzig - 30 Year Anniversary Tour",
+        ],
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Date: ",
+            "Wed, Oct 31, 2018 6:30 PM",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Date: ",
+          "Wed, Oct 31, 2018 6:30 PM",
+        ],
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "current event",
+          "height": 400,
+          "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Location: ",
+            "Fillmore Auditorium (Denver)",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Location: ",
+          "Fillmore Auditorium (Denver)",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Address: ",
+            "1510 Clarkson Denver, CO 80218",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Address: ",
+          "1510 Clarkson Denver, CO 80218",
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <i
+            className="fas fa-eye"
+            onClick={[MockFunction]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              className="hover-msg"
+            >
+              help me
+            </span>
+          </i>,
+          <h1>
+            Event: 
+            Danzig - 30 Year Anniversary Tour
+          </h1>,
+          <h4>
+            Date: 
+            Wed, Oct 31, 2018 6:30 PM
+          </h4>,
+          <img
+            alt="current event"
+            height={400}
+            src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+          />,
+          <p>
+            Location: 
+            Fillmore Auditorium (Denver)
+          </p>,
+          <p>
+            Address: 
+            1510 Clarkson Denver, CO 80218
+          </p>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <span
+              className="hover-msg"
+            >
+              help me
+            </span>,
+            "className": "fas fa-eye",
+            "onClick": [MockFunction],
+            "onMouseEnter": [Function],
+            "onMouseLeave": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "help me",
+              "className": "hover-msg",
+            },
+            "ref": null,
+            "rendered": "help me",
+            "type": "span",
+          },
+          "type": "i",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Event: ",
+              "Danzig - 30 Year Anniversary Tour",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Event: ",
+            "Danzig - 30 Year Anniversary Tour",
+          ],
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Date: ",
+              "Wed, Oct 31, 2018 6:30 PM",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Date: ",
+            "Wed, Oct 31, 2018 6:30 PM",
+          ],
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "current event",
+            "height": 400,
+            "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Location: ",
+              "Fillmore Auditorium (Denver)",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Location: ",
+            "Fillmore Auditorium (Denver)",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Address: ",
+              "1510 Clarkson Denver, CO 80218",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Address: ",
+            "1510 Clarkson Denver, CO 80218",
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`EventModal should matchSnapshot when favorite is true 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventModal
+    handleFavoriteClick={[MockFunction]}
+    handleHover={[MockFunction]}
+    hoverMessage="help me"
+    targetEvent={
+      Object {
+        "address": "1510 Clarkson Denver, CO 80218",
+        "date": "Wed, Oct 31, 2018 6:30 PM",
+        "distance": 0.5,
+        "e_id": "G5vzZ4C58cdb-",
+        "favorite": true,
+        "img": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+        "lat": "39.740611",
+        "lng": "-104.977194",
+        "name": "Danzig - 30 Year Anniversary Tour",
+        "url": "http://concerts.livenation.com/event/1E0054E2D0B43621",
+        "venue_name": "Fillmore Auditorium (Denver)",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <i
+          className="far fa-eye"
+          onClick={[MockFunction]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <span
+            className="hover-msg"
+          >
+            help me
+          </span>
+        </i>,
+        <h1>
+          Event: 
+          Danzig - 30 Year Anniversary Tour
+        </h1>,
+        <h4>
+          Date: 
+          Wed, Oct 31, 2018 6:30 PM
+        </h4>,
+        <img
+          alt="current event"
+          height={400}
+          src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+        />,
+        <p>
+          Location: 
+          Fillmore Auditorium (Denver)
+        </p>,
+        <p>
+          Address: 
+          1510 Clarkson Denver, CO 80218
+        </p>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <span
+            className="hover-msg"
+          >
+            help me
+          </span>,
+          "className": "far fa-eye",
+          "onClick": [MockFunction],
+          "onMouseEnter": [Function],
+          "onMouseLeave": [Function],
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "help me",
+            "className": "hover-msg",
+          },
+          "ref": null,
+          "rendered": "help me",
+          "type": "span",
+        },
+        "type": "i",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Event: ",
+            "Danzig - 30 Year Anniversary Tour",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Event: ",
+          "Danzig - 30 Year Anniversary Tour",
+        ],
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Date: ",
+            "Wed, Oct 31, 2018 6:30 PM",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Date: ",
+          "Wed, Oct 31, 2018 6:30 PM",
+        ],
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "current event",
+          "height": 400,
+          "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Location: ",
+            "Fillmore Auditorium (Denver)",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Location: ",
+          "Fillmore Auditorium (Denver)",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Address: ",
+            "1510 Clarkson Denver, CO 80218",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Address: ",
+          "1510 Clarkson Denver, CO 80218",
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <i
+            className="far fa-eye"
+            onClick={[MockFunction]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <span
+              className="hover-msg"
+            >
+              help me
+            </span>
+          </i>,
+          <h1>
+            Event: 
+            Danzig - 30 Year Anniversary Tour
+          </h1>,
+          <h4>
+            Date: 
+            Wed, Oct 31, 2018 6:30 PM
+          </h4>,
+          <img
+            alt="current event"
+            height={400}
+            src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+          />,
+          <p>
+            Location: 
+            Fillmore Auditorium (Denver)
+          </p>,
+          <p>
+            Address: 
+            1510 Clarkson Denver, CO 80218
+          </p>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <span
+              className="hover-msg"
+            >
+              help me
+            </span>,
+            "className": "far fa-eye",
+            "onClick": [MockFunction],
+            "onMouseEnter": [Function],
+            "onMouseLeave": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "help me",
+              "className": "hover-msg",
+            },
+            "ref": null,
+            "rendered": "help me",
+            "type": "span",
+          },
+          "type": "i",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Event: ",
+              "Danzig - 30 Year Anniversary Tour",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Event: ",
+            "Danzig - 30 Year Anniversary Tour",
+          ],
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Date: ",
+              "Wed, Oct 31, 2018 6:30 PM",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Date: ",
+            "Wed, Oct 31, 2018 6:30 PM",
+          ],
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "current event",
+            "height": 400,
+            "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Location: ",
+              "Fillmore Auditorium (Denver)",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Location: ",
+            "Fillmore Auditorium (Denver)",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Address: ",
+              "1510 Clarkson Denver, CO 80218",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Address: ",
+            "1510 Clarkson Denver, CO 80218",
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

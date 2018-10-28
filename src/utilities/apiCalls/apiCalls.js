@@ -41,7 +41,6 @@ export const setFavorite = async (user, event, id) => {
 };
 
 export const removeFromWatchlist = async (userId, eventId) => {
-  //userid
   const url = `https://event-mapper-api.herokuapp.com/api/v1/users/${userId}/events/${eventId}`;
   const response = await fetch(url, {
     method: 'DELETE',
@@ -53,9 +52,9 @@ export const removeFromWatchlist = async (userId, eventId) => {
 };
 
 export const getUserWatchlist = async userId => {
-  const url = `https:// event-mapper-api.herokuapp.com/api/v1/users/${userId}/events`;
+  const url = `https://event-mapper-api.herokuapp.com/api/v1/users/${userId}/events`;
   const response = await fetch(url);
-
   const result = await response.json();
+  console.log(result);
   return result;
 };

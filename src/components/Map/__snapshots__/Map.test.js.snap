@@ -36,6 +36,21 @@ ShallowWrapper {
     }
     latitude={35.2323}
     longitude={-105.3434}
+    setEvents={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Array [],
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

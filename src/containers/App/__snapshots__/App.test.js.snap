@@ -182,7 +182,9 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <div>
-        <Connect(NavBar) />
+        <Connect(NavBar)
+          logout={[Function]}
+        />
         <Routes
           changeMap={[Function]}
           displaySidebar={[Function]}
@@ -202,7 +204,9 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           null,
-          <Connect(NavBar) />,
+          <Connect(NavBar)
+            logout={[Function]}
+          />,
           <Routes
             changeMap={[Function]}
             displaySidebar={[Function]}
@@ -221,7 +225,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "logout": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -255,7 +261,9 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <div>
-          <Connect(NavBar) />
+          <Connect(NavBar)
+            logout={[Function]}
+          />
           <Routes
             changeMap={[Function]}
             displaySidebar={[Function]}
@@ -275,7 +283,9 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             null,
-            <Connect(NavBar) />,
+            <Connect(NavBar)
+              logout={[Function]}
+            />,
             <Routes
               changeMap={[Function]}
               displaySidebar={[Function]}
@@ -294,7 +304,9 @@ ShallowWrapper {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
-            "props": Object {},
+            "props": Object {
+              "logout": [Function],
+            },
             "ref": null,
             "rendered": null,
             "type": [Function],
@@ -362,15 +374,17 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <div>
-        <div
-          className="toggle-map-style"
-        >
+        <div>
+          <div
+            className="toggle-map-style"
+          >
+            <button
+              className="streets-button"
+              onClick={[Function]}
+            />
+          </div>
           <i
             className="fas fa-bars streets"
-            onClick={[Function]}
-          />
-          <button
-            className="streets-button"
             onClick={[Function]}
           />
         </div>
@@ -396,15 +410,17 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <div
-            className="toggle-map-style"
-          >
+          <div>
+            <div
+              className="toggle-map-style"
+            >
+              <button
+                className="streets-button"
+                onClick={[Function]}
+              />
+            </div>
             <i
               className="fas fa-bars streets"
-              onClick={[Function]}
-            />
-            <button
-              className="streets-button"
               onClick={[Function]}
             />
           </div>,
@@ -432,19 +448,48 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
+              <div
+                className="toggle-map-style"
+              >
+                <button
+                  className="streets-button"
+                  onClick={[Function]}
+                />
+              </div>,
               <i
                 className="fas fa-bars streets"
                 onClick={[Function]}
               />,
-              <button
-                className="streets-button"
-                onClick={[Function]}
-              />,
             ],
-            "className": "toggle-map-style",
           },
           "ref": null,
           "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="streets-button"
+                  onClick={[Function]}
+                />,
+                "className": "toggle-map-style",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "streets-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "button",
+              },
+              "type": "div",
+            },
             Object {
               "instance": null,
               "key": undefined,
@@ -456,18 +501,6 @@ ShallowWrapper {
               "ref": null,
               "rendered": null,
               "type": "i",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "className": "streets-button",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "button",
             },
           ],
           "type": "div",
@@ -504,15 +537,17 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <div>
-          <div
-            className="toggle-map-style"
-          >
+          <div>
+            <div
+              className="toggle-map-style"
+            >
+              <button
+                className="streets-button"
+                onClick={[Function]}
+              />
+            </div>
             <i
               className="fas fa-bars streets"
-              onClick={[Function]}
-            />
-            <button
-              className="streets-button"
               onClick={[Function]}
             />
           </div>
@@ -538,15 +573,17 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <div
-              className="toggle-map-style"
-            >
+            <div>
+              <div
+                className="toggle-map-style"
+              >
+                <button
+                  className="streets-button"
+                  onClick={[Function]}
+                />
+              </div>
               <i
                 className="fas fa-bars streets"
-                onClick={[Function]}
-              />
-              <button
-                className="streets-button"
                 onClick={[Function]}
               />
             </div>,
@@ -574,19 +611,48 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
+                <div
+                  className="toggle-map-style"
+                >
+                  <button
+                    className="streets-button"
+                    onClick={[Function]}
+                  />
+                </div>,
                 <i
                   className="fas fa-bars streets"
                   onClick={[Function]}
                 />,
-                <button
-                  className="streets-button"
-                  onClick={[Function]}
-                />,
               ],
-              "className": "toggle-map-style",
             },
             "ref": null,
             "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="streets-button"
+                    onClick={[Function]}
+                  />,
+                  "className": "toggle-map-style",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "streets-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "button",
+                },
+                "type": "div",
+              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -598,18 +664,6 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": null,
                 "type": "i",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "streets-button",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "button",
               },
             ],
             "type": "div",
