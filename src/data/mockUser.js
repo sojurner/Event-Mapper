@@ -66,3 +66,13 @@ export const mockStateUser = {
   created_at: '2018-10-24T23:37:44.724Z',
   updated_at: '2018-10-24T23:37:44.724Z'
 };
+
+export const mockUserResponse = {
+  created_at: '2018-10-24T23:37:44.724Z',
+  email: 'pykim0591@gmail.com',
+  first_name: 'Paul',
+  gid: '117977763637801404146',
+  id: 3,
+  last_name: 'K',
+  updated_at: '2018-10-24T23:37:44.724Z'
+};
