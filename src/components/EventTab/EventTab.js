@@ -15,7 +15,7 @@ class EventTab extends Component {
           onMouseLeave={closePopup}
           onClick={event => handleModalClick(event, 'open')}
         >
-          <h1>{event.name}</h1>
+          <h1 className="tab-event-name">{event.name}</h1>
           <img src={event.img} className="tab-img" />
         </div>
       );
