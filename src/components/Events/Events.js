@@ -29,14 +29,16 @@ export class Events extends Component {
       let coordinates = [eve.lng, eve.lat];
       return (
         <Marker
-          onClick={event => this.handleModalClick(event, 'open')}
-          onMouseEnter={event => this.showEventInfo(event, eve)}
-          onMouseLeave={this.closePopup}
           key={`event-${index}`}
           coordinates={coordinates}
           anchor="bottom"
         >
-          <i class="fas fa-map-pin" />
+          <i
+            class="fas fa-map-pin"
+            onClick={event => this.handleModalClick(event, 'open')}
+            onMouseEnter={event => this.showEventInfo(event, eve)}
+            onMouseLeave={this.closePopup}
+          />
         </Marker>
       );
     });
@@ -127,13 +129,13 @@ export class Events extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   activeUser: state.activeUser,
   watchList: state.watchList,
   events: state.events
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addToWatchList: event => dispatch(invoke.addToWatchList(event)),
   removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
   setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
