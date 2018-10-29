@@ -8,22 +8,35 @@
   position: absolute;
   z-index: 100;
   top: 2.9%;
-  left: 5.5%;
-  margin: 0 0 0 -6rem; }
+  left: 2.5%;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  border: 0.5px solid #765959;
+  box-shadow: 1.5px 1.5px #a0a0a0;
+  background-color: #dde7fa;
+  padding: 0.5rem; }
+
+.location-input:hover {
+  box-shadow: 2.5px 2.5px #a0a0a0;
+  background-color: #ffffff; }
+
+input:focus {
+  outline-width: 0; }
 
 .suggestion-list {
   color: #856c4b;
-  width: 12.4rem;
+  width: 12.35rem;
   cursor: pointer;
   position: absolute;
   top: 5.5%;
-  left: 5.6%;
+  left: 2.5%;
   background-color: white;
-  z-index: 100;
-  margin: 0 0 0 -6.2rem; }
+  z-index: 100; }
 
 .suggestion {
-  border: 0.8px solid gray;
+  border: 0.5px solid gray;
   padding: 0.3rem;
   margin: 0; }
 
