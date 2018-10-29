@@ -92,6 +92,7 @@ export class FilterBar extends Component {
           onKeyDown={this.handleKeyDown}
           value={location}
         />
+
         <section ref={this.textContent} className={`suggestion-list`}>
           {suggestions.map((city, index) => {
             if (index < 7 && location.length > 1) {

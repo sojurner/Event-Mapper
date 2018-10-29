@@ -21,16 +21,19 @@ export const eventsCleaner = events => {
       favorite: false
     };
   });
-  function removeDuplicates(arr, prop) {
-    let obj = {};
-    return Object.keys(
-      arr.reduce((prev, next) => {
-        if (!obj[next[prop]]) obj[next[prop]] = next;
-        return obj;
-      }, obj)
-    ).map(i => obj[i]);
-  }
-  return removeDuplicates(parsedEvent, 'venue_name');
+
+  const uniqueEvents = removeDuplicates(parsedEvent, 'venue_name');
+  return uniqueEvents;
+};
+
+const removeDuplicates = (arr, prop) => {
+  let obj = {};
+  return Object.keys(
+    arr.reduce((prev, next) => {
+      if (!obj[next[prop]]) obj[next[prop]] = next;
+      return obj;
+    }, obj)
+  ).map(i => obj[i]);
 };
 
 export const cleanedUser = userInfo => {
