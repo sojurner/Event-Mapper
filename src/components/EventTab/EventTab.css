@@ -5,19 +5,22 @@
   box-shadow: 2px 2px #cdcdcd;
   height: 100vh;
   width: 19rem;
-  font-size: 0.6rem;
-  overflow-y: auto; }
+  font-size: 0.6rem; }
 
 .tab-img {
   height: 10rem;
   width: 19rem; }
 
 .tab-card {
-  border-bottom: 3px solid #d5d5d5;
-  padding-bottom: 1rem; }
+  border-top: 3px solid #d5d5d5;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  filter: grayscale(40%); }
 
 .tab-card:hover {
-  background-color: aliceblue; }
+  filter: grayscale(0%); }
 
 .tab-scroll-container {
-  margin: 10rem 0 0 0; }
+  margin: 7rem 0 0 0;
+  overflow-y: auto;
+  height: 90vh; }
