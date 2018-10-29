@@ -6,6 +6,7 @@ import Modal from 'react-responsive-modal';
 import * as call from '../../utilities/apiCalls/apiCalls';
 import * as clean from '../../utilities/helpers/helpers';
 import * as invoke from '../../actions';
+import EventTab from '../EventTab/EventTab';
 
 import { EventModal } from '../EventModal/EventModal';
 import { EventPopup } from '../EventPopup/EventPopup';
@@ -112,6 +113,7 @@ export class Events extends Component {
       <div>
         {event}
         {displayPopup && <EventPopup targetEvent={targetEvent} />}
+        <EventTab />
         <Modal
           open={displayModal}
           onClose={event => this.handleModalClick(event)}
