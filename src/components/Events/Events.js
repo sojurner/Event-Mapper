@@ -34,7 +34,7 @@ export class Events extends Component {
           anchor="bottom"
         >
           <i
-            class="fas fa-map-pin"
+            className="fas fa-map-pin"
             onClick={event => this.handleModalClick(event, 'open')}
             onMouseEnter={event => this.showEventInfo(event, eve)}
             onMouseLeave={this.closePopup}
@@ -141,7 +141,4 @@ export const mapDispatchToProps = dispatch => ({
   setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Events);
+export default connect(mapStateToProps, mapDispatchToProps)(Events);
