@@ -96,6 +96,7 @@ export class FilterBar extends Component {
           onKeyDown={this.handleKeyDown}
           value={location}
         />
+        {/* <i class="fas fa-search-location" /> */}
 
         <section ref={this.textContent} className={`suggestion-list`}>
           {suggestions.map((city, index) => {
