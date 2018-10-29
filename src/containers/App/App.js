@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { loginUser, setUserLocation } from '../../actions';
-import Map from '../../components/Map/Map';
-import NavBar from '../../components/NavBar/NavBar';
 import { Routes } from '../../components/Routes/Routes';
-import './App.css';
+import NavBar from '../../components/NavBar/NavBar';
 
-import * as keys from '../../utilities/apiCalls/apiKeys';
 import { postUser } from '../../utilities/apiCalls/apiCalls';
+
+import './App.css';
 
 export class App extends Component {
   constructor() {
@@ -39,7 +38,7 @@ export class App extends Component {
     this.setState({ user: activeUser, redirect: true });
   };
 
-  logout = res => {
+  logout = () => {
     this.setState({ user: null, redirect: false });
   };
 
@@ -102,7 +101,8 @@ export class App extends Component {
 
 App.propTypes = {
   user: PropTypes.object,
-  loginUser: PropTypes.func
+  loginUser: PropTypes.func,
+  setUserLocation: PropTypes.func
 };
 
 export const mapDispatchToProps = dispatch => ({
@@ -110,7 +110,4 @@ export const mapDispatchToProps = dispatch => ({
   setUserLocation: coordinates => dispatch(setUserLocation(coordinates))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(App);
+export default connect(null, mapDispatchToProps)(App);

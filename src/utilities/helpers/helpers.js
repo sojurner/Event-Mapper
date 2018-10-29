@@ -5,7 +5,6 @@ export const eventsCleaner = events => {
   const parsedEvent = events._embedded.events.map(event => {
     const { name, id, url, images, dates } = event;
     const { venues } = event._embedded;
-
     return {
       name: name,
       e_id: id,
@@ -31,7 +30,6 @@ export const eventsCleaner = events => {
       }, obj)
     ).map(i => obj[i]);
   }
-
   return removeDuplicates(parsedEvent, 'venue_name');
 };
 
@@ -42,13 +40,13 @@ export const cleanedUser = userInfo => {
       google_id: googleId,
       given_name: givenName,
       family_name: familyName,
-      email: email
+      email
     }
   };
 };
 
 export const eventServerCleaner = (user, event) => {
-  const { first_name, last_name, gid, email, id } = user;
+  const { first_name, last_name, gid, email } = user;
   const userObj = {
     given_name: first_name,
     family_name: last_name,
@@ -58,6 +56,5 @@ export const eventServerCleaner = (user, event) => {
 
   const eventObj = { ...event };
   delete eventObj.favorite;
-
   return { userObj, eventObj };
 };

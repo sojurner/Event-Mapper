@@ -36,7 +36,7 @@ export class WatchListCard extends Component {
     return (
       <div key={e_id} onClick={() => this.handleClick()}>
         <h1>{name}</h1>
-        <img src={img}/>
+        <img alt='shows who is playing the event' src={img}/>
         {toggledItems()}
       </div>
     );

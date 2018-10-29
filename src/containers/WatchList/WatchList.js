@@ -20,9 +20,9 @@ export class WatchList extends Component {
   };
 
   render() {
-    const displayFavorites = this.props.watchList.map(favorite => {
-      return <WatchListCard key={favorite.e_id} {...favorite} />;
-    });
+    const displayFavorites = this.props.watchList.map(favorite => (
+      <WatchListCard key={favorite.e_id} {...favorite} />
+    ));
     return <div className="watch-list">{displayFavorites}</div>;
   }
 }
@@ -40,7 +40,4 @@ export const mapDispatchToProps = dispatch => ({
   addToWatchList: event => dispatch(addToWatchList(event))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(WatchList);
+export default connect(mapStateToProps, mapDispatchToProps)(WatchList);
