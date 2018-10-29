@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './EventTab.css';
 
 class EventTab extends Component {
-  displayEventTab = () => {
-    const { events } = this.props;
-    console.log(events);
-    events.map(event => {
-      return <div>{event.name}</div>;
-    });
-  };
+  displayEventTab = () => {};
 
   render() {
-    return <div>{this.displayEventTab()}</div>;
+    const { events } = this.props;
+    console.log(events);
+    const x = events.map(event => {
+      return <div>{event.name}</div>;
+    });
+    return <div className="tab-name">{x}</div>;
   }
 }
 
