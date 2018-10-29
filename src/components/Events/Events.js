@@ -23,28 +23,21 @@ export class Events extends Component {
     };
   }
 
-  // retrieveEvents = async (lat, lng) => {
-  //   const events = await getEvents(lat, lng);
-  //   this.props.setEvents(events);
-  // };
-
   plotEvents = () => {
     const { events } = this.props;
     return events.map((eve, index) => {
       let coordinates = [eve.lng, eve.lat];
       return (
         <Marker
-          onClick={event => this.handleModalClick(event, 'open')}
-          onMouseEnter={event => this.showEventInfo(event, eve)}
-          onMouseLeave={this.closePopup}
           key={`event-${index}`}
           coordinates={coordinates}
           anchor="bottom"
         >
-          <img
-            className="event-marker"
-            alt="map marker for an event"
-            src="http://landon-homes.net/wp-content/uploads/2015/04/map-pin.png"
+          <i
+            class="fas fa-map-pin"
+            onClick={event => this.handleModalClick(event, 'open')}
+            onMouseEnter={event => this.showEventInfo(event, eve)}
+            onMouseLeave={this.closePopup}
           />
         </Marker>
       );
@@ -71,7 +64,13 @@ export class Events extends Component {
   };
 
   handleFavoriteClick = async () => {
-    const { activeUser, addToWatchList, setWatchEvent, watchList } = this.props;
+    const {
+      activeUser,
+      addToWatchList,
+      setWatchEvent,
+      watchList,
+      removeFromWatchlist
+    } = this.props;
     const { targetEvent } = this.state;
     let watchListEvent;
     if (!targetEvent.favorite) {
@@ -90,6 +89,7 @@ export class Events extends Component {
         item => item.e_id === targetEvent.e_id
       );
       await call.removeFromWatchlist(activeUser.id, matchingEvent.id);
+      removeFromWatchlist(matchingEvent);
       watchListEvent = { ...targetEvent, favorite: false };
       this.setState({ targetEvent: watchListEvent });
     }
@@ -129,15 +129,15 @@ export class Events extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   activeUser: state.activeUser,
   watchList: state.watchList,
   events: state.events
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addToWatchList: event => dispatch(invoke.addToWatchList(event)),
-  // removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
+  removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
   setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
 });
 

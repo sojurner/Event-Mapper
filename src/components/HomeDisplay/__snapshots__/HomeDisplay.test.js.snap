@@ -19,21 +19,50 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <Connect(Map)
-        mapStyle="dark"
-      />,
+      "children": <div>
+        <Connect(FilterBar) />
+        <Connect(Map)
+          mapStyle="dark"
+        />
+      </div>,
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
-        "mapStyle": "dark",
+        "children": Array [
+          <Connect(FilterBar) />,
+          <Connect(Map)
+            mapStyle="dark"
+          />,
+        ],
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "mapStyle": "dark",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
     "type": "div",
   },
@@ -43,21 +72,50 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <Connect(Map)
-          mapStyle="dark"
-        />,
+        "children": <div>
+          <Connect(FilterBar) />
+          <Connect(Map)
+            mapStyle="dark"
+          />
+        </div>,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "mapStyle": "dark",
+          "children": Array [
+            <Connect(FilterBar) />,
+            <Connect(Map)
+              mapStyle="dark"
+            />,
+          ],
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "mapStyle": "dark",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       "type": "div",
     },

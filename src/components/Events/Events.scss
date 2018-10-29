@@ -1,10 +1,9 @@
-.event-marker {
-  filter: grayscale(30%);
-  height: 1.9rem;
+.fa-map-pin {
+  color: #a4480e;
   cursor: pointer;
 }
 
-.event-marker:hover {
-  height: 2.3rem;
-  filter: grayscale(0%);
+.fa-map-pin:hover {
+  font-size: 2.5rem;
+  color: #c07546;
 }

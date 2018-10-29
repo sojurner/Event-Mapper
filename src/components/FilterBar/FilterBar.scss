@@ -4,16 +4,25 @@
 }
 
 .location-input {
-  margin: auto;
+  font-size: 1.4rem;
+  width: 12rem;
+  position: absolute;
+  z-index: 100;
+  top: 2.9%;
+  left: 5.5%;
+  margin: 0 0 0 -6rem;
 }
 
 .suggestion-list {
   color: rgb(133, 108, 75);
-  width: 8.5rem;
+  width: 12.4rem;
   cursor: pointer;
   position: absolute;
-
+  top: 5.5%;
+  left: 5.6%;
+  background-color: rgb(255, 255, 255);
   z-index: 100;
+  margin: 0 0 0 -6.2rem;
 }
 
 .suggestion {
