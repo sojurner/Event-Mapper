@@ -4,9 +4,6 @@ import Geohash from 'latlon-geohash';
 
 export const getEvents = async (lat, lng) => {
   const geoCode = await Geohash.encode(lat, lng);
-  // let days = 7;
-  // let date = new Date();
-  // let last = new Date(date.getTime() + days * 24 * 60 * 60 * 1000);
   const url = `https://app.ticketmaster.com/discovery/v2/events.json?` +
     `apikey=${ticketMasterApiKey}&` +
     `geoPoint=${geoCode.slice(0, 9)}&` +

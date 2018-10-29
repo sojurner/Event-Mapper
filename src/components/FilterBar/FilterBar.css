@@ -27,10 +27,10 @@ input:focus {
 
 .suggestion-list {
   color: #856c4b;
-  width: 12.35rem;
+  width: 13.2rem;
   cursor: pointer;
   position: absolute;
-  top: 5.5%;
+  top: 6.7%;
   left: 2.5%;
   background-color: white;
   z-index: 100; }

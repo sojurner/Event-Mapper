@@ -8,8 +8,10 @@ const Profile = (props) => {
     <div className='user-wraper'>
       <div className='user-profile'>
         <img alt='the current user profile pic' src={imageUrl}/>
-        <h1>User: {first_name + ' ' + last_name}</h1>
-        <h2>Listed Contact: {email}</h2>
+        <div>
+          <h1>User: {first_name + ' ' + last_name}</h1>
+          <h2>Listed Contact: {email}</h2>
+        </div>
       </div>
     </div>
   );

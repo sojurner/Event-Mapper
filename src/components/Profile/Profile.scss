@@ -1,8 +1,27 @@
 .user-wraper {
-  height: 100%;
+  height: -webkit-fill-available;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .user-profile {
-  
+  display: flex;
+  flex-direction: column;
+  background: rgba(154, 154, 154, 0.9);
+  border-radius: .5em;
+  padding: 1em;
+}
+
+.user-profile img {
+  width: 9em;
+}
+
+.user-profile h1 {
+  margin: .5em 0;
+}
+
+.user-profile h2 {
+  margin: .5em 0;
 }

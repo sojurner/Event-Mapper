@@ -10,7 +10,7 @@ export class WatchList extends Component {
     super();
     this.state = {
       userWatchList: [],
-      selectedFavorite: ''
+      selectedFavorite: {}
     };
   }
   
@@ -21,6 +21,11 @@ export class WatchList extends Component {
 
   handleSelection(eventItems) {
     console.log(eventItems);
+    // const newSelectedFavorite = this.state.userWatchList.reduce((selected, favorite) => {
+    //   if(eventItems.e_id === ) {
+
+    //   }
+    // }, {});
   }
 
   render() {

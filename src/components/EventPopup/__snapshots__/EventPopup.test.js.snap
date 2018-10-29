@@ -34,16 +34,19 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
-        <h1>
-          Event: 
+        <h1
+          className="popup-name"
+        >
           Danzig - 30 Year Anniversary Tour
         </h1>,
         <img
           alt="container displaying event info"
+          className="popup-img"
           height={200}
           src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
         />,
       ],
+      "className": "popup-container",
       "coordinates": Array [
         "-104.977194",
         "39.740611",
@@ -70,16 +73,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Event: ",
-            "Danzig - 30 Year Anniversary Tour",
-          ],
+          "children": "Danzig - 30 Year Anniversary Tour",
+          "className": "popup-name",
         },
         "ref": null,
-        "rendered": Array [
-          "Event: ",
-          "Danzig - 30 Year Anniversary Tour",
-        ],
+        "rendered": "Danzig - 30 Year Anniversary Tour",
         "type": "h1",
       },
       Object {
@@ -88,6 +86,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "alt": "container displaying event info",
+          "className": "popup-img",
           "height": 200,
           "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
         },
@@ -105,16 +104,19 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <h1>
-            Event: 
+          <h1
+            className="popup-name"
+          >
             Danzig - 30 Year Anniversary Tour
           </h1>,
           <img
             alt="container displaying event info"
+            className="popup-img"
             height={200}
             src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
           />,
         ],
+        "className": "popup-container",
         "coordinates": Array [
           "-104.977194",
           "39.740611",
@@ -141,16 +143,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Event: ",
-              "Danzig - 30 Year Anniversary Tour",
-            ],
+            "children": "Danzig - 30 Year Anniversary Tour",
+            "className": "popup-name",
           },
           "ref": null,
-          "rendered": Array [
-            "Event: ",
-            "Danzig - 30 Year Anniversary Tour",
-          ],
+          "rendered": "Danzig - 30 Year Anniversary Tour",
           "type": "h1",
         },
         Object {
@@ -159,6 +156,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "alt": "container displaying event info",
+            "className": "popup-img",
             "height": 200,
             "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
           },

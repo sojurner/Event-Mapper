@@ -49,28 +49,34 @@ ShallowWrapper {
             help me
           </span>
         </i>,
-        <h1>
-          Event: 
+        <h1
+          className="event-name"
+        >
           Danzig - 30 Year Anniversary Tour
         </h1>,
-        <h4>
-          Date: 
+        <h4
+          className="event-date"
+        >
           Wed, Oct 31, 2018 6:30 PM
         </h4>,
         <img
           alt="current event"
+          className="event-img"
           height={400}
           src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
         />,
-        <p>
-          Location: 
+        <p
+          className="event-venue"
+        >
           Fillmore Auditorium (Denver)
         </p>,
-        <p>
-          Address: 
+        <p
+          className="event-address"
+        >
           1510 Clarkson Denver, CO 80218
         </p>,
       ],
+      "className": "event-modal-container",
     },
     "ref": null,
     "rendered": Array [
@@ -109,16 +115,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Event: ",
-            "Danzig - 30 Year Anniversary Tour",
-          ],
+          "children": "Danzig - 30 Year Anniversary Tour",
+          "className": "event-name",
         },
         "ref": null,
-        "rendered": Array [
-          "Event: ",
-          "Danzig - 30 Year Anniversary Tour",
-        ],
+        "rendered": "Danzig - 30 Year Anniversary Tour",
         "type": "h1",
       },
       Object {
@@ -126,16 +127,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Date: ",
-            "Wed, Oct 31, 2018 6:30 PM",
-          ],
+          "children": "Wed, Oct 31, 2018 6:30 PM",
+          "className": "event-date",
         },
         "ref": null,
-        "rendered": Array [
-          "Date: ",
-          "Wed, Oct 31, 2018 6:30 PM",
-        ],
+        "rendered": "Wed, Oct 31, 2018 6:30 PM",
         "type": "h4",
       },
       Object {
@@ -144,6 +140,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "alt": "current event",
+          "className": "event-img",
           "height": 400,
           "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
         },
@@ -156,16 +153,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Location: ",
-            "Fillmore Auditorium (Denver)",
-          ],
+          "children": "Fillmore Auditorium (Denver)",
+          "className": "event-venue",
         },
         "ref": null,
-        "rendered": Array [
-          "Location: ",
-          "Fillmore Auditorium (Denver)",
-        ],
+        "rendered": "Fillmore Auditorium (Denver)",
         "type": "p",
       },
       Object {
@@ -173,16 +165,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Address: ",
-            "1510 Clarkson Denver, CO 80218",
-          ],
+          "children": "1510 Clarkson Denver, CO 80218",
+          "className": "event-address",
         },
         "ref": null,
-        "rendered": Array [
-          "Address: ",
-          "1510 Clarkson Denver, CO 80218",
-        ],
+        "rendered": "1510 Clarkson Denver, CO 80218",
         "type": "p",
       },
     ],
@@ -207,28 +194,34 @@ ShallowWrapper {
               help me
             </span>
           </i>,
-          <h1>
-            Event: 
+          <h1
+            className="event-name"
+          >
             Danzig - 30 Year Anniversary Tour
           </h1>,
-          <h4>
-            Date: 
+          <h4
+            className="event-date"
+          >
             Wed, Oct 31, 2018 6:30 PM
           </h4>,
           <img
             alt="current event"
+            className="event-img"
             height={400}
             src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
           />,
-          <p>
-            Location: 
+          <p
+            className="event-venue"
+          >
             Fillmore Auditorium (Denver)
           </p>,
-          <p>
-            Address: 
+          <p
+            className="event-address"
+          >
             1510 Clarkson Denver, CO 80218
           </p>,
         ],
+        "className": "event-modal-container",
       },
       "ref": null,
       "rendered": Array [
@@ -267,16 +260,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Event: ",
-              "Danzig - 30 Year Anniversary Tour",
-            ],
+            "children": "Danzig - 30 Year Anniversary Tour",
+            "className": "event-name",
           },
           "ref": null,
-          "rendered": Array [
-            "Event: ",
-            "Danzig - 30 Year Anniversary Tour",
-          ],
+          "rendered": "Danzig - 30 Year Anniversary Tour",
           "type": "h1",
         },
         Object {
@@ -284,16 +272,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Date: ",
-              "Wed, Oct 31, 2018 6:30 PM",
-            ],
+            "children": "Wed, Oct 31, 2018 6:30 PM",
+            "className": "event-date",
           },
           "ref": null,
-          "rendered": Array [
-            "Date: ",
-            "Wed, Oct 31, 2018 6:30 PM",
-          ],
+          "rendered": "Wed, Oct 31, 2018 6:30 PM",
           "type": "h4",
         },
         Object {
@@ -302,6 +285,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "alt": "current event",
+            "className": "event-img",
             "height": 400,
             "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
           },
@@ -314,16 +298,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Location: ",
-              "Fillmore Auditorium (Denver)",
-            ],
+            "children": "Fillmore Auditorium (Denver)",
+            "className": "event-venue",
           },
           "ref": null,
-          "rendered": Array [
-            "Location: ",
-            "Fillmore Auditorium (Denver)",
-          ],
+          "rendered": "Fillmore Auditorium (Denver)",
           "type": "p",
         },
         Object {
@@ -331,16 +310,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Address: ",
-              "1510 Clarkson Denver, CO 80218",
-            ],
+            "children": "1510 Clarkson Denver, CO 80218",
+            "className": "event-address",
           },
           "ref": null,
-          "rendered": Array [
-            "Address: ",
-            "1510 Clarkson Denver, CO 80218",
-          ],
+          "rendered": "1510 Clarkson Denver, CO 80218",
           "type": "p",
         },
       ],
@@ -416,28 +390,34 @@ ShallowWrapper {
             help me
           </span>
         </i>,
-        <h1>
-          Event: 
+        <h1
+          className="event-name"
+        >
           Danzig - 30 Year Anniversary Tour
         </h1>,
-        <h4>
-          Date: 
+        <h4
+          className="event-date"
+        >
           Wed, Oct 31, 2018 6:30 PM
         </h4>,
         <img
           alt="current event"
+          className="event-img"
           height={400}
           src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
         />,
-        <p>
-          Location: 
+        <p
+          className="event-venue"
+        >
           Fillmore Auditorium (Denver)
         </p>,
-        <p>
-          Address: 
+        <p
+          className="event-address"
+        >
           1510 Clarkson Denver, CO 80218
         </p>,
       ],
+      "className": "event-modal-container",
     },
     "ref": null,
     "rendered": Array [
@@ -476,16 +456,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Event: ",
-            "Danzig - 30 Year Anniversary Tour",
-          ],
+          "children": "Danzig - 30 Year Anniversary Tour",
+          "className": "event-name",
         },
         "ref": null,
-        "rendered": Array [
-          "Event: ",
-          "Danzig - 30 Year Anniversary Tour",
-        ],
+        "rendered": "Danzig - 30 Year Anniversary Tour",
         "type": "h1",
       },
       Object {
@@ -493,16 +468,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Date: ",
-            "Wed, Oct 31, 2018 6:30 PM",
-          ],
+          "children": "Wed, Oct 31, 2018 6:30 PM",
+          "className": "event-date",
         },
         "ref": null,
-        "rendered": Array [
-          "Date: ",
-          "Wed, Oct 31, 2018 6:30 PM",
-        ],
+        "rendered": "Wed, Oct 31, 2018 6:30 PM",
         "type": "h4",
       },
       Object {
@@ -511,6 +481,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "alt": "current event",
+          "className": "event-img",
           "height": 400,
           "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
         },
@@ -523,16 +494,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Location: ",
-            "Fillmore Auditorium (Denver)",
-          ],
+          "children": "Fillmore Auditorium (Denver)",
+          "className": "event-venue",
         },
         "ref": null,
-        "rendered": Array [
-          "Location: ",
-          "Fillmore Auditorium (Denver)",
-        ],
+        "rendered": "Fillmore Auditorium (Denver)",
         "type": "p",
       },
       Object {
@@ -540,16 +506,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Address: ",
-            "1510 Clarkson Denver, CO 80218",
-          ],
+          "children": "1510 Clarkson Denver, CO 80218",
+          "className": "event-address",
         },
         "ref": null,
-        "rendered": Array [
-          "Address: ",
-          "1510 Clarkson Denver, CO 80218",
-        ],
+        "rendered": "1510 Clarkson Denver, CO 80218",
         "type": "p",
       },
     ],
@@ -574,28 +535,34 @@ ShallowWrapper {
               help me
             </span>
           </i>,
-          <h1>
-            Event: 
+          <h1
+            className="event-name"
+          >
             Danzig - 30 Year Anniversary Tour
           </h1>,
-          <h4>
-            Date: 
+          <h4
+            className="event-date"
+          >
             Wed, Oct 31, 2018 6:30 PM
           </h4>,
           <img
             alt="current event"
+            className="event-img"
             height={400}
             src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
           />,
-          <p>
-            Location: 
+          <p
+            className="event-venue"
+          >
             Fillmore Auditorium (Denver)
           </p>,
-          <p>
-            Address: 
+          <p
+            className="event-address"
+          >
             1510 Clarkson Denver, CO 80218
           </p>,
         ],
+        "className": "event-modal-container",
       },
       "ref": null,
       "rendered": Array [
@@ -634,16 +601,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Event: ",
-              "Danzig - 30 Year Anniversary Tour",
-            ],
+            "children": "Danzig - 30 Year Anniversary Tour",
+            "className": "event-name",
           },
           "ref": null,
-          "rendered": Array [
-            "Event: ",
-            "Danzig - 30 Year Anniversary Tour",
-          ],
+          "rendered": "Danzig - 30 Year Anniversary Tour",
           "type": "h1",
         },
         Object {
@@ -651,16 +613,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Date: ",
-              "Wed, Oct 31, 2018 6:30 PM",
-            ],
+            "children": "Wed, Oct 31, 2018 6:30 PM",
+            "className": "event-date",
           },
           "ref": null,
-          "rendered": Array [
-            "Date: ",
-            "Wed, Oct 31, 2018 6:30 PM",
-          ],
+          "rendered": "Wed, Oct 31, 2018 6:30 PM",
           "type": "h4",
         },
         Object {
@@ -669,6 +626,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "alt": "current event",
+            "className": "event-img",
             "height": 400,
             "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
           },
@@ -681,16 +639,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Location: ",
-              "Fillmore Auditorium (Denver)",
-            ],
+            "children": "Fillmore Auditorium (Denver)",
+            "className": "event-venue",
           },
           "ref": null,
-          "rendered": Array [
-            "Location: ",
-            "Fillmore Auditorium (Denver)",
-          ],
+          "rendered": "Fillmore Auditorium (Denver)",
           "type": "p",
         },
         Object {
@@ -698,16 +651,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Address: ",
-              "1510 Clarkson Denver, CO 80218",
-            ],
+            "children": "1510 Clarkson Denver, CO 80218",
+            "className": "event-address",
           },
           "ref": null,
-          "rendered": Array [
-            "Address: ",
-            "1510 Clarkson Denver, CO 80218",
-          ],
+          "rendered": "1510 Clarkson Denver, CO 80218",
           "type": "p",
         },
       ],

@@ -21,14 +21,16 @@ export class App extends Component {
     };
   }
 
-  componentDidMount() {
-    this.setLatLngEvents();
+  async componentDidMount() {
+    await this.setLatLngEvents();
   }
 
-  setLatLngEvents = async () => {
-    await navigator.geolocation.getCurrentPosition(async location => {
+  setLatLngEvents =  () => {
+    console.log('sds');
+    navigator.geolocation.getCurrentPosition(location => {
       const { latitude, longitude } = location.coords;
-      await this.props.setUserLocation({ latitude, longitude });
+      console.log('sds');
+      this.props.setUserLocation({ latitude, longitude });
     });
   };
 
