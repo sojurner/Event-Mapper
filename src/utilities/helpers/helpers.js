@@ -39,13 +39,14 @@ const removeDuplicates = (arr, prop) => {
 };
 
 export const cleanedUser = userInfo => {
-  const { email, familyName, givenName, googleId } = userInfo;
+  const { email, familyName, givenName, googleId, imageUrl } = userInfo;
   return {
     user: {
       google_id: googleId,
       given_name: givenName,
       family_name: familyName,
-      email: email
+      email,
+      imageUrl
     }
   };
 };

@@ -1,4 +1,43 @@
-.tab-name {
-  z-index: 1000;
-  display: none;
+.tab-container {
+  z-index: 10;
+  position: absolute;
+  background-color: rgb(228, 228, 228);
+  box-shadow: 2px 2px rgb(205, 205, 205);
+  height: 100vh;
+  width: 19rem;
+  font-size: 0.6rem;
+}
+
+.tab-img {
+  height: 10rem;
+  width: 15rem;
+  border-radius: 1rem;
+  align-self: center;
+  margin-left: 2rem;
+}
+
+.tab-card {
+  border-top: 3px solid rgb(213, 213, 213);
+  padding-bottom: 1rem;
+  cursor: pointer;
+  filter: grayscale(40%);
+}
+
+.tab-card:hover {
+  filter: grayscale(0%);
+  background-color: rgb(206, 206, 206);
+}
+
+.tab-scroll-container {
+  margin: 7rem 0 0 0;
+  overflow-y: auto;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-event-name {
+  font-family: caviar;
+  letter-spacing: 2px;
+  text-align: center;
 }

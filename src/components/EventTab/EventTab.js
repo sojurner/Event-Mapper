@@ -6,12 +6,25 @@ class EventTab extends Component {
   displayEventTab = () => {};
 
   render() {
-    const { events } = this.props;
-    console.log(events);
-    const x = events.map(event => {
-      return <div>{event.name}</div>;
+    const { events, showEventInfo, closePopup, handleModalClick } = this.props;
+    const eventTab = events.map(event => {
+      return (
+        <div
+          className="tab-card"
+          onMouseEnter={e => showEventInfo(e, event)}
+          onMouseLeave={closePopup}
+          onClick={event => handleModalClick(event, 'open')}
+        >
+          <h1 className="tab-event-name">{event.name}</h1>
+          <img src={event.img} className="tab-img" />
+        </div>
+      );
     });
-    return <div className="tab-name">{x}</div>;
+    return (
+      <div className="tab-container">
+        <div className="tab-scroll-container">{eventTab}</div>
+      </div>
+    );
   }
 }
 
