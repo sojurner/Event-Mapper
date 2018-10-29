@@ -1,0 +1,27 @@
+.watch-list-card {
+  border-bottom: 1px solid black;
+  width: 28em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: .5em;
+  padding: 1em;
+  word-wrap: break-word;
+}
+
+.main-card-content {
+
+}
+
+.watch-list-card h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.watch-list-card img {
+  width: 15em;
+}
+
+.watch-list-card h2 {
+  font-size: 1.4em;
+}

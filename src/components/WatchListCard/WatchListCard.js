@@ -28,15 +28,17 @@ export class WatchListCard extends Component {
         );
       } else {
         return (
-          <div>test</div>
+          <div></div>
         );
       }
     };
 
     return (
-      <div key={e_id} onClick={() => this.handleClick()}>
-        <h1>{name}</h1>
-        <img alt='shows who is playing the event' src={img}/>
+      <div className='watch-list-card' key={e_id} onClick={() => this.props.handleSelection()}>
+        <div className='main-card-content'>
+          <h1>{name}</h1>
+          <img alt='shows who is playing the event' src={img}/>
+        </div>
         {toggledItems()}
       </div>
     );

@@ -1,43 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addToWatchList } from '../../actions';
 import { WatchListCard } from '../../components/WatchListCard/WatchListCard';
 import { getUserWatchlist } from '../../utilities/apiCalls/apiCalls';
 import './WatchList.css';
 
 export class WatchList extends Component {
-  componentDidMount() {
-    this.getUserEvents();
+  constructor() {
+    super();
+    this.state = {
+      userWatchList: [],
+      selectedFavorite: ''
+    };
+  }
+  
+  async componentDidMount() {
+    const userWatchList = await getUserWatchlist(this.props.activeUser.id);
+    this.setState({ userWatchList });
   }
 
-  getUserEvents = async () => {
-    const { activeUser, addToWatchList } = this.props;
-    const result = await getUserWatchlist(activeUser.id);
-    result.forEach(event => {
-      addToWatchList(event);
-    });
-  };
+  handleSelection(eventItems) {
+    console.log(eventItems);
+  }
 
   render() {
-    const displayFavorites = this.props.watchList.map(favorite => (
-      <WatchListCard key={favorite.e_id} {...favorite} />
+    const displayFavorites = this.state.userWatchList.map(favorite => (
+      <WatchListCard handleSelection={() => this.handleSelection()} key={favorite.e_id} {...favorite} />
     ));
     return <div className="watch-list">{displayFavorites}</div>;
   }
 }
 
 WatchList.propTypes = {
-  watchList: PropTypes.array
+  activeUser: PropTypes.object
 };
 
 export const mapStateToProps = state => ({
-  watchList: state.watchList,
   activeUser: state.activeUser
 });
 
-export const mapDispatchToProps = dispatch => ({
-  addToWatchList: event => dispatch(addToWatchList(event))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(WatchList);
+export default connect(mapStateToProps)(WatchList);
