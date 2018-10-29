@@ -742,6 +742,7 @@ export const mockEventsResponse = {
   },
   page: { size: 2, totalElements: 991, totalPages: 496, number: 0 }
 };
+
 export const userWatchlist = [
   {
     id: 3,
