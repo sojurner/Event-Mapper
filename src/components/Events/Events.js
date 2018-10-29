@@ -113,7 +113,11 @@ export class Events extends Component {
       <div>
         {event}
         {displayPopup && <EventPopup targetEvent={targetEvent} />}
-        <EventTab />
+        <EventTab
+          showEventInfo={this.showEventInfo}
+          closePopup={this.closePopup}
+          handleModalClick={this.handleModalClick}
+        />
         <Modal
           open={displayModal}
           onClose={event => this.handleModalClick(event)}
