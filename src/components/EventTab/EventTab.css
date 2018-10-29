@@ -1,3 +1,23 @@
-.tab-name {
-  z-index: 1000;
-  display: none; }
+.tab-container {
+  z-index: 10;
+  position: absolute;
+  background-color: #e4e4e4;
+  box-shadow: 2px 2px #cdcdcd;
+  height: 100vh;
+  width: 19rem;
+  font-size: 0.6rem;
+  overflow-y: auto; }
+
+.tab-img {
+  height: 10rem;
+  width: 19rem; }
+
+.tab-card {
+  border-bottom: 3px solid #d5d5d5;
+  padding-bottom: 1rem; }
+
+.tab-card:hover {
+  background-color: aliceblue; }
+
+.tab-scroll-container {
+  margin: 10rem 0 0 0; }
