@@ -11,6 +11,7 @@ export const eventsCleaner = events => {
       url: url,
       img: images[0].url,
       date: moment(dates.start.dateTime).format('llll'),
+      unix: dates.start.dateTime,
       venue_name: venues[0].name,
       address: `${venues[0].address.line1} ${venues[0].city.name}, ${
         venues[0].state.stateCode
@@ -23,6 +24,7 @@ export const eventsCleaner = events => {
   });
 
   const uniqueEvents = removeDuplicates(parsedEvent, 'venue_name');
+  console.log(uniqueEvents);
   return uniqueEvents;
 };
 
