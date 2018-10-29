@@ -1,6 +1,21 @@
+@font-face {
+  font-family: caviar;
+  src: url('../../fonts/CaviarDreams.ttf');
+}
+
+@font-face {
+  font-family: caviar-bold;
+  src: url('../../fonts/CaviarDreams_Bold.ttf');
+}
+
 .fas,
 .fa-eye {
   font-size: 2rem;
+  color: rgb(94, 118, 118);
+  cursor: pointer;
+}
+
+.fa-eye:hover {
   color: darkslategray;
 }
 
@@ -11,4 +26,36 @@
 .hover-msg {
   font-size: 1rem;
   color: rgb(131, 131, 131);
+}
+
+.event-modal-container {
+  font-family: caviar;
+}
+
+.event-name {
+  font-family: caviar-bold;
+  color: #114211;
+}
+
+.event-venue {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.event-address {
+  font-size: 1.2rem;
+}
+
+.styles_modal__gNwvD {
+  border-radius: 1rem;
+  background-color: rgba(225, 225, 225, 0.927);
+}
+
+.event-img {
+  border-radius: 10rem;
+  filter: grayscale(50%);
+}
+
+.styles_closeIcon__1QwbI {
+  cursor: pointer;
 }
