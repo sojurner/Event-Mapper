@@ -7,16 +7,7 @@ import WatchList from '../../containers/WatchList/WatchList';
 import { LoginDisplay } from '../LoginDisplay/LoginDisplay';
 import { HomeDisplay } from '../HomeDisplay/HomeDisplay';
 
-export const Routes = ({
-  user,
-  mapType,
-  // displaySidebar,
-  // stateSidebar,
-  // changeMap,
-  // logout,
-  login,
-  redirect
-}) => {
+export const Routes = ({ user, mapType, login, redirect }) => {
   return (
     <div className="App">
       {!window.location.href.includes('app') &&
