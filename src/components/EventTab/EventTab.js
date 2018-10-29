@@ -7,7 +7,6 @@ class EventTab extends Component {
 
   render() {
     const { events } = this.props;
-    console.log(events);
     const x = events.map(event => {
       return <div>{event.name}</div>;
     });
