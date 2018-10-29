@@ -42,10 +42,7 @@ export class Map extends Component {
         center={[longitude, latitude]}
         zoom={[13]}
         style={`mapbox://styles/mapbox/${this.props.mapStyle}-v9`}
-        containerStyle={{
-          height: '100vh',
-          width: '100vw'
-        }}
+        containerStyle={{ height: '100vh', width: '100vw' }}
       >
         <Events retrieveEvents={this.retrieveEvents} />
       </Map>

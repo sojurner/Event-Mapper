@@ -76,11 +76,7 @@ class FilterBar extends Component {
   resetState = async (lat, lng) => {
     const response = await getEvents(lat, lng);
     this.props.setEvents(response);
-    this.props.setUserLocation({
-      latitude: lat,
-      longitude: lng
-    });
-
+    this.props.setUserLocation({ latitude: lat, longitude: lng });
     this.setState({ location: '', suggestions: [] });
   };
 
@@ -96,15 +92,12 @@ class FilterBar extends Component {
           onKeyDown={this.handleKeyDown}
           value={location}
         />
-
         <section ref={this.textContent} className={`suggestion-list`}>
           {suggestions.map((city, index) => {
             if (index < 7 && location.length > 1) {
               return (
                 <p
-                  className={
-                    cursor === index + 1 ? 'active-suggestion' : 'suggestion'
-                  }
+                  className={cursor === index + 1 ? 'active-suggestion' : 'suggestion'}
                   key={`suggestions-${index}`}
                   lng={city.lng}
                   lat={city.lat}
@@ -126,7 +119,4 @@ export const mapDispatchToProps = dispatch => ({
   setEvents: events => dispatch(setEvents(events))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(FilterBar);
+export default connect(null, mapDispatchToProps)(FilterBar);
