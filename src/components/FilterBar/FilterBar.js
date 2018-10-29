@@ -6,7 +6,7 @@ import './FilterBar.css';
 import { setUserLocation, setEvents } from '../../actions';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
-class FilterBar extends Component {
+export class FilterBar extends Component {
   constructor() {
     super();
     this.state = {
