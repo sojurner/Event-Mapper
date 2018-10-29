@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './EventTab.css';
 
-class EventTab extends Component {
-  displayEventTab = () => {};
-
+export class EventTab extends Component {
   render() {
     const { events, showEventInfo, closePopup, handleModalClick } = this.props;
-    const eventTab = events.map(event => {
+    const eventTab = events.map((event, index) => {
       return (
         <div
           className="tab-card"
           onMouseEnter={e => showEventInfo(e, event)}
           onMouseLeave={closePopup}
           onClick={event => handleModalClick(event, 'open')}
+          key={`tab-${index}`}
         >
           <h1 className="tab-event-name">{event.name}</h1>
           <img src={event.img} className="tab-img" />
