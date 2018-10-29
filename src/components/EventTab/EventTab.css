@@ -9,7 +9,10 @@
 
 .tab-img {
   height: 10rem;
-  width: 19rem; }
+  width: 15rem;
+  border-radius: 1rem;
+  align-self: center;
+  margin-left: 2rem; }
 
 .tab-card {
   border-top: 3px solid #d5d5d5;
@@ -18,9 +21,17 @@
   filter: grayscale(40%); }
 
 .tab-card:hover {
-  filter: grayscale(0%); }
+  filter: grayscale(0%);
+  background-color: #cecece; }
 
 .tab-scroll-container {
   margin: 7rem 0 0 0;
   overflow-y: auto;
-  height: 90vh; }
+  height: 90vh;
+  display: flex;
+  flex-direction: column; }
+
+.tab-event-name {
+  font-family: caviar;
+  letter-spacing: 2px;
+  text-align: center; }
