@@ -19,11 +19,6 @@ export const WatchListCard = ({ handleSelection, item }) => {
 };
 
 WatchListCard.propTypes = {
-  name: PropTypes.string,
-  e_id: PropTypes.string,
-  img: PropTypes.string,
-  date: PropTypes.string,
-  url: PropTypes.string,
-  venue_name: PropTypes.string,
-  address: PropTypes.string
+  item: PropTypes.object,
+  handleSelection: PropTypes.func
 };
