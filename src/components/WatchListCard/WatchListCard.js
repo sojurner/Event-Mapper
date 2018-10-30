@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './WatchListCard.css';
 
-export const WatchListCard = ({ handleSelected, item }) => {
+export const WatchListCard = ({ handleSelection, item }) => {
   return (
     <div
       className="watch-list-card-container"
       onClick={e => handleSelection(e, item)}
     >
-      <h1>{item.name}</h1>
+      <h1 className="watch-list-card">{item.name}</h1>
       <img
-        className="watchlist-img"
+        className="img-card"
         alt="shows who is playing the event"
         src={item.img}
       />

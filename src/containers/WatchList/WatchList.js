@@ -12,33 +12,33 @@ export class WatchList extends Component {
     super();
     this.state = {
       userWatchList: [],
-      displayInfo: {}
+      displayInfo: {},
       currentItem: null
     };
   }
 
-  render() {
-    const displayFavorites = this.state.userWatchList.map(favorite => (
-      <WatchListCard handleSelection={this.handleSelection} key={favorite.e_id} {...favorite} />
-    ));
-    return (
-      <div className='watch-list'>
-        <div className='favorites-list'>
-          {displayFavorites}
-        </div>
-        <SelectedInfoContainer displayInfo={this.state.displayInfo} />
+  componentDidMount() {
+    this.getUserWatchlist();
+  }
+
+  getUserWatchlist = async () => {
+    const userWatchList = await call.getUserWatchlist(this.props.activeUser.id);
+    this.setState({ userWatchList });
+  };
 
   handleSelection = async (event, selectedItem) => {
     event.preventDefault();
-    const { displayInfo } = this.state;
-  
+    const { currentItem } = this.state;
     if (currentItem !== selectedItem.id) {
       await call.getEventWeather(
         selectedItem.lat,
         selectedItem.lng,
         selectedItem.unix
       );
-      this.setState({ selectedItem, currentItem: selectedItem.id });
+      this.setState({
+        displayInfo: selectedItem,
+        currentItem: selectedItem.id
+      });
     } else {
       this.setState({ currentItem: null });
     }
@@ -47,12 +47,8 @@ export class WatchList extends Component {
   removeEvent = async (e, event) => {
     e.preventDefault();
     const { userWatchList } = this.state;
-    const response = await removeFromWatchlist(
-      this.props.activeUser.id,
-      event.id
-    );
+    await call.removeFromWatchlist(this.props.activeUser.id, event.id);
     const userList = userWatchList.filter(item => item.e_id !== event.e_id);
-    console.log(userWatchList);
     this.setState({ userWatchList: userList, currentItem: null });
   };
 
@@ -67,13 +63,11 @@ export class WatchList extends Component {
     ));
     return (
       <div className="watch-list">
-        <div className='favorites-list'>
-          {displayFavorites}
-        </div>
+        <div className="favorites-list">{displayFavorites}</div>
         {currentItem && (
           <SelectedInfoContainer
             removeEvent={this.removeEvent}
-            displayInfo={displayInfo}
+            item={displayInfo}
           />
         )}
       </div>
