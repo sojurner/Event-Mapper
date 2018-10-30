@@ -7,7 +7,7 @@ export const LoginDisplay = ({ login }) => (
     <div className="login-container">
       <h1>EVENT MAPPER</h1>
       <GoogleLogin
-        clientId={keys.googleClientId}
+        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
         className="login-button"
         buttonText="Login with Google"
         onSuccess={login}
