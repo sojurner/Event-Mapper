@@ -63,13 +63,11 @@ export class WatchList extends Component {
     ));
     return (
       <div className="watch-list">
-        <div className='favorites-list'>
-          {displayFavorites}
-        </div>
+        <div className="favorites-list">{displayFavorites}</div>
         {currentItem && (
           <SelectedInfoContainer
             removeEvent={this.removeEvent}
-            displayInfo={displayInfo}
+            item={displayInfo}
           />
         )}
       </div>
