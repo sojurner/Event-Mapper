@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { WatchListCard } from '../../components/WatchListCard/WatchListCard';
-import { SelectedWatchlist } from '../../components/SelectedWatchlist/SelectedWatchlist';
-import * as call from '../../utilities/apiCalls/apiCalls';
 
-import {
-  getUserWatchlist,
-  removeFromWatchlist
-} from '../../utilities/apiCalls/apiCalls';
+import { WatchListCard } from '../../components/WatchListCard/WatchListCard';
+import { SelectedInfoContainer } from '../../components/SelectedInfoContainer/SelectedInfoContainer';
+import * as call from '../../utilities/apiCalls/apiCalls';
 import './WatchList.css';
 
 export class WatchList extends Component {
@@ -16,19 +12,26 @@ export class WatchList extends Component {
     super();
     this.state = {
       userWatchList: [],
-      selectedItem: {},
+      displayInfo: {}
       currentItem: null
     };
   }
 
-  async componentDidMount() {
-    const userWatchList = await getUserWatchlist(this.props.activeUser.id);
-    this.setState({ userWatchList });
-  }
+  render() {
+    const displayFavorites = this.state.userWatchList.map(favorite => (
+      <WatchListCard handleSelection={this.handleSelection} key={favorite.e_id} {...favorite} />
+    ));
+    return (
+      <div className='watch-list'>
+        <div className='favorites-list'>
+          {displayFavorites}
+        </div>
+        <SelectedInfoContainer displayInfo={this.state.displayInfo} />
 
   handleSelection = async (event, selectedItem) => {
-    const { currentItem } = this.state;
     event.preventDefault();
+    const { displayInfo } = this.state;
+  
     if (currentItem !== selectedItem.id) {
       await call.getEventWeather(
         selectedItem.lat,
@@ -54,7 +57,7 @@ export class WatchList extends Component {
   };
 
   render() {
-    const { selectedItem, userWatchList, currentItem } = this.state;
+    const { displayInfo, userWatchList, currentItem } = this.state;
     const displayFavorites = userWatchList.map(item => (
       <WatchListCard
         handleSelection={this.handleSelection}
@@ -64,11 +67,13 @@ export class WatchList extends Component {
     ));
     return (
       <div className="watch-list">
-        {displayFavorites}
+        <div className='favorites-list'>
+          {displayFavorites}
+        </div>
         {currentItem && (
-          <SelectedWatchlist
+          <SelectedInfoContainer
             removeEvent={this.removeEvent}
-            item={selectedItem}
+            displayInfo={displayInfo}
           />
         )}
       </div>

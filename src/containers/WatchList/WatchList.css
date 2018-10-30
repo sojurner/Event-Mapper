@@ -1,5 +1,10 @@
 .watch-list {
   display: flex;
-  flex-direction: column;
-  padding: 1em 0 1em 1em;
-  border-radius: 0.5em; }
+  background: #e4e4e4;
+  height: 100vh;
+  width: fit-content; }
+
+.favorites-list {
+  width: 19rem;
+  font-size: 0.6rem;
+  border-right: 3px solid darkgray; }

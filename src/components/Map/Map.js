@@ -5,7 +5,7 @@ import ReactMapboxGl from 'react-mapbox-gl';
 
 import { UserLocation } from '../UserLocation/UserLocation';
 import Events from '../Events/Events';
-import { setEvents, setUserLocation } from '../../actions/index.js';
+import { setEvents } from '../../actions/index.js';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
 

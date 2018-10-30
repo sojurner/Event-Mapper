@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './WatchListCard.css';
 
-export const WatchListCard = ({ handleSelection, item }) => {
+export const WatchListCard = ({ handleSelected, item }) => {
   return (
     <div
-      className="watchlist-card-container"
+      className="watch-list-card-container"
       onClick={e => handleSelection(e, item)}
     >
       <h1>{item.name}</h1>
