@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import './Profile.css';
 
 const Profile = (props) => {
   const {first_name, last_name, email, imageUrl } = props.activeUser;
