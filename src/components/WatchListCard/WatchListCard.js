@@ -5,8 +5,9 @@ import './WatchListCard.css';
 export const WatchListCard = ({ handleSelection, item }) => {
   return (
     <div
+      data-id={item.id}
       className="watch-list-card-container"
-      onClick={e => handleSelection(e, item)}
+      onClick={handleSelection.bind(null, item)}
     >
       <h1 className="watch-list-card">{item.name}</h1>
       <img

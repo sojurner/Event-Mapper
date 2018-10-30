@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SelectedInfoContainer.css';
 
-export const SelectedInfoContainer = ({ removeEvent, item }) => {
+export const SelectedInfoContainer = ({ removeEvent, item, getWeather }) => {
   return (
     <div className="selected-container">
       <p className="selected selected-date">{item.date}</p>
@@ -12,7 +12,7 @@ export const SelectedInfoContainer = ({ removeEvent, item }) => {
       <a href={item.url}>Event Info</a>
       <button
         className="selected selected-date"
-        onClick={e => removeEvent(e, item)}
+        onClick={removeEvent.bind(null, item)}
       >
         Remove from Watchlist
       </button>
