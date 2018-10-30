@@ -24,7 +24,6 @@ export const eventsCleaner = events => {
   });
 
   const uniqueEvents = removeDuplicates(parsedEvent, 'venue_name');
-  console.log(uniqueEvents);
   return uniqueEvents;
 };
 

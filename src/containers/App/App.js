@@ -24,11 +24,9 @@ export class App extends Component {
     await this.setLatLngEvents();
   }
 
-
   setLatLngEvents = () => {
     navigator.geolocation.getCurrentPosition(location => {
       const { latitude, longitude } = location.coords;
-      console.log('sds');
       this.props.setUserLocation({ latitude, longitude });
     });
   };
