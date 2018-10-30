@@ -66,6 +66,7 @@ ShallowWrapper {
             P!NK: BEAUTIFUL TRAUMA WORLD TOUR
           </h1>
           <img
+            alt="event"
             className="tab-img"
             src="https://s1.ticketm.net/dam/a/1dd/d5e86d93-5e1a-49d9-b530-70fefc0f21dd_877061_RETINA_PORTRAIT_3_2.jpg"
           />
@@ -82,6 +83,7 @@ ShallowWrapper {
             Childish Gambino
           </h1>
           <img
+            alt="event"
             className="tab-img"
             src="https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg"
           />
@@ -108,6 +110,7 @@ ShallowWrapper {
               P!NK: BEAUTIFUL TRAUMA WORLD TOUR
             </h1>
             <img
+              alt="event"
               className="tab-img"
               src="https://s1.ticketm.net/dam/a/1dd/d5e86d93-5e1a-49d9-b530-70fefc0f21dd_877061_RETINA_PORTRAIT_3_2.jpg"
             />
@@ -124,6 +127,7 @@ ShallowWrapper {
               Childish Gambino
             </h1>
             <img
+              alt="event"
               className="tab-img"
               src="https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg"
             />
@@ -145,6 +149,7 @@ ShallowWrapper {
                 P!NK: BEAUTIFUL TRAUMA WORLD TOUR
               </h1>,
               <img
+                alt="event"
                 className="tab-img"
                 src="https://s1.ticketm.net/dam/a/1dd/d5e86d93-5e1a-49d9-b530-70fefc0f21dd_877061_RETINA_PORTRAIT_3_2.jpg"
               />,
@@ -173,6 +178,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "alt": "event",
                 "className": "tab-img",
                 "src": "https://s1.ticketm.net/dam/a/1dd/d5e86d93-5e1a-49d9-b530-70fefc0f21dd_877061_RETINA_PORTRAIT_3_2.jpg",
               },
@@ -195,6 +201,7 @@ ShallowWrapper {
                 Childish Gambino
               </h1>,
               <img
+                alt="event"
                 className="tab-img"
                 src="https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg"
               />,
@@ -223,6 +230,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "alt": "event",
                 "className": "tab-img",
                 "src": "https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg",
               },
@@ -259,6 +267,7 @@ ShallowWrapper {
               P!NK: BEAUTIFUL TRAUMA WORLD TOUR
             </h1>
             <img
+              alt="event"
               className="tab-img"
               src="https://s1.ticketm.net/dam/a/1dd/d5e86d93-5e1a-49d9-b530-70fefc0f21dd_877061_RETINA_PORTRAIT_3_2.jpg"
             />
@@ -275,6 +284,7 @@ ShallowWrapper {
               Childish Gambino
             </h1>
             <img
+              alt="event"
               className="tab-img"
               src="https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg"
             />
@@ -301,6 +311,7 @@ ShallowWrapper {
                 P!NK: BEAUTIFUL TRAUMA WORLD TOUR
               </h1>
               <img
+                alt="event"
                 className="tab-img"
                 src="https://s1.ticketm.net/dam/a/1dd/d5e86d93-5e1a-49d9-b530-70fefc0f21dd_877061_RETINA_PORTRAIT_3_2.jpg"
               />
@@ -317,6 +328,7 @@ ShallowWrapper {
                 Childish Gambino
               </h1>
               <img
+                alt="event"
                 className="tab-img"
                 src="https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg"
               />
@@ -338,6 +350,7 @@ ShallowWrapper {
                   P!NK: BEAUTIFUL TRAUMA WORLD TOUR
                 </h1>,
                 <img
+                  alt="event"
                   className="tab-img"
                   src="https://s1.ticketm.net/dam/a/1dd/d5e86d93-5e1a-49d9-b530-70fefc0f21dd_877061_RETINA_PORTRAIT_3_2.jpg"
                 />,
@@ -366,6 +379,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
+                  "alt": "event",
                   "className": "tab-img",
                   "src": "https://s1.ticketm.net/dam/a/1dd/d5e86d93-5e1a-49d9-b530-70fefc0f21dd_877061_RETINA_PORTRAIT_3_2.jpg",
                 },
@@ -388,6 +402,7 @@ ShallowWrapper {
                   Childish Gambino
                 </h1>,
                 <img
+                  alt="event"
                   className="tab-img"
                   src="https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg"
                 />,
@@ -416,6 +431,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
+                  "alt": "event",
                   "className": "tab-img",
                   "src": "https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg",
                 },

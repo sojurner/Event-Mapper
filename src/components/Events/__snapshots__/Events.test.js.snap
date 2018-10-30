@@ -104,7 +104,7 @@ ShallowWrapper {
             }
           >
             <i
-              class="fas fa-map-pin"
+              className="fas fa-map-pin"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
@@ -120,7 +120,7 @@ ShallowWrapper {
             }
           >
             <i
-              class="fas fa-map-pin"
+              className="fas fa-map-pin"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
@@ -186,7 +186,7 @@ ShallowWrapper {
         "props": Object {
           "anchor": "bottom",
           "children": <i
-            class="fas fa-map-pin"
+            className="fas fa-map-pin"
             onClick={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
@@ -202,7 +202,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "class": "fas fa-map-pin",
+            "className": "fas fa-map-pin",
             "onClick": [Function],
             "onMouseEnter": [Function],
             "onMouseLeave": [Function],
@@ -220,7 +220,7 @@ ShallowWrapper {
         "props": Object {
           "anchor": "bottom",
           "children": <i
-            class="fas fa-map-pin"
+            className="fas fa-map-pin"
             onClick={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
@@ -236,7 +236,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "class": "fas fa-map-pin",
+            "className": "fas fa-map-pin",
             "onClick": [Function],
             "onMouseEnter": [Function],
             "onMouseLeave": [Function],
@@ -340,7 +340,7 @@ ShallowWrapper {
               }
             >
               <i
-                class="fas fa-map-pin"
+                className="fas fa-map-pin"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
@@ -356,7 +356,7 @@ ShallowWrapper {
               }
             >
               <i
-                class="fas fa-map-pin"
+                className="fas fa-map-pin"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
@@ -422,7 +422,7 @@ ShallowWrapper {
           "props": Object {
             "anchor": "bottom",
             "children": <i
-              class="fas fa-map-pin"
+              className="fas fa-map-pin"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
@@ -438,7 +438,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "class": "fas fa-map-pin",
+              "className": "fas fa-map-pin",
               "onClick": [Function],
               "onMouseEnter": [Function],
               "onMouseLeave": [Function],
@@ -456,7 +456,7 @@ ShallowWrapper {
           "props": Object {
             "anchor": "bottom",
             "children": <i
-              class="fas fa-map-pin"
+              className="fas fa-map-pin"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
@@ -472,7 +472,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "class": "fas fa-map-pin",
+              "className": "fas fa-map-pin",
               "onClick": [Function],
               "onMouseEnter": [Function],
               "onMouseLeave": [Function],
@@ -683,7 +683,7 @@ ShallowWrapper {
             }
           >
             <i
-              class="fas fa-map-pin"
+              className="fas fa-map-pin"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
@@ -699,7 +699,7 @@ ShallowWrapper {
             }
           >
             <i
-              class="fas fa-map-pin"
+              className="fas fa-map-pin"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
@@ -767,7 +767,7 @@ ShallowWrapper {
         "props": Object {
           "anchor": "bottom",
           "children": <i
-            class="fas fa-map-pin"
+            className="fas fa-map-pin"
             onClick={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
@@ -783,7 +783,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "class": "fas fa-map-pin",
+            "className": "fas fa-map-pin",
             "onClick": [Function],
             "onMouseEnter": [Function],
             "onMouseLeave": [Function],
@@ -801,7 +801,7 @@ ShallowWrapper {
         "props": Object {
           "anchor": "bottom",
           "children": <i
-            class="fas fa-map-pin"
+            className="fas fa-map-pin"
             onClick={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
@@ -817,7 +817,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "class": "fas fa-map-pin",
+            "className": "fas fa-map-pin",
             "onClick": [Function],
             "onMouseEnter": [Function],
             "onMouseLeave": [Function],
@@ -931,7 +931,7 @@ ShallowWrapper {
               }
             >
               <i
-                class="fas fa-map-pin"
+                className="fas fa-map-pin"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
@@ -947,7 +947,7 @@ ShallowWrapper {
               }
             >
               <i
-                class="fas fa-map-pin"
+                className="fas fa-map-pin"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
@@ -1015,7 +1015,7 @@ ShallowWrapper {
           "props": Object {
             "anchor": "bottom",
             "children": <i
-              class="fas fa-map-pin"
+              className="fas fa-map-pin"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
@@ -1031,7 +1031,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "class": "fas fa-map-pin",
+              "className": "fas fa-map-pin",
               "onClick": [Function],
               "onMouseEnter": [Function],
               "onMouseLeave": [Function],
@@ -1049,7 +1049,7 @@ ShallowWrapper {
           "props": Object {
             "anchor": "bottom",
             "children": <i
-              class="fas fa-map-pin"
+              className="fas fa-map-pin"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
@@ -1065,7 +1065,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "class": "fas fa-map-pin",
+              "className": "fas fa-map-pin",
               "onClick": [Function],
               "onMouseEnter": [Function],
               "onMouseLeave": [Function],
