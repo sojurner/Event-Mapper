@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { WatchListCard } from '../../components/WatchListCard/WatchListCard';
-import { getUserWatchlist } from '../../utilities/apiCalls/apiCalls';
+import { SelectedWatchlist } from '../../components/SelectedWatchlist/SelectedWatchlist';
+import * as call from '../../utilities/apiCalls/apiCalls';
+
+import {
+  getUserWatchlist,
+  removeFromWatchlist
+} from '../../utilities/apiCalls/apiCalls';
 import './WatchList.css';
 
 export class WatchList extends Component {
@@ -10,29 +16,63 @@ export class WatchList extends Component {
     super();
     this.state = {
       userWatchList: [],
-      selectedFavorite: {}
+      selectedItem: {},
+      currentItem: null
     };
   }
-  
+
   async componentDidMount() {
     const userWatchList = await getUserWatchlist(this.props.activeUser.id);
     this.setState({ userWatchList });
   }
 
-  handleSelection(eventItems) {
-    console.log(eventItems);
-    // const newSelectedFavorite = this.state.userWatchList.reduce((selected, favorite) => {
-    //   if(eventItems.e_id === ) {
+  handleSelection = async (event, selectedItem) => {
+    const { currentItem } = this.state;
+    event.preventDefault();
+    if (currentItem !== selectedItem.id) {
+      await call.getEventWeather(
+        selectedItem.lat,
+        selectedItem.lng,
+        selectedItem.unix
+      );
+      this.setState({ selectedItem, currentItem: selectedItem.id });
+    } else {
+      this.setState({ currentItem: null });
+    }
+  };
 
-    //   }
-    // }, {});
-  }
+  removeEvent = async (e, event) => {
+    e.preventDefault();
+    const { userWatchList } = this.state;
+    const response = await removeFromWatchlist(
+      this.props.activeUser.id,
+      event.id
+    );
+    const userList = userWatchList.filter(item => item.e_id !== event.e_id);
+    console.log(userWatchList);
+    this.setState({ userWatchList: userList, currentItem: null });
+  };
 
   render() {
-    const displayFavorites = this.state.userWatchList.map(favorite => (
-      <WatchListCard handleSelection={() => this.handleSelection()} key={favorite.e_id} {...favorite} />
+    const { selectedItem, userWatchList, currentItem } = this.state;
+    const displayFavorites = userWatchList.map(item => (
+      <WatchListCard
+        handleSelection={this.handleSelection}
+        key={item.e_id}
+        item={item}
+      />
     ));
-    return <div className="watch-list">{displayFavorites}</div>;
+    return (
+      <div className="watch-list">
+        {displayFavorites}
+        {currentItem && (
+          <SelectedWatchlist
+            removeEvent={this.removeEvent}
+            item={selectedItem}
+          />
+        )}
+      </div>
+    );
   }
 }
 
@@ -41,7 +81,8 @@ WatchList.propTypes = {
 };
 
 export const mapStateToProps = state => ({
-  activeUser: state.activeUser
+  activeUser: state.activeUser,
+  watchlist: state.watchlist
 });
 
 export default connect(mapStateToProps)(WatchList);
