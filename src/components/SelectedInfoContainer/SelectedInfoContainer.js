@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SelectedInfoContainer.css';
 
-export const SelectedInfoContainer = ({ removeEvent, item, getWeather }) => {
+export const SelectedInfoContainer = ({ removeEvent, item, weather }) => {
   return (
     <div className="selected-container">
+      <img src={require(`../../images/${weather.icon}.png`)} />
       <p className="selected selected-date">{item.date}</p>
       <p className="selected selected-distance">{item.distance}m</p>
       <p className="selected selected-date">{item.address}</p>
