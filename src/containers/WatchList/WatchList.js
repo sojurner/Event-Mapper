@@ -12,7 +12,7 @@ export class WatchList extends Component {
     super();
     this.state = {
       userWatchList: [],
-      displayInfo: {}
+      displayInfo: {},
       currentItem: null
     };
   }
