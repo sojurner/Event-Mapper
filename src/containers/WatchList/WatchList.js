@@ -13,7 +13,8 @@ export class WatchList extends Component {
     this.state = {
       userWatchList: [],
       displayInfo: {},
-      currentItem: null
+      currentItem: null,
+      weather: null
     };
   }
 
@@ -29,13 +30,7 @@ export class WatchList extends Component {
   handleSelection = selectedItem => {
     const { currentItem } = this.state;
     if (currentItem !== selectedItem.id) {
-      setTimeout(async () => {
-        const result = await call.getEventWeather(
-          selectedItem.lat,
-          selectedItem.lng,
-          selectedItem.unix
-        );
-      }, 1);
+      this.getWeather(selectedItem);
       this.setState({
         displayInfo: selectedItem,
         currentItem: selectedItem.id
@@ -43,6 +38,16 @@ export class WatchList extends Component {
     } else {
       this.setState({ currentItem: null });
     }
+  };
+
+  getWeather = async selectedItem => {
+    const weather = await call.getEventWeather(
+      selectedItem.lat,
+      selectedItem.lng,
+      selectedItem.unix
+    );
+
+    this.setState({ weather });
   };
 
   removeEvent = async event => {
@@ -53,7 +58,7 @@ export class WatchList extends Component {
   };
 
   render() {
-    const { displayInfo, userWatchList, currentItem } = this.state;
+    const { displayInfo, userWatchList, currentItem, weather } = this.state;
     const displayFavorites = userWatchList.map(item => (
       <WatchListCard
         handleSelection={this.handleSelection}
@@ -64,12 +69,14 @@ export class WatchList extends Component {
     return (
       <div className="watch-list">
         <div className="favorites-list">{displayFavorites}</div>
-        {currentItem && (
-          <SelectedInfoContainer
-            removeEvent={this.removeEvent}
-            item={displayInfo}
-          />
-        )}
+        {currentItem &&
+          weather && (
+            <SelectedInfoContainer
+              weather={weather}
+              removeEvent={this.removeEvent}
+              item={displayInfo}
+            />
+          )}
       </div>
     );
   }
