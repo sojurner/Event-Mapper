@@ -10,7 +10,8 @@
   flex-direction: column;
   background: rgba(154, 154, 154, 0.9);
   border-radius: .5em;
-  padding: 1em; }
+  padding: 1em;
+  align-items: center; }
 
 .user-profile img {
   width: 9em; }
