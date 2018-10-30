@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactMapboxGl from 'react-mapbox-gl';
+
+import { UserLocation } from '../UserLocation/UserLocation';
 import Events from '../Events/Events';
 import { setEvents, setUserLocation } from '../../actions/index.js';
-
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
 
@@ -44,6 +45,7 @@ export class Map extends Component {
         style={`mapbox://styles/mapbox/${this.props.mapStyle}-v9`}
         containerStyle={{ height: '100vh', width: '100vw' }}
       >
+        <UserLocation lng={longitude} lat={latitude} />
         <Events retrieveEvents={this.retrieveEvents} />
       </Map>
     );
@@ -65,4 +67,7 @@ export const mapDispatchToProps = dispatch => ({
   setEvents: events => dispatch(setEvents(events))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Map);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Map);

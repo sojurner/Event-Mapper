@@ -98,7 +98,9 @@ export class FilterBar extends Component {
             if (index < 7 && location.length > 1) {
               return (
                 <p
-                  className={cursor === index + 1 ? 'active-suggestion' : 'suggestion'}
+                  className={
+                    cursor === index + 1 ? 'active-suggestion' : 'suggestion'
+                  }
                   key={`suggestions-${index}`}
                   lng={city.lng}
                   lat={city.lat}
@@ -120,4 +122,7 @@ export const mapDispatchToProps = dispatch => ({
   setEvents: events => dispatch(setEvents(events))
 });
 
-export default connect(null, mapDispatchToProps)(FilterBar);
+export default connect(
+  null,
+  mapDispatchToProps
+)(FilterBar);
