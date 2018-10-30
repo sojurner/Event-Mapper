@@ -2,7 +2,7 @@ import * as moment from 'moment';
 
 export const eventsCleaner = events => {
   if (!events._embedded) return;
-  const parsedEvent = events._embedded.events.map(event => {
+  const parsedEvent = events._embedded.events.map((event, index) => {
     const { name, id, url, images, dates } = event;
     const { venues } = event._embedded;
     return {
@@ -24,8 +24,7 @@ export const eventsCleaner = events => {
   });
 
   const uniqueEvents = removeDuplicates(parsedEvent, 'venue_name');
-  console.log(uniqueEvents);
-  return uniqueEvents;
+  return parsedEvent;
 };
 
 const removeDuplicates = (arr, prop) => {
