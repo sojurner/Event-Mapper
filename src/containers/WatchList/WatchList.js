@@ -47,12 +47,8 @@ export class WatchList extends Component {
   removeEvent = async (e, event) => {
     e.preventDefault();
     const { userWatchList } = this.state;
-    const response = await removeFromWatchlist(
-      this.props.activeUser.id,
-      event.id
-    );
+    await call.removeFromWatchlist(this.props.activeUser.id, event.id);
     const userList = userWatchList.filter(item => item.e_id !== event.e_id);
-    console.log(userWatchList);
     this.setState({ userWatchList: userList, currentItem: null });
   };
 
