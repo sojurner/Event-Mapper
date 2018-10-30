@@ -26,7 +26,6 @@ export class App extends Component {
   }
 
   setLatLngEvents =  () => {
-    console.log('sds');
     navigator.geolocation.getCurrentPosition(location => {
       const { latitude, longitude } = location.coords;
       console.log('sds');

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactMapboxGl from 'react-mapbox-gl';
 import Events from '../Events/Events';
-import { setEvents, setUserLocation } from '../../actions/index.js';
+import { setEvents } from '../../actions/index.js';
 
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';

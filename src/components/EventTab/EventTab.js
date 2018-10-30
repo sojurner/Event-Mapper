@@ -15,7 +15,7 @@ export class EventTab extends Component {
           key={`tab-${index}`}
         >
           <h1 className="tab-event-name">{event.name}</h1>
-          <img src={event.img} className="tab-img" />
+          <img alt='event' src={event.img} className="tab-img" />
         </div>
       );
     });

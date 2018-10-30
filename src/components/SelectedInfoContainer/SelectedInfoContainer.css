@@ -1,0 +1,10 @@
+.selected-wrapper {
+  display: flex;
+  transition: 2s; }
+
+.selected-container {
+  padding: 2em 1em;
+  width: 20em;
+  font-family: caviar;
+  letter-spacing: 2px;
+  font-size: 1.1em; }
