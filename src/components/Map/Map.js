@@ -30,7 +30,7 @@ export class Map extends Component {
 
   render() {
     const Map = ReactMapboxGl({
-      accessToken: TOKEN
+      accessToken: process.env.REACT_APP_MB_ACCESS_TOKEN
     });
     let { latitude, longitude } = this.state;
     const { userLocation } = this.props;

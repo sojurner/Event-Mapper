@@ -9,10 +9,9 @@ export const getEvents = async (lat, lng) => {
     .add(30, 'days')
     .utc()
     .format();
-  const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketMasterApiKey}&geoPoint=${geoCode.slice(
-    0,
-    9
-  )}&endDateTime=${unixSeven}&radius=20&size=20`;
+  const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${
+    process.env.REACT_APP_TICKET_MASTER_API_KEY
+  }&geoPoint=${geoCode.slice(0, 9)}&endDateTime=${unixSeven}&radius=20&size=20`;
   const response = await fetch(url);
   const result = await response.json();
   const cleanedEvents = eventsCleaner(result);
