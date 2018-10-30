@@ -28,15 +28,17 @@ export class WatchList extends Component {
 
   handleSelection = async (event, selectedItem) => {
     event.preventDefault();
-    const { displayInfo } = this.state;
-  
+    const { currentItem } = this.state;
     if (currentItem !== selectedItem.id) {
       await call.getEventWeather(
         selectedItem.lat,
         selectedItem.lng,
         selectedItem.unix
       );
-      this.setState({ selectedItem, currentItem: selectedItem.id });
+      this.setState({
+        displayInfo: selectedItem,
+        currentItem: selectedItem.id
+      });
     } else {
       this.setState({ currentItem: null });
     }
