@@ -7,7 +7,6 @@ import { Routes } from '../../components/Routes/Routes';
 import NavBar from '../../components/NavBar/NavBar';
 
 import { postUser } from '../../utilities/apiCalls/apiCalls';
-
 import './App.css';
 
 export class App extends Component {
@@ -25,7 +24,8 @@ export class App extends Component {
     await this.setLatLngEvents();
   }
 
-  setLatLngEvents =  () => {
+
+  setLatLngEvents = () => {
     navigator.geolocation.getCurrentPosition(location => {
       const { latitude, longitude } = location.coords;
       console.log('sds');
@@ -111,4 +111,7 @@ export const mapDispatchToProps = dispatch => ({
   setUserLocation: coordinates => dispatch(setUserLocation(coordinates))
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);

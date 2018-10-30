@@ -1,0 +1,12 @@
+.user-location {
+  height: 0.7rem;
+  width: 0.7rem;
+  border-radius: 50%;
+  z-index: 10;
+  background-color: rgb(74, 96, 108);
+  animation: dark-pulse 1.5s linear infinite;
+}
+
+.mapboxgl-marker {
+  z-index: 10;
+}
