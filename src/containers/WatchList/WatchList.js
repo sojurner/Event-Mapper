@@ -17,16 +17,14 @@ export class WatchList extends Component {
     };
   }
 
-  render() {
-    const displayFavorites = this.state.userWatchList.map(favorite => (
-      <WatchListCard handleSelection={this.handleSelection} key={favorite.e_id} {...favorite} />
-    ));
-    return (
-      <div className='watch-list'>
-        <div className='favorites-list'>
-          {displayFavorites}
-        </div>
-        <SelectedInfoContainer displayInfo={this.state.displayInfo} />
+  componentDidMount() {
+    this.getUserWatchlist();
+  }
+
+  getUserWatchlist = async () => {
+    const userWatchList = await call.getUserWatchlist(this.props.activeUser.id);
+    this.setState({ userWatchList });
+  };
 
   handleSelection = async (event, selectedItem) => {
     event.preventDefault();
