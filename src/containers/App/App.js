@@ -24,11 +24,9 @@ export class App extends Component {
     await this.setLatLngEvents();
   }
 
-
   setLatLngEvents = () => {
     navigator.geolocation.getCurrentPosition(location => {
       const { latitude, longitude } = location.coords;
-      console.log('sds');
       this.props.setUserLocation({ latitude, longitude });
     });
   };
@@ -111,7 +109,4 @@ export const mapDispatchToProps = dispatch => ({
   setUserLocation: coordinates => dispatch(setUserLocation(coordinates))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(App);
+export default connect( null, mapDispatchToProps)(App);
