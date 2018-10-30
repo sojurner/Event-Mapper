@@ -26,15 +26,16 @@ export class WatchList extends Component {
     this.setState({ userWatchList });
   };
 
-  handleSelection = async (event, selectedItem) => {
-    event.preventDefault();
+  handleSelection = selectedItem => {
     const { currentItem } = this.state;
     if (currentItem !== selectedItem.id) {
-      await call.getEventWeather(
-        selectedItem.lat,
-        selectedItem.lng,
-        selectedItem.unix
-      );
+      setTimeout(async () => {
+        const result = await call.getEventWeather(
+          selectedItem.lat,
+          selectedItem.lng,
+          selectedItem.unix
+        );
+      }, 1);
       this.setState({
         displayInfo: selectedItem,
         currentItem: selectedItem.id
@@ -44,8 +45,7 @@ export class WatchList extends Component {
     }
   };
 
-  removeEvent = async (e, event) => {
-    e.preventDefault();
+  removeEvent = async event => {
     const { userWatchList } = this.state;
     await call.removeFromWatchlist(this.props.activeUser.id, event.id);
     const userList = userWatchList.filter(item => item.e_id !== event.e_id);
