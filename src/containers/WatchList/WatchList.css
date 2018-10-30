@@ -2,5 +2,4 @@
   display: flex;
   flex-direction: column;
   padding: 1em 0 1em 1em;
-  background: rgba(154, 154, 154, 0.9);
-  border-radius: .5em; }
+  border-radius: 0.5em; }
