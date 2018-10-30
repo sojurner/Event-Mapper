@@ -12,7 +12,7 @@ export const getEvents = async (lat, lng) => {
   const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketMasterApiKey}&geoPoint=${geoCode.slice(
     0,
     9
-  )}&endDateTime=${unixSeven}&radius=30&size=100`;
+  )}&endDateTime=${unixSeven}&radius=20&size=20`;
   const response = await fetch(url);
   const result = await response.json();
   const cleanedEvents = eventsCleaner(result);
