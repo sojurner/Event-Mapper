@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { LoginDisplay } from '../LoginDisplay/LoginDisplay';
 import { HomeDisplay } from '../HomeDisplay/HomeDisplay';
@@ -42,4 +43,11 @@ export const Routes = ({ user, mapType, login, redirect }) => {
       )}
     </div>
   );
+};
+
+Routes.propTypes = {
+  user: PropTypes.object,
+  mapType: PropTypes.string, 
+  login: PropTypes.bool, 
+  redirect: PropTypes.bool
 };

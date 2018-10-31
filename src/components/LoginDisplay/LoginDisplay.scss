@@ -1,0 +1,48 @@
+.placement-container {
+  height: 110%;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  margin: -4rem 0 0rem 0;
+  justify-content: center;
+  align-items: center;
+  background: url('../../images/worldpoly.gif');
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  background-color: #0c0c0c;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(191, 186, 183, 0.9);
+  padding: 0.3em 1em;
+  border-radius: 0.3em;
+  box-shadow: 0.1em 0.2em rgba(100, 100, 100, 1);
+}
+
+.login-container h1 {
+  margin: 0;
+  font-size: 3em;
+  color: rgb(255, 255, 255);
+}
+
+.login-button {
+  font-family: 'Roboto Slab', serif;
+  margin: 0.5em;
+  padding: 0.2em 0.5em;
+  background-color: #646464;
+  border: 1px solid transparent;
+  border-radius: 0.3em;
+  color: rgb(255, 255, 255);
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  border: 1px solid rgba(255, 215, 50, 1);
+  transition: 500ms;
+}
+  
