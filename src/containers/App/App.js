@@ -38,7 +38,7 @@ export class App extends Component {
   };
 
   logout = () => {
-    this.setState({ user: null, redirect: false });
+    this.setState({ user: null, displaySidebar: false, redirect: false });
   };
 
   changeMap = (event, style) => {
