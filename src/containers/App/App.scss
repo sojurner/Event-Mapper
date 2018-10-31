@@ -115,11 +115,12 @@ button:focus {
   z-index: 30;
   cursor: pointer;
   padding: 0.3rem;
+  color: rgb(153, 153, 153);
 }
 
 .fa-window-close:hover {
   border-radius: 50%;
-  animation: dark-pulse 1.3s linear infinite;
+  color: rgb(34, 34, 34);
 }
 
 .fa-bars {
