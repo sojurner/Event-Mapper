@@ -2,7 +2,8 @@
   display: flex;
   background: #e4e4e4;
   height: 100vh;
-  width: fit-content; }
+  width: fit-content;
+  overflow-y: auto; }
 
 .favorites-list {
   width: 19rem;

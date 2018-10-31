@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactMapboxGl from 'react-mapbox-gl';
 
-import { UserLocation } from '../UserLocation/UserLocation';
+import { UserLocation } from '../../components/UserLocation/UserLocation';
 import Events from '../Events/Events';
 import { setEvents } from '../../actions/index.js';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
@@ -50,7 +50,6 @@ export class Map extends Component {
       </Map>
     ) : (
       <Map
-        zoom={[13]}
         style={`mapbox://styles/mapbox/${this.props.mapStyle}-v9`}
         containerStyle={{ height: '100vh', width: '100vw' }}
       />

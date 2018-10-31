@@ -1,6 +1,6 @@
 import React from 'react';
-import Map from '../Map/Map';
-import FilterBar from '../FilterBar/FilterBar';
+import Map from '../../containers/Map/Map';
+import FilterBar from '../../containers/FilterBar/FilterBar';
 
 export const HomeDisplay = ({ mapType }) => (
   <div>

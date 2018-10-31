@@ -1,5 +1,11 @@
 language: node_js
 node_js:
-  - "9"
+- '9'
 notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: toGp333m7sqLQ0Dc+5Hu1cmqk+kF1/BbAhiqC2O3zpJRXiA0J3y6tSbAcIC+NEA/BSbJ09EmxYEjQVLKJaatNO6H32SygrTTyXzvpLdLBrVZk/vgE4/QBwP9pw1x+ah+RDuDAuDHXOKpMbDBbqL5xrq+zaarRXKqQ3qJlBz6tfzF6j1exZdjBmEkPkvktdS+UE2SCd1qopm+EkSFD9NVrOw7QZBlXE3SNLtJHgVzdFLYFFmBK0oGLpF8AOZ5Hxm5i/J8NpRp4XsPdB1GUbszzkOu+PjUPBItBEsscGnRSo1Go6QxsldUBwx7uwfLdXO5aDNUXFGPkRihsHRa50H8cWCDDuK+DReh82nx0ZJadyy9bmqZMGilNHxOg/ULZ+ERTd0JY4MuBI6hS7knS7oQWFSwbBLoQ9MpRKiSjqJTBC4LSPeFdmP89nHqrs+NNjzwruNmJrPs0DC1pZ8Rmj5gfXFRhMn2qf6PA+nF4ZPgJwEhSJZ8EhJhEkJhdwTjnpCmiVFMMG4VEx3lqCUuE2l05mQxx1y3rduQ821ZTxM+FGhhfdXdtsLkA+tlGfJ3ltzqVVVgrphL4BcFJ0De/iuc6yAw/kwQ02zGmctZncg4PwNYH2NIL55Zs4pLfXzDjLeLpktTMz4Rj7ISrdtyqT3SN45SsTk5o8tC0r6AUDgHwG4=
+  app: event-mapper-fe
+  skip_cleanup: true
