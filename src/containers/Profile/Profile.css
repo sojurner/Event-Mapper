@@ -3,12 +3,13 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background: radial-gradient(#868686, #52535a); }
 
 .user-profile {
   display: flex;
   flex-direction: column;
-  background: rgba(154, 154, 154, 0.9);
+  background: rgba(170, 170, 170, 0.9);
   border-radius: .5em;
   padding: 1em;
   align-items: center; }
