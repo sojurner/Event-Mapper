@@ -61,6 +61,7 @@ export class WatchList extends Component {
     const { displayInfo, userWatchList, currentItem, weather } = this.state;
     const displayFavorites = userWatchList.map(item => (
       <WatchListCard
+        currentItem={currentItem}
         handleSelection={this.handleSelection}
         key={item.e_id}
         item={item}
@@ -69,14 +70,13 @@ export class WatchList extends Component {
     return (
       <div className="watch-list">
         <div className="favorites-list">{displayFavorites}</div>
-        {currentItem &&
-          weather && (
-            <SelectedInfoContainer
-              weather={weather}
-              removeEvent={this.removeEvent}
-              item={displayInfo}
-            />
-          )}
+        {currentItem && (
+          <SelectedInfoContainer
+            weather={weather}
+            removeEvent={this.removeEvent}
+            item={displayInfo}
+          />
+        )}
       </div>
     );
   }
