@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleLogin } from 'react-google-login';
+import './LoginDisplay.css';
 
 export const LoginDisplay = ({ login }) => (
   <div className="placement-container">
