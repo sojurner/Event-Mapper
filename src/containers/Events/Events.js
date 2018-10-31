@@ -8,8 +8,8 @@ import * as clean from '../../utilities/helpers/helpers';
 import * as invoke from '../../actions';
 import EventTab from '../EventTab/EventTab';
 
-import { EventModal } from '../EventModal/EventModal';
-import { EventPopup } from '../EventPopup/EventPopup';
+import { EventModal } from '../../components/EventModal/EventModal';
+import { EventPopup } from '../../components/EventPopup/EventPopup';
 
 import './Events.css';
 
@@ -147,4 +147,7 @@ export const mapDispatchToProps = dispatch => ({
   setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Events);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Events);
