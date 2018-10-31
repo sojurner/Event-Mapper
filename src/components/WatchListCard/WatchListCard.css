@@ -1,4 +1,4 @@
-.watch-list-card {
+.watch-list-card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,9 +9,21 @@
   cursor: pointer;
   filter: grayscale(40%); }
 
-.watch-list-card:hover {
+.watch-list-card-container:hover {
   filter: grayscale(0%);
   background-color: #cecece; }
+
+.watch-list-card-container-active {
+  filter: grayscale(0%);
+  background-color: #cecece;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: caviar;
+  letter-spacing: 2px;
+  border-top: 3px solid darkgray;
+  padding: 1em;
+  cursor: pointer; }
 
 .watch-list-card h1 {
   margin: 1em 0;

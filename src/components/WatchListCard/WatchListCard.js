@@ -2,11 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './WatchListCard.css';
 
-export const WatchListCard = ({ handleSelection, item }) => {
+export const WatchListCard = ({ handleSelection, item, currentItem }) => {
   return (
     <div
       data-id={item.id}
-      className="watch-list-card-container"
+      className={
+        currentItem === item.id
+          ? 'watch-list-card-container-active'
+          : 'watch-list-card-container'
+      }
       onClick={handleSelection.bind(null, item)}
     >
       <h1 className="watch-list-card">{item.name}</h1>
