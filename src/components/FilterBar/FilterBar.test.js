@@ -3,7 +3,6 @@ import React from 'react';
 import { FilterBar, mapDispatchToProps } from './FilterBar';
 import * as suggest from './mockFilterData';
 import * as mock from '../../data/mockEvents';
-// import { events } from 'react-mapbox-gl/lib/map-events';
 
 jest.mock('../../utilities/apiCalls/apiCalls');
 
