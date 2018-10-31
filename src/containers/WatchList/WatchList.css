@@ -1,6 +1,6 @@
 .watch-list {
   display: flex;
-  background: #e4e4e4;
+  background: radial-gradient(#868686, #52535a);
   height: 100vh;
   width: 100%;
   overflow-y: auto; }
@@ -8,4 +8,6 @@
 .favorites-list {
   width: 19rem;
   font-size: 0.6rem;
-  border-right: 3px solid darkgray; }
+  border-right: 3px solid darkgray;
+  background-color: #aaaaaa;
+  overflow: auto; }
