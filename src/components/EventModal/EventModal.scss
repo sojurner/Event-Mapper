@@ -11,7 +11,7 @@
 .fas,
 .fa-eye {
   font-size: 2rem;
-  color: rgb(94, 118, 118);
+  color: #5e7676;
   cursor: pointer;
 }
 
@@ -20,16 +20,18 @@
 }
 
 .far {
-  color: rgb(136, 136, 136);
+  color: #888888;
 }
 
 .hover-msg {
   font-size: 1rem;
-  color: rgb(131, 131, 131);
+  color: #838383;
 }
 
 .event-modal-container {
   font-family: caviar;
+  display: flex;
+  flex-direction: column;
 }
 
 .event-name {
@@ -54,8 +56,75 @@
 .event-img {
   border-radius: 10rem;
   filter: grayscale(50%);
+  align-self: center;
 }
 
 .styles_closeIcon__1QwbI {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1025px) {
+  .event-name {
+    font-size: 1.2rem;
+  }
+  .event-img {
+    width: 500px;
+  }
+  .event-date {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-height: 725px) {
+  .event-name {
+    font-size: 1.2rem;
+  }
+  .styles_modal__gNwvD {
+    border-radius: 1rem;
+    background-color: rgba(225, 225, 225, 0.927);
+  }
+  .event-venue {
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 1rem 0 0 0;
+  }
+  .event-address {
+    font-size: 1rem;
+  }
+  .event-img {
+    height: 200px;
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .event-name {
+    font-size: 1rem;
+  }
+
+  .styles_modal__gNwvD {
+    border-radius: 1rem;
+    background-color: rgba(225, 225, 225, 0.927);
+  }
+
+  .event-venue {
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 1rem 0 0 0;
+  }
+
+  .event-address {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .event-name {
+    font-size: 0.8rem;
+  }
+
+  .event-img {
+    height: 150px;
+    width: 200px;
+  }
 }

@@ -38,7 +38,7 @@ export class App extends Component {
   };
 
   logout = () => {
-    this.setState({ user: null, redirect: false });
+    this.setState({ user: null, redirect: false, displaySidebar: false });
   };
 
   changeMap = (event, style) => {
@@ -116,4 +116,7 @@ export const mapDispatchToProps = dispatch => ({
   setUserLocation: coordinates => dispatch(setUserLocation(coordinates))
 });
 
-export default connect( null, mapDispatchToProps)(App);
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
