@@ -3,7 +3,7 @@ export const responseGoogle1 =
 
 export const responseGoogle2 = {
   body:
-    '{"user":{"google_id":"117977763637801404146","given_name":"Paul","family_name":"K","email":"pykim0591@gmail.com"}}',
+    '{"user":{"google_id":"117977763637801404146","given_name":"Paul","family_name":"K","email":"pykim0591@gmail.com","imageUrl":"https://lh4.googleusercontent.com/-q79bv4Nc_dY/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbDO0B2Sp9SzOXeqgK19boqsTiIVAA/s96-c/photo.jpg"}}',
   headers: { 'Content-Type': 'application/json' },
   method: 'POST'
 };

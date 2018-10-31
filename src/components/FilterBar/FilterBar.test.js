@@ -1,7 +1,11 @@
 import React from 'react';
 
-import { FilterBar } from './FilterBar';
+import { FilterBar, mapDispatchToProps } from './FilterBar';
 import * as suggest from './mockFilterData';
+import * as mock from '../../data/mockEvents';
+// import { events } from 'react-mapbox-gl/lib/map-events';
+
+jest.mock('../../utilities/apiCalls/apiCalls');
 
 describe('FilterBar', () => {
   let wrapper;
@@ -44,26 +48,102 @@ describe('FilterBar', () => {
     expect(result).toEqual('east las vegas');
   });
 
-  it('should decrement state of cursor when the event.keycode is 38', () => {
-    const mockEvent = { keyCode: 38 };
+  describe('handleKeyDown', () => {
+    it('should decrement state of cursor when the event.keycode is 38', () => {
+      const mockEvent = { keyCode: 38 };
 
-    wrapper.setState({ cursor: 4 });
-    wrapper.instance().handleKeyDown(mockEvent);
+      wrapper.setState({ cursor: 4 });
+      wrapper.instance().handleKeyDown(mockEvent);
 
-    expect(wrapper.state().cursor).toEqual(3);
+      expect(wrapper.state().cursor).toEqual(3);
+    });
+
+    it('should increment state of cursor when the event.keycode is 40', () => {
+      const mockEvent = { keyCode: 40 };
+
+      wrapper.setState({ cursor: 1, suggestions: [2, 3, 4] });
+      wrapper.instance().handleKeyDown(mockEvent);
+
+      expect(wrapper.state().cursor).toEqual(2);
+
+      wrapper.setState({ cursor: 1, suggestions: [] });
+      wrapper.instance().handleKeyDown(mockEvent);
+
+      expect(wrapper.state().cursor).toEqual(1);
+    });
+
+    it.skip('should  state of cursor when event.keycode is 13', () => {
+      const mockEvent = { preventDefault: jest.fn(), keyCode: 13 };
+
+      wrapper.instance().handleKeyDown(mockEvent);
+
+      wrapper.setState({ cursor: 1, suggestions: [] });
+      wrapper.instance().handleKeyDown(mockEvent);
+
+      expect(wrapper.state().cursor).toEqual(1);
+    });
   });
 
-  it('should increment state of cursor when the event.keycode is 40', () => {
-    const mockEvent = { keyCode: 40 };
+  describe('resetState', () => {
+    it('should set state of lat and lng', () => {
+      wrapper.instance().resetState(35, -135);
+      expect(wrapper.state().location).toEqual('');
+      expect(wrapper.state().suggestions).toEqual([]);
+    });
+  });
 
-    wrapper.setState({ cursor: 1, suggestions: [2, 3, 4] });
-    wrapper.instance().handleKeyDown(mockEvent);
+  describe('mapDispatch to props', () => {
+    it('should fire an action from dispatch', () => {
+      let mockDispatch = jest.fn();
+      let mapped = mapDispatchToProps(mockDispatch);
+      mapped.setUserLocation();
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+    it('should fire an action from dispatch', () => {
+      let mockDispatch = jest.fn();
+      let mapped = mapDispatchToProps(mockDispatch);
+      mapped.setEvents();
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+  });
 
-    expect(wrapper.state().cursor).toEqual(2);
+  describe('events', () => {
+    it('should call updateValue on change of input field', () => {
+      const mockEvent = { preventDefault: jest.fn(), target: { value: 'wer' } };
+      const spy = jest.spyOn(wrapper.instance(), 'updateValue');
 
-    wrapper.setState({ cursor: 1, suggestions: [] });
-    wrapper.instance().handleKeyDown(mockEvent);
+      wrapper.instance().forceUpdate();
 
-    expect(wrapper.state().cursor).toEqual(1);
+      const marker = wrapper.find('input');
+
+      marker.simulate('change', mockEvent);
+
+      expect(spy).toHaveBeenCalled();
+    });
+
+    it('should call handleKeyDown on keydown', () => {
+      const mockEvent = { preventDefault: jest.fn(), keyCode: 2 };
+
+      const spy = jest.spyOn(wrapper.instance(), 'handleKeyDown');
+      wrapper.instance().forceUpdate();
+
+      const keyCode = wrapper.find('input');
+
+      keyCode.simulate('keyDown', mockEvent);
+
+      expect(spy).toHaveBeenCalled();
+    });
+
+    it('should call resetState on click', () => {
+      wrapper.setState({ suggestions: mock.eventsResponse, location: 'dss' });
+
+      const spy = jest.spyOn(wrapper.instance(), 'resetState');
+      wrapper.instance().forceUpdate();
+      const suggestion = wrapper.find('.suggestion').first();
+
+      suggestion.simulate('click', 35, 105);
+
+      expect(spy).toHaveBeenCalled();
+    });
   });
 });
