@@ -40,29 +40,53 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <img
-          src="cloudy.png"
-        />,
+        <section
+          className="weather-info"
+        >
+          <img
+            src="cloudy.png"
+          />
+          <p
+            className="weather-high"
+          >
+            NaN
+            °F
+          </p>
+          <p
+            className="weather-low"
+          >
+            NaN
+            °F
+          </p>
+        </section>,
+        <p
+          className="weather-precip"
+        >
+          Chance of Rain: 
+          NaN
+          %
+        </p>,
         <p
           className="selected selected-date"
         >
           Wed, Oct 31, 2018 6:30 PM
+           @
+        </p>,
+        <p
+          className="selected selected-venue"
+        >
+          Fillmore Auditorium (Denver)
         </p>,
         <p
           className="selected selected-distance"
         >
           0.5
-          m
+          M away
         </p>,
         <p
-          className="selected selected-date"
+          className="selected selected-address"
         >
           1510 Clarkson Denver, CO 80218
-        </p>,
-        <p
-          className="selected selected-date"
-        >
-          Fillmore Auditorium (Denver)
         </p>,
         <a
           href="http://concerts.livenation.com/event/1E0054E2D0B43621"
@@ -85,22 +109,125 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "src": "cloudy.png",
+          "children": Array [
+            <img
+              src="cloudy.png"
+            />,
+            <p
+              className="weather-high"
+            >
+              NaN
+              °F
+            </p>,
+            <p
+              className="weather-low"
+            >
+              NaN
+              °F
+            </p>,
+          ],
+          "className": "weather-info",
         },
         "ref": null,
-        "rendered": null,
-        "type": "img",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "src": "cloudy.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                NaN,
+                "°F",
+              ],
+              "className": "weather-high",
+            },
+            "ref": null,
+            "rendered": Array [
+              NaN,
+              "°F",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                NaN,
+                "°F",
+              ],
+              "className": "weather-low",
+            },
+            "ref": null,
+            "rendered": Array [
+              NaN,
+              "°F",
+            ],
+            "type": "p",
+          },
+        ],
+        "type": "section",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Wed, Oct 31, 2018 6:30 PM",
+          "children": Array [
+            "Chance of Rain: ",
+            NaN,
+            "%",
+          ],
+          "className": "weather-precip",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Chance of Rain: ",
+          NaN,
+          "%",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Wed, Oct 31, 2018 6:30 PM",
+            " @",
+          ],
           "className": "selected selected-date",
         },
         "ref": null,
-        "rendered": "Wed, Oct 31, 2018 6:30 PM",
+        "rendered": Array [
+          "Wed, Oct 31, 2018 6:30 PM",
+          " @",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Fillmore Auditorium (Denver)",
+          "className": "selected selected-venue",
+        },
+        "ref": null,
+        "rendered": "Fillmore Auditorium (Denver)",
         "type": "p",
       },
       Object {
@@ -110,14 +237,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             0.5,
-            "m",
+            "M away",
           ],
           "className": "selected selected-distance",
         },
         "ref": null,
         "rendered": Array [
           0.5,
-          "m",
+          "M away",
         ],
         "type": "p",
       },
@@ -127,22 +254,10 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "1510 Clarkson Denver, CO 80218",
-          "className": "selected selected-date",
+          "className": "selected selected-address",
         },
         "ref": null,
         "rendered": "1510 Clarkson Denver, CO 80218",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Fillmore Auditorium (Denver)",
-          "className": "selected selected-date",
-        },
-        "ref": null,
-        "rendered": "Fillmore Auditorium (Denver)",
         "type": "p",
       },
       Object {
@@ -180,29 +295,53 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <img
-            src="cloudy.png"
-          />,
+          <section
+            className="weather-info"
+          >
+            <img
+              src="cloudy.png"
+            />
+            <p
+              className="weather-high"
+            >
+              NaN
+              °F
+            </p>
+            <p
+              className="weather-low"
+            >
+              NaN
+              °F
+            </p>
+          </section>,
+          <p
+            className="weather-precip"
+          >
+            Chance of Rain: 
+            NaN
+            %
+          </p>,
           <p
             className="selected selected-date"
           >
             Wed, Oct 31, 2018 6:30 PM
+             @
+          </p>,
+          <p
+            className="selected selected-venue"
+          >
+            Fillmore Auditorium (Denver)
           </p>,
           <p
             className="selected selected-distance"
           >
             0.5
-            m
+            M away
           </p>,
           <p
-            className="selected selected-date"
+            className="selected selected-address"
           >
             1510 Clarkson Denver, CO 80218
-          </p>,
-          <p
-            className="selected selected-date"
-          >
-            Fillmore Auditorium (Denver)
           </p>,
           <a
             href="http://concerts.livenation.com/event/1E0054E2D0B43621"
@@ -225,22 +364,125 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "src": "cloudy.png",
+            "children": Array [
+              <img
+                src="cloudy.png"
+              />,
+              <p
+                className="weather-high"
+              >
+                NaN
+                °F
+              </p>,
+              <p
+                className="weather-low"
+              >
+                NaN
+                °F
+              </p>,
+            ],
+            "className": "weather-info",
           },
           "ref": null,
-          "rendered": null,
-          "type": "img",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "src": "cloudy.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  NaN,
+                  "°F",
+                ],
+                "className": "weather-high",
+              },
+              "ref": null,
+              "rendered": Array [
+                NaN,
+                "°F",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  NaN,
+                  "°F",
+                ],
+                "className": "weather-low",
+              },
+              "ref": null,
+              "rendered": Array [
+                NaN,
+                "°F",
+              ],
+              "type": "p",
+            },
+          ],
+          "type": "section",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Wed, Oct 31, 2018 6:30 PM",
+            "children": Array [
+              "Chance of Rain: ",
+              NaN,
+              "%",
+            ],
+            "className": "weather-precip",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Chance of Rain: ",
+            NaN,
+            "%",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Wed, Oct 31, 2018 6:30 PM",
+              " @",
+            ],
             "className": "selected selected-date",
           },
           "ref": null,
-          "rendered": "Wed, Oct 31, 2018 6:30 PM",
+          "rendered": Array [
+            "Wed, Oct 31, 2018 6:30 PM",
+            " @",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Fillmore Auditorium (Denver)",
+            "className": "selected selected-venue",
+          },
+          "ref": null,
+          "rendered": "Fillmore Auditorium (Denver)",
           "type": "p",
         },
         Object {
@@ -250,14 +492,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               0.5,
-              "m",
+              "M away",
             ],
             "className": "selected selected-distance",
           },
           "ref": null,
           "rendered": Array [
             0.5,
-            "m",
+            "M away",
           ],
           "type": "p",
         },
@@ -267,22 +509,10 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "1510 Clarkson Denver, CO 80218",
-            "className": "selected selected-date",
+            "className": "selected selected-address",
           },
           "ref": null,
           "rendered": "1510 Clarkson Denver, CO 80218",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Fillmore Auditorium (Denver)",
-            "className": "selected selected-date",
-          },
-          "ref": null,
-          "rendered": "Fillmore Auditorium (Denver)",
           "type": "p",
         },
         Object {

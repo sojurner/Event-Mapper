@@ -274,14 +274,8 @@ ShallowWrapper {
     "props": Object {
       "bearing": 0,
       "center": Array [
-        undefined,
-        undefined,
-      ],
-      "children": Array [
-        <UserLocation />,
-        <Connect(Events)
-          retrieveEvents={[Function]}
-        />,
+        -0.2416815,
+        51.5285582,
       ],
       "containerStyle": Object {
         "height": "100vh",
@@ -296,31 +290,7 @@ ShallowWrapper {
       ],
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "lat": undefined,
-          "lng": undefined,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "retrieveEvents": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
+    "rendered": null,
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -331,14 +301,8 @@ ShallowWrapper {
       "props": Object {
         "bearing": 0,
         "center": Array [
-          undefined,
-          undefined,
-        ],
-        "children": Array [
-          <UserLocation />,
-          <Connect(Events)
-            retrieveEvents={[Function]}
-          />,
+          -0.2416815,
+          51.5285582,
         ],
         "containerStyle": Object {
           "height": "100vh",
@@ -353,31 +317,7 @@ ShallowWrapper {
         ],
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "lat": undefined,
-            "lng": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "retrieveEvents": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
+      "rendered": null,
       "type": [Function],
     },
   ],
