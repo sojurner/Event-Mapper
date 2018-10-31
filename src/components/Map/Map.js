@@ -23,6 +23,7 @@ export class Map extends Component {
   }
 
   retrieveEvents = async (lat, lng) => {
+    if (!lat && !lng) return;
     const events = await getEvents(lat, lng);
     this.props.setEvents(events);
   };
@@ -37,7 +38,7 @@ export class Map extends Component {
       latitude = userLocation.latitude;
       longitude = userLocation.longitude;
     }
-    return (
+    return latitude && longitude ? (
       <Map
         center={[longitude, latitude]}
         zoom={[13]}
@@ -47,6 +48,12 @@ export class Map extends Component {
         <UserLocation lng={longitude} lat={latitude} />
         <Events retrieveEvents={this.retrieveEvents} />
       </Map>
+    ) : (
+      <Map
+        zoom={[13]}
+        style={`mapbox://styles/mapbox/${this.props.mapStyle}-v9`}
+        containerStyle={{ height: '100vh', width: '100vw' }}
+      />
     );
   }
 }

@@ -23,19 +23,19 @@ export const eventsCleaner = events => {
     };
   });
 
-  const uniqueEvents = removeDuplicates(parsedEvent, 'venue_name');
+  // const uniqueEvents = removeDuplicates(parsedEvent, 'venue_name');
   return parsedEvent;
 };
 
-const removeDuplicates = (arr, prop) => {
-  let obj = {};
-  return Object.keys(
-    arr.reduce((prev, next) => {
-      if (!obj[next[prop]]) obj[next[prop]] = next;
-      return obj;
-    }, obj)
-  ).map(i => obj[i]);
-};
+// const removeDuplicates = (arr, prop) => {
+//   let obj = {};
+//   return Object.keys(
+//     arr.reduce((prev, next) => {
+//       if (!obj[next[prop]]) obj[next[prop]] = next;
+//       return obj;
+//     }, obj)
+//   ).map(i => obj[i]);
+// };
 
 export const cleanedUser = userInfo => {
   const { email, familyName, givenName, googleId, imageUrl } = userInfo;

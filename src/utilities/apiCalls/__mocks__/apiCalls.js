@@ -25,4 +25,12 @@ export const setFavorites = async () => {
   });
 };
 
+export const getUserWatchlist = async () => {
+  return await new Promise(resolve => {
+    return resolve({
+      json: () => Promise.resolve(events.eventsResponse)
+    });
+  });
+};
+
 // export const removeFavorite

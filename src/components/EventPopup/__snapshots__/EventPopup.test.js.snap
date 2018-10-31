@@ -187,3 +187,191 @@ ShallowWrapper {
   },
 }
 `;
+
+exports[`EventPopup should mathSnapshot if the name is longer than 38 characters 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventPopup
+    targetEvent={
+      Object {
+        "address": "1510 Clarkson Denver, CO 80218",
+        "date": "Wed, Oct 31, 2018 6:30 PM",
+        "distance": 0.5,
+        "e_id": "G5vzZ4C58cdb-",
+        "favorite": true,
+        "img": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+        "lat": "39.740611",
+        "lng": "-104.977194",
+        "name": "Danzig - 30 Year Anniversary Tourasdsadasdsadasdasdasdsadsadasdsadasdasdasd",
+        "url": "http://concerts.livenation.com/event/1E0054E2D0B43621",
+        "venue_name": "Fillmore Auditorium (Denver)",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <h1
+          className="popup-name"
+        >
+          Danzig - 30 Year Anniversary Tourasd...
+        </h1>,
+        <img
+          alt="container displaying event info"
+          className="popup-img"
+          height={200}
+          src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+        />,
+      ],
+      "className": "popup-container",
+      "coordinates": Array [
+        "-104.977194",
+        "39.740611",
+      ],
+      "offset": Object {
+        "bottom": Array [
+          0,
+          -38,
+        ],
+        "bottom-left": Array [
+          12,
+          -38,
+        ],
+        "bottom-right": Array [
+          -12,
+          -38,
+        ],
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Danzig - 30 Year Anniversary Tourasd...",
+          "className": "popup-name",
+        },
+        "ref": null,
+        "rendered": "Danzig - 30 Year Anniversary Tourasd...",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "container displaying event info",
+          "className": "popup-img",
+          "height": 200,
+          "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <h1
+            className="popup-name"
+          >
+            Danzig - 30 Year Anniversary Tourasd...
+          </h1>,
+          <img
+            alt="container displaying event info"
+            className="popup-img"
+            height={200}
+            src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+          />,
+        ],
+        "className": "popup-container",
+        "coordinates": Array [
+          "-104.977194",
+          "39.740611",
+        ],
+        "offset": Object {
+          "bottom": Array [
+            0,
+            -38,
+          ],
+          "bottom-left": Array [
+            12,
+            -38,
+          ],
+          "bottom-right": Array [
+            -12,
+            -38,
+          ],
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Danzig - 30 Year Anniversary Tourasd...",
+            "className": "popup-name",
+          },
+          "ref": null,
+          "rendered": "Danzig - 30 Year Anniversary Tourasd...",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "container displaying event info",
+            "className": "popup-img",
+            "height": 200,
+            "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

@@ -20,12 +20,12 @@ export class App extends Component {
     };
   }
 
-  async componentDidMount() {
-    await this.setLatLngEvents();
+  componentDidMount() {
+    this.setLatLngEvents();
   }
 
-  setLatLngEvents = () => {
-    navigator.geolocation.getCurrentPosition(location => {
+  setLatLngEvents = async () => {
+    await navigator.geolocation.getCurrentPosition(location => {
       const { latitude, longitude } = location.coords;
       this.props.setUserLocation({ latitude, longitude });
     });
