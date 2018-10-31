@@ -24,6 +24,7 @@ export class Map extends Component {
   }
 
   retrieveEvents = async (lat, lng) => {
+    if (!lat && !lng) return;
     const events = await getEvents(lat, lng);
     this.props.setEvents(events);
   };
