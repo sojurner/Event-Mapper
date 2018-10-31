@@ -13,7 +13,7 @@ export const getEvents = async (lat, lng) => {
     `geoPoint=${geoCode}&` +
     `endDateTime=${unixSeven}&` +
     'radius=30&' +
-    'size=100';
+    'size=20';
   const response = await fetch(url);
   const result = await response.json();
   const cleanedEvents = eventsCleaner(result);

@@ -6,7 +6,10 @@ export const SelectedInfoContainer = ({ removeEvent, item, weather }) => {
   return weather ? (
     <div className="selected-container">
       <section className="weather-info">
-        <img src={require(`../../images/${weather.icon}.png`)} />
+        <img 
+          alt='selected info for event' 
+          src={require(`../../images/${weather.icon}.png`)} 
+        />
         <p className="weather-high">
           {Math.floor(weather.high)}
           °F
@@ -31,6 +34,7 @@ export const SelectedInfoContainer = ({ removeEvent, item, weather }) => {
     </div>
   ) : (
     <img
+      alt='selected info for event'
       src={`url(https://steamusercontent-a.akamaihd.net/ugc/82592888811466982/5C5EF117E40A35C384624D15C32BEF0B1F5D8D3C/)`}
     />
   );
