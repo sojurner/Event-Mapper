@@ -7,7 +7,6 @@ import { UserLocation } from '../UserLocation/UserLocation';
 import Events from '../Events/Events';
 import { setEvents } from '../../actions/index.js';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
-import { mbAccessToken as TOKEN } from '../../utilities/apiCalls/apiKeys';
 
 export class Map extends Component {
   constructor(props) {
@@ -63,7 +62,8 @@ Map.propTypes = {
   latitude: PropTypes.number,
   longitude: PropTypes.number,
   events: PropTypes.array,
-  setEvents: PropTypes.func
+  setEvents: PropTypes.func,
+  userLocation: PropTypes.object
 };
 
 export const mapStateToProps = state => ({
@@ -74,7 +74,4 @@ export const mapDispatchToProps = dispatch => ({
   setEvents: events => dispatch(setEvents(events))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Map);
+export default connect(mapStateToProps, mapDispatchToProps)(Map);
