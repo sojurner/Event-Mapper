@@ -8,3 +8,14 @@
   font-family: caviar;
   letter-spacing: 2px;
   font-size: 1.1em; }
+
+.weather-high {
+  color: #c28181;
+  margin: auto 0.2rem; }
+
+.weather-low {
+  color: #4a4a83;
+  margin: auto 0.2rem; }
+
+.weather-info {
+  display: flex; }
