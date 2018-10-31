@@ -1,6 +1,9 @@
 import React from 'react';
 import { EventPopup } from './EventPopup';
-import { mockTargetEventFalse } from '../../data/mockEvents';
+import {
+  mockTargetEventFalse,
+  mockTargetEventFalseTwo
+} from '../../data/mockEvents';
 
 jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
   Map: () => ({})
@@ -13,6 +16,11 @@ describe('EventPopup', () => {
   });
 
   it('should matchSnapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should mathSnapshot if the name is longer than 38 characters', () => {
+    wrapper = shallow(<EventPopup targetEvent={mockTargetEventFalseTwo} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
