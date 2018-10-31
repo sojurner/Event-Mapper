@@ -29,7 +29,6 @@ ShallowWrapper {
           accessType="online"
           buttonText="Login with Google"
           className="login-button"
-          clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
           cookiePolicy="single_host_origin"
           disabledStyle={
             Object {
@@ -65,7 +64,6 @@ ShallowWrapper {
             accessType="online"
             buttonText="Login with Google"
             className="login-button"
-            clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
             cookiePolicy="single_host_origin"
             disabledStyle={
               Object {
@@ -108,7 +106,7 @@ ShallowWrapper {
             "accessType": "online",
             "buttonText": "Login with Google",
             "className": "login-button",
-            "clientId": "241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com",
+            "clientId": undefined,
             "cookiePolicy": "single_host_origin",
             "disabledStyle": Object {
               "opacity": 0.6,
@@ -150,7 +148,6 @@ ShallowWrapper {
             accessType="online"
             buttonText="Login with Google"
             className="login-button"
-            clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
             cookiePolicy="single_host_origin"
             disabledStyle={
               Object {
@@ -186,7 +183,6 @@ ShallowWrapper {
               accessType="online"
               buttonText="Login with Google"
               className="login-button"
-              clientId="241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com"
               cookiePolicy="single_host_origin"
               disabledStyle={
                 Object {
@@ -229,7 +225,7 @@ ShallowWrapper {
               "accessType": "online",
               "buttonText": "Login with Google",
               "className": "login-button",
-              "clientId": "241779944002-qa42v6cvk3kpu8da0jimdr364vn41t1r.apps.googleusercontent.com",
+              "clientId": undefined,
               "cookiePolicy": "single_host_origin",
               "disabledStyle": Object {
                 "opacity": 0.6,

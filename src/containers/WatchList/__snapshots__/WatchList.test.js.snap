@@ -1,10 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Map should change latitude and longitude coordinates if user location is not specified 1`] = `
+exports[`WatchList should match snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Map
-    events={
+  Symbol(enzyme.__unrendered__): <WatchList
+    activeUser={
+      Object {
+        "created_at": "2018-10-24T23:37:44.724Z",
+        "email": "pykim0591@gmail.com",
+        "first_name": "Paul",
+        "gid": "117977763637801404146",
+        "id": 3,
+        "last_name": "K",
+        "updated_at": "2018-10-24T23:37:44.724Z",
+      }
+    }
+    watchlist={
       Array [
         Object {
           "address": "1000 Chopper Circle Denver, CO 80204",
@@ -24,7 +35,7 @@ ShallowWrapper {
           "date": "Tue, Dec 4, 2018 7:30 PM",
           "distance": 0.75,
           "e_id": "G5vzZ4aV5O3CO",
-          "favorite": true,
+          "favorite": false,
           "img": "https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg",
           "lat": "39.74724",
           "lng": "-105.010166",
@@ -33,29 +44,6 @@ ShallowWrapper {
           "venue_name": "Pepsi Center",
         },
       ]
-    }
-    setEvents={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "json": [Function],
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
-    userLocation={
-      Object {
-        "latitude": 23,
-        "longitude": 42,
-      }
     }
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -69,121 +57,65 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
-      "bearing": 0,
-      "center": Array [
-        42,
-        23,
-      ],
       "children": Array [
-        <UserLocation
-          lat={23}
-          lng={42}
+        <div
+          className="favorites-list"
         />,
-        <Connect(Events)
-          retrieveEvents={[Function]}
-        />,
+        null,
       ],
-      "containerStyle": Object {
-        "height": "100vh",
-        "width": "100vw",
-      },
-      "movingMethod": "flyTo",
-      "onStyleLoad": [Function],
-      "pitch": 0,
-      "style": "mapbox://styles/mapbox/undefined-v9",
-      "zoom": Array [
-        13,
-      ],
+      "className": "watch-list",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "lat": 23,
-          "lng": 42,
+          "children": Array [],
+          "className": "favorites-list",
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [],
+        "type": "div",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "retrieveEvents": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
+      null,
     ],
-    "type": [Function],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
-        "bearing": 0,
-        "center": Array [
-          42,
-          23,
-        ],
         "children": Array [
-          <UserLocation
-            lat={23}
-            lng={42}
+          <div
+            className="favorites-list"
           />,
-          <Connect(Events)
-            retrieveEvents={[Function]}
-          />,
+          null,
         ],
-        "containerStyle": Object {
-          "height": "100vh",
-          "width": "100vw",
-        },
-        "movingMethod": "flyTo",
-        "onStyleLoad": [Function],
-        "pitch": 0,
-        "style": "mapbox://styles/mapbox/undefined-v9",
-        "zoom": Array [
-          13,
-        ],
+        "className": "watch-list",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "lat": 23,
-            "lng": 42,
+            "children": Array [],
+            "className": "favorites-list",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": Array [],
+          "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "retrieveEvents": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
+        null,
       ],
-      "type": [Function],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -206,11 +138,22 @@ ShallowWrapper {
 }
 `;
 
-exports[`Map should matchSnapshot 1`] = `
+exports[`WatchList should match snapshot 2`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Map
-    events={
+  Symbol(enzyme.__unrendered__): <WatchList
+    activeUser={
+      Object {
+        "created_at": "2018-10-24T23:37:44.724Z",
+        "email": "pykim0591@gmail.com",
+        "first_name": "Paul",
+        "gid": "117977763637801404146",
+        "id": 3,
+        "last_name": "K",
+        "updated_at": "2018-10-24T23:37:44.724Z",
+      }
+    }
+    watchlist={
       Array [
         Object {
           "address": "1000 Chopper Circle Denver, CO 80204",
@@ -230,7 +173,7 @@ ShallowWrapper {
           "date": "Tue, Dec 4, 2018 7:30 PM",
           "distance": 0.75,
           "e_id": "G5vzZ4aV5O3CO",
-          "favorite": true,
+          "favorite": false,
           "img": "https://s1.ticketm.net/dam/a/7d9/44a96192-d246-4946-b6b4-c1f7f975a7d9_816871_TABLET_LANDSCAPE_3_2.jpg",
           "lat": "39.74724",
           "lng": "-105.010166",
@@ -240,24 +183,6 @@ ShallowWrapper {
         },
       ]
     }
-    setEvents={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "json": [Function],
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
-    userLocation={Object {}}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -270,115 +195,65 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
-      "bearing": 0,
-      "center": Array [
-        undefined,
-        undefined,
-      ],
       "children": Array [
-        <UserLocation />,
-        <Connect(Events)
-          retrieveEvents={[Function]}
+        <div
+          className="favorites-list"
         />,
+        null,
       ],
-      "containerStyle": Object {
-        "height": "100vh",
-        "width": "100vw",
-      },
-      "movingMethod": "flyTo",
-      "onStyleLoad": [Function],
-      "pitch": 0,
-      "style": "mapbox://styles/mapbox/undefined-v9",
-      "zoom": Array [
-        13,
-      ],
+      "className": "watch-list",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "lat": undefined,
-          "lng": undefined,
+          "children": Array [],
+          "className": "favorites-list",
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [],
+        "type": "div",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "retrieveEvents": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
+      null,
     ],
-    "type": [Function],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
-        "bearing": 0,
-        "center": Array [
-          undefined,
-          undefined,
-        ],
         "children": Array [
-          <UserLocation />,
-          <Connect(Events)
-            retrieveEvents={[Function]}
+          <div
+            className="favorites-list"
           />,
+          null,
         ],
-        "containerStyle": Object {
-          "height": "100vh",
-          "width": "100vw",
-        },
-        "movingMethod": "flyTo",
-        "onStyleLoad": [Function],
-        "pitch": 0,
-        "style": "mapbox://styles/mapbox/undefined-v9",
-        "zoom": Array [
-          13,
-        ],
+        "className": "watch-list",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "lat": undefined,
-            "lng": undefined,
+            "children": Array [],
+            "className": "favorites-list",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": Array [],
+          "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "retrieveEvents": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
+        null,
       ],
-      "type": [Function],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WatchListCard should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <WatchListCard
+    handleSelection={[MockFunction]}
+    item={
+      Object {
+        "address": "1510 Clarkson Denver, CO 80218",
+        "date": "Wed, Oct 31, 2018 6:30 PM",
+        "distance": 0.5,
+        "e_id": "G5vzZ4C58cdb-",
+        "favorite": false,
+        "img": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+        "lat": "39.740611",
+        "lng": "-104.977194",
+        "name": "Danzig - 30 Year Anniversary Tour",
+        "url": "http://concerts.livenation.com/event/1E0054E2D0B43621",
+        "venue_name": "Fillmore Auditorium (Denver)",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1
+          className="watch-list-card"
+        >
+          Danzig - 30 Year Anniversary Tour
+        </h1>,
+        <img
+          alt="shows who is playing the event"
+          className="img-card"
+          src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+        />,
+      ],
+      "className": "watch-list-card-container",
+      "data-id": undefined,
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Danzig - 30 Year Anniversary Tour",
+          "className": "watch-list-card",
+        },
+        "ref": null,
+        "rendered": "Danzig - 30 Year Anniversary Tour",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "shows who is playing the event",
+          "className": "img-card",
+          "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1
+            className="watch-list-card"
+          >
+            Danzig - 30 Year Anniversary Tour
+          </h1>,
+          <img
+            alt="shows who is playing the event"
+            className="img-card"
+            src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+          />,
+        ],
+        "className": "watch-list-card-container",
+        "data-id": undefined,
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Danzig - 30 Year Anniversary Tour",
+            "className": "watch-list-card",
+          },
+          "ref": null,
+          "rendered": "Danzig - 30 Year Anniversary Tour",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "shows who is playing the event",
+            "className": "img-card",
+            "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
