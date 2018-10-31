@@ -10,3 +10,17 @@
   letter-spacing: 2px;
   font-size: 1.1em;
 }
+
+.weather-high {
+  color: rgb(194, 129, 129);
+  margin: auto 0.2rem;
+}
+
+.weather-low {
+  color: rgb(74, 74, 131);
+  margin: auto 0.2rem;
+}
+
+.weather-info {
+  display: flex;
+}
