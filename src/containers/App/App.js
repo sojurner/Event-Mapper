@@ -76,6 +76,13 @@ export class App extends Component {
                   onClick={event => this.changeMap(event, 'dark')}
                 />
               </div>
+              <div
+                className={
+                  !displaySidebar
+                    ? `quarter-circle-top-right`
+                    : 'quarter-circle-top-right-inactive'
+                }
+              />
               <i
                 className={
                   !displaySidebar
@@ -113,4 +120,7 @@ export const mapDispatchToProps = dispatch => ({
   setUserLocation: coordinates => dispatch(setUserLocation(coordinates))
 });
 
-export default connect( null, mapDispatchToProps)(App);
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
