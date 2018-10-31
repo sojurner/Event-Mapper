@@ -4,23 +4,98 @@
 }
 
 .selected-container {
-  padding: 2em 1em;
-  width: 20em;
+  padding: 0 1.5em;
+  width: 100%;
   font-family: caviar;
   letter-spacing: 2px;
   font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
 }
 
 .weather-high {
-  color: rgb(194, 129, 129);
+  color: rgb(236, 115, 115);
   margin: auto 0.2rem;
 }
 
 .weather-low {
-  color: rgb(74, 74, 131);
+  color: rgb(185, 185, 185);
   margin: auto 0.2rem;
+}
+
+.weather-precip {
+  margin: 1rem;
+  color: rgb(118, 165, 149);
 }
 
 .weather-info {
   display: flex;
+  justify-content: center;
+}
+
+.weather-container {
+  display: flex;
+  border: 0 2px 2px 2px solid black;
+  border: 2px solid #7c7c7c;
+  border-top: 0;
+  border-radius: 2rem;
+  border-radius: 0rem 0rem 2rem 2rem;
+  padding: 0.5rem;
+}
+
+.selected-date {
+  font-size: 4rem;
+  color: #acabab;
+}
+
+.selected-venue {
+  font-size: 2.5rem;
+  color: #020202;
+}
+
+.selected-distance {
+  font-size: 1.3rem;
+  color: #222222;
+}
+
+.selected-address {
+  font-size: 2rem;
+  color: #c7c7c7;
+}
+
+.selected-remove {
+  font-family: caviar;
+  font-weight: 800;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 1.3px;
+  border-radius: 1rem;
+  border-color: #383535;
+  cursor: pointer;
+  margin: 2rem;
+}
+
+.selected-remove:hover {
+  background-color: rgb(104, 104, 104);
+  color: rgb(163, 145, 145);
+}
+
+.selected-link {
+  font-weight: 800;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 1.3px;
+  border: 1px solid black;
+  border-radius: 1rem;
+  border-color: #383535;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.selected-link:hover {
+  background-color: rgb(104, 104, 104);
+  color: rgb(144, 170, 185);
 }

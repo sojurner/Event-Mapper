@@ -6,35 +6,45 @@ export const SelectedInfoContainer = ({ removeEvent, item, weather }) => {
   return weather ? (
     <div className="selected-container">
       <section className="weather-info">
-        <img 
-          alt='selected info for event' 
-          src={require(`../../images/${weather.icon}.png`)} 
-        />
-        <p className="weather-high">
-          {Math.floor(weather.high)}
-          °F
-        </p>
-        <p className="weather-low">
-          {Math.floor(weather.low)}
-          °F
-        </p>
+        <div className="weather-container">
+          <img
+            alt="selected info for event"
+            src={require(`../../images/${weather.icon}.png`)}
+          />
+          <p className="weather-high">
+            {Math.floor(weather.high)}
+            °F
+          </p>
+          <p className="weather-low">
+            {Math.floor(weather.low)}
+            °F
+          </p>
+          <p className="weather-precip">
+            Chance of Rain: {weather.precip * 100}%
+          </p>
+        </div>
       </section>
-      <p className="weather-precip">Chance of Rain: {weather.precip * 100}%</p>
-      <p className="selected selected-date">{item.date} @</p>
-      <p className="selected selected-venue">{item.venue_name}</p>
-      <p className="selected selected-distance">{item.distance}M away</p>
-      <p className="selected selected-address">{item.address}</p>
-      <a href={item.url}>Event Info</a>
-      <button
-        className="selected selected-date"
-        onClick={removeEvent.bind(null, item)}
-      >
-        Remove from Watchlist
-      </button>
+      <div className="item-info">
+        <p className="selected selected-date">{item.date} @</p>
+        <p className="selected selected-venue">{item.venue_name}</p>
+        <p className="selected selected-address">{item.address}</p>
+        <p className="selected selected-distance">
+          Distance: {item.distance} miles
+        </p>
+        <a className="selected-link" href={item.url}>
+          Event Info
+        </a>
+        <button
+          className="selected selected-remove"
+          onClick={removeEvent.bind(null, item)}
+        >
+          Remove from Watchlist
+        </button>
+      </div>
     </div>
   ) : (
     <img
-      alt='selected info for event'
+      alt="selected info for event"
       src={`url(https://steamusercontent-a.akamaihd.net/ugc/82592888811466982/5C5EF117E40A35C384624D15C32BEF0B1F5D8D3C/)`}
     />
   );
