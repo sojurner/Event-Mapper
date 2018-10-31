@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { loginUser, setUserLocation } from '../../actions';
 import { Routes } from '../../components/Routes/Routes';
-import NavBar from '../../components/NavBar/NavBar';
+import NavBar from '../NavBar/NavBar';
 
 import { postUser } from '../../utilities/apiCalls/apiCalls';
 import './App.css';

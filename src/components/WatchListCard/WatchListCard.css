@@ -8,26 +8,21 @@
   border-top: 3px solid darkgray;
   padding: 1em;
   cursor: pointer;
-  filter: grayscale(40%);
-}
+  filter: grayscale(40%); }
 
 .watch-list-card-container:hover {
   filter: grayscale(0%);
-  background-color: #cecece;
-}
+  background-color: #cecece; }
 
 .watch-list-card-container-active {
   filter: grayscale(0%);
-  background-color: #cecece;
-}
+  background-color: #cecece; }
 
 .watch-list-card h1 {
   margin: 1em 0;
-  text-align: center;
-}
+  text-align: center; }
 
 .img-card {
   height: 10rem;
   width: 15rem;
-  border-radius: 1rem;
-}
+  border-radius: 1rem; }
