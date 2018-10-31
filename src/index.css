@@ -1,7 +1,9 @@
 html {
-  background: url('./images/concert_crowd.jpg');
+  background: url('./images/worldpoly.gif');
   background-repeat: no-repeat;
-  background-size: 120%;
+  background-size: 70%;
+  background-position: center;
+  background-color: #0c0c0c;
 }
 
 body {
