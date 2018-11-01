@@ -21,9 +21,7 @@ ShallowWrapper {
     "props": Object {
       "children": <div>
         <Connect(FilterBar) />
-        <Connect(Map)
-          mapStyle="dark"
-        />
+        <Connect(Map) />
       </div>,
     },
     "ref": null,
@@ -34,9 +32,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Connect(FilterBar) />,
-          <Connect(Map)
-            mapStyle="dark"
-          />,
+          <Connect(Map) />,
         ],
       },
       "ref": null,
@@ -54,9 +50,7 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {
-            "mapStyle": "dark",
-          },
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -74,9 +68,7 @@ ShallowWrapper {
       "props": Object {
         "children": <div>
           <Connect(FilterBar) />
-          <Connect(Map)
-            mapStyle="dark"
-          />
+          <Connect(Map) />
         </div>,
       },
       "ref": null,
@@ -87,9 +79,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <Connect(FilterBar) />,
-            <Connect(Map)
-              mapStyle="dark"
-            />,
+            <Connect(Map) />,
           ],
         },
         "ref": null,
@@ -107,9 +97,7 @@ ShallowWrapper {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
-            "props": Object {
-              "mapStyle": "dark",
-            },
+            "props": Object {},
             "ref": null,
             "rendered": null,
             "type": [Function],
