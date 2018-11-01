@@ -28,7 +28,7 @@ Watchlist page
 
 
 ## Setup
-Clone down this Repo
+Clone down this [Repo](https://github.com/JoOCon/event-mapper-fe.git)
 * Install dependencies
 ```
 npm install
