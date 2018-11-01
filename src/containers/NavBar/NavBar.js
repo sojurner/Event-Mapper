@@ -35,7 +35,8 @@ export const mapStateToProps = state => ({
 });
 
 NavBar.propTypes = {
-  activeUser: PropTypes.object
+  activeUser: PropTypes.object,
+  logout: PropTypes.func
 };
 
 export default connect(mapStateToProps)(NavBar);

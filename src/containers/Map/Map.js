@@ -85,7 +85,8 @@ Map.propTypes = {
   longitude: PropTypes.number,
   events: PropTypes.array,
   setEvents: PropTypes.func,
-  userLocation: PropTypes.object
+  userLocation: PropTypes.object,
+  mapStyle: PropTypes.string
 };
 
 export const mapStateToProps = state => ({

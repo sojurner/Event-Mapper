@@ -61,9 +61,10 @@ export const getUserWatchlist = async userId => {
 };
 
 export const getEventWeather = async (lat, lng, unix) => {
-  const url = `https://event-mapper-weather.herokuapp.com/api/v1/weather?lat=${lat}&lng=${lng}&date=${unix}`;
+  const url = `https://event-mapper-weather.herokuapp.com/api/v1/weather?lat=${lat}` +
+    `&lng=${lng}` +
+    `&date=${unix}`;
   const response = await fetch(url);
   const result = await response.json();
-  console.log(result);
   return result;
 };

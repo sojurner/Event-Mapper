@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Popup } from 'react-mapbox-gl';
 import './EventPopup.css';
 
@@ -28,4 +29,8 @@ export const EventPopup = ({ targetEvent }) => {
       />
     </Popup>
   );
+};
+
+EventPopup.propTypes = {
+  targetEvent: PropTypes.object
 };

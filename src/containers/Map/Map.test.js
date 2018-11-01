@@ -3,7 +3,6 @@ import React from 'react';
 import { Map, mapDispatchToProps, mapStateToProps } from './Map';
 import * as events from '../../data/mockEvents';
 import { mockStore } from '../../data/mockStore';
-import moment from 'moment';
 
 jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
   Map: () => ({})

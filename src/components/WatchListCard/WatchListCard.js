@@ -13,7 +13,7 @@ export const WatchListCard = ({ handleSelection, item, currentItem }) => {
       }
       onClick={handleSelection.bind(null, item)}
     >
-      <h1 className="watch-list-card">{item.name}</h1>
+      <h1 className="watch-list-card-title">{item.name}</h1>
       <img
         className="img-card"
         alt="shows who is playing the event"
@@ -25,5 +25,6 @@ export const WatchListCard = ({ handleSelection, item, currentItem }) => {
 
 WatchListCard.propTypes = {
   item: PropTypes.object,
-  handleSelection: PropTypes.func
+  handleSelection: PropTypes.func,
+  currentItem: PropTypes.object
 };

@@ -7,7 +7,7 @@ import { HomeDisplay } from '../HomeDisplay/HomeDisplay';
 import Profile from '../../containers/Profile/Profile';
 import WatchList from '../../containers/WatchList/WatchList';
 
-export const Routes = ({ user, mapType, login, redirect }) => {
+export const Routes = ({ user, login, redirect }) => {
   return (
     <div className="App">
       {!window.location.href.includes('home') &&
@@ -47,7 +47,6 @@ export const Routes = ({ user, mapType, login, redirect }) => {
 
 Routes.propTypes = {
   user: PropTypes.object,
-  mapType: PropTypes.string,
-  login: PropTypes.bool,
+  login: PropTypes.func,
   redirect: PropTypes.bool
 };

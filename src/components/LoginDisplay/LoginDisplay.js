@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
 import './LoginDisplay.css';
 
@@ -16,3 +17,7 @@ export const LoginDisplay = ({ login }) => (
     </div>
   </div>
 );
+
+LoginDisplay.propTypes = {
+  login: PropTypes.func
+};

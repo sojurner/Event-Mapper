@@ -83,6 +83,8 @@ export class App extends Component {
 
 App.propTypes = {
   user: PropTypes.object,
+  displaySidebar: PropTypes.bool,
+  redirect: PropTypes.bool,
   loginUser: PropTypes.func,
   setUserLocation: PropTypes.func
 };
