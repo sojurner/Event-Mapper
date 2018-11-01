@@ -14,19 +14,21 @@
   flex-direction: column;
 }
 
-.weather-high {
+.weather-high,
+.weather-low {
   color: rgb(236, 115, 115);
   margin: auto 0.2rem;
+  font-size: 1.4rem;
 }
 
 .weather-low {
-  color: rgb(185, 185, 185);
-  margin: auto 0.2rem;
+  color: rgb(184, 184, 184);
 }
 
 .weather-precip {
-  margin: 1rem;
-  color: rgb(118, 165, 149);
+  margin: 1.3rem;
+  font-size: 1.2rem;
+  color: rgb(202, 248, 233);
 }
 
 .weather-info {
@@ -47,20 +49,22 @@
 
 .item-info {
   height: 100%;
-  font-size: .9em;
+  // font-size: 0.9em;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
 }
 
 .selected-title {
-  margin: .5em 0 0 0;
-  font-size: 4em;
+  margin: 0.5em 0 0 0;
+  font-size: 3em;
   color: #020202;
 }
 
 .selected-date {
-  margin: .5em 0;
-  font-size: 3em;
+  margin: 0.5em 0;
+  font-size: 2.5em;
   color: #acabab;
 }
 
@@ -71,7 +75,7 @@
 }
 
 .selected-address {
-  margin: .5em 0;
+  margin: 0.5em 0;
   font-size: 2em;
   color: #c7c7c7;
 }
@@ -87,11 +91,12 @@
   border-color: #383535;
   cursor: pointer;
   margin: 1rem;
+  color: rgb(211, 211, 211);
 }
 
 .selected-remove:hover {
-  background-color: rgb(104, 104, 104);
-  color: rgb(163, 145, 145);
+  background-color: rgb(90, 90, 90);
+  color: rgb(190, 170, 170);
 }
 
 .selected-link {
@@ -105,27 +110,57 @@
   border-color: #383535;
   cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: rgb(211, 211, 211);
 }
 
 .selected-link:hover {
-  background-color: rgb(104, 104, 104);
-  color: rgb(144, 170, 185);
+  color: rgb(168, 196, 212);
+  background-color: rgb(90, 90, 90);
 }
 
 @media only screen and (max-width: 1000px) {
   .item-info {
-    justify-content: space-between;
   }
   .selected-container {
     padding: 0 1em;
     letter-spacing: 0;
     width: unset;
   }
+
+  .selected-title {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 2.5em;
+  }
+
+  .selected-date {
+    font-size: 1.3em;
+  }
+
+  .selected-address {
+    font-size: 1em;
+  }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-height: 900px) {
   .item-info {
-    font-size: .8em;
+    font-size: 1rem;
+    justify-content: start;
+    height: 20rem;
+  }
+
+  .selected {
+    margin: 2rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .selected {
+    margin: 1rem 1rem;
+  }
+
+  .selected-remove,
+  .selected-link {
+    font-size: 0.7rem;
   }
 }
