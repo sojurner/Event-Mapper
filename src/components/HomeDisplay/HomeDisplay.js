@@ -2,11 +2,11 @@ import React from 'react';
 import Map from '../../containers/Map/Map';
 import FilterBar from '../../containers/FilterBar/FilterBar';
 
-export const HomeDisplay = ({ mapType }) => (
+export const HomeDisplay = () => (
   <div>
     <div>
       <FilterBar />
-      <Map mapStyle={mapType} />
+      <Map />
     </div>
   </div>
 );
