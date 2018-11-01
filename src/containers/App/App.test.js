@@ -64,18 +64,6 @@ describe('App', () => {
     expect(wrapper.state().user).toEqual(null);
   });
 
-  it('should setState of mapType when changeMap is called', () => {
-    const mockEvent = { preventDefault: jest.fn() };
-
-    wrapper.instance().changeMap(mockEvent, 'dark');
-
-    expect(wrapper.state().mapType).toEqual('dark');
-
-    wrapper.instance().changeMap(mockEvent, 'streets');
-
-    expect(wrapper.state().mapType).toEqual('streets');
-  });
-
   it('should setState when displaySideBar is called', () => {
     expect(wrapper.state().displaySidebar).toEqual(false);
 
@@ -92,17 +80,5 @@ describe('App', () => {
     wrapper.find('i').simulate('click');
 
     expect(wrapper.state().displaySidebar).toEqual(true);
-  });
-
-  it('should setState of mapType on button click', () => {
-    const mockEvent = { preventDefault: jest.fn() };
-
-    wrapper.setState({ user: user.mockUser.profileObj });
-
-    expect(wrapper.state().mapType).toEqual('streets');
-
-    wrapper.find('button').simulate('click', mockEvent, 'dark');
-
-    expect(wrapper.state().mapType).toEqual('dark');
   });
 });
