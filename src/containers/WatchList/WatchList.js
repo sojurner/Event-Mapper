@@ -84,7 +84,8 @@ export class WatchList extends Component {
 }
 
 WatchList.propTypes = {
-  activeUser: PropTypes.object
+  activeUser: PropTypes.object,
+  watchlist: PropTypes.array
 };
 
 export const mapStateToProps = state => ({

@@ -26,5 +26,5 @@ export const WatchListCard = ({ handleSelection, item, currentItem }) => {
 WatchListCard.propTypes = {
   item: PropTypes.object,
   handleSelection: PropTypes.func,
-  currentItem: PropTypes.object
+  currentItem: PropTypes.number
 };
