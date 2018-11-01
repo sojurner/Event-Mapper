@@ -75,14 +75,15 @@ ShallowWrapper {
           className="item-info"
         >
           <p
+            className="selected selected-title"
+          >
+            Danzig - 30 Year Anniversary Tour
+          </p>
+          <p
             className="selected selected-date"
           >
             Wed, Oct 31, 2018 6:30 PM
-             @
-          </p>
-          <p
-            className="selected selected-venue"
-          >
+             @ 
             Fillmore Auditorium (Denver)
           </p>
           <p
@@ -97,18 +98,20 @@ ShallowWrapper {
             0.5
              miles
           </p>
-          <a
-            className="selected-link"
-            href="http://concerts.livenation.com/event/1E0054E2D0B43621"
-          >
-            Event Info
-          </a>
-          <button
-            className="selected selected-remove"
-            onClick={[Function]}
-          >
-            Remove from Watchlist
-          </button>
+          <div>
+            <a
+              className="selected-link"
+              href="http://concerts.livenation.com/event/1E0054E2D0B43621"
+            >
+              Event Info
+            </a>
+            <button
+              className="selected selected-remove"
+              onClick={[Function]}
+            >
+              Remove from Watchlist
+            </button>
+          </div>
         </div>,
       ],
       "className": "selected-container",
@@ -264,14 +267,15 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <p
+              className="selected selected-title"
+            >
+              Danzig - 30 Year Anniversary Tour
+            </p>,
+            <p
               className="selected selected-date"
             >
               Wed, Oct 31, 2018 6:30 PM
-               @
-            </p>,
-            <p
-              className="selected selected-venue"
-            >
+               @ 
               Fillmore Auditorium (Denver)
             </p>,
             <p
@@ -286,18 +290,20 @@ ShallowWrapper {
               0.5
                miles
             </p>,
-            <a
-              className="selected-link"
-              href="http://concerts.livenation.com/event/1E0054E2D0B43621"
-            >
-              Event Info
-            </a>,
-            <button
-              className="selected selected-remove"
-              onClick={[Function]}
-            >
-              Remove from Watchlist
-            </button>,
+            <div>
+              <a
+                className="selected-link"
+                href="http://concerts.livenation.com/event/1E0054E2D0B43621"
+              >
+                Event Info
+              </a>
+              <button
+                className="selected selected-remove"
+                onClick={[Function]}
+              >
+                Remove from Watchlist
+              </button>
+            </div>,
           ],
           "className": "item-info",
         },
@@ -308,17 +314,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                "Wed, Oct 31, 2018 6:30 PM",
-                " @",
-              ],
-              "className": "selected selected-date",
+              "children": "Danzig - 30 Year Anniversary Tour",
+              "className": "selected selected-title",
             },
             "ref": null,
-            "rendered": Array [
-              "Wed, Oct 31, 2018 6:30 PM",
-              " @",
-            ],
+            "rendered": "Danzig - 30 Year Anniversary Tour",
             "type": "p",
           },
           Object {
@@ -326,11 +326,19 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Fillmore Auditorium (Denver)",
-              "className": "selected selected-venue",
+              "children": Array [
+                "Wed, Oct 31, 2018 6:30 PM",
+                " @ ",
+                "Fillmore Auditorium (Denver)",
+              ],
+              "className": "selected selected-date",
             },
             "ref": null,
-            "rendered": "Fillmore Auditorium (Denver)",
+            "rendered": Array [
+              "Wed, Oct 31, 2018 6:30 PM",
+              " @ ",
+              "Fillmore Auditorium (Denver)",
+            ],
             "type": "p",
           },
           Object {
@@ -370,26 +378,51 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Event Info",
-              "className": "selected-link",
-              "href": "http://concerts.livenation.com/event/1E0054E2D0B43621",
+              "children": Array [
+                <a
+                  className="selected-link"
+                  href="http://concerts.livenation.com/event/1E0054E2D0B43621"
+                >
+                  Event Info
+                </a>,
+                <button
+                  className="selected selected-remove"
+                  onClick={[Function]}
+                >
+                  Remove from Watchlist
+                </button>,
+              ],
             },
             "ref": null,
-            "rendered": "Event Info",
-            "type": "a",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Remove from Watchlist",
-              "className": "selected selected-remove",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Remove from Watchlist",
-            "type": "button",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Event Info",
+                  "className": "selected-link",
+                  "href": "http://concerts.livenation.com/event/1E0054E2D0B43621",
+                },
+                "ref": null,
+                "rendered": "Event Info",
+                "type": "a",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Remove from Watchlist",
+                  "className": "selected selected-remove",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Remove from Watchlist",
+                "type": "button",
+              },
+            ],
+            "type": "div",
           },
         ],
         "type": "div",
@@ -439,14 +472,15 @@ ShallowWrapper {
             className="item-info"
           >
             <p
+              className="selected selected-title"
+            >
+              Danzig - 30 Year Anniversary Tour
+            </p>
+            <p
               className="selected selected-date"
             >
               Wed, Oct 31, 2018 6:30 PM
-               @
-            </p>
-            <p
-              className="selected selected-venue"
-            >
+               @ 
               Fillmore Auditorium (Denver)
             </p>
             <p
@@ -461,18 +495,20 @@ ShallowWrapper {
               0.5
                miles
             </p>
-            <a
-              className="selected-link"
-              href="http://concerts.livenation.com/event/1E0054E2D0B43621"
-            >
-              Event Info
-            </a>
-            <button
-              className="selected selected-remove"
-              onClick={[Function]}
-            >
-              Remove from Watchlist
-            </button>
+            <div>
+              <a
+                className="selected-link"
+                href="http://concerts.livenation.com/event/1E0054E2D0B43621"
+              >
+                Event Info
+              </a>
+              <button
+                className="selected selected-remove"
+                onClick={[Function]}
+              >
+                Remove from Watchlist
+              </button>
+            </div>
           </div>,
         ],
         "className": "selected-container",
@@ -628,14 +664,15 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <p
+                className="selected selected-title"
+              >
+                Danzig - 30 Year Anniversary Tour
+              </p>,
+              <p
                 className="selected selected-date"
               >
                 Wed, Oct 31, 2018 6:30 PM
-                 @
-              </p>,
-              <p
-                className="selected selected-venue"
-              >
+                 @ 
                 Fillmore Auditorium (Denver)
               </p>,
               <p
@@ -650,18 +687,20 @@ ShallowWrapper {
                 0.5
                  miles
               </p>,
-              <a
-                className="selected-link"
-                href="http://concerts.livenation.com/event/1E0054E2D0B43621"
-              >
-                Event Info
-              </a>,
-              <button
-                className="selected selected-remove"
-                onClick={[Function]}
-              >
-                Remove from Watchlist
-              </button>,
+              <div>
+                <a
+                  className="selected-link"
+                  href="http://concerts.livenation.com/event/1E0054E2D0B43621"
+                >
+                  Event Info
+                </a>
+                <button
+                  className="selected selected-remove"
+                  onClick={[Function]}
+                >
+                  Remove from Watchlist
+                </button>
+              </div>,
             ],
             "className": "item-info",
           },
@@ -672,17 +711,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  "Wed, Oct 31, 2018 6:30 PM",
-                  " @",
-                ],
-                "className": "selected selected-date",
+                "children": "Danzig - 30 Year Anniversary Tour",
+                "className": "selected selected-title",
               },
               "ref": null,
-              "rendered": Array [
-                "Wed, Oct 31, 2018 6:30 PM",
-                " @",
-              ],
+              "rendered": "Danzig - 30 Year Anniversary Tour",
               "type": "p",
             },
             Object {
@@ -690,11 +723,19 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Fillmore Auditorium (Denver)",
-                "className": "selected selected-venue",
+                "children": Array [
+                  "Wed, Oct 31, 2018 6:30 PM",
+                  " @ ",
+                  "Fillmore Auditorium (Denver)",
+                ],
+                "className": "selected selected-date",
               },
               "ref": null,
-              "rendered": "Fillmore Auditorium (Denver)",
+              "rendered": Array [
+                "Wed, Oct 31, 2018 6:30 PM",
+                " @ ",
+                "Fillmore Auditorium (Denver)",
+              ],
               "type": "p",
             },
             Object {
@@ -734,26 +775,51 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Event Info",
-                "className": "selected-link",
-                "href": "http://concerts.livenation.com/event/1E0054E2D0B43621",
+                "children": Array [
+                  <a
+                    className="selected-link"
+                    href="http://concerts.livenation.com/event/1E0054E2D0B43621"
+                  >
+                    Event Info
+                  </a>,
+                  <button
+                    className="selected selected-remove"
+                    onClick={[Function]}
+                  >
+                    Remove from Watchlist
+                  </button>,
+                ],
               },
               "ref": null,
-              "rendered": "Event Info",
-              "type": "a",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Remove from Watchlist",
-                "className": "selected selected-remove",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Remove from Watchlist",
-              "type": "button",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Event Info",
+                    "className": "selected-link",
+                    "href": "http://concerts.livenation.com/event/1E0054E2D0B43621",
+                  },
+                  "ref": null,
+                  "rendered": "Event Info",
+                  "type": "a",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Remove from Watchlist",
+                    "className": "selected selected-remove",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Remove from Watchlist",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
             },
           ],
           "type": "div",

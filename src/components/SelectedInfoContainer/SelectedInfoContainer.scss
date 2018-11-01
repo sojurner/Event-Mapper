@@ -6,6 +6,7 @@
 .selected-container {
   padding: 0 1.5em;
   width: 100%;
+  height: 100%;
   font-family: caviar;
   letter-spacing: 2px;
   font-size: 1.1em;
@@ -41,25 +42,37 @@
   border-radius: 2rem;
   border-radius: 0rem 0rem 2rem 2rem;
   padding: 0.5rem;
+  height: fit-content;
 }
 
-.selected-date {
-  font-size: 4rem;
-  color: #acabab;
+.item-info {
+  height: 100%;
+  font-size: .9em;
+  display: flex;
+  flex-direction: column;
 }
 
-.selected-venue {
-  font-size: 2.5rem;
+.selected-title {
+  margin: .5em 0 0 0;
+  font-size: 4em;
   color: #020202;
 }
 
+.selected-date {
+  margin: .5em 0;
+  font-size: 3em;
+  color: #acabab;
+}
+
 .selected-distance {
-  font-size: 1.3rem;
+  margin: 0;
+  font-size: 1.5em;
   color: #222222;
 }
 
 .selected-address {
-  font-size: 2rem;
+  margin: .5em 0;
+  font-size: 2em;
   color: #c7c7c7;
 }
 
@@ -73,7 +86,7 @@
   border-radius: 1rem;
   border-color: #383535;
   cursor: pointer;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .selected-remove:hover {
@@ -98,4 +111,21 @@
 .selected-link:hover {
   background-color: rgb(104, 104, 104);
   color: rgb(144, 170, 185);
+}
+
+@media only screen and (max-width: 1000px) {
+  .item-info {
+    justify-content: space-between;
+  }
+  .selected-container {
+    padding: 0 1em;
+    letter-spacing: 0;
+    width: unset;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .item-info {
+    font-size: .8em;
+  }
 }

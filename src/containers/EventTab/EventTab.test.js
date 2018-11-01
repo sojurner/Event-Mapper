@@ -1,10 +1,8 @@
 import React from 'react';
 
 import { EventTab, mapStateToProps } from './EventTab';
-import '../../data/mockEvents';
 import * as events from '../../data/mockEvents';
 import { mockStore } from '../../data/mockStore';
-import { exact } from 'prop-types';
 
 describe(EventTab, () => {
   let wrapper;

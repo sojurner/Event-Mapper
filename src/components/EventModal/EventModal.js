@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './EventModal.css';
 
 export const EventModal = ({ targetEvent, handleFavoriteClick, handleHover, hoverMessage }) => {
@@ -9,8 +10,8 @@ export const EventModal = ({ targetEvent, handleFavoriteClick, handleHover, hove
         <i
           className="fas fa-eye"
           onClick={handleFavoriteClick}
-          onMouseEnter={e => handleHover(e, 'Add to Watch-list')}
-          onMouseLeave={e => handleHover(e, '')}
+          onMouseEnter={event => handleHover(event, 'Add to Watch-list')}
+          onMouseLeave={event => handleHover(event, '')}
         >
           <span className="hover-msg">{hoverMessage}</span>
         </i>
@@ -18,8 +19,8 @@ export const EventModal = ({ targetEvent, handleFavoriteClick, handleHover, hove
         <i
           className="far fa-eye"
           onClick={handleFavoriteClick}
-          onMouseEnter={e => handleHover(e, 'Remove from Watch-list')}
-          onMouseLeave={e => handleHover(e, '')}
+          onMouseEnter={event => handleHover(event, 'Remove from Watch-list')}
+          onMouseLeave={event => handleHover(event, '')}
         >
           <span className="hover-msg">{hoverMessage}</span>
         </i>
@@ -36,4 +37,11 @@ export const EventModal = ({ targetEvent, handleFavoriteClick, handleHover, hove
       <p className="event-address">{address}</p>
     </div>
   );
+};
+
+EventModal.propTypes = {
+  targetEvent: PropTypes.object, 
+  handleFavoriteClick: PropTypes.func, 
+  handleHover: PropTypes.func, 
+  hoverMessage: PropTypes.string
 };

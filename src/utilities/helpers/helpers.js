@@ -2,7 +2,7 @@ import * as moment from 'moment';
 
 export const eventsCleaner = events => {
   if (!events._embedded) return;
-  const parsedEvent = events._embedded.events.map((event, index) => {
+  const parsedEvent = events._embedded.events.map((event) => {
     const { name, id, url, images, dates } = event;
     const { venues } = event._embedded;
     return {
@@ -22,20 +22,8 @@ export const eventsCleaner = events => {
       favorite: false
     };
   });
-
-  // const uniqueEvents = removeDuplicates(parsedEvent, 'venue_name');
   return parsedEvent;
 };
-
-// const removeDuplicates = (arr, prop) => {
-//   let obj = {};
-//   return Object.keys(
-//     arr.reduce((prev, next) => {
-//       if (!obj[next[prop]]) obj[next[prop]] = next;
-//       return obj;
-//     }, obj)
-//   ).map(i => obj[i]);
-// };
 
 export const cleanedUser = userInfo => {
   const { email, familyName, givenName, googleId, imageUrl } = userInfo;
@@ -58,7 +46,6 @@ export const eventServerCleaner = (user, event) => {
     google_id: gid,
     email
   };
-
   const eventObj = { ...event };
   delete eventObj.favorite;
   return { userObj, eventObj };

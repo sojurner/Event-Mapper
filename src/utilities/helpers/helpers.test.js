@@ -1,11 +1,6 @@
 import * as clean from './helpers';
 import { mockStateUser } from '../../data/mockUser';
-import {
-  mockTargetEventFalse,
-  mockEventsResponse
-} from '../../data/mockEvents';
-
-import * as moment from 'moment';
+import { mockTargetEventFalse } from '../../data/mockEvents';
 
 describe('eventServerCleaner', () => {
   it('should return the correct obj', () => {
@@ -37,10 +32,3 @@ describe('eventServerCleaner', () => {
     expect(result).toEqual(expected);
   });
 });
-
-// describe('eventsCleaner', () => {
-//   it('should return scraped events', () => {
-//     const result = clean.eventsCleaner(mockEventsResponse);
-//     expect(result).toEqual();
-//   });
-// });

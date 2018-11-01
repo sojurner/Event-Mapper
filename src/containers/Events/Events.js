@@ -147,7 +147,4 @@ export const mapDispatchToProps = dispatch => ({
   setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Events);
+export default connect(mapStateToProps, mapDispatchToProps)(Events);

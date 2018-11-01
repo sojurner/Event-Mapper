@@ -2,6 +2,7 @@
 .watch-list-card-container-active {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   font-family: caviar;
   letter-spacing: 2px;
@@ -18,8 +19,8 @@
   filter: grayscale(0%);
   background-color: #cecece; }
 
-.watch-list-card h1 {
-  margin: 1em 0;
+.watch-list-card-title {
+  margin: 0 0 1em 0;
   text-align: center; }
 
 .img-card {
@@ -27,10 +28,19 @@
   width: 15rem;
   border-radius: 1rem; }
 
-@media only screen and (max-width: 770px) {
-  .favorites-list {
-    width: 12rem;
-    font-size: 0.6rem;
-    border-right: 3px solid darkgray;
-    background-color: #aaaaaa;
-    overflow: auto; } }
+@media only screen and (max-width: 1000px) {
+  .img-card {
+    height: 13em;
+    width: 17em; }
+  .watch-list-card-title {
+    font-size: 2em; }
+  .watch-list-card-container,
+  .watch-list-card-container-active {
+    padding-bottom: 2em; } }
+
+@media only screen and (max-width: 750px) {
+  .img-card {
+    height: 10em;
+    width: 13em; }
+  .watch-list-card-title {
+    font-size: 1.5em; } }

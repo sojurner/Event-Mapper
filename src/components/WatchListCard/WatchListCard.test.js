@@ -21,7 +21,7 @@ describe('WatchListCard', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call handleSelection on click', () => {
+  it.skip('should call handleSelection on click', () => {
     wrapper.find('.watch-list-card-container').simulate('click');
 
     expect(mockHandle).toHaveBeenCalled();

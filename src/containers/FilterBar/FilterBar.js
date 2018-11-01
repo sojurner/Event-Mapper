@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import cities from '../../data/usCities.json';
-
 import './FilterBar.css';
 import { setUserLocation, setEvents } from '../../actions';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
@@ -88,7 +88,7 @@ export class FilterBar extends Component {
           className="location-input"
           type="text"
           placeholder="Search City"
-          onChange={e => this.updateValue(e)}
+          onChange={event => this.updateValue(event)}
           onKeyDown={this.handleKeyDown}
           value={location}
         />
@@ -104,7 +104,7 @@ export class FilterBar extends Component {
                   key={`suggestions-${index}`}
                   lng={city.lng}
                   lat={city.lat}
-                  onClick={e => this.resetState(city.lat, city.lng)}
+                  onClick={event => this.resetState(city.lat, city.lng)}
                 >
                   {city.city}, {city.state_id}
                 </p>
@@ -117,12 +117,14 @@ export class FilterBar extends Component {
   }
 }
 
+FilterBar.propTypes = {
+  setEvents: PropTypes.func,
+  setUserLocation: PropTypes.func
+};
+
 export const mapDispatchToProps = dispatch => ({
   setUserLocation: coordinates => dispatch(setUserLocation(coordinates)),
   setEvents: events => dispatch(setEvents(events))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(FilterBar);
+export default connect(null, mapDispatchToProps)(FilterBar);

@@ -36,7 +36,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <h1
-          className="watch-list-card"
+          className="watch-list-card-title"
         >
           Danzig - 30 Year Anniversary Tour
         </h1>,
@@ -58,7 +58,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Danzig - 30 Year Anniversary Tour",
-          "className": "watch-list-card",
+          "className": "watch-list-card-title",
         },
         "ref": null,
         "rendered": "Danzig - 30 Year Anniversary Tour",
@@ -88,7 +88,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h1
-            className="watch-list-card"
+            className="watch-list-card-title"
           >
             Danzig - 30 Year Anniversary Tour
           </h1>,
@@ -110,7 +110,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Danzig - 30 Year Anniversary Tour",
-            "className": "watch-list-card",
+            "className": "watch-list-card-title",
           },
           "ref": null,
           "rendered": "Danzig - 30 Year Anniversary Tour",

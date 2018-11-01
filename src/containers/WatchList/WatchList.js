@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
 import { WatchListCard } from '../../components/WatchListCard/WatchListCard';
-import { SelectedInfoContainer } from '../../components/SelectedInfoContainer/SelectedInfoContainer';
+import { 
+  SelectedInfoContainer 
+} from '../../components/SelectedInfoContainer/SelectedInfoContainer';
 import * as call from '../../utilities/apiCalls/apiCalls';
 import './WatchList.css';
 
@@ -83,7 +84,8 @@ export class WatchList extends Component {
 }
 
 WatchList.propTypes = {
-  activeUser: PropTypes.object
+  activeUser: PropTypes.object,
+  watchlist: PropTypes.array
 };
 
 export const mapStateToProps = state => ({
