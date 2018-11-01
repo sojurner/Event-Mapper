@@ -2,10 +2,24 @@
   font-family: caviar-bold;
 }
 
+.popup-container {
+  animation: fadeIn 0.4s linear;
+}
+
 .popup-img {
   border-radius: 1rem;
 }
 
 .popup-name {
   text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
