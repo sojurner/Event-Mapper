@@ -30,6 +30,19 @@ describe(EventTab, () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should match snapshot when length of event.name is greater than 36', () => {
+    wrapper = shallow(
+      <EventTab
+        showEventInfo={mockShow}
+        closePopup={mockClose}
+        handleModalClick={mockHandle}
+        events={events.mockTargetEventTrueTwo}
+      />
+    );
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should map to the store properly', () => {
     const expected = mockStore.events;
 
