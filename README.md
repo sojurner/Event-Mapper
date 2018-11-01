@@ -18,7 +18,7 @@ Watchlist page
 * React, React-Router
 * Redux
 * [React-mapbox-gl](https://github.com/alex3165/react-mapbox-gl/blob/master/docs/API.md)
-* [Ruby on Rails] (https://github.com/SSchwartz214/event_mapper_api)
+* [Ruby on Rails](https://github.com/SSchwartz214/event_mapper_api)
 
 ## APIs
 * Google O-Auth
