@@ -34,14 +34,6 @@ describe('Map', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call window.fetch with correct Params', () => {
-    wrapper.instance().retrieveEvents();
-
-    expect(mockSet).toHaveBeenCalled();
-    expect(wrapper.state().latitude).toEqual();
-    expect(wrapper.state().longitude).toEqual();
-  });
-
   it('should fire setEvents when called in mapDispatchToProps', () => {
     const mockDispatch = jest.fn();
     const mapped = mapDispatchToProps(mockDispatch);
@@ -49,6 +41,30 @@ describe('Map', () => {
     mapped.setEvents();
 
     expect(mockDispatch).toHaveBeenCalled();
+  });
+
+  it('should setState of mapType when changeMap is called', () => {
+    const mockEvent = { preventDefault: jest.fn() };
+
+    wrapper.instance().changeMap(mockEvent, 'dark');
+
+    expect(wrapper.state().mapType).toEqual('dark');
+
+    wrapper.instance().changeMap(mockEvent, 'streets');
+
+    expect(wrapper.state().mapType).toEqual('streets');
+  });
+
+  it('should setState of mapType on button click', () => {
+    const mockEvent = { preventDefault: jest.fn() };
+
+    wrapper.setState({ latitude: 232, longitude: 232 });
+
+    expect(wrapper.state().mapType).toEqual('streets');
+
+    wrapper.find('button').simulate('click', mockEvent, 'dark');
+
+    expect(wrapper.state().mapType).toEqual('dark');
   });
 
   it('should map to the store properly', () => {
