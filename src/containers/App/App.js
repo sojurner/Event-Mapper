@@ -14,7 +14,6 @@ export class App extends Component {
     super();
     this.state = {
       user: null,
-      mapType: 'streets',
       displaySidebar: false,
       redirect: false
     };
@@ -41,37 +40,17 @@ export class App extends Component {
     this.setState({ user: null, redirect: false, displaySidebar: false });
   };
 
-  changeMap = (event, style) => {
-    event.preventDefault();
-    const { mapType } = this.state;
-    mapType !== style
-      ? this.setState({ mapType: style })
-      : this.setState({ mapType: 'streets' });
-  };
-
   displaySidebar = () => {
     this.setState({ displaySidebar: !this.state.displaySidebar });
   };
 
   render() {
-    const { mapType, redirect, displaySidebar, user } = this.state;
+    const { redirect, displaySidebar, user } = this.state;
     return (
       <Router>
         <div>
           {user && (
             <div>
-              <div
-                className={
-                  mapType === 'streets'
-                    ? 'toggle-map-style'
-                    : 'toggle-map-style-active'
-                }
-              >
-                <button
-                  className={`${mapType}-button`}
-                  onClick={event => this.changeMap(event, 'dark')}
-                />
-              </div>
               <div
                 className={
                   !displaySidebar
@@ -81,9 +60,7 @@ export class App extends Component {
               />
               <i
                 className={
-                  !displaySidebar
-                    ? `fas fa-bars ${mapType}`
-                    : 'far fa-window-close'
+                  !displaySidebar ? `fas fa-bars` : 'far fa-window-close'
                 }
                 onClick={this.displaySidebar}
               />
@@ -96,7 +73,6 @@ export class App extends Component {
             displaySidebar={this.displaySidebar}
             stateSidebar={displaySidebar}
             user={user}
-            mapType={mapType}
             login={this.login}
           />
         </div>

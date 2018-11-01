@@ -21,10 +21,8 @@ ShallowWrapper {
     "props": Object {
       "children": <div>
         <Routes
-          changeMap={[Function]}
           displaySidebar={[Function]}
           login={[Function]}
-          mapType="streets"
           redirect={false}
           stateSidebar={false}
           user={null}
@@ -41,10 +39,8 @@ ShallowWrapper {
           null,
           false,
           <Routes
-            changeMap={[Function]}
             displaySidebar={[Function]}
             login={[Function]}
-            mapType="streets"
             redirect={false}
             stateSidebar={false}
             user={null}
@@ -60,10 +56,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "changeMap": [Function],
+            "changeMap": undefined,
             "displaySidebar": [Function],
             "login": [Function],
-            "mapType": "streets",
             "redirect": false,
             "stateSidebar": false,
             "user": null,
@@ -85,10 +80,8 @@ ShallowWrapper {
       "props": Object {
         "children": <div>
           <Routes
-            changeMap={[Function]}
             displaySidebar={[Function]}
             login={[Function]}
-            mapType="streets"
             redirect={false}
             stateSidebar={false}
             user={null}
@@ -105,10 +98,8 @@ ShallowWrapper {
             null,
             false,
             <Routes
-              changeMap={[Function]}
               displaySidebar={[Function]}
               login={[Function]}
-              mapType="streets"
               redirect={false}
               stateSidebar={false}
               user={null}
@@ -124,10 +115,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "changeMap": [Function],
+              "changeMap": undefined,
               "displaySidebar": [Function],
               "login": [Function],
-              "mapType": "streets",
               "redirect": false,
               "stateSidebar": false,
               "user": null,
@@ -186,10 +176,8 @@ ShallowWrapper {
           logout={[Function]}
         />
         <Routes
-          changeMap={[Function]}
           displaySidebar={[Function]}
           login={[Function]}
-          mapType="streets"
           redirect={false}
           stateSidebar={true}
           user={null}
@@ -208,10 +196,8 @@ ShallowWrapper {
             logout={[Function]}
           />,
           <Routes
-            changeMap={[Function]}
             displaySidebar={[Function]}
             login={[Function]}
-            mapType="streets"
             redirect={false}
             stateSidebar={true}
             user={null}
@@ -237,10 +223,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "changeMap": [Function],
+            "changeMap": undefined,
             "displaySidebar": [Function],
             "login": [Function],
-            "mapType": "streets",
             "redirect": false,
             "stateSidebar": true,
             "user": null,
@@ -265,10 +250,8 @@ ShallowWrapper {
             logout={[Function]}
           />
           <Routes
-            changeMap={[Function]}
             displaySidebar={[Function]}
             login={[Function]}
-            mapType="streets"
             redirect={false}
             stateSidebar={true}
             user={null}
@@ -287,10 +270,8 @@ ShallowWrapper {
               logout={[Function]}
             />,
             <Routes
-              changeMap={[Function]}
               displaySidebar={[Function]}
               login={[Function]}
-              mapType="streets"
               redirect={false}
               stateSidebar={true}
               user={null}
@@ -316,10 +297,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "changeMap": [Function],
+              "changeMap": undefined,
               "displaySidebar": [Function],
               "login": [Function],
-              "mapType": "streets",
               "redirect": false,
               "stateSidebar": true,
               "user": null,
@@ -376,23 +356,16 @@ ShallowWrapper {
       "children": <div>
         <div>
           <div
-            className="toggle-map-style"
-          >
-            <button
-              className="streets-button"
-              onClick={[Function]}
-            />
-          </div>
+            className="quarter-circle-top-right"
+          />
           <i
-            className="fas fa-bars streets"
+            className="fas fa-bars"
             onClick={[Function]}
           />
         </div>
         <Routes
-          changeMap={[Function]}
           displaySidebar={[Function]}
           login={[Function]}
-          mapType="streets"
           redirect={false}
           stateSidebar={false}
           user={
@@ -412,24 +385,17 @@ ShallowWrapper {
         "children": Array [
           <div>
             <div
-              className="toggle-map-style"
-            >
-              <button
-                className="streets-button"
-                onClick={[Function]}
-              />
-            </div>
+              className="quarter-circle-top-right"
+            />
             <i
-              className="fas fa-bars streets"
+              className="fas fa-bars"
               onClick={[Function]}
             />
           </div>,
           false,
           <Routes
-            changeMap={[Function]}
             displaySidebar={[Function]}
             login={[Function]}
-            mapType="streets"
             redirect={false}
             stateSidebar={false}
             user={
@@ -449,15 +415,10 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div
-                className="toggle-map-style"
-              >
-                <button
-                  className="streets-button"
-                  onClick={[Function]}
-                />
-              </div>,
+                className="quarter-circle-top-right"
+              />,
               <i
-                className="fas fa-bars streets"
+                className="fas fa-bars"
                 onClick={[Function]}
               />,
             ],
@@ -469,25 +430,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <button
-                  className="streets-button"
-                  onClick={[Function]}
-                />,
-                "className": "toggle-map-style",
+                "className": "quarter-circle-top-right",
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "streets-button",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "button",
-              },
+              "rendered": null,
               "type": "div",
             },
             Object {
@@ -495,7 +441,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "className": "fas fa-bars streets",
+                "className": "fas fa-bars",
                 "onClick": [Function],
               },
               "ref": null,
@@ -511,10 +457,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "changeMap": [Function],
+            "changeMap": undefined,
             "displaySidebar": [Function],
             "login": [Function],
-            "mapType": "streets",
             "redirect": false,
             "stateSidebar": false,
             "user": Object {
@@ -539,23 +484,16 @@ ShallowWrapper {
         "children": <div>
           <div>
             <div
-              className="toggle-map-style"
-            >
-              <button
-                className="streets-button"
-                onClick={[Function]}
-              />
-            </div>
+              className="quarter-circle-top-right"
+            />
             <i
-              className="fas fa-bars streets"
+              className="fas fa-bars"
               onClick={[Function]}
             />
           </div>
           <Routes
-            changeMap={[Function]}
             displaySidebar={[Function]}
             login={[Function]}
-            mapType="streets"
             redirect={false}
             stateSidebar={false}
             user={
@@ -575,24 +513,17 @@ ShallowWrapper {
           "children": Array [
             <div>
               <div
-                className="toggle-map-style"
-              >
-                <button
-                  className="streets-button"
-                  onClick={[Function]}
-                />
-              </div>
+                className="quarter-circle-top-right"
+              />
               <i
-                className="fas fa-bars streets"
+                className="fas fa-bars"
                 onClick={[Function]}
               />
             </div>,
             false,
             <Routes
-              changeMap={[Function]}
               displaySidebar={[Function]}
               login={[Function]}
-              mapType="streets"
               redirect={false}
               stateSidebar={false}
               user={
@@ -612,15 +543,10 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <div
-                  className="toggle-map-style"
-                >
-                  <button
-                    className="streets-button"
-                    onClick={[Function]}
-                  />
-                </div>,
+                  className="quarter-circle-top-right"
+                />,
                 <i
-                  className="fas fa-bars streets"
+                  className="fas fa-bars"
                   onClick={[Function]}
                 />,
               ],
@@ -632,25 +558,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <button
-                    className="streets-button"
-                    onClick={[Function]}
-                  />,
-                  "className": "toggle-map-style",
+                  "className": "quarter-circle-top-right",
                 },
                 "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "className": "streets-button",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "button",
-                },
+                "rendered": null,
                 "type": "div",
               },
               Object {
@@ -658,7 +569,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "className": "fas fa-bars streets",
+                  "className": "fas fa-bars",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -674,10 +585,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "changeMap": [Function],
+              "changeMap": undefined,
               "displaySidebar": [Function],
               "login": [Function],
-              "mapType": "streets",
               "redirect": false,
               "stateSidebar": false,
               "user": Object {

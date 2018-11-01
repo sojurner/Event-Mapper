@@ -46,7 +46,7 @@ ShallowWrapper {
           src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
         />,
       ],
-      "className": "watch-list-card-container",
+      "className": "watch-list-card-container-active",
       "data-id": undefined,
       "onClick": [Function],
     },
@@ -98,7 +98,7 @@ ShallowWrapper {
             src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
           />,
         ],
-        "className": "watch-list-card-container",
+        "className": "watch-list-card-container-active",
         "data-id": undefined,
         "onClick": [Function],
       },

@@ -44,8 +44,9 @@ export const SelectedInfoContainer = ({ removeEvent, item, weather }) => {
     </div>
   ) : (
     <img
-      alt="selected info for event"
-      src={`url(https://steamusercontent-a.akamaihd.net/ugc/82592888811466982/5C5EF117E40A35C384624D15C32BEF0B1F5D8D3C/)`}
+      className="loading-gif"
+      alt="Loading..."
+      src={require(`../../images/loading.gif`)}
     />
   );
 };
@@ -55,5 +56,3 @@ SelectedInfoContainer.propTypes = {
   item: PropTypes.object,
   weather: PropTypes.object
 };
-
-// {"summary":"Partly cloudy throughout the day.","icon":"partly-cloudy-day","precip":0.1,"high":46.67,"low":26.7}

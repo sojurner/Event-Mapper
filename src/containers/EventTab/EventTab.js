@@ -6,6 +6,9 @@ export class EventTab extends Component {
   render() {
     const { events, showEventInfo, closePopup, handleModalClick } = this.props;
     const eventTab = events.map((event, index) => {
+      if (event.name.length > 36) {
+        event.name = event.name.slice(0, 36).concat('...');
+      }
       return (
         <div
           className="tab-card"
@@ -15,7 +18,7 @@ export class EventTab extends Component {
           key={`tab-${index}`}
         >
           <h1 className="tab-event-name">{event.name}</h1>
-          <img alt='event' src={event.img} className="tab-img" />
+          <img alt="event" src={event.img} className="tab-img" />
         </div>
       );
     });

@@ -467,3 +467,286 @@ ShallowWrapper {
   },
 }
 `;
+
+exports[`EventTab should match snapshot when length of event.name is greater than 36 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventTab
+    closePopup={[MockFunction]}
+    events={
+      Array [
+        Object {
+          "address": "1510 Clarkson Denver, CO 80218",
+          "date": "Wed, Oct 31, 2018 6:30 PM",
+          "distance": 0.5,
+          "e_id": "G5vzZ4C58cdb-",
+          "favorite": true,
+          "img": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+          "lat": "39.740611",
+          "lng": "-104.977194",
+          "name": "Danzig - 30 Year Anniversary Toqdqff...",
+          "url": "http://concerts.livenation.com/event/1E0054E2D0B43621",
+          "venue_name": "Fillmore Auditorium (Denver)",
+        },
+      ]
+    }
+    handleModalClick={[MockFunction]}
+    showEventInfo={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="tab-scroll-container"
+      >
+        <div
+          className="tab-card"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[MockFunction]}
+        >
+          <h1
+            className="tab-event-name"
+          >
+            Danzig - 30 Year Anniversary Toqdqff...
+          </h1>
+          <img
+            alt="event"
+            className="tab-img"
+            src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+          />
+        </div>
+      </div>,
+      "className": "tab-container",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="tab-card"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[MockFunction]}
+          >
+            <h1
+              className="tab-event-name"
+            >
+              Danzig - 30 Year Anniversary Toqdqff...
+            </h1>
+            <img
+              alt="event"
+              className="tab-img"
+              src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+            />
+          </div>,
+        ],
+        "className": "tab-scroll-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "tab-0",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h1
+                className="tab-event-name"
+              >
+                Danzig - 30 Year Anniversary Toqdqff...
+              </h1>,
+              <img
+                alt="event"
+                className="tab-img"
+                src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+              />,
+            ],
+            "className": "tab-card",
+            "onClick": [Function],
+            "onMouseEnter": [Function],
+            "onMouseLeave": [MockFunction],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Danzig - 30 Year Anniversary Toqdqff...",
+                "className": "tab-event-name",
+              },
+              "ref": null,
+              "rendered": "Danzig - 30 Year Anniversary Toqdqff...",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "event",
+                "className": "tab-img",
+                "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="tab-scroll-container"
+        >
+          <div
+            className="tab-card"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[MockFunction]}
+          >
+            <h1
+              className="tab-event-name"
+            >
+              Danzig - 30 Year Anniversary Toqdqff...
+            </h1>
+            <img
+              alt="event"
+              className="tab-img"
+              src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+            />
+          </div>
+        </div>,
+        "className": "tab-container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="tab-card"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[MockFunction]}
+            >
+              <h1
+                className="tab-event-name"
+              >
+                Danzig - 30 Year Anniversary Toqdqff...
+              </h1>
+              <img
+                alt="event"
+                className="tab-img"
+                src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+              />
+            </div>,
+          ],
+          "className": "tab-scroll-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "tab-0",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h1
+                  className="tab-event-name"
+                >
+                  Danzig - 30 Year Anniversary Toqdqff...
+                </h1>,
+                <img
+                  alt="event"
+                  className="tab-img"
+                  src="https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg"
+                />,
+              ],
+              "className": "tab-card",
+              "onClick": [Function],
+              "onMouseEnter": [Function],
+              "onMouseLeave": [MockFunction],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Danzig - 30 Year Anniversary Toqdqff...",
+                  "className": "tab-event-name",
+                },
+                "ref": null,
+                "rendered": "Danzig - 30 Year Anniversary Toqdqff...",
+                "type": "h1",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "event",
+                  "className": "tab-img",
+                  "src": "https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

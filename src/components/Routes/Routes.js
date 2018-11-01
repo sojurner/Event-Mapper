@@ -28,7 +28,7 @@ export const Routes = ({ user, mapType, login, redirect }) => {
             exact
             path={`/home/${user.id}`}
             render={() => {
-              return <HomeDisplay mapType={mapType} />;
+              return <HomeDisplay />;
             }}
           />
           <Route
@@ -47,7 +47,7 @@ export const Routes = ({ user, mapType, login, redirect }) => {
 
 Routes.propTypes = {
   user: PropTypes.object,
-  mapType: PropTypes.string, 
-  login: PropTypes.bool, 
+  mapType: PropTypes.string,
+  login: PropTypes.bool,
   redirect: PropTypes.bool
 };

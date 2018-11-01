@@ -111,6 +111,23 @@ export const mockTargetEventFalseTwo = {
   favorite: true
 };
 
+export const mockTargetEventTrueTwo = [
+  {
+    name: 'Danzig - 30 Year Anniversary Toqdqffsdfasdfasfasdur',
+    e_id: 'G5vzZ4C58cdb-',
+    url: 'http://concerts.livenation.com/event/1E0054E2D0B43621',
+    img:
+      'https://s1.ticketm.net/dam/a/492/732ca6af-f94f-477d-9e66-5f56f9e54492_450551_EVENT_DETAIL_PAGE_16_9.jpg',
+    date: 'Wed, Oct 31, 2018 6:30 PM',
+    venue_name: 'Fillmore Auditorium (Denver)',
+    address: '1510 Clarkson Denver, CO 80218',
+    lat: '39.740611',
+    lng: '-104.977194',
+    distance: 0.5,
+    favorite: true
+  }
+];
+
 export const mockEventsResponse = {
   _embedded: {
     events: [

@@ -68,7 +68,7 @@
 
   .tab-card {
     border-right: 3px solid rgb(213, 213, 213);
-    padding-right: 1.5rem;
+    padding: 0 1rem;
   }
 }
 
@@ -76,6 +76,7 @@
   .tab-img {
     height: 5rem;
     width: 8rem;
+    margin: 0;
   }
 
   .tab-container {

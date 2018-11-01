@@ -8,6 +8,7 @@ export const EventPopup = ({ targetEvent }) => {
   if (name.length > 38) {
     name = name.slice(0, 36).concat('...');
   }
+
   return (
     <Popup
       coordinates={coords}

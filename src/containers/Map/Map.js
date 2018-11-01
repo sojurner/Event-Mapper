@@ -13,7 +13,8 @@ export class Map extends Component {
     super(props);
     this.state = {
       latitude: props.userLocation.latitude,
-      longitude: props.userLocation.longitude
+      longitude: props.userLocation.longitude,
+      mapType: 'streets'
     };
   }
 
@@ -28,26 +29,48 @@ export class Map extends Component {
     this.props.setEvents(events);
   };
 
+  changeMap = (event, style) => {
+    event.preventDefault();
+    const { mapType } = this.state;
+    mapType !== style
+      ? this.setState({ mapType: style })
+      : this.setState({ mapType: 'streets' });
+  };
+
   render() {
     const Map = ReactMapboxGl({
       accessToken: process.env.REACT_APP_MB_ACCESS_TOKEN
     });
-    let { latitude, longitude } = this.state;
+    let { latitude, longitude, mapType } = this.state;
     const { userLocation } = this.props;
     if (userLocation.latitude) {
       latitude = userLocation.latitude;
       longitude = userLocation.longitude;
     }
     return latitude && longitude ? (
-      <Map
-        center={[longitude, latitude]}
-        zoom={[13]}
-        style={`mapbox://styles/mapbox/${this.props.mapStyle}-v9`}
-        containerStyle={{ height: '100vh', width: '100vw' }}
-      >
-        <UserLocation lng={longitude} lat={latitude} />
-        <Events retrieveEvents={this.retrieveEvents} />
-      </Map>
+      <div>
+        <div
+          className={
+            mapType === 'streets'
+              ? 'toggle-map-style'
+              : 'toggle-map-style-active'
+          }
+        >
+          <button
+            className={`${mapType}-button`}
+            onClick={event => this.changeMap(event, 'dark')}
+          />
+        </div>
+        <Map
+          center={[longitude, latitude]}
+          zoom={[13]}
+          style={`mapbox://styles/mapbox/${mapType}-v9`}
+          containerStyle={{ height: '100vh', width: '100vw' }}
+        >
+          <UserLocation lng={longitude} lat={latitude} />
+          <Events retrieveEvents={this.retrieveEvents} />
+        </Map>
+      </div>
     ) : (
       <Map
         style={`mapbox://styles/mapbox/${this.props.mapStyle}-v9`}
@@ -73,4 +96,7 @@ export const mapDispatchToProps = dispatch => ({
   setEvents: events => dispatch(setEvents(events))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Map);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Map);
