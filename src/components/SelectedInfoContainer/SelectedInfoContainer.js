@@ -11,23 +11,37 @@ export const SelectedInfoContainer = ({ removeEvent, item, weather }) => {
             alt="selected info for event"
             src={require(`../../images/${weather.icon}.png`)}
           />
-          <p className="weather-high">{Math.floor(weather.high)}°F</p>
-          <p className="weather-low">{Math.floor(weather.low)}°F</p>
-          <p className="weather-precip">Chance of Rain: {weather.precip * 100}%</p>
+          <p className="weather-high">
+            {Math.floor(weather.high)}
+            °F
+          </p>
+          <p className="weather-low">
+            {Math.floor(weather.low)}
+            °F
+          </p>
+          <p className="weather-precip">
+            Chance of Rain: {weather.precip * 100}%
+          </p>
         </div>
       </section>
       <div className="item-info">
         <p className="selected selected-title">{item.name}</p>
-        <p className="selected selected-date">{item.date} @ {item.venue_name}</p>
+        <p className="selected selected-date">
+          {item.date} @ {item.venue_name}
+        </p>
         <p className="selected selected-address">{item.address}</p>
-        <p className="selected selected-distance">Distance: {item.distance} miles</p>
+        <p className="selected selected-distance">
+          Distance: {item.distance} miles
+        </p>
         <div>
-          <a className="selected-link" href={item.url}>Event Info</a>
+          <a className="selected-link" href={item.url}>
+            Event Info
+          </a>
           <button
             className="selected selected-remove"
             onClick={removeEvent.bind(null, item)}
           >
-          Remove from Watchlist
+            Remove from Watchlist
           </button>
         </div>
       </div>

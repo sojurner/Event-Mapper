@@ -15,7 +15,7 @@
 .weather-high,
 .weather-low {
   color: #ec7373;
-  margin: auto 0.2rem;
+  margin: auto 0.4rem;
   font-size: 1.4rem; }
 
 .weather-low {
@@ -55,7 +55,7 @@
 .selected-date {
   margin: 0.5em 0;
   font-size: 2.5em;
-  color: #acabab; }
+  color: #d4d4d4; }
 
 .selected-distance {
   margin: 0;
