@@ -7,19 +7,24 @@
 }
 
 .favorites-list {
-  width: 19rem;
+  max-width: 16rem;
+  min-width: 16rem;
   font-size: 0.6rem;
+  height: 100%;
   border-right: 3px solid rgb(169, 169, 169);
   background-color: rgb(170, 170, 170);
   overflow: auto;
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 1000px) {
+  .watch-list {
+    flex-direction: column-reverse;
+  }
+
   .favorites-list {
-    width: 12rem;
-    font-size: 0.6rem;
-    border-right: 3px solid rgb(169, 169, 169);
-    background-color: rgb(170, 170, 170);
-    overflow: auto;
+    display: flex;
+    max-width: none;
+    height: fit-content;
+    min-height: fit-content;
   }
 }
