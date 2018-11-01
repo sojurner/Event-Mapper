@@ -101,6 +101,11 @@
   color: #a8c4d4;
   background-color: #5a5a5a; }
 
+.loading-gif {
+  height: 10rem;
+  width: 10rem;
+  margin: auto; }
+
 @media only screen and (max-width: 1000px) {
   .item-info {
     font-size: 1rem;
