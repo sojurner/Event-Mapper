@@ -4,23 +4,73 @@
   background-color: rgb(170, 170, 170);
   box-shadow: 2px 2px 2px 2px rgba(172, 172, 172, 0.7);
   height: 100vh;
-  width: 19rem;
+  width: 30rem;
   font-size: 0.6rem;
 }
 
 .tab-img {
-  height: 10rem;
-  width: 15rem;
-  border-radius: 1rem;
-  align-self: center;
-  margin-left: 2rem;
+  height: 8rem;
+  width: 9rem;
+  border-radius: 0.3rem;
 }
 
 .tab-card {
   border-top: 3px solid rgb(213, 213, 213);
-  padding-bottom: 1rem;
-  cursor: pointer;
+  height: 8rem;
+  display: flex;
   filter: grayscale(40%);
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.fa-eye {
+  position: absolute;
+  left: 10%;
+  top: 0%;
+  font-size: 1.8rem;
+  color: #5e7676;
+  cursor: pointer;
+}
+
+.fa-eye:hover {
+  color: darkslategray;
+}
+
+.fa-bookmark {
+  font-size: 1.4rem;
+  position: absolute;
+  left: 2%;
+  top: 1%;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.fa-bookmark:hover {
+  color: gray;
+}
+
+.active-bookmark {
+  color: rgb(114, 114, 114);
+}
+
+.tab-info {
+  font-family: caviar;
+  font-size: 0.8rem;
+}
+
+.tab-contents {
+  font-size: 0.9rem;
+}
+
+.tab-event-name {
+  letter-spacing: 2px;
+}
+
+.tab-date {
+  color: rgb(49, 65, 99);
+}
+
+.tab-venue {
 }
 
 .tab-card:hover {
@@ -32,14 +82,6 @@
   margin: 7rem 0 0 0;
   overflow-y: auto;
   height: 90vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.tab-event-name {
-  font-family: caviar;
-  letter-spacing: 2px;
-  text-align: center;
 }
 
 @media only screen and (max-width: 1025px) {
