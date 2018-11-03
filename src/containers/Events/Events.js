@@ -87,7 +87,7 @@ export class Events extends Component {
       : this.setState({ displayModal: false });
   };
 
-  handleFavoriteClick = async () => {
+  handleFavoriteClick = async (e, event) => {
     const {
       activeUser,
       addToWatchList,
@@ -95,13 +95,9 @@ export class Events extends Component {
       watchList,
       removeFromWatchlist
     } = this.props;
-    const { targetEvent } = this.state;
-    let watchListEvent;
-    if (!targetEvent.favorite) {
-      setWatchEvent(targetEvent);
-      const body = clean.eventServerCleaner(activeUser, targetEvent);
-      watchListEvent = { ...targetEvent, favorite: true };
-      this.setState({ targetEvent: watchListEvent });
+    if (!event.favorite) {
+      setWatchEvent(event);
+      const body = clean.eventServerCleaner(activeUser, event);
       const response = await call.setFavorite(
         body.userObj,
         body.eventObj,
