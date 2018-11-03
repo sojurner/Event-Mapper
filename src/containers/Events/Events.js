@@ -24,6 +24,29 @@ export class Events extends Component {
     };
   }
 
+  async componentDidMount() {
+    const { activeUser, setWatchList } = this.props;
+    const result = await call.getUserWatchlist(activeUser.id);
+    const userWatchList = result.map(item => {
+      return { ...item, favorite: true };
+    });
+    setWatchList(userWatchList);
+    this.setEvents(userWatchList);
+  }
+
+  setEvents = list => {
+    const { events, setWatchEvent } = this.props;
+    const setEvent = events.map(event => {
+      list.forEach(item => {
+        if (item.e_id === event.e_id) {
+          event.favorite = !event.favorite;
+        }
+      });
+      return event;
+    });
+    setWatchEvent(setEvent);
+  };
+
   plotEvents = () => {
     const { events } = this.props;
     return events.map((eve, index) => {
@@ -64,7 +87,7 @@ export class Events extends Component {
       : this.setState({ displayModal: false });
   };
 
-  handleFavoriteClick = async () => {
+  handleFavoriteClick = async (e, event) => {
     const {
       activeUser,
       addToWatchList,
@@ -72,13 +95,9 @@ export class Events extends Component {
       watchList,
       removeFromWatchlist
     } = this.props;
-    const { targetEvent } = this.state;
-    let watchListEvent;
-    if (!targetEvent.favorite) {
-      setWatchEvent(targetEvent);
-      const body = clean.eventServerCleaner(activeUser, targetEvent);
-      watchListEvent = { ...targetEvent, favorite: true };
-      this.setState({ targetEvent: watchListEvent });
+    if (!event.favorite) {
+      setWatchEvent(event);
+      const body = clean.eventServerCleaner(activeUser, event);
       const response = await call.setFavorite(
         body.userObj,
         body.eventObj,
@@ -86,13 +105,10 @@ export class Events extends Component {
       );
       if (!response.error) addToWatchList(response.event);
     } else {
-      const matchingEvent = watchList.find(
-        item => item.e_id === targetEvent.e_id
-      );
+      const matchingEvent = watchList.find(item => item.e_id === event.e_id);
       await call.removeFromWatchlist(activeUser.id, matchingEvent.id);
+      setWatchEvent(event);
       removeFromWatchlist(matchingEvent);
-      watchListEvent = { ...targetEvent, favorite: false };
-      this.setState({ targetEvent: watchListEvent });
     }
   };
 
@@ -114,6 +130,7 @@ export class Events extends Component {
         {event}
         {displayPopup && <EventPopup targetEvent={targetEvent} />}
         <EventTab
+          handleFavoriteClick={this.handleFavoriteClick}
           showEventInfo={this.showEventInfo}
           closePopup={this.closePopup}
           handleModalClick={this.handleModalClick}
@@ -144,7 +161,11 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => ({
   addToWatchList: event => dispatch(invoke.addToWatchList(event)),
   removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
-  setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
+  setWatchEvent: event => dispatch(invoke.setWatchEvent(event)),
+  setWatchList: events => dispatch(invoke.setWatchList(events))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Events);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Events);

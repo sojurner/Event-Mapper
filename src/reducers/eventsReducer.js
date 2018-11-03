@@ -4,9 +4,14 @@ export const eventsReducer = (state = [], action) => {
       return action.events || state;
 
     case 'SET_WATCH_EVENT':
-      const event = state.find(event => event.e_id === action.event.e_id);
-      event.favorite = !event.favorite;
-      return state;
+      const events = state.map(event => {
+        if (event.e_id === action.event.e_id) {
+          event.favorite = !event.favorite;
+        }
+        return event;
+      });
+
+      return events;
 
     default:
       return state;
