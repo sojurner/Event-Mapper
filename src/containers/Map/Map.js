@@ -63,7 +63,7 @@ export class Map extends Component {
         </div>
         <Map
           center={[longitude, latitude]}
-          zoom={[13]}
+          zoom={[12]}
           style={`mapbox://styles/mapbox/${mapType}-v9`}
           containerStyle={{ height: '100vh', width: '100vw' }}
         >
