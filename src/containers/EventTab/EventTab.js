@@ -4,20 +4,41 @@ import './EventTab.css';
 
 export class EventTab extends Component {
   render() {
-    const { events, showEventInfo, closePopup, handleModalClick } = this.props;
+    const {
+      events,
+      showEventInfo,
+      closePopup,
+      handleModalClick,
+      handleFavoriteClick
+    } = this.props;
     const eventTab = events.map((event, index) => {
       if (event.name.length > 36) {
-        event.name = event.name.slice(0, 36).concat('...');
+        event.name = event.name.slice(0, 29).concat('...');
       }
       return (
         <div
           className="tab-card"
           onMouseEnter={e => showEventInfo(e, event)}
           onMouseLeave={closePopup}
-          onClick={event => handleModalClick(event, 'open')}
           key={`tab-${index}`}
         >
-          <h1 className="tab-event-name">{event.name}</h1>
+          <section className="tab-info">
+            <i
+              className="far fa-eye"
+              onClick={event => handleModalClick(event, 'open')}
+            />
+            <i
+              className={
+                !event.favorite
+                  ? 'fas fa-bookmark'
+                  : 'fas fa-bookmark active-bookmark'
+              }
+              onClick={e => handleFavoriteClick(e, event)}
+            />
+            <h1 className="tab-contents tab-event-name">{event.name}</h1>
+            <p className="tab-contents tab-date">{event.date}</p>
+            <p className="tab-contents tab-address">{event.address}</p>
+          </section>
           <img alt="event" src={event.img} className="tab-img" />
         </div>
       );
@@ -31,7 +52,8 @@ export class EventTab extends Component {
 }
 
 export const mapStateToProps = state => ({
-  events: state.events
+  events: state.events,
+  watchList: state.watchList
 });
 
 export default connect(mapStateToProps)(EventTab);
