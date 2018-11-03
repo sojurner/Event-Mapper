@@ -105,13 +105,10 @@ export class Events extends Component {
       );
       if (!response.error) addToWatchList(response.event);
     } else {
-      const matchingEvent = watchList.find(
-        item => item.e_id === targetEvent.e_id
-      );
+      const matchingEvent = watchList.find(item => item.e_id === event.e_id);
       await call.removeFromWatchlist(activeUser.id, matchingEvent.id);
+      setWatchEvent(event);
       removeFromWatchlist(matchingEvent);
-      watchListEvent = { ...targetEvent, favorite: false };
-      this.setState({ targetEvent: watchListEvent });
     }
   };
 
