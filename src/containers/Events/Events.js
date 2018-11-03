@@ -130,6 +130,7 @@ export class Events extends Component {
         {event}
         {displayPopup && <EventPopup targetEvent={targetEvent} />}
         <EventTab
+          handleFavoriteClick={this.handleFavoriteClick}
           showEventInfo={this.showEventInfo}
           closePopup={this.closePopup}
           handleModalClick={this.handleModalClick}
@@ -160,7 +161,11 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => ({
   addToWatchList: event => dispatch(invoke.addToWatchList(event)),
   removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
-  setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
+  setWatchEvent: event => dispatch(invoke.setWatchEvent(event)),
+  setWatchList: events => dispatch(invoke.setWatchList(events))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Events);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Events);
