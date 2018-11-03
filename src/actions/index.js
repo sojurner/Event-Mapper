@@ -8,6 +8,11 @@ export const setUserLocation = coordinates => ({
   coordinates
 });
 
+export const setWatchList = events => ({
+  type: 'SET_WATCH_LIST',
+  events
+});
+
 export const addToWatchList = event => ({
   type: 'ADD_TO_WATCH_LIST',
   event
