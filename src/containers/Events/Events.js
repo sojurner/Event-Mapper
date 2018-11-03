@@ -24,6 +24,29 @@ export class Events extends Component {
     };
   }
 
+  async componentDidMount() {
+    const { activeUser, setWatchList } = this.props;
+    const result = await call.getUserWatchlist(activeUser.id);
+    const userWatchList = result.map(item => {
+      return { ...item, favorite: true };
+    });
+    setWatchList(userWatchList);
+    this.setEvents(userWatchList);
+  }
+
+  setEvents = list => {
+    const { events, setWatchEvent } = this.props;
+    const setEvent = events.map(event => {
+      list.forEach(item => {
+        if (item.e_id === event.e_id) {
+          event.favorite = !event.favorite;
+        }
+      });
+      return event;
+    });
+    setWatchEvent(setEvent);
+  };
+
   plotEvents = () => {
     const { events } = this.props;
     return events.map((eve, index) => {
