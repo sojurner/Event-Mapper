@@ -84,6 +84,14 @@ export class FilterBar extends Component {
     this.setState({ location: '', suggestions: [] });
   };
 
+  handleFilterOptions = () => {
+    const { filterDisplay, dateDisplay } = this.state;
+    if (!filterDisplay) {
+      this.setState({ filterDisplay: true, dateDisplay: 'show' });
+    } else {
+      this.setState({ filterDisplay: false, dateDisplay: '' });
+    }
+  };
   render() {
     const { suggestions, location, cursor } = this.state;
     return (
