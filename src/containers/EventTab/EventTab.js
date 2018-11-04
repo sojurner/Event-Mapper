@@ -12,9 +12,6 @@ export class EventTab extends Component {
       handleFavoriteClick
     } = this.props;
     const eventTab = events.map((event, index) => {
-      if (event.name.length > 36) {
-        event.name = event.name.slice(0, 29).concat('...');
-      }
       return (
         <div
           className="tab-card"
@@ -37,7 +34,6 @@ export class EventTab extends Component {
             />
             <h1 className="tab-contents tab-event-name">{event.name}</h1>
             <p className="tab-contents tab-date">{event.date}</p>
-            <p className="tab-contents tab-address">{event.address}</p>
           </section>
           <img alt="event" src={event.img} className="tab-img" />
         </div>
