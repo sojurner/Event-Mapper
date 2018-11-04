@@ -3,12 +3,13 @@ import * as moment from 'moment';
 import Geohash from 'latlon-geohash';
 
 export const getEvents = async (lat, lng) => {
-  const geoCode = await Geohash.encode(lat, lng).slice(0, 9);
+  const geoCode = Geohash.encode(lat, lng).slice(0, 9);
   const unixSeven = moment()
     .add(30, 'days')
     .utc()
     .format();
-  const url = 'https://app.ticketmaster.com/discovery/v2/events.json?' +
+  const url =
+    'https://app.ticketmaster.com/discovery/v2/events.json?' +
     `apikey=${process.env.REACT_APP_TICKET_MASTER_API_KEY}&` +
     `geoPoint=${geoCode}&` +
     `endDateTime=${unixSeven}&` +
@@ -17,6 +18,23 @@ export const getEvents = async (lat, lng) => {
   const response = await fetch(url);
   const result = await response.json();
   const cleanedEvents = eventsCleaner(result);
+  return cleanedEvents;
+};
+
+export const getEventsByDate = async (lat, lng, start, end) => {
+  const geoCode = Geohash.encode(lat, lng).slice(0, 9);
+  const url =
+    'https://app.ticketmaster.com/discovery/v2/events.json?' +
+    `apikey=${process.env.REACT_APP_TICKET_MASTER_API_KEY}&` +
+    `geoPoint=${geoCode}&` +
+    `startDateTime=${start}&` +
+    `endDateTime=${end}&` +
+    'radius=30&' +
+    'size=20';
+  const response = await fetch(url);
+  const result = await response.json();
+  const cleanedEvents = eventsCleaner(result);
+  console.log(cleanedEvents);
   return cleanedEvents;
 };
 
@@ -61,7 +79,8 @@ export const getUserWatchlist = async userId => {
 };
 
 export const getEventWeather = async (lat, lng, unix) => {
-  const url = `https://event-mapper-weather.herokuapp.com/api/v1/weather?lat=${lat}` +
+  const url =
+    `https://event-mapper-weather.herokuapp.com/api/v1/weather?lat=${lat}` +
     `&lng=${lng}` +
     `&date=${unix}`;
   const response = await fetch(url);

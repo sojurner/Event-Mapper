@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { WatchListCard } from '../../components/WatchListCard/WatchListCard';
-import { 
-  SelectedInfoContainer 
-} from '../../components/SelectedInfoContainer/SelectedInfoContainer';
+import { SelectedInfoContainer } from '../../components/SelectedInfoContainer/SelectedInfoContainer';
 import * as call from '../../utilities/apiCalls/apiCalls';
 import './WatchList.css';
 
@@ -13,7 +11,7 @@ export class WatchList extends Component {
     super();
     this.state = {
       userWatchList: [],
-      displayInfo: {},
+      displayInfo: null,
       currentItem: null,
       weather: null
     };
@@ -26,6 +24,9 @@ export class WatchList extends Component {
   getUserWatchlist = async () => {
     const userWatchList = await call.getUserWatchlist(this.props.activeUser.id);
     this.setState({ userWatchList });
+    if (!this.state.displayInfo) {
+      this.handleSelection(userWatchList[0]);
+    }
   };
 
   handleSelection = selectedItem => {

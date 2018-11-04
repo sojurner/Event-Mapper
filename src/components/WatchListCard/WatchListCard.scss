@@ -6,20 +6,24 @@
   align-items: center;
   font-family: caviar;
   letter-spacing: 2px;
-  border-top: 3px solid darkgray;
+  border-top: 3px solid rgb(233, 233, 233);
   padding: 1em;
   cursor: pointer;
   filter: grayscale(40%);
 }
 
+.watch-list-card-container {
+  background-color: #cfcfcf;
+}
+
 .watch-list-card-container:hover {
   filter: grayscale(0%);
-  background-color: #cecece;
+  background-color: #b1b1b1;
 }
 
 .watch-list-card-container-active {
   filter: grayscale(0%);
-  background-color: #cecece;
+  background-color: #707070;
 }
 
 .watch-list-card-title {

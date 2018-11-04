@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import * as moment from 'moment';
 import cities from '../../data/usCities.json';
 import './FilterBar.css';
+import { DateFilter } from '../../components/DateFilter/DateFilter';
 import { setUserLocation, setEvents } from '../../actions';
-import { getEvents } from '../../utilities/apiCalls/apiCalls';
-
+import { getEvents, getEventsByDate } from '../../utilities/apiCalls/apiCalls';
 export class FilterBar extends Component {
   constructor() {
     super();
     this.state = {
       location: '',
       suggestions: [],
-      cursor: 0
+      cursor: 0,
+      dateDisplay: '',
+      startDate: null,
+      endDate: null
     };
     this.textContent = React.createRef();
   }
@@ -80,10 +84,102 @@ export class FilterBar extends Component {
     this.setState({ location: '', suggestions: [] });
   };
 
+  handleFilterOptions = () => {
+    const { filterDisplay, dateDisplay } = this.state;
+    if (!filterDisplay) {
+      this.setState({ filterDisplay: true, dateDisplay: 'show' });
+    } else {
+      this.setState({ filterDisplay: false, dateDisplay: '' });
+    }
+  };
+
+  getStartingDate = value => {
+    const date = moment(value).format('ll');
+    const unix = moment(value)
+      .utc()
+      .format();
+    this.setState({
+      startDate: { unix, date }
+    });
+  };
+
+  getEndDate = value => {
+    const date = moment(value).format('ll');
+    const unix = moment(value)
+      .utc()
+      .format();
+
+    this.setState({
+      endDate: { unix, date }
+    });
+  };
+
+  showDate = (e, command) => {
+    e.preventDefault();
+    const { dateDisplay } = this.state;
+    const slashIndex = dateDisplay.indexOf('/');
+    command === 'start'
+      ? this.setState({ startDate: null })
+      : this.setState({ endDate: null });
+
+    if (!dateDisplay.includes('/')) {
+      command = `${dateDisplay}/${command}`;
+      this.setState({ dateDisplay: command });
+      return;
+    }
+    if (slashIndex !== dateDisplay.length - 1) {
+      command = `${dateDisplay.slice(0, slashIndex)}/${command}`;
+      this.setState({ dateDisplay: command });
+    }
+  };
+
+  getEventsByDate = async e => {
+    e.preventDefault();
+    const { setEvents, userLocation } = this.props;
+    const { latitude, longitude } = userLocation;
+    const { startDate, endDate } = this.state;
+    const result = await getEventsByDate(
+      latitude,
+      longitude,
+      startDate.unix,
+      endDate.unix
+    );
+    setEvents(result);
+  };
+
   render() {
-    const { suggestions, location, cursor } = this.state;
+    const {
+      suggestions,
+      location,
+      cursor,
+      dateDisplay,
+      filterDisplay,
+      startDate,
+      endDate
+    } = this.state;
     return (
       <form>
+        {!filterDisplay && (
+          <button className="show-date-btn" onClick={this.handleFilterOptions}>
+            Filter by Date
+          </button>
+        )}
+        {filterDisplay && (
+          <button className="hide-date-btn" onClick={this.handleFilterOptions}>
+            Hide Filter
+          </button>
+        )}
+        {dateDisplay.includes('show') && (
+          <DateFilter
+            startDate={startDate}
+            endDate={endDate}
+            dateDisplay={dateDisplay}
+            getStartingDate={this.getStartingDate}
+            getEndDate={this.getEndDate}
+            showDate={this.showDate}
+            getEventsByDate={this.getEventsByDate}
+          />
+        )}
         <input
           className="location-input"
           type="text"
@@ -92,7 +188,6 @@ export class FilterBar extends Component {
           onKeyDown={this.handleKeyDown}
           value={location}
         />
-
         <section ref={this.textContent} className={`suggestion-list`}>
           {suggestions.map((city, index) => {
             if (index < 7 && location.length > 1) {
@@ -122,9 +217,16 @@ FilterBar.propTypes = {
   setUserLocation: PropTypes.func
 };
 
+export const mapStateToProps = state => ({
+  userLocation: state.userLocation
+});
+
 export const mapDispatchToProps = dispatch => ({
   setUserLocation: coordinates => dispatch(setUserLocation(coordinates)),
   setEvents: events => dispatch(setEvents(events))
 });
 
-export default connect(null, mapDispatchToProps)(FilterBar);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FilterBar);

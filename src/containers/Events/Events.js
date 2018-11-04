@@ -58,7 +58,7 @@ export class Events extends Component {
           anchor="bottom"
         >
           <i
-            className="fas fa-map-pin"
+            className="fas fa-map-marker-alt"
             onClick={event => this.handleModalClick(event, 'open')}
             onMouseEnter={event => this.showEventInfo(event, eve)}
             onMouseLeave={this.closePopup}

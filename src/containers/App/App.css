@@ -14,19 +14,17 @@
 button:focus {
   outline: 0; }
 
-.toggle-map-style {
+.toggle-map-style,
+.toggle-map-style-active {
   background-color: #eeeeee;
   position: absolute;
   z-index: 10;
-  left: 50%;
+  right: 0;
+  margin: 0 6rem 0 0;
   top: 1.5%; }
 
 .toggle-map-style-active {
-  background-color: #5d5a5a;
-  position: absolute;
-  z-index: 10;
-  left: 50%;
-  top: 1.5%; }
+  background-color: #5d5a5a; }
 
 .streets-button:hover {
   background-color: gray; }
