@@ -6,14 +6,17 @@ import './LoginDisplay.css';
 export const LoginDisplay = ({ login }) => (
   <div className="placement-container">
     <div className="login-container">
-      <h1>EVENT MAPPER</h1>
-      <GoogleLogin
-        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-        className="login-button"
-        buttonText="Login with Google"
-        onSuccess={login}
-        onFailure={login}
-      />
+      <fieldset>
+        <legend className="login-title">EVENT MAPPER</legend>
+
+        <GoogleLogin
+          clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+          className="login-button"
+          buttonText="Login w/ Google"
+          onSuccess={login}
+          onFailure={login}
+        />
+      </fieldset>
     </div>
   </div>
 );
