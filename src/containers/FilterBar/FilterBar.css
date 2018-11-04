@@ -16,7 +16,8 @@
   border: 0.5px solid #765959;
   box-shadow: 1.5px 1.5px #a0a0a0;
   background-color: #dde7fa;
-  padding: 0.5rem; }
+  padding: 0.5rem;
+  animation: fadeIn 2s cubic-bezier(0.165, 0.84, 0.44, 1); }
 
 .location-input:hover {
   box-shadow: 2.5px 2.5px #a0a0a0;
@@ -61,7 +62,8 @@ input:focus {
   padding: 0.5rem;
   margin: 1.9rem 0 0 18rem;
   background-color: #dde7fa;
-  border-radius: 0.5rem; }
+  border-radius: 0.5rem;
+  animation: fadeIn 2s cubic-bezier(0.165, 0.84, 0.44, 1); }
 
 .show-date-btn:hover {
   color: black;

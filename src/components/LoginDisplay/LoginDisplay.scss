@@ -1,4 +1,5 @@
 .placement-container {
+  font-family: codec;
   height: 110%;
   width: 100%;
   display: flex;
@@ -6,34 +7,47 @@
   margin: -4rem 0 0rem 0;
   justify-content: center;
   align-items: center;
-  background: url('../../images/worldpoly.gif');
+  background: url('../../images/concert_crowd.jpg');
   background-repeat: no-repeat;
-  background-size: 90%;
+  background-size: 140rem;
   background-position: center;
   background-color: #0c0c0c;
 }
-
 .login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(170, 170, 170, .9);
-  padding: 0.3em 1em;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  background: rgba(92, 92, 92, 0.9);
+  padding: 1.5em;
   border-radius: 0.3em;
+
+  // position: absolute;
   box-shadow: 0.1em 0.2em 0.5em rgba(100, 100, 100, 1);
 }
 
+fieldset {
+  height: 10rem;
+  margin: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.274);
+}
+
+.login-title {
+  font-size: 5rem;
+  color: #dadada;
+  font-weight: 500;
+  animation: flip 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 .login-container h1 {
-  margin: 0;
-  font-size: 3em;
+  font-size: 4em;
   color: rgb(255, 255, 255);
 }
 
 .login-button {
-  font-family: 'Roboto Slab', serif;
-  margin: 0.5em;
+  font-family: codec;
+  margin: 2em 9rem;
   padding: 0.2em 0.5em;
-  background-color: #646464;
+  background-color: #a1a1a1;
   border-radius: 0.3em;
   border: none;
   color: rgb(255, 255, 255);
@@ -42,7 +56,7 @@
 }
 
 .login-button:hover {
-  animation: login-animation 1.5s linear infinite;
+  background-color: #746565;
 }
 
 @media only screen and (max-width: 600px) {
@@ -51,23 +65,11 @@
   }
 
   .login-container {
-    padding: 0 .3em;
+    padding: 0 0.3em;
     border-radius: 0.3em;
   }
 
   .login-button {
-    margin: 0 0 .5em 0;
-  }
-}
-  
-@keyframes login-animation {
-  0% {
-    box-shadow: 0 0 0 0 rgba(100, 100, 100, .5);
-  }
-  50% {
-    box-shadow: 0 0 0 4px rgba(0, 220, 0, .5);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(100, 100, 100, .5);
+    margin: 0 0 0.5em 0;
   }
 }

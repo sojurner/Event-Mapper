@@ -5,7 +5,8 @@
   box-shadow: 2px 2px 2px 2px rgba(172, 172, 172, 0.7);
   height: 100vh;
   width: 30rem;
-  font-size: 0.6rem; }
+  font-size: 0.6rem;
+  animation: slideInLeft 1s cubic-bezier(0.075, 0.82, 0.165, 1); }
 
 .tab-img {
   height: 8rem;
