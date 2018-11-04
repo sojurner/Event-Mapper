@@ -145,6 +145,11 @@ export class FilterBar extends Component {
       endDate.unix
     );
     setEvents(result);
+    this.setState({
+      dateDisplay: '',
+      startDate: null,
+      endDate: null
+    });
   };
 
   render() {
@@ -159,12 +164,12 @@ export class FilterBar extends Component {
     } = this.state;
     return (
       <form>
-        {!filterDisplay && (
+        {!dateDisplay && (
           <button className="show-date-btn" onClick={this.handleFilterOptions}>
             Filter by Date
           </button>
         )}
-        {filterDisplay && (
+        {dateDisplay && (
           <button className="hide-date-btn" onClick={this.handleFilterOptions}>
             Hide Filter
           </button>
