@@ -92,6 +92,17 @@ export class FilterBar extends Component {
       this.setState({ filterDisplay: false, dateDisplay: '' });
     }
   };
+
+  getStartingDate = value => {
+    const date = moment(value).format('ll');
+    const unix = moment(value)
+      .utc()
+      .format();
+    this.setState({
+      startDate: { unix, date }
+    });
+  };
+
   render() {
     const { suggestions, location, cursor } = this.state;
     return (
