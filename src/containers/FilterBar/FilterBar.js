@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import * as moment from 'moment';
 import cities from '../../data/usCities.json';
 import './FilterBar.css';
+import { DateFilter } from '../../components/DateFilter/DateFilter';
 import { setUserLocation, setEvents } from '../../actions';
-import { getEvents } from '../../utilities/apiCalls/apiCalls';
-
+import { getEvents, getEventsByDate } from '../../utilities/apiCalls/apiCalls';
 export class FilterBar extends Component {
   constructor() {
     super();
     this.state = {
       location: '',
       suggestions: [],
-      cursor: 0
+      cursor: 0,
+      dateDisplay: '',
+      startDate: null,
+      endDate: null
     };
     this.textContent = React.createRef();
   }
