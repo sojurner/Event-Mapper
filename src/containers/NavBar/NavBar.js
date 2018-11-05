@@ -7,7 +7,8 @@ import './NavBar.css';
 
 export class NavBar extends Component {
   render() {
-    const { id, first_name } = this.props.activeUser;
+    const { activeUser, watchlist, logout } = this.props;
+    const { id, first_name } = activeUser;
     return (
       <nav className="nav-container">
         <h1 className="greeting">{`Hello, ${first_name}`}</h1>
@@ -18,12 +19,13 @@ export class NavBar extends Component {
           Profile
         </NavLink>
         <NavLink className="nav-link" to={`/home/${id}/watchlist`}>
-          Watchlist
+          Watchlist{' '}
+          <span className="watchlist-number">({watchlist.length})</span>
         </NavLink>
         <GoogleLogout
           className="nav-link"
           buttonText="Logout"
-          onLogoutSuccess={this.props.logout}
+          onLogoutSuccess={logout}
         />
       </nav>
     );
@@ -31,7 +33,8 @@ export class NavBar extends Component {
 }
 
 export const mapStateToProps = state => ({
-  activeUser: state.activeUser
+  activeUser: state.activeUser,
+  watchlist: state.watchList
 });
 
 NavBar.propTypes = {

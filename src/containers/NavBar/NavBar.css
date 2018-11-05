@@ -29,6 +29,10 @@
 .greeting {
   margin: 4rem auto 2rem auto; }
 
+.watchlist-number {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #272626; }
+
 @media only screen and (max-width: 1000px) {
   .nav-container {
     width: 10rem; } }
