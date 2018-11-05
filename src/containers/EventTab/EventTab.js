@@ -14,7 +14,7 @@ export class EventTab extends Component {
     const eventTab = events.map((event, index) => {
       return (
         <div
-          className="tab-card"
+          className={!event.favorite ? 'tab-card' : 'tab-card tab-card-listed'}
           onMouseEnter={e => showEventInfo(e, event)}
           onMouseLeave={closePopup}
           key={`tab-${index}`}
