@@ -1,33 +1,67 @@
 .nav-container {
-  height: 100vh;
+  height: 30vh;
   width: 14rem;
   position: absolute;
   z-index: 10;
-  right: 0%;
+  right: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
-  background-color: #aaaaaa;
+  background-color: lightgray;
   font-family: caviar-bold;
-  animation: slideInRight 0.3s linear;
+  animation: fadeIn 0.3s linear;
   box-shadow: 2px 2px 2px 4px #98989873;
-  color: #403b3b; }
+  color: #403b3b;
+  margin: 6.5rem 2rem 0 0rem; }
+
+.nav-container:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0%;
+  width: 0;
+  height: 0;
+  border: 22px solid transparent;
+  border-bottom-color: #cccccc;
+  border-top: 0;
+  margin-left: -22px;
+  margin-top: -22px; }
 
 .active {
-  background-color: #c9c9c9; }
+  background-color: #c2c2c2; }
 
 .nav-link {
   text-decoration-line: none;
   font-size: 1.2rem;
-  padding: 1rem 0 1rem 1rem;
-  color: #6d6d6d; }
+  padding: 1rem 1rem 1rem 1rem;
+  color: #6d6d6d;
+  background-color: #e0e0e0;
+  border-top: 2px solid #c5bdbd; }
+
+.fa-eye,
+.fa-user,
+.fa-home {
+  margin-right: 0.6rem;
+  font-size: 1.3rem; }
 
 .nav-link:hover {
   border-left: 4px solid #797979;
   background-color: #c9c9c9;
   color: #ffffff; }
 
+.logout-btn {
+  cursor: pointer; }
+
+.logout-btn:hover {
+  color: #9e4a4a;
+  font-family: caviar;
+  font-weight: 800;
+  border: none;
+  background-color: #b8a6a6; }
+
 .greeting {
-  margin: 4rem auto 2rem auto; }
+  margin: 2rem auto 2rem auto;
+  font-size: 2rem; }
 
 .watchlist-number {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

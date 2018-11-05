@@ -51,22 +51,18 @@ export class App extends Component {
         <div>
           {user && (
             <div>
-              <div
-                className={
-                  !displaySidebar
-                    ? `quarter-circle-top-right`
-                    : 'quarter-circle-top-right-inactive'
-                }
-              />
+              <div className={`quarter-circle-top-right`} />
               <i
                 className={
-                  !displaySidebar ? `fas fa-bars` : 'far fa-window-close'
+                  !displaySidebar ? `fas fa-bars` : 'fas fa-times-circle'
                 }
                 onClick={this.displaySidebar}
               />
             </div>
           )}
-          {displaySidebar && <NavBar logout={this.logout} />}
+          {displaySidebar && (
+            <NavBar displaySidebar={this.displaySidebar} logout={this.logout} />
+          )}
           <Routes
             redirect={redirect}
             changeMap={this.changeMap}

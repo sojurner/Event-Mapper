@@ -21,10 +21,6 @@ export class EventTab extends Component {
         >
           <section className="tab-info">
             <i
-              className="far fa-eye"
-              onClick={event => handleModalClick(event, 'open')}
-            />
-            <i
               className={
                 !event.favorite
                   ? 'fas fa-bookmark'
@@ -34,6 +30,12 @@ export class EventTab extends Component {
             />
             <h1 className="tab-contents tab-event-name">{event.name}</h1>
             <p className="tab-contents tab-date">{event.date}</p>
+            <p
+              className="view-modal"
+              onClick={event => handleModalClick(event, 'open')}
+            >
+              View Details
+            </p>
           </section>
           <img alt="event" src={event.img} className="tab-img" />
         </div>

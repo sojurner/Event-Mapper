@@ -22,14 +22,19 @@
   filter: grayscale(0%);
   background-color: #707070; }
 
-.watch-list-card-title {
+.watch-list-card-title,
+.watch-list-card-title-active {
   margin: 0 0 1em 0;
-  text-align: center; }
+  text-align: center;
+  font-size: 1.2rem; }
+
+.watch-list-card-title-active {
+  color: #e4e4e4; }
 
 .img-card {
-  height: 10rem;
-  width: 15rem;
-  border-radius: 1rem; }
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%; }
 
 @media only screen and (max-width: 1000px) {
   .img-card {

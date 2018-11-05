@@ -13,7 +13,15 @@ export const WatchListCard = ({ handleSelection, item, currentItem }) => {
       }
       onClick={handleSelection.bind(null, item)}
     >
-      <h1 className="watch-list-card-title">{item.name}</h1>
+      <h1
+        className={
+          currentItem === item.id
+            ? 'watch-list-card-title-active'
+            : 'watch-list-card-title'
+        }
+      >
+        {item.name}
+      </h1>
       <img
         className="img-card"
         alt="shows who is playing the event"

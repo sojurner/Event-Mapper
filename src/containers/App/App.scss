@@ -23,8 +23,8 @@ button:focus {
   position: absolute;
   z-index: 10;
   right: 0;
-  margin: 0 6rem 0 0;
-  top: 1.5%;
+  margin: 2.1rem 7rem 0 0;
+  top: 0;
 }
 
 .toggle-map-style-active {
@@ -57,24 +57,8 @@ button:focus {
   display: flex;
 }
 
-.fa-window-close {
-  position: absolute;
-  right: 0%;
-  top: 0.5%;
-  margin: 0 0.3rem 0 0;
-  font-size: 1.2rem;
-  z-index: 30;
-  cursor: pointer;
-  padding: 0.3rem;
-  color: rgb(153, 153, 153);
-}
-
-.fa-window-close:hover {
-  border-radius: 50%;
-  color: rgb(34, 34, 34);
-}
-
-.fa-bars {
+.fa-bars,
+.fa-times-circle {
   position: absolute;
   right: 0;
   top: 0;
@@ -82,12 +66,22 @@ button:focus {
   z-index: 30;
   border-radius: 50%;
   padding: 0.5rem;
-  margin: 1rem 1.15rem 0 0;
+  margin: 1.6rem 2.2rem;
+
   cursor: pointer;
   color: #f7f7f7;
 }
 
+.fa-times-circle {
+  font-size: 2.1rem;
+  margin: 1.4rem 1.8rem;
+}
+
 .fa-bars:hover {
+  color: #d3d3d3;
+}
+
+.fa-times-circle:hover {
   color: #d3d3d3;
 }
 
@@ -103,12 +97,8 @@ button:focus {
   z-index: 29;
   right: 0;
   top: 0;
-  margin: 0.3rem 0.5rem 0 0;
+  margin: 1rem 1.5rem 0 0;
   position: absolute;
-}
-
-.quarter-circle-top-right-inactive {
-  display: none;
 }
 
 @font-face {
