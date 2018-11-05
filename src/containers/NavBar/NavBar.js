@@ -7,23 +7,39 @@ import './NavBar.css';
 
 export class NavBar extends Component {
   render() {
-    const { activeUser, watchlist, logout } = this.props;
+    const { activeUser, watchlist, logout, displaySidebar } = this.props;
     const { id, first_name } = activeUser;
     return (
       <nav className="nav-container">
-        <h1 className="greeting">{`Hello, ${first_name}`}</h1>
-        <NavLink className="nav-link" exact to={`/home/${id}`}>
+        <h1 className="greeting">{`Hi, ${first_name}`}</h1>
+        <NavLink
+          className="nav-link"
+          onClick={displaySidebar}
+          exact
+          to={`/home/${id}`}
+        >
+          <i class="fas fa-home" />
           Home
         </NavLink>
-        <NavLink className="nav-link" to={`/home/${id}/profile`}>
+        <NavLink
+          className="nav-link"
+          onClick={displaySidebar}
+          to={`/home/${id}/profile`}
+        >
+          <i class="fas fa-user" />
           Profile
         </NavLink>
-        <NavLink className="nav-link" to={`/home/${id}/watchlist`}>
+        <NavLink
+          className="nav-link"
+          onClick={displaySidebar}
+          to={`/home/${id}/watchlist`}
+        >
+          <i className="far fa-eye" />
           Watchlist{' '}
           <span className="watchlist-number">({watchlist.length})</span>
         </NavLink>
         <GoogleLogout
-          className="nav-link"
+          className="nav-link logout-btn"
           buttonText="Logout"
           onLogoutSuccess={logout}
         />
