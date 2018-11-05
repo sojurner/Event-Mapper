@@ -20,7 +20,7 @@
   background-color: #f5f5f5;
   box-shadow: 2px 2px 2px 2px #2c2a2a15;
   // border: 4px 0 solid #ece8e8;
-  height: 8rem;
+  height: 9rem;
   display: flex;
   filter: grayscale(40%);
   justify-content: space-between;
@@ -38,19 +38,6 @@
   border-color: #979797 #e6e3e3;
   border-radius: 0 0 0 0.5rem;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.fa-eye {
-  position: absolute;
-  left: 10%;
-  top: 0%;
-  font-size: 1.8rem;
-  color: #5e7676;
-  cursor: pointer;
-}
-
-.fa-eye:hover {
-  color: darkslategray;
 }
 
 .fa-bookmark {
@@ -91,13 +78,25 @@
 
 .tab-card:hover {
   filter: grayscale(0%);
-  background-color: rgba(209, 215, 223, 0.459);
+  background-color: rgba(237, 244, 253, 0.459);
 }
 
 .tab-scroll-container {
   margin: 7rem 0 0 0;
   overflow-y: auto;
   height: 90vh;
+  border-top: 2px solid #cccccc;
+}
+
+.view-modal {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #868686;
+  font-weight: 600;
+  margin: 0;
+}
+.view-modal:hover {
+  color: black;
 }
 
 @media only screen and (max-width: 1025px) {
