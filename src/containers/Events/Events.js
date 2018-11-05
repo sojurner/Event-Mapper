@@ -20,7 +20,8 @@ export class Events extends Component {
       targetEvent: {},
       displayPopup: false,
       displayModal: false,
-      hoverMessage: ''
+      hoverMessage: '',
+      msgPrompt: ''
     };
   }
 
@@ -57,8 +58,9 @@ export class Events extends Component {
           coordinates={coordinates}
           anchor="bottom"
         >
-          <i
-            className="fas fa-map-marker-alt"
+          <img
+            src={require(`../../images/map-pin.png`)}
+            className="map-pin"
             onClick={event => this.handleModalClick(event, 'open')}
             onMouseEnter={event => this.showEventInfo(event, eve)}
             onMouseLeave={this.closePopup}
@@ -103,13 +105,21 @@ export class Events extends Component {
         body.eventObj,
         activeUser.id
       );
-      if (!response.error) addToWatchList(response.event);
+      if (!response.error) {
+        addToWatchList(response.event);
+        this.setState({ msgPrompt: 'Event Added!' });
+      }
     } else {
       const matchingEvent = watchList.find(item => item.e_id === event.e_id);
       await call.removeFromWatchlist(activeUser.id, matchingEvent.id);
       setWatchEvent(event);
       removeFromWatchlist(matchingEvent);
+      this.setState({ msgPrompt: 'Event Removed!' });
     }
+
+    setTimeout(() => {
+      this.setState({ msgPrompt: '' });
+    }, 2000);
   };
 
   handleHover = (event, hoverMessage) => {
@@ -122,13 +132,15 @@ export class Events extends Component {
       targetEvent,
       hoverMessage,
       displayPopup,
-      displayModal
+      displayModal,
+      msgPrompt
     } = this.state;
     const event = this.plotEvents();
     return (
       <div>
         {event}
         {displayPopup && <EventPopup targetEvent={targetEvent} />}
+        {msgPrompt && <div className="prompt-msg">{msgPrompt}</div>}
         <EventTab
           handleFavoriteClick={this.handleFavoriteClick}
           showEventInfo={this.showEventInfo}
