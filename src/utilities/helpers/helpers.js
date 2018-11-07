@@ -2,9 +2,15 @@ import * as moment from 'moment';
 
 export const eventsCleaner = events => {
   if (!events._embedded) return;
-  const parsedEvent = events._embedded.events.map((event) => {
+  const parsedEvent = events._embedded.events.map((event, index) => {
     const { name, id, url, images, dates } = event;
     const { venues } = event._embedded;
+    const lat =
+      parseFloat(venues[0].location.latitude) + 0.0002 * Math.random();
+    const lng =
+      parseFloat(venues[0].location.longitude) + 0.0008 * Math.random();
+    console.log('latitude:', venues[0].location.latitude);
+    console.log(lat);
     return {
       name: name,
       e_id: id,
@@ -16,8 +22,8 @@ export const eventsCleaner = events => {
       address: `${venues[0].address.line1} ${venues[0].city.name}, ${
         venues[0].state.stateCode
       } ${venues[0].postalCode}`,
-      lat: venues[0].location.latitude,
-      lng: venues[0].location.longitude,
+      lat,
+      lng,
       distance: venues[0].distance,
       favorite: false
     };

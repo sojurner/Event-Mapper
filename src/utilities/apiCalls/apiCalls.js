@@ -34,7 +34,6 @@ export const getEventsByDate = async (lat, lng, start, end) => {
   const response = await fetch(url);
   const result = await response.json();
   const cleanedEvents = eventsCleaner(result);
-  console.log(cleanedEvents);
   return cleanedEvents;
 };
 
