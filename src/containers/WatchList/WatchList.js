@@ -62,7 +62,9 @@ export class WatchList extends Component {
 
   render() {
     const { displayInfo, userWatchList, currentItem, weather } = this.state;
-    const displayFavorites = userWatchList.map(item => (
+    let displayFavorites;
+    if (userWatchList.length) {
+      displayFavorites = userWatchList.map(item => (
       <WatchListCard
         currentItem={currentItem}
         handleSelection={this.handleSelection}
@@ -70,6 +72,9 @@ export class WatchList extends Component {
         item={item}
       />
     ));
+    } else {
+      displayFavorites = <h1>No Items in Watchlist!</h1>;
+    }
     return (
       <div className="watch-list">
         <div className="favorites-list">{displayFavorites}</div>
