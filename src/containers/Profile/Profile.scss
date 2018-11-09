@@ -1,30 +1,35 @@
-.user-wraper {
+.user-wrapper {
   height: -webkit-fill-available;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background: radial-gradient(#868686, #52535a);
 }
 
 .user-profile {
   display: flex;
   flex-direction: column;
-  background: rgba(170, 170, 170, .9);
-  border-radius: .5em;
+  background: rgba(170, 170, 170, 0.9);
+  border-radius: 0.5em;
   padding: 1em;
   align-items: center;
 }
 
+.under-construction {
+  font-size: 5rem;
+}
+
 .user-profile img {
   width: 9em;
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
 .user-profile h1 {
-  margin: .5em 0;
+  margin: 0.5em 0;
 }
 
 .user-profile h2 {
-  margin: .5em 0;
+  margin: 0.5em 0;
 }
