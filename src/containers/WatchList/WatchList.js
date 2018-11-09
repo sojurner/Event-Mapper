@@ -65,13 +65,13 @@ export class WatchList extends Component {
     let displayFavorites;
     if (userWatchList.length) {
       displayFavorites = userWatchList.map(item => (
-      <WatchListCard
-        currentItem={currentItem}
-        handleSelection={this.handleSelection}
-        key={item.e_id}
-        item={item}
-      />
-    ));
+        <WatchListCard
+          currentItem={currentItem}
+          handleSelection={this.handleSelection}
+          key={item.e_id}
+          item={item}
+        />
+      ));
     } else {
       displayFavorites = <h1>No Items in Watchlist!</h1>;
     }
