@@ -23,6 +23,7 @@ export class WatchList extends Component {
 
   getUserWatchlist = async () => {
     const userWatchList = await call.getUserWatchlist(this.props.activeUser.id);
+    if (!userWatchList.length) return;
     this.setState({ userWatchList });
     if (!this.state.displayInfo) {
       this.handleSelection(userWatchList[0]);
