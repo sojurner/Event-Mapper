@@ -15,6 +15,7 @@ export class FilterBar extends Component {
       suggestions: [],
       cursor: 0,
       dateDisplay: '',
+      filterDisplay: false,
       startDate: null,
       endDate: null
     };
@@ -84,8 +85,9 @@ export class FilterBar extends Component {
     this.setState({ location: '', suggestions: [] });
   };
 
-  handleFilterOptions = () => {
-    const { filterDisplay, dateDisplay } = this.state;
+  handleFilterOptions = e => {
+    e.preventDefault();
+    const { filterDisplay } = this.state;
     if (!filterDisplay) {
       this.setState({ filterDisplay: true, dateDisplay: 'show' });
     } else {
@@ -145,7 +147,7 @@ export class FilterBar extends Component {
       endDate.unix
     );
     setEvents(result);
-    this.setState({
+    await this.setState({
       dateDisplay: '',
       startDate: null,
       endDate: null
@@ -158,19 +160,24 @@ export class FilterBar extends Component {
       location,
       cursor,
       dateDisplay,
-      filterDisplay,
       startDate,
       endDate
     } = this.state;
     return (
       <form>
         {!dateDisplay && (
-          <button className="show-date-btn" onClick={this.handleFilterOptions}>
+          <button
+            className="show-date-btn"
+            onClick={e => this.handleFilterOptions(e)}
+          >
             Filter by Date
           </button>
         )}
         {dateDisplay && (
-          <button className="hide-date-btn" onClick={this.handleFilterOptions}>
+          <button
+            className="hide-date-btn"
+            onClick={e => this.handleFilterOptions(e)}
+          >
             Hide Filter
           </button>
         )}
