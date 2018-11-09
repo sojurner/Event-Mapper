@@ -6,7 +6,8 @@ import './Profile.css';
 export const Profile = props => {
   const { first_name, last_name, email, imageUrl } = props.activeUser;
   return (
-    <div className="user-wraper">
+    <div className="user-wrapper">
+      <h1 className="under-construction">Under Construction...</h1>
       <div className="user-profile">
         <img alt="the current user profile pic" src={imageUrl} />
         <div>
