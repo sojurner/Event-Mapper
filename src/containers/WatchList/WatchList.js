@@ -23,6 +23,7 @@ export class WatchList extends Component {
 
   getUserWatchlist = async () => {
     const userWatchList = await call.getUserWatchlist(this.props.activeUser.id);
+    if (!userWatchList.length) return;
     this.setState({ userWatchList });
     if (!this.state.displayInfo) {
       this.handleSelection(userWatchList[0]);
@@ -61,14 +62,19 @@ export class WatchList extends Component {
 
   render() {
     const { displayInfo, userWatchList, currentItem, weather } = this.state;
-    const displayFavorites = userWatchList.map(item => (
-      <WatchListCard
-        currentItem={currentItem}
-        handleSelection={this.handleSelection}
-        key={item.e_id}
-        item={item}
-      />
-    ));
+    let displayFavorites;
+    if (userWatchList.length) {
+      displayFavorites = userWatchList.map(item => (
+        <WatchListCard
+          currentItem={currentItem}
+          handleSelection={this.handleSelection}
+          key={item.e_id}
+          item={item}
+        />
+      ));
+    } else {
+      displayFavorites = <h1>No Items in Watchlist!</h1>;
+    }
     return (
       <div className="watch-list">
         <div className="favorites-list">{displayFavorites}</div>
