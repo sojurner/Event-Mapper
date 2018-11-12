@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { loginUser, setUserLocation } from '../../actions';
 import { Routes } from '../../components/Routes/Routes';
 import NavBar from '../NavBar/NavBar';
+import { LoadingScreen } from '../../components/LoadingScreen/LoadingScreen';
 
 import { postUser } from '../../utilities/apiCalls/apiCalls';
 import './App.css';
@@ -14,6 +15,7 @@ export class App extends Component {
     super();
     this.state = {
       user: null,
+      loading: false,
       displaySidebar: false,
       redirect: false
     };
@@ -30,10 +32,18 @@ export class App extends Component {
     });
   };
 
-  login = async res => {
+  loginSuccess = async res => {
+    if (!this.state.user) {
+      await this.setState({ loading: true });
+    }
     const activeUser = await postUser(res.profileObj);
     this.props.loginUser(activeUser);
-    this.setState({ user: activeUser, redirect: true });
+    this.setState({ user: activeUser, redirect: true, loading: false });
+  };
+
+  loginFail = async res => {
+    const error = await postUser(res.profileObj);
+    this.setState({ error });
   };
 
   logout = () => {
@@ -45,10 +55,11 @@ export class App extends Component {
   };
 
   render() {
-    const { redirect, displaySidebar, user } = this.state;
+    const { redirect, displaySidebar, user, loading } = this.state;
     return (
       <Router>
         <div>
+          {loading && <LoadingScreen />}
           {user && (
             <div>
               <div className={`quarter-circle-top-right`} />
@@ -69,7 +80,8 @@ export class App extends Component {
             displaySidebar={this.displaySidebar}
             stateSidebar={displaySidebar}
             user={user}
-            login={this.login}
+            loginSuccess={this.loginSuccess}
+            loginFail={this.loginFail}
           />
         </div>
       </Router>

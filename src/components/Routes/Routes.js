@@ -7,19 +7,22 @@ import { HomeDisplay } from '../HomeDisplay/HomeDisplay';
 import Profile from '../../containers/Profile/Profile';
 import WatchList from '../../containers/WatchList/WatchList';
 
-export const Routes = ({ user, login, redirect }) => {
+export const Routes = ({ user, loginFail, loginSuccess, redirect }) => {
   return (
     <div className="App">
       {!window.location.href.includes('home') &&
         redirect === true &&
         user.id && <Redirect to={`/home/${user.id}`} />}
-      {window.location.href.includes('home') &&
-        redirect === false && <Redirect to={`/`} />}
+      {window.location.href.includes('home') && redirect === false && (
+        <Redirect to={`/`} />
+      )}
       <Route
         exact
         path={'/'}
         render={() => {
-          return <LoginDisplay login={login} />;
+          return (
+            <LoginDisplay loginSuccess={loginSuccess} loginFail={loginFail} />
+          );
         }}
       />
       {user && (
