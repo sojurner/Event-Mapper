@@ -1,3 +1,6 @@
+.start-end-container {
+  width: 15rem; }
+
 .start-date {
   background-color: #f8f8f8; }
 
@@ -69,6 +72,3 @@
 
 .react-calendar {
   z-index: 100; }
-
-.calendar-container {
-  padding: 0 2rem; }
