@@ -14,7 +14,7 @@ export const DateFilter = ({
 }) => {
   return (
     <div className="filter-menu">
-      <div>
+      <div className="start-end-container">
         <section className="start-date-section">
           <h5 className="start-date-btn" onClick={e => showDate(e, 'start')}>
             Start Date:
@@ -29,28 +29,25 @@ export const DateFilter = ({
         </section>
       </div>
       <div className="calendar-container">
-        {dateDisplay.includes('start') &&
-          !startDate && (
-            <Calendar
-              className="start-date"
-              calendarType={`ISO 8601`}
-              onChange={getStartingDate}
-            />
-          )}
-        {dateDisplay.includes('end') &&
-          !endDate && (
-            <Calendar
-              className="end-date"
-              calendarType={`ISO 8601`}
-              onChange={getEndDate}
-            />
-          )}
-        {startDate &&
-          endDate && (
-            <button className="apply-btn" onClick={e => getEventsByDate(e)}>
-              Apply Filter
-            </button>
-          )}
+        {dateDisplay.includes('start') && !startDate && (
+          <Calendar
+            className="start-date"
+            calendarType={`ISO 8601`}
+            onChange={getStartingDate}
+          />
+        )}
+        {dateDisplay.includes('end') && !endDate && (
+          <Calendar
+            className="end-date"
+            calendarType={`ISO 8601`}
+            onChange={getEndDate}
+          />
+        )}
+        {startDate && endDate && (
+          <button className="apply-btn" onClick={e => getEventsByDate(e)}>
+            Apply Filter
+          </button>
+        )}
       </div>
     </div>
   );
