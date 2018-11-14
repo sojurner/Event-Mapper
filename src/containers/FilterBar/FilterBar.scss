@@ -1,19 +1,34 @@
-.suggestion:hover {
-  background-color: rgb(179, 179, 179);
-  color: rgb(250, 250, 250);
+.filter-form {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 7rem;
+  width: 30rem;
 }
 
-.location-input {
+.suggestion:hover {
+  color: rgb(84, 62, 32);
+  background-color: rgb(204, 226, 232);
+}
+
+.location-input-suggestions {
+  z-index: 100;
+  position: relative;
+}
+
+.location-input,
+.show-date-btn,
+.hide-date-btn {
   font-size: 1.4rem;
   width: 12rem;
-  position: absolute;
+  height: 2rem;
   z-index: 100;
-  top: 2.9%;
-  left: 2.5%;
   border-radius: 0.5rem;
-  display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-self: start;
   border: 0.5px solid rgb(118, 89, 89);
   box-shadow: 1.5px 1.5px #a0a0a0;
   background-color: #dde7fa;
@@ -23,7 +38,7 @@
 
 .location-input:hover {
   box-shadow: 2.5px 2.5px #a0a0a0;
-  background-color: #ffffff;
+  background-color: rgb(224, 241, 245);
 }
 
 input:focus {
@@ -32,14 +47,15 @@ input:focus {
 
 .suggestion-list {
   color: rgb(133, 108, 75);
-  width: 13.2rem;
+  width: 13rem;
   cursor: pointer;
   position: absolute;
-  top: 6.7%;
-  left: 2.5%;
+  top: 3.1rem;
+  left: 0.1rem;
   background-color: rgb(255, 255, 255);
   z-index: 100;
 }
+
 .suggestion {
   border: 0.5px solid gray;
   padding: 0.3rem;
@@ -47,28 +63,17 @@ input:focus {
 }
 
 .active-suggestion {
+  color: rgb(84, 62, 32);
   border: 0.8px solid gray;
   padding: 0.3rem;
   margin: 0;
-  background-color: rgb(179, 179, 179);
+  background-color: rgb(221, 236, 240);
 }
 
 .show-date-btn,
 .hide-date-btn {
-  cursor: pointer;
-  font-family: system-ui;
-  font-size: 1.4rem;
-  font-weight: 300;
-  position: absolute;
-  color: rgb(107, 107, 107);
-  left: 0;
-  z-index: 50;
-  box-shadow: 1px 1px rgba(0, 0, 0, 0.377);
-  top: 0;
-  padding: 0.5rem;
-  margin: 1.9rem 0 0 18rem;
-  background-color: #dde7fa;
-  border-radius: 0.5rem;
+  width: 10rem;
+  height: 3rem;
   animation: fadeIn 2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 

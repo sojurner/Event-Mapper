@@ -9,6 +9,10 @@
   animation: slideInLeft 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+.tab-inactive {
+  height: 14%;
+}
+
 .tab-img {
   height: 8rem;
   width: 9rem;
@@ -51,6 +55,23 @@
 
 .fa-bookmark:hover {
   color: gray;
+}
+
+.arrow-container {
+  position: absolute;
+  z-index: 10000;
+  right: -2rem;
+  top: 2rem;
+  background-color: #e6e3e3;
+  box-shadow: 3px 3px rgba(172, 172, 172, 0.7);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 .active-bookmark {
