@@ -128,13 +128,19 @@ export class Events extends Component {
     this.setState({ hoverMessage });
   };
 
+  changeTabDisplay = (event, bool) => {
+    event.preventDefault();
+    this.setState({ displayTab: !bool });
+  };
+
   render() {
     const {
       targetEvent,
       hoverMessage,
       displayPopup,
       displayModal,
-      msgPrompt
+      msgPrompt,
+      displayTab
     } = this.state;
     const event = this.plotEvents();
     return (
@@ -143,6 +149,8 @@ export class Events extends Component {
         {displayPopup && <EventPopup targetEvent={targetEvent} />}
         {msgPrompt && <div className="prompt-msg">{msgPrompt}</div>}
         <EventTab
+          changeTabDisplay={this.changeTabDisplay}
+          displayTab={displayTab}
           handleFavoriteClick={this.handleFavoriteClick}
           showEventInfo={this.showEventInfo}
           closePopup={this.closePopup}
