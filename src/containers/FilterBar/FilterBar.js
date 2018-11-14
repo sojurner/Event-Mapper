@@ -164,7 +164,7 @@ export class FilterBar extends Component {
       endDate
     } = this.state;
     return (
-      <form>
+      <form className="filter-form">
         {!dateDisplay && (
           <button
             className="show-date-btn"
@@ -192,33 +192,35 @@ export class FilterBar extends Component {
             getEventsByDate={this.getEventsByDate}
           />
         )}
-        <input
-          className="location-input"
-          type="text"
-          placeholder="Search City"
-          onChange={event => this.updateValue(event)}
-          onKeyDown={this.handleKeyDown}
-          value={location}
-        />
-        <section ref={this.textContent} className={`suggestion-list`}>
-          {suggestions.map((city, index) => {
-            if (index < 7 && location.length > 1) {
-              return (
-                <p
-                  className={
-                    cursor === index + 1 ? 'active-suggestion' : 'suggestion'
-                  }
-                  key={`suggestions-${index}`}
-                  lng={city.lng}
-                  lat={city.lat}
-                  onClick={event => this.resetState(city.lat, city.lng)}
-                >
-                  {city.city}, {city.state_id}
-                </p>
-              );
-            }
-          })}
-        </section>
+        <div className="location-input-suggestions">
+          <input
+            className="location-input"
+            type="text"
+            placeholder="Search City"
+            onChange={event => this.updateValue(event)}
+            onKeyDown={this.handleKeyDown}
+            value={location}
+          />
+          <section ref={this.textContent} className={`suggestion-list`}>
+            {suggestions.map((city, index) => {
+              if (index < 7 && location.length > 1) {
+                return (
+                  <p
+                    className={
+                      cursor === index + 1 ? 'active-suggestion' : 'suggestion'
+                    }
+                    key={`suggestions-${index}`}
+                    lng={city.lng}
+                    lat={city.lat}
+                    onClick={event => this.resetState(city.lat, city.lng)}
+                  >
+                    {city.city}, {city.state_id}
+                  </p>
+                );
+              }
+            })}
+          </section>
+        </div>
       </form>
     );
   }
