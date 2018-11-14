@@ -29,22 +29,18 @@ Watchlist page
 
 ## Setup
 Clone down this [Repo](https://github.com/JoOCon/event-mapper-fe.git)
-* Install dependencies
-```
-npm install
-```
-* Run server
-```
-npm start
-```
-* Run tests || test coverage
-```
-npm test || npm test -- --coverage
-```
-* eslint
-```
-npm run eslint
-```
+#### `npm install`
+* Installs npm packages
+#### `npm start`
+* Runs the app in development mode
+* Go http://localhost:3000 to view in browser
+
+#### `npm test || npm test -- --coverage`
+* Fires up the testing suite || View test coverage
+
+#### `npm run eslint`
+* Search for linting errors
+
 
 ### Contributors
 * [Joel O'Connor](https://github.com/JoOCon)
