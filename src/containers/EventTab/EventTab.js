@@ -9,7 +9,9 @@ export class EventTab extends Component {
       showEventInfo,
       closePopup,
       handleModalClick,
-      handleFavoriteClick
+      handleFavoriteClick,
+      displayTab,
+      changeTabDisplay
     } = this.props;
     const eventTab = events.map((event, index) => {
       return (
@@ -42,8 +44,18 @@ export class EventTab extends Component {
       );
     });
     return (
-      <div className="tab-container">
-        <div className="tab-scroll-container">{eventTab}</div>
+      <div
+        className={displayTab ? 'tab-container' : 'tab-container tab-inactive'}
+      >
+        {displayTab && <div className="tab-scroll-container">{eventTab}</div>}
+        <div
+          className="arrow-container"
+          onClick={e => changeTabDisplay(e, displayTab)}
+        >
+          <i
+            class={displayTab ? `fas fa-chevron-left` : `fas fa-chevron-right`}
+          />
+        </div>
       </div>
     );
   }
