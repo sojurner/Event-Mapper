@@ -23,6 +23,11 @@ export const setEvents = events => ({
   events
 });
 
+export const setEventLocation = location => ({
+  type: 'SET_EVENT_LOCATION',
+  location
+});
+
 export const setWatchEvent = event => ({
   type: 'SET_WATCH_EVENT',
   event
