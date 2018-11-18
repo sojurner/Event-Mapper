@@ -42,7 +42,7 @@ export class Map extends Component {
       accessToken: process.env.REACT_APP_MB_ACCESS_TOKEN
     });
     let { latitude, longitude, mapType } = this.state;
-    const { userLocation } = this.props;
+    const { userLocation, eventLocation } = this.props;
     if (userLocation.latitude) {
       latitude = userLocation.latitude;
       longitude = userLocation.longitude;
@@ -63,9 +63,14 @@ export class Map extends Component {
         </div>
         <Map
           center={[longitude, latitude]}
-          zoom={[12]}
+          zoom={[10]}
           style={`mapbox://styles/mapbox/${mapType}-v9`}
           containerStyle={{ height: '100vh', width: '100vw' }}
+          flyToOptions={
+            eventLocation && {
+              speed: 0.8
+            }
+          }
         >
           <UserLocation lng={longitude} lat={latitude} />
           <Events retrieveEvents={this.retrieveEvents} />
@@ -90,7 +95,8 @@ Map.propTypes = {
 };
 
 export const mapStateToProps = state => ({
-  userLocation: state.userLocation
+  userLocation: state.userLocation,
+  eventLocation: state.eventLocation
 });
 
 export const mapDispatchToProps = dispatch => ({
