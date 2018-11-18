@@ -17,3 +17,12 @@ export const eventsReducer = (state = [], action) => {
       return state;
   }
 };
+
+export const eventLocationReducer = (state = null, action) => {
+  switch (action.type) {
+    case 'SET_EVENT_LOCATION':
+      return action.location;
+    default:
+      return state;
+  }
+};
