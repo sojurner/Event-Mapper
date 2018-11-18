@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setEventLocation } from '../../actions';
 import './EventTab.css';
 
 export class EventTab extends Component {
+  setEvLocation = (e, event) => {
+    e.preventDefault();
+    this.props.setEventLocation({ latitude: event.lat, longitude: event.lng });
+  };
+
   render() {
     const {
       events,
@@ -39,7 +45,12 @@ export class EventTab extends Component {
               View Details
             </p>
           </section>
-          <img alt="event" src={event.img} className="tab-img" />
+          <img
+            alt="event"
+            src={event.img}
+            className="tab-img"
+            onMouseEnter={e => this.setEvLocation(e, event)}
+          />
         </div>
       );
     });
@@ -66,4 +77,11 @@ export const mapStateToProps = state => ({
   watchList: state.watchList
 });
 
-export default connect(mapStateToProps)(EventTab);
+export const mapDispatchToProps = dispatch => ({
+  setEventLocation: location => dispatch(setEventLocation(location))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EventTab);
