@@ -98,15 +98,14 @@ export class Map extends Component {
           containerStyle={{ height: '100vh', width: '100vw' }}
           flyToOptions={{ speed: 0.8 }}
         >
+          {displayPopup && <EventPopup targetEvent={targetEvent} />}
+
           <UserLocation lng={longitude} lat={latitude} />
-          <Events retrieveEvents={this.retrieveEvents} />
-        </Map>
+          <Layer type="symbol" id="marker" layout={layout} images={images}>
+            {features}
+          </Layer>
+        </ReactMap>
       </div>
-    ) : (
-      <Map
-        style={`mapbox://styles/mapbox/${this.props.mapStyle}-v9`}
-        containerStyle={{ height: '100vh', width: '100vw' }}
-      />
     );
   }
 }
