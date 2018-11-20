@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import ReactMapboxGl from 'react-mapbox-gl';
+import ReactMapboxGl, { Feature, Layer } from 'react-mapbox-gl';
 
 import { UserLocation } from '../../components/UserLocation/UserLocation';
-import Events from '../Events/Events';
+import { EventPopup } from '../../components/EventPopup/EventPopup';
 import { setEvents } from '../../actions/index.js';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
