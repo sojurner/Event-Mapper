@@ -5,7 +5,7 @@ import * as moment from 'moment';
 import cities from '../../data/usCities.json';
 import './FilterBar.css';
 import { DateFilter } from '../../components/DateFilter/DateFilter';
-import { setUserLocation, setEvents } from '../../actions';
+import * as actions from '../../actions';
 import { getEvents, getEventsByDate } from '../../utilities/apiCalls/apiCalls';
 export class FilterBar extends Component {
   constructor() {
@@ -79,9 +79,12 @@ export class FilterBar extends Component {
   };
 
   resetState = async (lat, lng) => {
+    const { setEvents, setUserLocation, setTargetEvent, setZoom } = this.props;
     const response = await getEvents(lat, lng);
-    this.props.setEvents(response);
-    this.props.setUserLocation({ latitude: lat, longitude: lng });
+    setEvents(response);
+    setUserLocation({ latitude: lat, longitude: lng });
+    setTargetEvent(null);
+    setZoom([12]);
     this.setState({ location: '', suggestions: [] });
   };
 
@@ -236,8 +239,11 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  setUserLocation: coordinates => dispatch(setUserLocation(coordinates)),
-  setEvents: events => dispatch(setEvents(events))
+  setUserLocation: coordinates =>
+    dispatch(actions.setUserLocation(coordinates)),
+  setTargetEvent: event => dispatch(actions.setTargetEvent(event)),
+  setEvents: events => dispatch(actions.setEvents(events)),
+  setZoom: zoomVal => dispatch(actions.setZoom(zoomVal))
 });
 
 export default connect(
