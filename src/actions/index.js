@@ -42,3 +42,8 @@ export const changePopupDisplay = bool => ({
   type: 'CHANGE_DISPLAY_POPUP',
   bool
 });
+
+export const setZoom = zoomVal => ({
+  type: 'SET_ZOOM',
+  zoomVal
+});
