@@ -61,8 +61,20 @@ export class Map extends Component {
   };
 
   render() {
-    const Map = ReactMapboxGl({
-      accessToken: process.env.REACT_APP_MB_ACCESS_TOKEN
+    let latitude = this.state.latitude || this.props.userLocation.latitude;
+    let longitude = this.state.longitude || this.props.userLocation.longitude;
+    const { mapType, zoom, center } = this.state;
+    const { events, displayPopup, targetEvent } = this.props;
+
+    const markers = events.map((eve, index) => {
+      let coordinates = [eve.lng, eve.lat];
+      return (
+        <Feature
+          key={`event-${index}`}
+          coordinates={coordinates}
+          onClick={this.adjustCenter.bind(null, coordinates)}
+        />
+      );
     });
     let { latitude, longitude, mapType } = this.state;
     const { userLocation, eventLocation } = this.props;
