@@ -9,8 +9,6 @@ export const eventsCleaner = events => {
       parseFloat(venues[0].location.latitude) + 0.0002 * Math.random();
     const lng =
       parseFloat(venues[0].location.longitude) + 0.0008 * Math.random();
-    console.log('latitude:', venues[0].location.latitude);
-    console.log(lat);
     return {
       name: name,
       e_id: id,
