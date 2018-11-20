@@ -6,6 +6,7 @@ import {
   eventTargetReducer,
   popupReducer
 } from './eventsReducer';
+import { mapReducer } from './mapReducer';
 
 const rootReducer = combineReducers({
   activeUser: userReducer,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   targetEvent: eventTargetReducer,
   displayPopup: popupReducer,
   watchList: watchListReducer,
-  events: eventsReducer
+  events: eventsReducer,
+  zoom: mapReducer
 });
 
 export default rootReducer;
