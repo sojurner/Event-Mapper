@@ -91,16 +91,12 @@ export class Map extends Component {
             onClick={event => this.changeMap(event, 'dark')}
           />
         </div>
-        <Map
-          center={[longitude, latitude]}
-          zoom={[10]}
+        <ReactMap
+          center={center || [longitude, latitude]}
+          zoom={zoom}
           style={`mapbox://styles/mapbox/${mapType}-v9`}
           containerStyle={{ height: '100vh', width: '100vw' }}
-          flyToOptions={
-            eventLocation && {
-              speed: 0.8
-            }
-          }
+          flyToOptions={{ speed: 0.8 }}
         >
           <UserLocation lng={longitude} lat={latitude} />
           <Events retrieveEvents={this.retrieveEvents} />
