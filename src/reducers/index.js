@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 import { userReducer, userLocationReducer } from './userReducer';
 import { watchListReducer } from './watchListReducer';
-import { eventsReducer, eventLocationReducer } from './eventsReducer';
+import {
+  eventsReducer,
+  eventTargetReducer,
+  popupReducer
+} from './eventsReducer';
 
 const rootReducer = combineReducers({
   activeUser: userReducer,
