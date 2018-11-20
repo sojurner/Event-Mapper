@@ -10,7 +10,8 @@ import {
 const rootReducer = combineReducers({
   activeUser: userReducer,
   userLocation: userLocationReducer,
-  eventLocation: eventLocationReducer,
+  targetEvent: eventTargetReducer,
+  displayPopup: popupReducer,
   watchList: watchListReducer,
   events: eventsReducer
 });
