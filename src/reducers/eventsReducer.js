@@ -27,9 +27,10 @@ export const eventTargetReducer = (state = null, action) => {
   }
 };
 
+export const popupReducer = (state = false, action) => {
   switch (action.type) {
-    case 'SET_EVENT_LOCATION':
-      return action.location;
+    case 'CHANGE_DISPLAY_POPUP':
+      return action.bool;
     default:
       return state;
   }
