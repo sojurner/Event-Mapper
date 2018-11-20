@@ -20,7 +20,7 @@ export const SelectedInfoContainer = ({ removeEvent, item, weather }) => {
             °F
           </p>
           <p className="weather-precip">
-            Chance of Rain: {weather.precip * 100}%
+            Chance of Rain: {Math.floor(weather.precip * 100)}%
           </p>
         </div>
       </section>
