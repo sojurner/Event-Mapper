@@ -124,11 +124,14 @@ export const mapStateToProps = state => ({
   eventLocation: state.eventLocation,
   events: state.events,
   displayPopup: state.displayPopup,
-  targetEvent: state.targetEvent
+  targetEvent: state.targetEvent,
+  zoom: state.zoom
 });
 
 export const mapDispatchToProps = dispatch => ({
-  setEvents: events => dispatch(setEvents(events))
+  setEvents: events => dispatch(setEvents(events)),
+  setTargetEvent: event => dispatch(setTargetEvent(event)),
+  setZoom: zoomVal => dispatch(setZoom(zoomVal))
 });
 
 export default connect(
