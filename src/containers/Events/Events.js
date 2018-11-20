@@ -15,9 +15,7 @@ export class Events extends Component {
   constructor() {
     super();
     this.state = {
-      targetEvent: {},
       displayTab: true,
-      displayPopup: false,
       displayModal: false,
       hoverMessage: '',
       msgPrompt: ''
