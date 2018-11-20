@@ -153,7 +153,9 @@ export const mapDispatchToProps = dispatch => ({
   addToWatchList: event => dispatch(invoke.addToWatchList(event)),
   removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
   setWatchEvent: event => dispatch(invoke.setWatchEvent(event)),
-  setWatchList: events => dispatch(invoke.setWatchList(events))
+  setWatchList: events => dispatch(invoke.setWatchList(events)),
+  setTargetEvent: event => dispatch(invoke.setTargetEvent(event)),
+  changePopupDisplay: bool => dispatch(invoke.changePopupDisplay(bool))
 });
 
 export default connect(
