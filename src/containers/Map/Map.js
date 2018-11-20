@@ -31,7 +31,9 @@ export class Map extends Component {
     this.state = {
       latitude: props.userLocation.latitude,
       longitude: props.userLocation.longitude,
-      mapType: 'streets'
+      mapType: 'streets',
+      center: null,
+      zoom: [10]
     };
   }
 
