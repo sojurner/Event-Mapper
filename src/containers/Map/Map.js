@@ -56,6 +56,10 @@ export class Map extends Component {
       : this.setState({ mapType: 'streets' });
   };
 
+  adjustCenter = center => {
+    this.setState({ center, zoom: [14] });
+  };
+
   render() {
     const Map = ReactMapboxGl({
       accessToken: process.env.REACT_APP_MB_ACCESS_TOKEN
