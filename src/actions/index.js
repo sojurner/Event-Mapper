@@ -23,9 +23,9 @@ export const setEvents = events => ({
   events
 });
 
-export const setEventLocation = location => ({
-  type: 'SET_EVENT_LOCATION',
-  location
+export const setTargetEvent = event => ({
+  type: 'SET_TARGET_EVENT',
+  event
 });
 
 export const setWatchEvent = event => ({
@@ -36,4 +36,9 @@ export const setWatchEvent = event => ({
 export const removeFromWatchlist = event => ({
   type: 'REMOVE_FROM_WATCH_LIST',
   event
+});
+
+export const changePopupDisplay = bool => ({
+  type: 'CHANGE_DISPLAY_POPUP',
+  bool
 });
