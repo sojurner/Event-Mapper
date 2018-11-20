@@ -53,7 +53,7 @@ export class Events extends Component {
   };
 
   closePopup = () => {
-    this.setState({ displayPopup: false });
+    this.props.changePopupDisplay(false);
   };
 
   handleModalClick = (event, order) => {
@@ -115,11 +115,8 @@ export class Events extends Component {
       msgPrompt,
       displayTab
     } = this.state;
-    const event = this.plotEvents();
     return (
       <div>
-        {event}
-        {displayPopup && <EventPopup targetEvent={targetEvent} />}
         {msgPrompt && <div className="prompt-msg">{msgPrompt}</div>}
         <EventTab
           changeTabDisplay={this.changeTabDisplay}
