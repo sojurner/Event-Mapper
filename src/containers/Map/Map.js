@@ -5,7 +5,7 @@ import ReactMapboxGl, { Feature, Layer } from 'react-mapbox-gl';
 
 import { UserLocation } from '../../components/UserLocation/UserLocation';
 import { EventPopup } from '../../components/EventPopup/EventPopup';
-import { setEvents } from '../../actions/index.js';
+import { setEvents, setTargetEvent, setZoom } from '../../actions/index.js';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
 import mapPin from '../../images/location-point.png';
@@ -29,11 +29,7 @@ export class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      latitude: props.userLocation.latitude,
-      longitude: props.userLocation.longitude,
-      mapType: 'streets',
-      center: null,
-      zoom: [10]
+      mapType: 'streets'
     };
   }
 
@@ -56,15 +52,30 @@ export class Map extends Component {
       : this.setState({ mapType: 'streets' });
   };
 
-  adjustCenter = center => {
-    this.setState({ center, zoom: [14] });
+  adjustCenter = event => {
+    const { setTargetEvent, setZoom } = this.props;
+    setTargetEvent(event);
+    setZoom([16]);
   };
 
   render() {
-    let latitude = this.state.latitude || this.props.userLocation.latitude;
-    let longitude = this.state.longitude || this.props.userLocation.longitude;
-    const { mapType, zoom, center } = this.state;
-    const { events, displayPopup, targetEvent } = this.props;
+    const {
+      targetEvent,
+      userLocation,
+      events,
+      displayPopup,
+      zoom
+    } = this.props;
+    let latitude;
+    let longitude;
+    if (targetEvent) {
+      latitude = targetEvent.lat;
+      longitude = targetEvent.lng;
+    } else {
+      latitude = userLocation.latitude;
+      longitude = userLocation.longitude;
+    }
+    const { mapType } = this.state;
 
     const features = events.map((eve, index) => {
       let coordinates = [eve.lng, eve.lat];
@@ -72,7 +83,7 @@ export class Map extends Component {
         <Feature
           key={`event-${index}`}
           coordinates={coordinates}
-          onClick={this.adjustCenter.bind(null, coordinates)}
+          onClick={this.adjustCenter.bind(null, eve)}
         />
       );
     });
@@ -92,7 +103,7 @@ export class Map extends Component {
           />
         </div>
         <ReactMap
-          center={center || [longitude, latitude]}
+          center={[longitude, latitude]}
           zoom={zoom}
           style={`mapbox://styles/mapbox/${mapType}-v9`}
           containerStyle={{ height: '100vh', width: '100vw' }}
@@ -100,7 +111,10 @@ export class Map extends Component {
         >
           {displayPopup && <EventPopup targetEvent={targetEvent} />}
 
-          <UserLocation lng={longitude} lat={latitude} />
+          <UserLocation
+            lng={userLocation.longitude}
+            lat={userLocation.latitude}
+          />
           <Layer type="symbol" id="marker" layout={layout} images={images}>
             {features}
           </Layer>
