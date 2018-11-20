@@ -121,7 +121,10 @@ Map.propTypes = {
 
 export const mapStateToProps = state => ({
   userLocation: state.userLocation,
-  eventLocation: state.eventLocation
+  eventLocation: state.eventLocation,
+  events: state.events,
+  displayPopup: state.displayPopup,
+  targetEvent: state.targetEvent
 });
 
 export const mapDispatchToProps = dispatch => ({
