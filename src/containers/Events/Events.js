@@ -45,34 +45,11 @@ export class Events extends Component {
     setWatchEvent(setEvent);
   };
 
-  plotEvents = () => {
-    const { events } = this.props;
-    return events.map((eve, index) => {
-      let coordinates = [eve.lng, eve.lat];
-      return (
-        <Marker
-          key={`event-${index}`}
-          coordinates={coordinates}
-          anchor="bottom"
-        >
-          <img
-            src={require(`../../images/map-pin.png`)}
-            className="map-pin"
-            onClick={event => this.handleModalClick(event, 'open')}
-            onMouseEnter={event => this.showEventInfo(event, eve)}
-            onMouseLeave={this.closePopup}
-          />
-        </Marker>
-      );
-    });
-  };
-
-  showEventInfo = (event, targEvent) => {
-    event.preventDefault();
-    const targetEvent = this.props.events.find(
-      eve => eve.e_id === targEvent.e_id
-    );
-    this.setState({ targetEvent, displayPopup: true });
+  showEventInfo = id => {
+    const { setTargetEvent, changePopupDisplay } = this.props;
+    const targetEvent = this.props.events.find(event => event.e_id === id);
+    setTargetEvent(targetEvent);
+    changePopupDisplay(true);
   };
 
   closePopup = () => {
