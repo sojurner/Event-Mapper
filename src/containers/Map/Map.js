@@ -66,7 +66,7 @@ export class Map extends Component {
     const { mapType, zoom, center } = this.state;
     const { events, displayPopup, targetEvent } = this.props;
 
-    const markers = events.map((eve, index) => {
+    const features = events.map((eve, index) => {
       let coordinates = [eve.lng, eve.lat];
       return (
         <Feature
@@ -76,13 +76,8 @@ export class Map extends Component {
         />
       );
     });
-    let { latitude, longitude, mapType } = this.state;
-    const { userLocation, eventLocation } = this.props;
-    if (userLocation.latitude) {
-      latitude = userLocation.latitude;
-      longitude = userLocation.longitude;
-    }
-    return latitude && longitude ? (
+
+    return (
       <div>
         <div
           className={
