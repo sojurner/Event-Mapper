@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Marker } from 'react-mapbox-gl';
 import { connect } from 'react-redux';
 import Modal from 'react-responsive-modal';
 
@@ -9,7 +8,6 @@ import * as invoke from '../../actions';
 import EventTab from '../EventTab/EventTab';
 
 import { EventModal } from '../../components/EventModal/EventModal';
-import { EventPopup } from '../../components/EventPopup/EventPopup';
 
 import './Events.css';
 
