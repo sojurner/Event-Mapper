@@ -8,6 +8,23 @@ import { EventPopup } from '../../components/EventPopup/EventPopup';
 import { setEvents } from '../../actions/index.js';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
+import mapPin from '../../images/location-point.png';
+
+const ReactMap = ReactMapboxGl({
+  accessToken: process.env.REACT_APP_MB_ACCESS_TOKEN
+});
+
+const layout = { 'icon-image': 'point' };
+const image = new Image();
+image.src = mapPin;
+image.useMap = 'marker';
+image.isMap = true;
+image.crossOrigin = 'anonymous';
+image.height = 30;
+image.width = 30;
+
+const images = ['point', image];
+
 export class Map extends Component {
   constructor(props) {
     super(props);
