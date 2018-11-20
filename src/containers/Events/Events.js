@@ -46,9 +46,10 @@ export class Events extends Component {
   };
 
   showEventInfo = id => {
-    const { setTargetEvent, changePopupDisplay } = this.props;
+    const { setTargetEvent, changePopupDisplay, setZoom } = this.props;
     const targetEvent = this.props.events.find(event => event.e_id === id);
     setTargetEvent(targetEvent);
+    setZoom([15]);
     changePopupDisplay(true);
   };
 
@@ -107,14 +108,9 @@ export class Events extends Component {
   };
 
   render() {
-    const {
-      targetEvent,
-      hoverMessage,
-      displayPopup,
-      displayModal,
-      msgPrompt,
-      displayTab
-    } = this.state;
+    const { hoverMessage, displayModal, msgPrompt, displayTab } = this.state;
+
+    const { targetEvent } = this.props;
     return (
       <div>
         {msgPrompt && <div className="prompt-msg">{msgPrompt}</div>}
@@ -146,7 +142,8 @@ export class Events extends Component {
 export const mapStateToProps = state => ({
   activeUser: state.activeUser,
   watchList: state.watchList,
-  events: state.events
+  events: state.events,
+  targetEvent: state.targetEvent
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -155,7 +152,8 @@ export const mapDispatchToProps = dispatch => ({
   setWatchEvent: event => dispatch(invoke.setWatchEvent(event)),
   setWatchList: events => dispatch(invoke.setWatchList(events)),
   setTargetEvent: event => dispatch(invoke.setTargetEvent(event)),
-  changePopupDisplay: bool => dispatch(invoke.changePopupDisplay(bool))
+  changePopupDisplay: bool => dispatch(invoke.changePopupDisplay(bool)),
+  setZoom: zoomVal => dispatch(invoke.setZoom(zoomVal))
 });
 
 export default connect(
