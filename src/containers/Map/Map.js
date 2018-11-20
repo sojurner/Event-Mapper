@@ -5,7 +5,7 @@ import ReactMapboxGl, { Feature, Layer } from 'react-mapbox-gl';
 
 import { UserLocation } from '../../components/UserLocation/UserLocation';
 import { EventPopup } from '../../components/EventPopup/EventPopup';
-import { setEvents, setTargetEvent, setZoom } from '../../actions/index.js';
+import * as actions from '../../actions/index.js';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
 import mapPin from '../../images/location-point.png';
@@ -53,8 +53,9 @@ export class Map extends Component {
   };
 
   adjustCenter = event => {
-    const { setTargetEvent, setZoom } = this.props;
+    const { setTargetEvent, setZoom, changePopupDisplay } = this.props;
     setTargetEvent(event);
+    changePopupDisplay(true);
     setZoom([16]);
   };
 
@@ -143,9 +144,10 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  setEvents: events => dispatch(setEvents(events)),
-  setTargetEvent: event => dispatch(setTargetEvent(event)),
-  setZoom: zoomVal => dispatch(setZoom(zoomVal))
+  setEvents: events => dispatch(actions.setEvents(events)),
+  setTargetEvent: event => dispatch(actions.setTargetEvent(event)),
+  setZoom: zoomVal => dispatch(actions.setZoom(zoomVal)),
+  changePopupDisplay: bool => dispatch(actions.changePopupDisplay(bool))
 });
 
 export default connect(
