@@ -17,7 +17,8 @@ export class App extends Component {
       user: null,
       loading: false,
       displaySidebar: false,
-      redirect: false
+      redirect: false,
+      error: null
     };
   }
 
@@ -26,19 +27,24 @@ export class App extends Component {
   }
 
   setLatLngEvents = async () => {
-    await navigator.geolocation.getCurrentPosition(location => {
-      const { latitude, longitude } = location.coords;
-      this.props.setUserLocation({ latitude, longitude });
-    });
+    try {
+      await navigator.geolocation.getCurrentPosition(location => {
+        const { latitude, longitude } = location.coords;
+        this.props.setUserLocation({ latitude, longitude });
+      });
+    } catch (error) {
+      this.setState({ error });
+    }
   };
 
   loginSuccess = async res => {
-    if (!this.state.user) {
+    const { loginUser, activeUser } = this.props;
+    if (!activeUser) {
       await this.setState({ loading: true });
     }
-    const activeUser = await postUser(res.profileObj);
-    this.props.loginUser(activeUser);
-    this.setState({ user: activeUser, redirect: true, loading: false });
+    const user = await postUser(res.profileObj);
+    loginUser(user);
+    this.setState({ redirect: true, loading: false });
   };
 
   loginFail = async res => {
@@ -55,12 +61,16 @@ export class App extends Component {
   };
 
   render() {
-    const { redirect, displaySidebar, user, loading } = this.state;
+    const { redirect, displaySidebar, loading, error } = this.state;
+    const { activeUser } = this.props;
+    if (error) {
+      return <div>{error.error}</div>;
+    }
     return (
       <Router>
         <div>
           {loading && <LoadingScreen />}
-          {user && (
+          {activeUser && (
             <div>
               <div className={`quarter-circle-top-right`} />
               <i
@@ -79,7 +89,7 @@ export class App extends Component {
             changeMap={this.changeMap}
             displaySidebar={this.displaySidebar}
             stateSidebar={displaySidebar}
-            user={user}
+            user={activeUser}
             loginSuccess={this.loginSuccess}
             loginFail={this.loginFail}
           />
@@ -97,12 +107,16 @@ App.propTypes = {
   setUserLocation: PropTypes.func
 };
 
+export const mapStateToProps = state => ({
+  activeUser: state.activeUser
+});
+
 export const mapDispatchToProps = dispatch => ({
   loginUser: user => dispatch(loginUser(user)),
   setUserLocation: coordinates => dispatch(setUserLocation(coordinates))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);

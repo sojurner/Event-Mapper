@@ -15,10 +15,15 @@ export const getEvents = async (lat, lng) => {
     `endDateTime=${unixSeven}&` +
     'radius=30&' +
     'size=20';
-  const response = await fetch(url);
-  const result = await response.json();
-  const cleanedEvents = eventsCleaner(result);
-  return cleanedEvents;
+  try {
+    const response = await fetch(url);
+    if (response.status === 200) {
+      const result = await response.json();
+      return eventsCleaner(result);
+    }
+  } catch (error) {
+    return { error };
+  }
 };
 
 export const getEventsByDate = async (lat, lng, start, end) => {
@@ -31,50 +36,69 @@ export const getEventsByDate = async (lat, lng, start, end) => {
     `endDateTime=${end}&` +
     'radius=30&' +
     'size=20';
-  const response = await fetch(url);
-  const result = await response.json();
-  const cleanedEvents = eventsCleaner(result);
-  return cleanedEvents;
+  try {
+    const response = await fetch(url);
+    if (response.status === 200) {
+      const result = await response.json();
+      return eventsCleaner(result);
+    }
+  } catch (error) {
+    return { error };
+  }
 };
 
 export const postUser = async userInfo => {
-  const activeUser = await cleanedUser(userInfo);
+  const activeUser = cleanedUser(userInfo);
   const url = 'https://event-mapper-api.herokuapp.com/api/v1/users';
-  const response = await fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(activeUser),
-    headers: { 'Content-Type': 'application/json' }
-  });
-  const result = await response.json();
-  return result;
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(activeUser),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    return await response.json();
+  } catch (error) {
+    return { error };
+  }
 };
 
 export const setFavorite = async (user, event, id) => {
   const url = `https://event-mapper-api.herokuapp.com/api/v1/users/${id}/events`;
-  const response = await fetch(url, {
-    method: 'POST',
-    body: JSON.stringify({ event: event, user: user }),
-    headers: { 'Content-Type': 'application/json' }
-  });
-  const result = await response.json();
-  return result;
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({ event: event, user: user }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    return await response.json();
+  } catch (error) {
+    return { error };
+  }
 };
 
 export const removeFromWatchlist = async (userId, eventId) => {
   const url = `https://event-mapper-api.herokuapp.com/api/v1/users/${userId}/events/${eventId}`;
-  const response = await fetch(url, {
-    method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' }
-  });
-  const result = await response.json();
-  return result;
+  try {
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' }
+    });
+    return await response.json();
+  } catch (error) {
+    return { error };
+  }
 };
 
 export const getUserWatchlist = async userId => {
   const url = `https://event-mapper-api.herokuapp.com/api/v1/users/${userId}/events`;
-  const response = await fetch(url);
-  const result = await response.json();
-  return result;
+
+  try {
+    const response = await fetch(url);
+    return await response.json();
+  } catch (error) {
+    return { error };
+  }
 };
 
 export const getEventWeather = async (lat, lng, unix) => {
@@ -82,7 +106,10 @@ export const getEventWeather = async (lat, lng, unix) => {
     `https://event-mapper-weather.herokuapp.com/api/v1/weather?lat=${lat}` +
     `&lng=${lng}` +
     `&date=${unix}`;
-  const response = await fetch(url);
-  const result = await response.json();
-  return result;
+  try {
+    const response = await fetch(url);
+    return await response.json();
+  } catch (error) {
+    return { error };
+  }
 };
