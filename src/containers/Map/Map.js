@@ -72,9 +72,12 @@ export class Map extends Component {
     if (targetEvent) {
       latitude = targetEvent.lat;
       longitude = targetEvent.lng;
-    } else {
+    } else if (userLocation) {
       latitude = userLocation.latitude;
       longitude = userLocation.longitude;
+    } else {
+      latitude = 39.7392;
+      longitude = -104.9903;
     }
     const { mapType } = this.state;
 
