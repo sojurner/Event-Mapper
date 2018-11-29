@@ -58,7 +58,9 @@ export class EventTab extends Component {
           onClick={e => changeTabDisplay(e, displayTab)}
         >
           <i
-            class={displayTab ? `fas fa-chevron-left` : `fas fa-chevron-right`}
+            className={
+              displayTab ? `fas fa-chevron-left` : `fas fa-chevron-right`
+            }
           />
         </div>
       </div>
