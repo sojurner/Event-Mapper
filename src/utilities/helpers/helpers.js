@@ -4,13 +4,17 @@ export const eventsCleaner = events => {
   if (!events._embedded) return;
   const parsedEvent = events._embedded.events.map((event, index) => {
     const { name, id, url, images, dates } = event;
+    let reducedName = name;
+    if (reducedName.length > 44) {
+      reducedName = `${name.slice(0, 44)}...`;
+    }
     const { venues } = event._embedded;
     const lat =
       parseFloat(venues[0].location.latitude) + 0.0002 * Math.random();
     const lng =
       parseFloat(venues[0].location.longitude) + 0.0008 * Math.random();
     return {
-      name: name,
+      name: reducedName,
       e_id: id,
       url: url,
       img: images[2].url,
@@ -53,4 +57,8 @@ export const eventServerCleaner = (user, event) => {
   const eventObj = { ...event };
   delete eventObj.favorite;
   return { userObj, eventObj };
+};
+
+export const cleanEventImages = images => {
+  return images.sort((a, b) => b.width - a.width)[0];
 };
