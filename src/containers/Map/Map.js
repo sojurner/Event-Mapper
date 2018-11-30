@@ -56,7 +56,7 @@ export class Map extends Component {
     const { setTargetEvent, setZoom, changePopupDisplay } = this.props;
     setTargetEvent(event);
     changePopupDisplay(true);
-    setZoom([16]);
+    setZoom([18]);
   };
 
   render() {
@@ -114,7 +114,6 @@ export class Map extends Component {
           flyToOptions={{ speed: 0.8 }}
         >
           {displayPopup && <EventPopup targetEvent={targetEvent} />}
-
           <UserLocation
             lng={userLocation.longitude}
             lat={userLocation.latitude}
