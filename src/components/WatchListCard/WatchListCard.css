@@ -45,9 +45,9 @@
   color: #e4e4e4; }
 
 .img-card {
-  height: 12rem;
-  width: 12rem;
-  border-radius: 50%; }
+  height: 10rem;
+  width: 10rem;
+  border-radius: 0.4rem; }
 
 @media only screen and (max-width: 1000px) {
   .img-card {

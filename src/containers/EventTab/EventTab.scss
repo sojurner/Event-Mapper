@@ -21,9 +21,9 @@
 }
 
 .tab-card {
+  cursor: pointer;
   background-color: #f5f5f5;
   box-shadow: 2px 2px 2px 2px #2c2a2a15;
-  // border: 4px 0 solid #ece8e8;
   height: 9rem;
   display: flex;
   filter: grayscale(40%);
@@ -49,7 +49,7 @@
   position: absolute;
   left: 2%;
   top: 1%;
-  color: rgb(114, 114, 114);
+  color: #727272;
   cursor: pointer;
 }
 
@@ -84,7 +84,7 @@
 }
 
 .active-bookmark {
-  color: rgb(52, 60, 87);
+  color: #343c57;
 }
 
 .tab-info {
@@ -103,7 +103,7 @@
 }
 
 .tab-date {
-  color: rgb(49, 65, 99);
+  color: #314163;
 }
 
 .tab-card:hover {
@@ -114,7 +114,7 @@
 .tab-scroll-container {
   margin: 7rem 0 0 0;
   overflow-y: auto;
-  height: 90vh;
+  height: 42rem;
   border-top: 2px solid #cccccc;
 }
 
@@ -125,6 +125,7 @@
   font-weight: 600;
   margin: 0;
 }
+
 .view-modal:hover {
   color: black;
 }
@@ -134,16 +135,13 @@
     margin: 0;
     flex-direction: row;
   }
-
   .tab-img {
     height: 8rem;
     width: 12rem;
   }
-
   .tab-event-name {
     font-size: 0.7rem;
   }
-
   .tab-container {
     margin-left: 0;
     z-index: 10;
@@ -152,9 +150,8 @@
     font-size: 0.6rem;
     bottom: 0;
   }
-
   .tab-card {
-    border-right: 3px solid rgb(213, 213, 213);
+    border-right: 3px solid #d5d5d5;
     padding: 0 1rem;
   }
 }
@@ -165,7 +162,6 @@
     width: 8rem;
     margin: 0;
   }
-
   .tab-container {
     height: 11.5rem;
   }

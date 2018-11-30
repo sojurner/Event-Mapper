@@ -22,26 +22,45 @@
 .event-name {
   font-family: caviar-bold;
   color: #114211;
-}
-
-.event-venue {
-  font-size: 1.4rem;
-  font-weight: 800;
-}
-
-.event-address {
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 .styles_modal__gNwvD {
   border-radius: 1rem;
-  background-color: rgba(225, 225, 225, 0.927);
+  background-color: rgb(147, 148, 165);
+}
+
+.event-modal-contents {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 3fr;
+  margin: 2rem;
+}
+
+.event-venue {
+  font-size: 1.8rem;
+  font-weight: 700;
+  grid-column: 1 /2;
+  grid-row: 1/ 2;
+}
+
+.event-date {
+  grid-column: 1/2;
+  grid-row: 3/ 4;
+}
+
+.event-address {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .event-img {
-  border-radius: 10rem;
+  width: 30rem;
+  border-radius: 0.2rem;
   filter: grayscale(50%);
-  align-self: center;
+  margin: 0 0 0 1rem;
+  grid-column: 2/3;
+  grid-row: 1/ 4;
 }
 
 .styles_closeIcon__1QwbI {

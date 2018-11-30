@@ -2,12 +2,12 @@
   height: 21rem;
   width: 14rem;
   position: absolute;
-  z-index: 10;
+  z-index: 20;
   right: 0;
   top: 0;
   display: flex;
   flex-direction: column;
-  background-color: rgb(128, 128, 128);
+  background-color: gray;
   font-family: caviar-bold;
   animation: fadeIn 0.3s linear;
   box-shadow: 2px 2px 2px 4px #98989873;
@@ -23,14 +23,14 @@
   width: 0;
   height: 0;
   border: 22px solid transparent;
-  border-bottom-color: rgb(119, 119, 119);
+  border-bottom-color: #777777;
   border-top: 0;
   margin-left: -22px;
   margin-top: -22px;
 }
 
 .active {
-  background-color: rgb(194, 194, 194);
+  background-color: #c2c2c2;
 }
 
 .nav-link {
@@ -39,7 +39,7 @@
   padding: 1rem 1rem 1rem 1rem;
   color: #d4d4d4;
   background-color: #838383;
-  border-top: 2px solid rgb(110, 110, 110);
+  border-top: 2px solid #6e6e6e;
 }
 
 .fa-eye,
@@ -50,17 +50,18 @@
 }
 
 .nav-link:hover {
-  border-left: 4px solid rgb(126, 126, 126);
-  background-color: rgb(201, 201, 201);
+  border-left: 4px solid #7e7e7e;
+  background-color: #c9c9c9;
   color: #777777;
 }
+
 .logout-btn {
   cursor: pointer;
 }
+
 .logout-btn:hover {
-  color: rgb(158, 74, 74);
+  color: #9e4a4a;
   font-family: caviar;
-  // border-bottom: 1px solid;
   font-weight: 800;
   border: none;
   background-color: #b8a6a6;
@@ -73,15 +74,12 @@
 
 .watchlist-number {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: rgb(39, 38, 38);
+  color: #272626;
 }
 
 @media only screen and (max-width: 1000px) {
   .nav-container {
     width: 10rem;
-  }
-
-  .greeting {
   }
 }
 
