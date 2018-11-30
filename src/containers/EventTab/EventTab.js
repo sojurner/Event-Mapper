@@ -3,16 +3,10 @@ import { connect } from 'react-redux';
 import './EventTab.css';
 
 export class EventTab extends Component {
-  setEvLocation = (e, event) => {
-    e.preventDefault();
-    // this.props.setEventLocation({ latitude: event.lat, longitude: event.lng });
-  };
-
   render() {
     const {
       events,
       showEventInfo,
-      closePopup,
       handleModalClick,
       handleFavoriteClick,
       displayTab,
@@ -22,8 +16,8 @@ export class EventTab extends Component {
       return (
         <div
           className={!event.favorite ? 'tab-card' : 'tab-card tab-card-listed'}
-          onMouseEnter={showEventInfo.bind(null, event.e_id)}
-          onMouseLeave={closePopup}
+          onClick={showEventInfo.bind(null, event.e_id)}
+          // onMouseLeave={closePopup}
           key={`tab-${index}`}
         >
           <section className="tab-info">
