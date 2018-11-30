@@ -63,6 +63,11 @@ export class WatchList extends Component {
     this.setState({ userWatchList: userList, currentItem: null });
   };
 
+  openNewTab = url => {
+    const newTab = window.open(url, '_blank');
+    newTab.focus();
+  };
+
   render() {
     const {
       displayInfo,
@@ -95,6 +100,7 @@ export class WatchList extends Component {
             weather={weather}
             removeEvent={this.removeEvent}
             item={displayInfo}
+            openNewTab={this.openNewTab}
           />
         )}
       </div>
