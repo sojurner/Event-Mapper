@@ -1,4 +1,8 @@
-import { eventsCleaner, cleanedUser } from '../helpers/helpers';
+import {
+  eventsCleaner,
+  cleanedUser,
+  cleanEventImages
+} from '../helpers/helpers';
 import * as moment from 'moment';
 import Geohash from 'latlon-geohash';
 
@@ -14,7 +18,7 @@ export const getEvents = async (lat, lng) => {
     `geoPoint=${geoCode}&` +
     `endDateTime=${unixSeven}&` +
     'radius=30&' +
-    'size=20';
+    'size=50';
   try {
     const response = await fetch(url);
     if (response.status === 200) {
