@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SelectedInfoContainer.css';
 
-export const SelectedInfoContainer = ({ removeEvent, item, weather }) => {
+export const SelectedInfoContainer = ({
+  removeEvent,
+  item,
+  weather,
+  selectedImage
+}) => {
   return weather ? (
     <div className="selected-container">
       <section className="weather-info">
@@ -24,6 +29,8 @@ export const SelectedInfoContainer = ({ removeEvent, item, weather }) => {
           </p>
         </div>
       </section>
+      <img src={selectedImage.url} className="selected-background-image" />
+
       <div className="item-info">
         <p className="selected selected-title">{item.name}</p>
         <p className="selected selected-date">
