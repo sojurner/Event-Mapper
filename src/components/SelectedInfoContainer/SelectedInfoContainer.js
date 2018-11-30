@@ -6,7 +6,8 @@ export const SelectedInfoContainer = ({
   removeEvent,
   item,
   weather,
-  selectedImage
+  selectedImage,
+  openNewTab
 }) => {
   return weather ? (
     <div className="selected-container">
@@ -41,9 +42,12 @@ export const SelectedInfoContainer = ({
           Distance: {item.distance} miles
         </p>
         <div>
-          <a className="selected-link" href={item.url}>
+          <p
+            className="selected-link"
+            onClick={openNewTab.bind(null, item.url)}
+          >
             Event Info
-          </a>
+          </p>
           <button
             className="selected selected-remove"
             onClick={removeEvent.bind(null, item)}
