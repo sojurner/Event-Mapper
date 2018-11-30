@@ -51,6 +51,22 @@ export const getEventsByDate = async (lat, lng, start, end) => {
   }
 };
 
+export const getEventImages = async id => {
+  const url = `https://app.ticketmaster.com/discovery/v2/events/${id}/images?apikey=${
+    process.env.REACT_APP_TICKET_MASTER_API_KEY
+  }`;
+
+  try {
+    const response = await fetch(url);
+    if (response.status === 200) {
+      const result = await response.json();
+      return cleanEventImages(result.images);
+    }
+  } catch (error) {
+    return { error };
+  }
+};
+
 export const postUser = async userInfo => {
   const activeUser = cleanedUser(userInfo);
   const url = 'https://event-mapper-api.herokuapp.com/api/v1/users';
