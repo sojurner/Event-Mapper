@@ -103,6 +103,8 @@
   color: #beaaaa; }
 
 .selected-link {
+  display: inline;
+  width: 5.7rem;
   font-weight: 800;
   background: transparent;
   padding: 0.5rem 1rem;
