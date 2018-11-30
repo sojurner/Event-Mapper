@@ -11,6 +11,7 @@ export class WatchList extends Component {
     super();
     this.state = {
       userWatchList: [],
+      selectedImage: null,
       displayInfo: null,
       currentItem: null,
       weather: null
@@ -30,13 +31,15 @@ export class WatchList extends Component {
     }
   };
 
-  handleSelection = selectedItem => {
+  handleSelection = async selectedItem => {
     const { currentItem } = this.state;
+    const selectedImage = await call.getEventImages(selectedItem.e_id);
     if (currentItem !== selectedItem.id) {
       this.getWeather(selectedItem);
       this.setState({
         displayInfo: selectedItem,
-        currentItem: selectedItem.id
+        currentItem: selectedItem.id,
+        selectedImage
       });
     } else {
       this.setState({ currentItem: null });
@@ -61,7 +64,13 @@ export class WatchList extends Component {
   };
 
   render() {
-    const { displayInfo, userWatchList, currentItem, weather } = this.state;
+    const {
+      displayInfo,
+      userWatchList,
+      currentItem,
+      weather,
+      selectedImage
+    } = this.state;
     let displayFavorites;
     if (userWatchList.length) {
       displayFavorites = userWatchList.map(item => (
@@ -73,13 +82,16 @@ export class WatchList extends Component {
         />
       ));
     } else {
-      displayFavorites = <h1>No Items in Watchlist!</h1>;
+      displayFavorites = (
+        <h1 className="itemless-list">No Items in Watchlist!</h1>
+      );
     }
     return (
       <div className="watch-list">
         <div className="favorites-list">{displayFavorites}</div>
         {currentItem && (
           <SelectedInfoContainer
+            selectedImage={selectedImage}
             weather={weather}
             removeEvent={this.removeEvent}
             item={displayInfo}
