@@ -79,7 +79,14 @@ export class FilterBar extends Component {
   };
 
   resetState = async (lat, lng) => {
-    const { setEvents, setUserLocation, setTargetEvent, setZoom } = this.props;
+    const {
+      setEvents,
+      setUserLocation,
+      setTargetEvent,
+      setZoom,
+      changePopupDisplay
+    } = this.props;
+    changePopupDisplay(false);
     const response = await getEvents(lat, lng);
     setEvents(response);
     setUserLocation({ latitude: lat, longitude: lng });
@@ -243,7 +250,8 @@ export const mapDispatchToProps = dispatch => ({
     dispatch(actions.setUserLocation(coordinates)),
   setTargetEvent: event => dispatch(actions.setTargetEvent(event)),
   setEvents: events => dispatch(actions.setEvents(events)),
-  setZoom: zoomVal => dispatch(actions.setZoom(zoomVal))
+  setZoom: zoomVal => dispatch(actions.setZoom(zoomVal)),
+  changePopupDisplay: bool => dispatch(actions.changePopupDisplay(bool))
 });
 
 export default connect(
