@@ -11,7 +11,7 @@ export class NavBar extends Component {
     const { id, first_name } = activeUser;
     return (
       <nav className="nav-container">
-        <h1 className="greeting">{`Hi, ${first_name}`}</h1>
+        <h1 className="greeting">{`Hi, ${first_name} !`}</h1>
         <NavLink
           className="nav-link"
           onClick={displaySidebar}
@@ -35,14 +35,13 @@ export class NavBar extends Component {
           to={`/home/${id}/watchlist`}
         >
           <i className="far fa-eye" />
-          Watchlist{' '}
-          <span className="watchlist-number">({watchlist.length})</span>
+          Watchlist
+          <span className="watchlist-number"> ({watchlist.length})</span>
         </NavLink>
-        <GoogleLogout
-          className="nav-link logout-btn"
-          buttonText="Logout"
-          onLogoutSuccess={logout}
-        />
+        <GoogleLogout className="nav-link logout-btn" onLogoutSuccess={logout}>
+          <i class="fas fa-sign-out-alt" />
+          Logout
+        </GoogleLogout>
       </nav>
     );
   }
