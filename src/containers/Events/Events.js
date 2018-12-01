@@ -112,7 +112,7 @@ export class Events extends Component {
 
     const { targetEvent } = this.props;
     return (
-      <div>
+      <div className="events-container">
         {msgPrompt && <div className="prompt-msg">{msgPrompt}</div>}
         <EventTab
           changeTabDisplay={this.changeTabDisplay}
