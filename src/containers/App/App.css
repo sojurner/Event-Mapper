@@ -47,8 +47,8 @@ button:focus {
 .main-container {
   display: flex; }
 
-.fa-bars,
-.fa-times-circle {
+.fa-stream,
+.fa-xing {
   position: absolute;
   right: 0;
   top: 0;
@@ -56,18 +56,18 @@ button:focus {
   z-index: 30;
   border-radius: 50%;
   padding: 0.5rem;
-  margin: 1.6rem 2.2rem;
+  margin: 1.6rem 2.1rem;
   cursor: pointer;
   color: #f7f7f7; }
 
-.fa-times-circle {
+.fa-xing {
   font-size: 2.1rem;
-  margin: 1.4rem 1.8rem; }
+  margin: 1.4rem 2rem; }
 
-.fa-bars:hover {
+.fa-stream:hover {
   color: #d3d3d3; }
 
-.fa-times-circle:hover {
+.fa-xing:hover {
   color: #d3d3d3; }
 
 .dark {
@@ -76,7 +76,7 @@ button:focus {
 .quarter-circle-top-right {
   width: 60px;
   height: 60px;
-  background: #7c7c7c;
+  background: rgba(155, 150, 150, 0.753);
   border-radius: 50%;
   z-index: 29;
   right: 0;
@@ -93,7 +93,7 @@ button:focus {
   src: url("../../fonts/xtreem.ttf"); }
 
 @media only screen and (max-width: 1000px) {
-  .fa-bars {
+  .fa-stream {
     font-size: 1rem; }
   .quarter-circle-top-right {
     height: 2rem;

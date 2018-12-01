@@ -1,5 +1,5 @@
 .nav-container {
-  height: 21rem;
+  height: 19rem;
   width: 14rem;
   position: absolute;
   z-index: 20;
@@ -7,11 +7,15 @@
   top: 0;
   display: flex;
   flex-direction: column;
-  background-color: gray;
+  background-color: #d1d1d1;
   font-family: caviar-bold;
   animation: fadeIn 0.3s linear;
-  box-shadow: 2px 2px 2px 4px #98989873;
-  color: #d4d4d4;
+  box-shadow: 2px 2px #98989873;
+  text-shadow: 1.5px 1.5px #afafaf;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  color: #727272;
   margin: 6.5rem 2rem 0 0rem; }
 
 .nav-container:after {
@@ -22,7 +26,8 @@
   width: 0;
   height: 0;
   border: 22px solid transparent;
-  border-bottom-color: #777777;
+  border-bottom-color: #d1d1d1;
+  box-shadow: 2px #98989873;
   border-top: 0;
   margin-left: -22px;
   margin-top: -22px; }
@@ -34,9 +39,8 @@
   text-decoration-line: none;
   font-size: 1.2rem;
   padding: 1rem 1rem 1rem 1rem;
-  color: #d4d4d4;
-  background-color: #838383;
-  border-top: 2px solid #6e6e6e; }
+  color: #8a8a8a;
+  background-color: #d1d1d1; }
 
 .fa-eye,
 .fa-user,
@@ -50,7 +54,12 @@
   color: #777777; }
 
 .logout-btn {
-  cursor: pointer; }
+  cursor: pointer;
+  display: flex;
+  padding: 1rem 0 1rem 1rem;
+  text-shadow: 1.5px 1.5px #afafaf;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem; }
 
 .logout-btn:hover {
   color: #9e4a4a;
@@ -60,12 +69,16 @@
   background-color: #b8a6a6; }
 
 .greeting {
-  margin: 2rem auto 2rem auto;
+  margin: 2rem auto 0.5rem auto;
   font-size: 2rem; }
 
 .watchlist-number {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #272626; }
+
+.fa-sign-out-alt {
+  padding-right: 0.5rem;
+  font-size: 1.7rem; }
 
 @media only screen and (max-width: 1000px) {
   .nav-container {
