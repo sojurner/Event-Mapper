@@ -74,9 +74,7 @@ export class App extends Component {
             <div>
               <div className={`quarter-circle-top-right`} />
               <i
-                className={
-                  !displaySidebar ? `fas fa-bars` : 'fas fa-times-circle'
-                }
+                className={!displaySidebar ? `fas fa-stream` : 'fab fa-xing'}
                 onClick={this.displaySidebar}
               />
             </div>
