@@ -47,3 +47,7 @@ export const setZoom = zoomVal => ({
   type: 'SET_ZOOM',
   zoomVal
 });
+
+export const setMapDisplay = bool => ({
+  type: 'SET_MAP_DISPLAY'
+});
