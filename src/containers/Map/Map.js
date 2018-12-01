@@ -9,6 +9,7 @@ import * as actions from '../../actions/index.js';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
 import mapPin from '../../images/location-point.png';
+import './Map.css';
 
 const ReactMap = ReactMapboxGl({
   accessToken: process.env.REACT_APP_MB_ACCESS_TOKEN
@@ -81,19 +82,19 @@ export class Map extends Component {
     }
     const { mapType } = this.state;
 
-    const features = events.map((eve, index) => {
-      let coordinates = [eve.lng, eve.lat];
+    const features = events.map((event, index) => {
+      let coordinates = [event.lng, event.lat];
       return (
         <Feature
           key={`event-${index}`}
           coordinates={coordinates}
-          onClick={this.adjustCenter.bind(null, eve)}
+          onClick={this.adjustCenter.bind(null, event)}
         />
       );
     });
 
     return (
-      <div>
+      <div className={'map-container'}>
         <div
           className={
             mapType === 'streets'
@@ -110,7 +111,7 @@ export class Map extends Component {
           center={[longitude, latitude]}
           zoom={zoom}
           style={`mapbox://styles/mapbox/${mapType}-v9`}
-          containerStyle={{ height: '100vh', width: '100vw' }}
+          containerStyle={{ height: '100vh' }}
           flyToOptions={{ speed: 0.8 }}
         >
           {displayPopup && <EventPopup targetEvent={targetEvent} />}
@@ -132,8 +133,12 @@ Map.propTypes = {
   longitude: PropTypes.number,
   events: PropTypes.array,
   setEvents: PropTypes.func,
+  setTargetEvent: PropTypes.func,
+  setZoom: PropTypes.func,
+  changePopupDisplay: PropTypes.func,
   userLocation: PropTypes.object,
-  mapStyle: PropTypes.string
+  mapStyle: PropTypes.string,
+  zoom: PropTypes.array
 };
 
 export const mapStateToProps = state => ({
