@@ -1,6 +1,6 @@
 # Event Mapper
 
-[Demor](https://event-mapper.netlify.com)
+[Live Demo](https://event-mapper.netlify.com)
 
 ## About
 Event Mapper is a map application that allows users to find events near their area. Users sign-in through Google and are taken to a map home page where they can view multiple events nearby.  Users can view the events information (name, venue, address, date, distance, picture, etc...) and save/remove an event to their watchlist.
