@@ -9,17 +9,16 @@ export class EventTab extends Component {
       showEventInfo,
       handleModalClick,
       handleFavoriteClick,
-      displayTab,
-      changeTabDisplay
+      displayTab
     } = this.props;
     const eventTab = events.map((event, index) => {
       return (
         <div
           className={!event.favorite ? 'tab-card' : 'tab-card tab-card-listed'}
           onClick={showEventInfo.bind(null, event.e_id)}
-          // onMouseLeave={closePopup}
           key={`tab-${index}`}
         >
+          <img alt="event" src={event.img} className="tab-img" />
           <section className="tab-info">
             <i
               className={
@@ -38,7 +37,6 @@ export class EventTab extends Component {
               View Details
             </p>
           </section>
-          <img alt="event" src={event.img} className="tab-img" />
         </div>
       );
     });
@@ -47,16 +45,6 @@ export class EventTab extends Component {
         className={displayTab ? 'tab-container' : 'tab-container tab-inactive'}
       >
         {displayTab && <div className="tab-scroll-container">{eventTab}</div>}
-        <div
-          className="arrow-container"
-          onClick={e => changeTabDisplay(e, displayTab)}
-        >
-          <i
-            className={
-              displayTab ? `fas fa-chevron-left` : `fas fa-chevron-right`
-            }
-          />
-        </div>
       </div>
     );
   }
