@@ -57,7 +57,11 @@ export class Map extends Component {
     const { setTargetEvent, setZoom, changePopupDisplay } = this.props;
     setTargetEvent(event);
     changePopupDisplay(true);
-    setZoom([18]);
+    setZoom([16]);
+  };
+
+  removePopup = () => {
+    this.props.changePopupDisplay(false);
   };
 
   render() {
@@ -108,13 +112,19 @@ export class Map extends Component {
           />
         </div>
         <ReactMap
+          onDrag={this.removePopup}
           center={[longitude, latitude]}
           zoom={zoom}
           style={`mapbox://styles/mapbox/${mapType}-v9`}
           containerStyle={{ height: '100vh' }}
           flyToOptions={{ speed: 0.8 }}
         >
-          {displayPopup && <EventPopup targetEvent={targetEvent} />}
+          {displayPopup && (
+            <EventPopup
+              className="event-popup-container"
+              targetEvent={targetEvent}
+            />
+          )}
           <UserLocation
             lng={userLocation.longitude || longitude}
             lat={userLocation.latitude || latitude}
