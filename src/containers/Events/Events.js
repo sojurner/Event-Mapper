@@ -45,11 +45,13 @@ export class Events extends Component {
     setWatchEvent(setEvent);
   };
 
-  showEventInfo = id => {
+  showEventInfo = (id, command) => {
     const { setTargetEvent, changePopupDisplay, setZoom } = this.props;
     const targetEvent = this.props.events.find(event => event.e_id === id);
     setTargetEvent(targetEvent);
-    setZoom([18]);
+    if (command === 'click') {
+      setZoom([14]);
+    }
     changePopupDisplay(true);
   };
 
