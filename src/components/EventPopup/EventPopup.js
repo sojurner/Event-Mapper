@@ -24,7 +24,6 @@ export const EventPopup = ({ targetEvent }) => {
       <img
         src={`${img}`}
         alt="container displaying event info"
-        height={200}
         className="popup-img"
       />
     </Popup>
