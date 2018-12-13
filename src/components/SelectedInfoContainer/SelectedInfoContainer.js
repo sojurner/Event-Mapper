@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { LoadingScreen } from '../LoadingScreen/LoadingScreen';
 import './SelectedInfoContainer.css';
 
 export const SelectedInfoContainer = ({
@@ -17,16 +18,18 @@ export const SelectedInfoContainer = ({
             alt="selected info for event"
             src={require(`../../images/${weather.icon}.png`)}
           />
-          <p className="weather-high">
-            {Math.floor(weather.high)}
-            °F
-          </p>
-          <p className="weather-low">
-            {Math.floor(weather.low)}
-            °F
-          </p>
+          <div className="high-low">
+            <p className="weather-high">
+              {Math.floor(weather.high)}
+              °F
+            </p>
+            <p className="weather-low">
+              {Math.floor(weather.low)}
+              °F
+            </p>
+          </div>
           <p className="weather-precip">
-            Chance of Rain: {Math.floor(weather.precip * 100)}%
+            Precip: {Math.floor(weather.precip * 100)}%
           </p>
         </div>
       </section>
@@ -58,11 +61,7 @@ export const SelectedInfoContainer = ({
       </div>
     </div>
   ) : (
-    <img
-      className="loading-gif"
-      alt="Loading..."
-      src={require(`../../images/loading.gif`)}
-    />
+    <LoadingScreen />
   );
 };
 

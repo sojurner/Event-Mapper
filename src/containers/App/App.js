@@ -102,7 +102,8 @@ App.propTypes = {
   displaySidebar: PropTypes.bool,
   redirect: PropTypes.bool,
   loginUser: PropTypes.func,
-  setUserLocation: PropTypes.func
+  setUserLocation: PropTypes.func,
+  activeUser: PropTypes.object
 };
 
 export const mapStateToProps = state => ({
