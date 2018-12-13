@@ -1,11 +1,15 @@
 import React from 'react';
 import './LoadingScreen.css';
 
-export const LoadingScreen = ({ loading }) => {
+export const LoadingScreen = () => {
   return (
-    <img
-      className="loading-homescreen"
-      src={require(`../../images/loading.gif`)}
-    />
+    <div className="giphy-embed">
+      <img
+        src={require(`../../images/loader.gif`)}
+        className="giphy-img"
+        height="100"
+        width="100"
+      />
+    </div>
   );
 };
