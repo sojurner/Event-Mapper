@@ -9,13 +9,16 @@ export class EventTab extends Component {
       showEventInfo,
       handleModalClick,
       handleFavoriteClick,
+      closePopup,
       displayTab
     } = this.props;
     const eventTab = events.map((event, index) => {
       return (
         <div
           className={!event.favorite ? 'tab-card' : 'tab-card tab-card-listed'}
-          onClick={showEventInfo.bind(null, event.e_id)}
+          onMouseEnter={showEventInfo.bind(null, event.e_id, 'hover')}
+          onMouseLeave={closePopup}
+          onClick={showEventInfo.bind(null, event.e_id, 'click')}
           key={`tab-${index}`}
         >
           <img alt="event" src={event.img} className="tab-img" />
