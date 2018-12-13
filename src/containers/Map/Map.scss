@@ -5,3 +5,15 @@
 .full-map-container {
   grid-column: 1 /3;
 }
+
+.event-popup-container {
+  background: rgb(133, 10, 10);
+  filter: brightness(80%);
+  // opacity: 0.6;
+}
+
+.mapboxgl-popup-content {
+  background: rgba(31, 28, 28, 0.495) !important;
+  width: 15rem;
+  height: 10rem;
+}

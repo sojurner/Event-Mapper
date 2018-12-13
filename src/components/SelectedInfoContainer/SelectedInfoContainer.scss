@@ -24,12 +24,16 @@
 .weather-high,
 .weather-low {
   color: rgb(236, 115, 115);
-  margin: auto 0.4rem;
+  margin: 0.5rem 0 0.5rem 1rem;
   font-size: 1.4rem;
 }
 
 .weather-low {
   color: rgb(184, 184, 184);
+}
+
+.high-low {
+  align-self: center;
 }
 
 .weather-precip {
@@ -41,17 +45,19 @@
 .weather-info {
   display: flex;
   justify-content: center;
+  font-weight: 800;
 }
 
 .weather-container {
   display: flex;
-  border: 0 2px 2px 2px solid black;
+  // border: 0 2px 2px 2px solid black;
+  box-shadow: 1px 1px 1px 1px #28222253;
   border: 2px solid #7c7c7c;
   border-top: 0;
   border-radius: 0rem 0rem 1.5rem 1.5rem;
   padding: 0.5rem;
   height: fit-content;
-  background-color: #474750;
+  background-color: #65656572;
   animation: slideInDown 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   z-index: 10;
 }
@@ -73,7 +79,7 @@
 
   font-size: 4em;
   font-weight: 800;
-  color: #cecece;
+  color: #f1f1f1;
 }
 
 .selected-date {

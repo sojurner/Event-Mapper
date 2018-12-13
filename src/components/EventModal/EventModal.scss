@@ -21,50 +21,106 @@
 
 .event-name {
   font-family: caviar-bold;
-  color: #114211;
-  font-size: 2rem;
+  color: #c2c2c2;
+  font-size: 4.5rem;
+  z-index: 2;
+  text-shadow: 2px 2px rgb(26, 26, 26);
+  text-align: center;
+  padding: 0rem 2rem;
+  margin: 1rem auto 0 auto;
+}
+
+.modal-link-details {
+  display: flex;
+}
+
+.modal-link {
+  display: inline-block;
+  width: 7.5rem;
+  font-weight: 800;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 1.3px;
+  border: 1px solid black;
+  border-radius: 1rem;
+  border-color: #383535;
+  background: rgb(89, 89, 89);
+  cursor: pointer;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: rgb(211, 211, 211);
+  align-self: center;
+  margin-left: 5rem;
+}
+
+.modal-link:hover {
+  color: rgb(168, 196, 212);
+  background-color: rgb(101, 100, 100);
+}
+
+.modal-address-date {
+  display: inline-block;
 }
 
 .styles_modal__gNwvD {
   border-radius: 1rem;
-  background-color: rgb(147, 148, 165);
+  background-color: rgb(29, 29, 29);
+  border: 1.5px solid rgb(121, 121, 121);
 }
 
 .event-modal-contents {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 2fr 3fr;
-  margin: 2rem;
+  padding: 0 2rem;
+  z-index: 2;
 }
 
 .event-venue {
-  font-size: 1.8rem;
-  font-weight: 700;
-  grid-column: 1 /2;
-  grid-row: 1/ 2;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #9f9f9f;
+  z-index: 2;
+  font-weight: 800;
+  text-shadow: 2px 2px rgb(26, 26, 26);
 }
 
 .event-date {
-  grid-column: 1/2;
-  grid-row: 3/ 4;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #a9a9a9;
+  text-shadow: 2px 2px rgb(26, 26, 26);
 }
 
 .event-address {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: bold;
+  z-index: 1000;
+  color: #969696;
+  text-shadow: 2px 2px rgb(26, 26, 26);
 }
 
 .event-img {
-  width: 30rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 0.2rem;
-  filter: grayscale(50%);
-  margin: 0 0 0 1rem;
+  // filter: grayscale(50%);
+  z-index: 1;
+  opacity: 0.2;
   grid-column: 2/3;
   grid-row: 1/ 4;
+  border-radius: 1rem;
 }
 
 .styles_closeIcon__1QwbI {
   cursor: pointer;
+  z-index: 10;
+  fill: #c2c2c2;
+}
+
+.styles_closeIcon__1QwbI:hover {
+  fill: #eeeeee;
 }
 
 @media only screen and (max-width: 1025px) {
