@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './EventModal.css';
 
 export const EventModal = ({ targetEvent }) => {
-  const { img, date, venue_name, address } = targetEvent;
+  const { img, date, venue_name, address, url } = targetEvent;
   let name = targetEvent.name;
   if (targetEvent.name > 40) {
     name = `${name.slice(0, 40)}...`;
@@ -11,16 +11,29 @@ export const EventModal = ({ targetEvent }) => {
   return (
     <div className="event-modal-container">
       <h1 className="event-name">{name}</h1>
+      <img
+        src={`${img}`}
+        alt="current event"
+        height={390}
+        className="event-img"
+      />
+
       <section className="event-modal-contents">
-        <img
-          src={`${img}`}
-          alt="current event"
-          height={390}
-          className="event-img"
-        />
         <p className="event-venue">{`${venue_name}`}</p>
-        <p className="event-address">{address}</p>
-        <h4 className="event-date">{date}</h4>
+        <div className="modal-link-details">
+          <section className="modal-address-date">
+            <p className="event-address">{address}</p>
+            <h4 className="event-date">{date}</h4>
+          </section>
+          <a
+            className="modal-link"
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Event Info
+          </a>
+        </div>
       </section>
     </div>
   );
