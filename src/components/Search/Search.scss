@@ -1,0 +1,70 @@
+.location-input-suggestions {
+  z-index: 100;
+  position: relative;
+}
+
+.location-input {
+}
+
+.location-input {
+  font-size: 1.4rem;
+  width: 12rem;
+  height: 2rem;
+  z-index: 100;
+  border-radius: 0.5rem;
+  justify-self: start;
+  border: 1px solid #c5c5c5;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px #292727;
+  background: rgb(84, 91, 91);
+  color: #dfdfdf;
+  padding: 0.5rem;
+  -webkit-animation: fadeIn 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: fadeIn 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.location-input::placeholder {
+  color: rgb(198, 198, 198);
+}
+
+.location-input:hover {
+  background: rgb(61, 65, 65);
+  color: #dfdfdf;
+
+  transition: 0.1s linear;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+.suggestion-list {
+  color: #dfdfdf;
+
+  width: 13rem;
+  cursor: pointer;
+  position: absolute;
+  top: 3.1rem;
+  left: 0.1rem;
+  background: rgb(61, 65, 65);
+
+  z-index: 100;
+}
+
+.suggestion {
+  border: 0.5px solid gray;
+  padding: 0.3rem;
+  margin: 0;
+}
+
+.suggestion:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(102, 112, 114);
+}
+
+.active-suggestion {
+  color: rgb(121, 121, 121);
+  border: 0.8px solid gray;
+  padding: 0.3rem;
+  margin: 0;
+  background-color: rgb(221, 236, 240);
+}
