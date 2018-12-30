@@ -2,6 +2,7 @@
   z-index: 10;
   position: absolute;
   background-color: #e6e3e3;
+  filter: invert(0.9);
   box-shadow: 2px 2px 2px 2px rgba(172, 172, 172, 0.7);
   height: 100vh;
   width: 30rem;
@@ -10,6 +11,16 @@
 
 .tab-inactive {
   height: 14%; }
+
+.event-header-title {
+  font-size: 2rem;
+  text-align: left;
+  padding-left: 2rem;
+  font-family: caviar;
+  letter-spacing: 1.5px; }
+
+strong {
+  color: #676464; }
 
 .tab-card {
   cursor: pointer;
@@ -28,6 +39,7 @@
 
 .tab-img {
   height: 8rem;
+  filter: invert(1);
   width: 9rem;
   border-radius: 0.3rem;
   box-shadow: 1.3px 1.3px 1.3px 1.3px rgba(0, 0, 0, 0.377);
@@ -97,9 +109,12 @@
   background-color: rgba(237, 244, 253, 0.459); }
 
 .tab-scroll-container {
-  margin: 7rem 0 0 0;
+  position: absolute;
   overflow-y: auto;
-  height: 42rem;
+  left: 0;
+  height: 85vh;
+  padding: 0 0 0;
+  overflow-y: scroll;
   border-top: 2px solid #cccccc; }
 
 .view-modal {
