@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { loginUser, setUserLocation } from '../../actions';
+import { loginUser, setUserLocation, setMapCenter } from '../../actions';
 import { Routes } from '../../components/Routes/Routes';
 import NavBar from '../NavBar/NavBar';
 import { LoadingScreen } from '../../components/LoadingScreen/LoadingScreen';
@@ -29,8 +29,8 @@ export class App extends Component {
   setLatLngEvents = async () => {
     try {
       await navigator.geolocation.getCurrentPosition(location => {
-        const { latitude, longitude } = location.coords;
-        this.props.setUserLocation({ latitude, longitude });
+        this.props.setUserLocation(location.coords);
+        this.props.setMapCenter(location.coords);
       });
     } catch (error) {
       this.setState({ error });
@@ -112,7 +112,8 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   loginUser: user => dispatch(loginUser(user)),
-  setUserLocation: coordinates => dispatch(setUserLocation(coordinates))
+  setUserLocation: coordinates => dispatch(setUserLocation(coordinates)),
+  setMapCenter: coordinates => dispatch(setMapCenter(coordinates))
 });
 
 export default connect(
