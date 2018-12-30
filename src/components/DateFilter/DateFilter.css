@@ -1,5 +1,14 @@
-.start-end-container {
-  width: 15rem; }
+.filter-menu {
+  position: absolute;
+  z-index: 101;
+  display: flex;
+  left: 7rem;
+  top: 0;
+  animation: slideInDown 0.5s cubic-bezier(0, 1, 0.5, 1);
+  transition: slideOutUp 1s ease-out;
+  border-radius: 0 0.5rem 0.5rem 0;
+  height: 7rem;
+  width: max-content; }
 
 .start-date {
   background-color: #f8f8f8; }
@@ -12,63 +21,61 @@
   font-family: caviar;
   font-size: 1.2rem;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  background: none; }
 
 .start-date-btn,
 .end-date-btn {
   cursor: pointer;
-  padding: 0.2rem;
-  margin: 1rem 0.5rem;
-  color: #858585; }
+  padding: 0.5rem;
+  margin: 1rem 0rem 1rem 0.5rem;
+  color: #bdbdbd;
+  background: #4b5454;
+  border-radius: 1rem;
+  transition: 0.2s linear;
+  border: 1px solid #cecece; }
 
-.start-date-btn:hover {
-  border-bottom: 1px solid #664c4c;
-  color: black; }
-
+.start-date-btn:hover,
 .end-date-btn:hover {
-  border-bottom: 1px solid #664c4c;
-  color: black; }
+  color: #dedede;
+  background: #353434; }
 
 .start-date-input,
 .end-date-input {
-  color: #6d9667;
-  margin: 1.2rem 0.5rem;
-  display: inline-block; }
+  color: #a3c19e;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  margin: 1rem 0rem 1rem 0.5rem;
+  display: inline-block;
+  background: #4c505b;
+  min-width: 8.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  border: 1px solid #918f8f; }
 
 .end-date-input {
-  color: #618391; }
+  color: #c6baa9; }
 
 .apply-btn {
   box-shadow: 1px 1px rgba(0, 0, 0, 0.205);
   position: absolute;
-  left: 0;
-  top: 0;
-  margin: 7rem 0;
   width: 7rem;
-  height: 1;
   height: 3rem;
+  top: 9rem;
+  left: 5rem;
   font-size: 1rem;
-  border-radius: 0 0 0.5rem 0;
-  background-color: #f5f5f5;
+  border-radius: 2rem;
+  color: #bdbdbd;
+  background: #4b5454;
   cursor: pointer;
   animation: slideInDown 0.5s cubic-bezier(0, 1, 0.5, 1); }
 
 .apply-btn:hover {
-  background-color: #d8d8d8; }
-
-.filter-menu {
-  background-color: #f5f5f5;
-  position: absolute;
-  z-index: 101;
-  display: flex;
-  left: 0;
-  top: 0;
-  margin: 0rem 0 0 30rem;
-  animation: slideInDown 0.5s cubic-bezier(0, 1, 0.5, 1);
-  transition: slideOutUp 1s ease-out;
-  box-shadow: 2px 2px 2px 2px rgba(184, 184, 184, 0.549);
-  border-radius: 0 0.5rem 0.5rem 0;
-  height: 7rem; }
+  background: #2f3535;
+  color: #d7d7d7;
+  transition: 0.2s linear; }
 
 .react-calendar {
-  z-index: 100; }
+  z-index: 100;
+  filter: invert(0.85);
+  margin: 0 0 0 1rem; }
