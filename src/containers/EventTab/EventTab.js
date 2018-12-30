@@ -47,6 +47,9 @@ export class EventTab extends Component {
       <div
         className={displayTab ? 'tab-container' : 'tab-container tab-inactive'}
       >
+        <h2 className="event-header-title">
+          Event List <strong>({events.length})</strong>
+        </h2>
         {displayTab && <div className="tab-scroll-container">{eventTab}</div>}
       </div>
     );
