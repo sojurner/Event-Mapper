@@ -1,75 +1,46 @@
 .filter-form {
   position: absolute;
-  left: 0;
+  left: 29rem;
   top: 0;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: start;
   align-items: center;
   height: 7rem;
-  width: 30rem; }
+  width: 100vw; }
 
-.suggestion:hover {
-  color: #543e20;
-  background-color: #cce2e8; }
+.filter-icons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  height: max-content; }
 
-.location-input-suggestions {
-  z-index: 100;
-  position: relative; }
-
-.location-input,
-.show-date-btn,
-.hide-date-btn {
-  font-size: 1.4rem;
-  width: 12rem;
-  height: 2rem;
-  z-index: 100;
-  border-radius: 0.5rem;
-  justify-self: start;
-  border: 0.5px solid #765959;
-  box-shadow: 1.5px 1.5px #a0a0a0;
-  background-color: #dde7fa;
-  padding: 0.5rem;
-  animation: fadeIn 2s cubic-bezier(0.165, 0.84, 0.44, 1); }
-
-.location-input:hover {
-  box-shadow: 2.5px 2.5px #a0a0a0;
-  background-color: #e0f1f5; }
-
-input:focus {
-  outline-width: 0; }
-
-.suggestion-list {
-  color: #856c4b;
-  width: 13rem;
+.fa-calendar-alt,
+.fa-search-location {
+  font-size: 1.7rem;
+  margin: 0.5rem 2rem;
+  z-index: 11;
+  color: #fefefe;
+  background-color: #b8bcbf;
   cursor: pointer;
-  position: absolute;
-  top: 3.1rem;
-  left: 0.1rem;
-  background-color: white;
-  z-index: 100; }
+  transition: 0.2s linear;
+  text-shadow: 1.5px 1.5px 1.5px #66717868;
+  padding: 0.5rem 0.6rem;
+  border-radius: 50%; }
 
-.suggestion {
-  border: 0.5px solid gray;
-  padding: 0.3rem;
-  margin: 0; }
+.fa-calendar-alt:hover,
+.fa-search-location:hover {
+  text-shadow: 1.5px 1.5px 1.5px #66717868;
+  transition: 0.2s linear;
+  background-color: #5c676f; }
 
-.active-suggestion {
-  color: #543e20;
-  border: 0.8px solid gray;
-  padding: 0.3rem;
-  margin: 0;
-  background-color: #ddecf0; }
+.filter-active {
+  color: #bbbbbb;
+  background-color: #5c686f; }
 
-.show-date-btn,
-.hide-date-btn {
-  width: 10rem;
-  height: 3rem;
-  animation: fadeIn 2s cubic-bezier(0.165, 0.84, 0.44, 1); }
-
-.show-date-btn:hover {
-  color: black;
-  background-color: #ffffff; }
+.filter-active:hover {
+  background-color: #3b454b; }
 
 @media only screen and (max-width: 600px) {
   .location-input {
