@@ -6,7 +6,11 @@ import {
   eventTargetReducer,
   popupReducer
 } from './eventsReducer';
-import { mapZoomReducer, mapDisplayReducer } from './mapReducer';
+import {
+  mapZoomReducer,
+  mapDisplayReducer,
+  mapCenterReducer
+} from './mapReducer';
 
 const rootReducer = combineReducers({
   activeUser: userReducer,
@@ -14,6 +18,7 @@ const rootReducer = combineReducers({
   targetEvent: eventTargetReducer,
   displayPopup: popupReducer,
   watchList: watchListReducer,
+  mapCenter: mapCenterReducer,
   events: eventsReducer,
   zoom: mapZoomReducer,
   fullMapDisplay: mapDisplayReducer
