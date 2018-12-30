@@ -30,7 +30,7 @@ export class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mapType: 'streets'
+      mapType: 'dark'
     };
   }
 
@@ -54,10 +54,17 @@ export class Map extends Component {
   };
 
   adjustCenter = event => {
-    const { setTargetEvent, setZoom, changePopupDisplay } = this.props;
+    const {
+      setTargetEvent,
+      setZoom,
+      changePopupDisplay,
+      setMapCenter
+    } = this.props;
+    const coordinates = { latitude: event.lat, longitude: event.lng };
     setTargetEvent(event);
     changePopupDisplay(true);
     setZoom([16]);
+    setMapCenter(coordinates);
   };
 
   removePopup = () => {
@@ -69,15 +76,13 @@ export class Map extends Component {
       targetEvent,
       userLocation,
       events,
+      mapCenter,
       displayPopup,
       zoom
     } = this.props;
     let latitude;
     let longitude;
-    if (targetEvent) {
-      latitude = targetEvent.lat;
-      longitude = targetEvent.lng;
-    } else if (userLocation) {
+    if (userLocation) {
       latitude = userLocation.latitude;
       longitude = userLocation.longitude;
     } else {
@@ -113,7 +118,7 @@ export class Map extends Component {
         </div>
         <ReactMap
           onDrag={this.removePopup}
-          center={[longitude, latitude]}
+          center={mapCenter}
           zoom={zoom}
           style={`mapbox://styles/mapbox/${mapType}-v9`}
           containerStyle={{ height: '100vh' }}
@@ -155,6 +160,7 @@ export const mapStateToProps = state => ({
   userLocation: state.userLocation,
   eventLocation: state.eventLocation,
   events: state.events,
+  mapCenter: state.mapCenter,
   displayPopup: state.displayPopup,
   targetEvent: state.targetEvent,
   zoom: state.zoom
@@ -163,6 +169,7 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => ({
   setEvents: events => dispatch(actions.setEvents(events)),
   setTargetEvent: event => dispatch(actions.setTargetEvent(event)),
+  setMapCenter: coordinates => dispatch(actions.setMapCenter(coordinates)),
   setZoom: zoomVal => dispatch(actions.setZoom(zoomVal)),
   changePopupDisplay: bool => dispatch(actions.changePopupDisplay(bool))
 });
