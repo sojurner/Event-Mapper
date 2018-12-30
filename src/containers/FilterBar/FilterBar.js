@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as moment from 'moment';
 import cities from '../../data/usCities.json';
 import './FilterBar.css';
-import { DateFilter } from '../../components/DateFilter/DateFilter';
+
+import { Search } from '../../components/Search/Search';
+import DateFilter from '../../components/DateFilter/DateFilter';
 import * as actions from '../../actions';
-import { getEvents, getEventsByDate } from '../../utilities/apiCalls/apiCalls';
+import { getEvents } from '../../utilities/apiCalls/apiCalls';
 export class FilterBar extends Component {
   constructor() {
     super();
     this.state = {
       location: '',
+      filterMode: 'location',
       suggestions: [],
       cursor: 0,
       dateDisplay: '',
-      filterDisplay: false,
-      startDate: null,
-      endDate: null
+      filterDisplay: false
     };
     this.textContent = React.createRef();
   }
@@ -78,90 +78,31 @@ export class FilterBar extends Component {
     }
   };
 
+  setDateDisplay = dateDisplay => {
+    this.setState({ dateDisplay });
+  };
+
   resetState = async (lat, lng) => {
     const {
       setEvents,
       setUserLocation,
       setTargetEvent,
       setZoom,
-      changePopupDisplay
+      changePopupDisplay,
+      setMapCenter
     } = this.props;
     changePopupDisplay(false);
     const response = await getEvents(lat, lng);
     setEvents(response);
     setUserLocation({ latitude: lat, longitude: lng });
+    setMapCenter({ latitude: lat, longitude: lng });
     setTargetEvent(null);
     setZoom([12]);
     this.setState({ location: '', suggestions: [] });
   };
 
-  handleFilterOptions = e => {
-    e.preventDefault();
-    const { filterDisplay } = this.state;
-    if (!filterDisplay) {
-      this.setState({ filterDisplay: true, dateDisplay: 'show' });
-    } else {
-      this.setState({ filterDisplay: false, dateDisplay: '' });
-    }
-  };
-
-  getStartingDate = value => {
-    const date = moment(value).format('ll');
-    const unix = moment(value)
-      .utc()
-      .format();
-    this.setState({
-      startDate: { unix, date }
-    });
-  };
-
-  getEndDate = value => {
-    const date = moment(value).format('ll');
-    const unix = moment(value)
-      .utc()
-      .format();
-
-    this.setState({
-      endDate: { unix, date }
-    });
-  };
-
-  showDate = (e, command) => {
-    e.preventDefault();
-    const { dateDisplay } = this.state;
-    const slashIndex = dateDisplay.indexOf('/');
-    command === 'start'
-      ? this.setState({ startDate: null })
-      : this.setState({ endDate: null });
-
-    if (!dateDisplay.includes('/')) {
-      command = `${dateDisplay}/${command}`;
-      this.setState({ dateDisplay: command });
-      return;
-    }
-    if (slashIndex !== dateDisplay.length - 1) {
-      command = `${dateDisplay.slice(0, slashIndex)}/${command}`;
-      this.setState({ dateDisplay: command });
-    }
-  };
-
-  getEventsByDate = async e => {
-    e.preventDefault();
-    const { setEvents, userLocation } = this.props;
-    const { latitude, longitude } = userLocation;
-    const { startDate, endDate } = this.state;
-    const result = await getEventsByDate(
-      latitude,
-      longitude,
-      startDate.unix,
-      endDate.unix
-    );
-    setEvents(result);
-    await this.setState({
-      dateDisplay: '',
-      startDate: null,
-      endDate: null
-    });
+  handleFilterOptions = filterMode => {
+    this.setState({ filterMode });
   };
 
   render() {
@@ -169,68 +110,46 @@ export class FilterBar extends Component {
       suggestions,
       location,
       cursor,
-      dateDisplay,
-      startDate,
-      endDate
+      filterMode,
+      dateDisplay
     } = this.state;
     return (
       <form className="filter-form">
-        {!dateDisplay && (
-          <button
-            className="show-date-btn"
-            onClick={e => this.handleFilterOptions(e)}
-          >
-            Filter by Date
-          </button>
-        )}
-        {dateDisplay && (
-          <button
-            className="hide-date-btn"
-            onClick={e => this.handleFilterOptions(e)}
-          >
-            Hide Filter
-          </button>
-        )}
-        {dateDisplay.includes('show') && (
-          <DateFilter
-            startDate={startDate}
-            endDate={endDate}
-            dateDisplay={dateDisplay}
-            getStartingDate={this.getStartingDate}
-            getEndDate={this.getEndDate}
-            showDate={this.showDate}
-            getEventsByDate={this.getEventsByDate}
+        <div className="filter-icons">
+          <i
+            className={
+              filterMode === 'location'
+                ? 'fas fa-search-location filter-active'
+                : 'fas fa-search-location'
+            }
+            onClick={this.handleFilterOptions.bind(null, 'location')}
           />
-        )}
-        <div className="location-input-suggestions">
-          <input
-            className="location-input"
-            type="text"
-            placeholder="Search City"
-            onChange={event => this.updateValue(event)}
-            onKeyDown={this.handleKeyDown}
-            value={location}
+          <i
+            className={
+              filterMode === 'date'
+                ? 'fas fa-calendar-alt filter-active'
+                : 'fas fa-calendar-alt'
+            }
+            onClick={this.handleFilterOptions.bind(null, 'date')}
           />
-          <section ref={this.textContent} className={`suggestion-list`}>
-            {suggestions.map((city, index) => {
-              if (index < 7 && location.length > 1) {
-                return (
-                  <p
-                    className={
-                      cursor === index + 1 ? 'active-suggestion' : 'suggestion'
-                    }
-                    key={`suggestions-${index}`}
-                    lng={city.lng}
-                    lat={city.lat}
-                    onClick={event => this.resetState(city.lat, city.lng)}
-                  >
-                    {city.city}, {city.state_id}
-                  </p>
-                );
-              }
-            })}
-          </section>
         </div>
+        {filterMode === 'date' && (
+          <DateFilter
+            dateDisplay={dateDisplay}
+            setDateDisplay={this.setDateDisplay}
+          />
+        )}
+        {filterMode === 'location' && (
+          <Search
+            updateValue={this.updateValue}
+            handleKeyDown={this.handleKeyDown}
+            textContent={this.textContent}
+            suggestions={suggestions}
+            location={location}
+            cursor={cursor}
+            resetState={this.resetState}
+          />
+        )}
       </form>
     );
   }
@@ -241,20 +160,17 @@ FilterBar.propTypes = {
   setUserLocation: PropTypes.func
 };
 
-export const mapStateToProps = state => ({
-  userLocation: state.userLocation
-});
-
 export const mapDispatchToProps = dispatch => ({
   setUserLocation: coordinates =>
     dispatch(actions.setUserLocation(coordinates)),
   setTargetEvent: event => dispatch(actions.setTargetEvent(event)),
+  setMapCenter: coords => dispatch(actions.setMapCenter(coords)),
   setEvents: events => dispatch(actions.setEvents(events)),
   setZoom: zoomVal => dispatch(actions.setZoom(zoomVal)),
   changePopupDisplay: bool => dispatch(actions.changePopupDisplay(bool))
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(FilterBar);

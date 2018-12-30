@@ -46,10 +46,20 @@ export class Events extends Component {
   };
 
   showEventInfo = (id, command) => {
-    const { setTargetEvent, changePopupDisplay, setZoom } = this.props;
+    const {
+      setTargetEvent,
+      changePopupDisplay,
+      setZoom,
+      setMapCenter
+    } = this.props;
     const targetEvent = this.props.events.find(event => event.e_id === id);
     setTargetEvent(targetEvent);
     if (command === 'click') {
+      const coordinates = {
+        latitude: targetEvent.lat,
+        longitude: targetEvent.lng
+      };
+      setMapCenter(coordinates);
       setZoom([14]);
     }
     changePopupDisplay(true);
@@ -84,7 +94,7 @@ export class Events extends Component {
       );
       if (!response.error) {
         addToWatchList(response.event);
-        this.setState({ msgPrompt: 'Event Added!' });
+        this.setState({ msgPrompt: 'Event Saved!' });
       }
     } else {
       const matchingEvent = watchList.find(item => item.e_id === event.e_id);
@@ -154,6 +164,7 @@ export const mapDispatchToProps = dispatch => ({
   setWatchEvent: event => dispatch(invoke.setWatchEvent(event)),
   setWatchList: events => dispatch(invoke.setWatchList(events)),
   setTargetEvent: event => dispatch(invoke.setTargetEvent(event)),
+  setMapCenter: coordinates => dispatch(invoke.setMapCenter(coordinates)),
   changePopupDisplay: bool => dispatch(invoke.changePopupDisplay(bool)),
   setZoom: zoomVal => dispatch(invoke.setZoom(zoomVal))
 });
