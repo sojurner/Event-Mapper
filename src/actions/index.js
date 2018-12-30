@@ -48,6 +48,11 @@ export const setZoom = zoomVal => ({
   zoomVal
 });
 
-export const setMapDisplay = bool => ({
+export const setMapDisplay = () => ({
   type: 'SET_MAP_DISPLAY'
+});
+
+export const setMapCenter = coords => ({
+  type: 'SET_MAP_CENTER',
+  coords
 });
