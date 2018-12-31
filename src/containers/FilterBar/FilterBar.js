@@ -72,9 +72,13 @@ export class FilterBar extends Component {
       const matchingNode = nodeList.find(
         node => node.className === 'active-suggestion'
       );
-      const longitude = matchingNode.getAttribute('lng');
-      const latitude = matchingNode.getAttribute('lat');
-      this.resetState(latitude, longitude);
+      if (matchingNode) {
+        const longitude = matchingNode.getAttribute('lng');
+        const latitude = matchingNode.getAttribute('lat');
+        this.resetState(latitude, longitude);
+      } else {
+        return;
+      }
     }
   };
 

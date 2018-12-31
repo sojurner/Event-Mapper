@@ -10,6 +10,7 @@ import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
 import mapPin from '../../images/location-point.png';
 import './Map.css';
+import { parse } from 'path';
 
 const ReactMap = ReactMapboxGl({
   accessToken: process.env.REACT_APP_MB_ACCESS_TOKEN
@@ -101,7 +102,6 @@ export class Map extends Component {
         />
       );
     });
-
     return (
       <div className={'map-container'}>
         <div
@@ -118,7 +118,7 @@ export class Map extends Component {
         </div>
         <ReactMap
           onDrag={this.removePopup}
-          center={mapCenter}
+          center={mapCenter.map(coord => parseFloat(coord))}
           zoom={zoom}
           style={`mapbox://styles/mapbox/${mapType}-v9`}
           containerStyle={{ height: '100vh' }}
