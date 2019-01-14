@@ -151,11 +151,18 @@ strong {
 @media only screen and (max-width: 1025px) {
   .tab-scroll-container {
     margin: 0;
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 11rem;
+    padding: 0 0 0;
+    overflow-x: auto;
+    border-top: 2px solid #cccccc;
   }
-  .tab-img {
-    height: 8rem;
-    width: 12rem;
+
+  .fa-bookmark {
+    text-shadow: 2px 2px white;
   }
   .tab-event-name {
     font-size: 0.7rem;
@@ -164,23 +171,65 @@ strong {
     margin-left: 0;
     z-index: 10;
     width: 100vw;
-    height: 13rem;
     font-size: 0.6rem;
     bottom: 0;
+    height: 15rem;
   }
   .tab-card {
-    border-right: 3px solid #d5d5d5;
-    padding: 0 1rem;
+    border-right: none;
+    padding: 0.2rem 1rem 0 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    min-width: 12rem;
+  }
+
+  .event-header-title {
+    font-size: 1.4rem;
+    text-align: left;
+    padding-left: 2rem;
+    font-family: caviar;
+    letter-spacing: 1.5px;
+  }
+
+  .tab-info {
+    .tab-date {
+      display: none;
+    }
+
+    .view-modal {
+      color: #07122b;
+      font-size: 1rem;
+      padding-left: 1rem;
+    }
+
+    .tab-event-name {
+      color: #412e2e;
+      z-index: 100;
+      padding-left: 1rem;
+      font-size: 1.5rem;
+      text-shadow: 1px 1px 1px rgba(56, 49, 49, 0.432);
+      margin-bottom: 1.5rem;
+      text-overflow: ellipsis;
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
   }
 }
 
 @media only screen and (max-width: 1025px) {
   .tab-img {
-    height: 5rem;
-    width: 8rem;
+    height: 100%;
+    width: 100%;
+    position: absolute;
     margin: 0;
+    z-index: -1;
+    background-blend-mode: multiply;
+    opacity: 0.5;
   }
-  .tab-container {
-    height: 11.5rem;
+
+  .tab-img {
+    // width: 100%;
   }
 }

@@ -19,7 +19,7 @@
   border: 3px solid #615f5f;
   border-radius: 1rem !important;
   transition: 0.4s linear;
-  width: 30vw;
+  width: 20rem;
   font-size: 1.4rem;
   padding-right: 35px;
   padding-left: 16px;
@@ -70,9 +70,6 @@
 .filter-active:hover {
   background-color: #3b454b; }
 
-@media only screen and (max-width: 600px) {
-  .location-input {
-    font-size: 1rem;
-    width: 10rem; }
-  .suggestion-list {
-    width: 11rem; } }
+@media only screen and (max-width: 1025px) {
+  .filter-form {
+    left: 0; } }
