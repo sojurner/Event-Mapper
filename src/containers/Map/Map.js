@@ -120,7 +120,7 @@ export class Map extends Component {
           center={mapCenter.map(coord => parseFloat(coord))}
           zoom={zoom}
           style={`mapbox://styles/mapbox/${mapType}-v9`}
-          containerStyle={{ height: '100vh' }}
+          containerStyle={{ height: '100vh', width: '100vw' }}
           flyToOptions={{ speed: 0.8 }}
         >
           {displayPopup && (

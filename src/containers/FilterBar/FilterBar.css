@@ -7,18 +7,16 @@
   justify-content: start;
   align-items: center;
   height: 7rem;
-  width: max-content;
-}
+  width: max-content; }
 
 .ap-with-places {
-  filter: invert(0.9);
-}
+  filter: invert(0.9); }
 
 .algo-places {
   position: absolute;
   filter: invert(0.8);
   z-index: 10;
-  border: 3px solid rgb(97, 95, 95);
+  border: 3px solid #615f5f;
   border-radius: 1rem !important;
   transition: 0.4s linear;
   width: 30vw;
@@ -31,24 +29,20 @@
   box-sizing: border-box;
   appearance: none;
   -webkit-appearance: none;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .ap-input-icon {
-  z-index: 11;
-}
+  z-index: 11; }
 
 .algolia-hide {
-  display: none;
-}
+  display: none; }
 
 .filter-icons {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   width: max-content;
-  height: max-content;
-}
+  height: max-content; }
 
 .fa-calendar-alt,
 .fa-search-location {
@@ -61,31 +55,24 @@
   transition: 0.2s linear;
   text-shadow: 1.5px 1.5px 1.5px #66717868;
   padding: 0.5rem 0.6rem;
-  border-radius: 50%;
-}
+  border-radius: 50%; }
 
 .fa-calendar-alt:hover,
 .fa-search-location:hover {
   text-shadow: 1.5px 1.5px 1.5px #66717868;
   transition: 0.2s linear;
-  background-color: #5c676f;
-}
+  background-color: #5c676f; }
 
 .filter-active {
   color: #bbbbbb;
-  background-color: #5c686f;
-}
+  background-color: #5c686f; }
 
 .filter-active:hover {
-  background-color: #3b454b;
-}
+  background-color: #3b454b; }
 
 @media only screen and (max-width: 600px) {
   .location-input {
     font-size: 1rem;
-    width: 10rem;
-  }
+    width: 10rem; }
   .suggestion-list {
-    width: 11rem;
-  }
-}
+    width: 11rem; } }
