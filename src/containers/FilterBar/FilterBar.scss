@@ -10,6 +10,38 @@
   width: max-content;
 }
 
+.ap-with-places {
+  filter: invert(0.9);
+}
+
+.algo-places {
+  position: absolute;
+  filter: invert(0.8);
+  z-index: 10;
+  border: 3px solid rgb(97, 95, 95);
+  border-radius: 1rem !important;
+  transition: 0.4s linear;
+  width: 30vw;
+  font-size: 1.4rem;
+  padding-right: 35px;
+  padding-left: 16px;
+  line-height: 40px;
+  height: 50px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+.ap-input-icon {
+  z-index: 11;
+}
+
+.algolia-hide {
+  display: none;
+}
+
 .filter-icons {
   margin-top: 1rem;
   display: flex;
