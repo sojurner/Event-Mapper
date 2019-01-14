@@ -6,6 +6,7 @@ export const LoadingScreen = () => {
     <div className="giphy-embed">
       <img
         src={require(`../../images/loader.gif`)}
+        alt="Loading indicator"
         className="giphy-img"
         height="100"
         width="100"

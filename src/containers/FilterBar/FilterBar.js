@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Places from 'places.js';
 import './FilterBar.css';
 
-import { Search } from '../../components/Search/Search';
 import DateFilter from '../../components/DateFilter/DateFilter';
 import * as actions from '../../actions';
 import { getEvents } from '../../utilities/apiCalls/apiCalls';

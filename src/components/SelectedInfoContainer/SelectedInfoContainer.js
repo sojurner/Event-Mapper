@@ -33,7 +33,11 @@ export const SelectedInfoContainer = ({
           </p>
         </div>
       </section>
-      <img src={selectedImage.url} className="selected-background-image" />
+      <img
+        src={selectedImage.url}
+        alt="background image for selected event"
+        className="selected-background-image"
+      />
 
       <div className="item-info">
         <p className="selected selected-title">{item.name}</p>
