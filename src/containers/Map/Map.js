@@ -10,7 +10,6 @@ import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
 import mapPin from '../../images/location-point.png';
 import './Map.css';
-import { parse } from 'path';
 
 const ReactMap = ReactMapboxGl({
   accessToken: process.env.REACT_APP_MB_ACCESS_TOKEN
