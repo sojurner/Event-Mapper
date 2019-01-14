@@ -29,7 +29,7 @@ export class EventTab extends Component {
                   ? 'fas fa-bookmark'
                   : 'fas fa-bookmark active-bookmark'
               }
-              onClick={e => handleFavoriteClick(e, event)}
+              onClick={eve => handleFavoriteClick(eve, event)}
             />
             <h1 className="tab-contents tab-event-name">{event.name}</h1>
             <p className="tab-contents tab-date">{event.date}</p>
@@ -48,7 +48,10 @@ export class EventTab extends Component {
         className={displayTab ? 'tab-container' : 'tab-container tab-inactive'}
       >
         <h2 className="event-header-title">
-          Event List <strong>({events.length})</strong>
+          {this.props.searchedLocation
+            ? this.props.searchedLocation
+            : 'Events Near You'}{' '}
+          <strong>({events.length})</strong>
         </h2>
         {displayTab && <div className="tab-scroll-container">{eventTab}</div>}
       </div>
@@ -57,6 +60,7 @@ export class EventTab extends Component {
 }
 
 export const mapStateToProps = state => ({
+  searchedLocation: state.userLocation.location,
   events: state.events,
   watchList: state.watchList
 });

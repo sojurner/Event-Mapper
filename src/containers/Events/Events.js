@@ -70,13 +70,14 @@ export class Events extends Component {
   };
 
   handleModalClick = (event, order) => {
-    event.preventDefault();
+    event.stopPropagation();
     order === 'open'
       ? this.setState({ displayModal: true })
       : this.setState({ displayModal: false });
   };
 
-  handleFavoriteClick = async (e, event) => {
+  handleFavoriteClick = async (eve, event) => {
+    eve.stopPropagation();
     const {
       activeUser,
       addToWatchList,
