@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import cities from '../../data/usCities.json';
+import Places from 'places.js';
 import './FilterBar.css';
 
 import { Search } from '../../components/Search/Search';
@@ -12,81 +12,45 @@ export class FilterBar extends Component {
   constructor() {
     super();
     this.state = {
-      location: '',
       filterMode: 'location',
-      suggestions: [],
-      cursor: 0,
       dateDisplay: '',
       filterDisplay: false
     };
-    this.textContent = React.createRef();
+    this.searchInput = React.createRef();
   }
 
-  updateValue = event => {
-    event.preventDefault();
-    const { value } = event.target;
-    this.setState({
-      location: value,
-      suggestions: this.getSuggestions(value),
-      cursor: 0
-    });
-  };
-
-  escapeRegexCharacters = str => {
-    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  };
-
-  getSuggestions = value => {
-    const escapedValue = this.escapeRegexCharacters(value.trim());
-    if (escapedValue === '') {
-      return [];
-    }
-    const regex = new RegExp('\\b' + escapedValue, 'i');
-
-    return cities.filter(city =>
-      regex.test(this.getSuggestionValue(city.city))
-    );
-  };
-
-  getSuggestionValue = suggestion => {
-    return suggestion;
-  };
-
-  handleKeyDown = event => {
-    const { cursor, suggestions } = this.state;
-    if (event.keyCode === 38 && cursor > 0) {
-      this.setState(prevState => ({
-        cursor: prevState.cursor - 1
-      }));
-    }
-
-    if (event.keyCode === 40 && cursor <= suggestions.length - 1) {
-      this.setState(prevState => ({
-        cursor: prevState.cursor + 1
-      }));
-    }
-
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      const nodeList = Array.from(this.textContent.current.childNodes);
-      const matchingNode = nodeList.find(
-        node => node.className === 'active-suggestion'
-      );
-      if (matchingNode) {
-        const longitude = matchingNode.getAttribute('lng');
-        const latitude = matchingNode.getAttribute('lat');
-        this.resetState(latitude, longitude);
-      } else {
-        return;
+  componentDidMount = () => {
+    const options = {
+      appId: process.env.REACT_APP_ALG_ID,
+      apiKey: process.env.REACT_APP_ALG_SEARCH_KEY,
+      container: this.searchInput,
+      templates: {
+        value: suggestion => {
+          return suggestion.name;
+        }
       }
-    }
+    };
+
+    const configueOptions = {
+      language: 'en',
+      countries: ['us'],
+      type: 'city'
+    };
+
+    const autoSuggestions = Places(options).configure(configueOptions);
+
+    autoSuggestions.on('change', event => {
+      const { name, latlng } = event.suggestion;
+      const { lat, lng } = latlng;
+      this.resetState(lat, lng, name);
+    });
   };
 
   setDateDisplay = dateDisplay => {
     this.setState({ dateDisplay });
   };
 
-  resetState = async (lat, lng) => {
+  resetState = async (latitude, longitude, location) => {
     const {
       setEvents,
       setUserLocation,
@@ -96,13 +60,12 @@ export class FilterBar extends Component {
       setMapCenter
     } = this.props;
     changePopupDisplay(false);
-    const response = await getEvents(lat, lng);
+    const response = await getEvents(latitude, longitude);
     setEvents(response);
-    setUserLocation({ latitude: lat, longitude: lng });
-    setMapCenter({ latitude: lat, longitude: lng });
+    setUserLocation({ latitude, longitude, location });
+    setMapCenter({ latitude, longitude });
     setTargetEvent(null);
     setZoom([12]);
-    this.setState({ location: '', suggestions: [] });
   };
 
   handleFilterOptions = filterMode => {
@@ -110,13 +73,7 @@ export class FilterBar extends Component {
   };
 
   render() {
-    const {
-      suggestions,
-      location,
-      cursor,
-      filterMode,
-      dateDisplay
-    } = this.state;
+    const { filterMode, dateDisplay } = this.state;
     return (
       <form className="filter-form">
         <div className="filter-icons">
@@ -137,21 +94,18 @@ export class FilterBar extends Component {
             onClick={this.handleFilterOptions.bind(null, 'date')}
           />
         </div>
+
+        <input
+          placeholder="Where to?"
+          className={filterMode === 'location' ? 'algo-places' : 'algolia-hide'}
+          ref={ref => {
+            this.searchInput = ref;
+          }}
+        />
         {filterMode === 'date' && (
           <DateFilter
             dateDisplay={dateDisplay}
             setDateDisplay={this.setDateDisplay}
-          />
-        )}
-        {filterMode === 'location' && (
-          <Search
-            updateValue={this.updateValue}
-            handleKeyDown={this.handleKeyDown}
-            textContent={this.textContent}
-            suggestions={suggestions}
-            location={location}
-            cursor={cursor}
-            resetState={this.resetState}
           />
         )}
       </form>
