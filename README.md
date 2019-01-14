@@ -3,7 +3,8 @@
 [Live Demo](https://event-mapper.netlify.com)
 
 ## About
-Event Mapper is a map application that allows users to find events near their area. Users sign-in through Google and are taken to a map home page where they can view multiple events nearby.  Users can view the events information (name, venue, address, date, distance, picture, etc...) and save/remove an event to their watchlist.
+
+Event Mapper is a map application that allows users to find events near their area. Users sign-in through Google and are taken to a map home page where they can view multiple events nearby. Users can view the events information (name, venue, address, date, distance, picture, etc...) and save/remove an event to their watchlist.
 
 ## Screenshots
 
@@ -13,36 +14,44 @@ Map page
 Watchlist page
 ![event-mapper-3](https://user-images.githubusercontent.com/35910428/47851253-b3be5780-dd9d-11e8-9eaa-17592d6b57d7.gif)
 
-
 ## Technologies
-* React, React-Router
-* Redux
-* [React-mapbox-gl](https://github.com/alex3165/react-mapbox-gl/blob/master/docs/API.md)
-* [Ruby on Rails](https://github.com/SSchwartz214/event_mapper_api)
+
+- React, React-Router
+- Redux
+- [React-mapbox-gl](https://github.com/alex3165/react-mapbox-gl/blob/master/docs/API.md)
+- [Ruby on Rails](https://github.com/SSchwartz214/event_mapper_api)
 
 ## APIs
-* Google O-Auth
-* [Mapbox API](https://www.mapbox.com/mapbox-gl-js/api/)
-* [TicketMaster API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
-* [DarkSky API](https://darksky.net/dev/docs)
 
+- Google O-Auth
+- [Mapbox](https://www.mapbox.com/mapbox-gl-js/api/)
+- [TicketMaster](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
+- [Alogolia](https://www.algolia.com/doc/)
+- [DarkSky](https://darksky.net/dev/docs)
 
 ## Setup
+
 Clone down this [Repo](https://github.com/JoOCon/event-mapper-fe.git)
+
 #### `npm install`
-* Installs npm packages
+
+- Installs npm packages
+
 #### `npm start`
-* Runs the app in development mode
-* Go http://localhost:3000 to view in browser
+
+- Runs the app in development mode
+- Go http://localhost:3000 to view in browser
 
 #### `npm test || npm test -- --coverage`
-* Fires up the testing suite || View test coverage
+
+- Fires up the testing suite || View test coverage
 
 #### `npm run eslint`
-* Search for linting errors
 
+- Search for linting errors
 
 ### Contributors
-* [Joel O'Connor](https://github.com/JoOCon)
-* [Paul Kim](https://github.com/sojurner)
-* [Seth Schwartz(BE)](https://github.com/SSchwartz214)
+
+- [Joel O'Connor](https://github.com/JoOCon)
+- [Paul Kim](https://github.com/sojurner)
+- [Seth Schwartz(BE)](https://github.com/SSchwartz214)
