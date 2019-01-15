@@ -1,21 +1,17 @@
 import * as moment from 'moment';
 
 export const eventsCleaner = events => {
-  console.log(events);
-  if (!events._embedded) return;
-  const parsedEvent = events._embedded.events.map((event, index) => {
+  const { page, _links, _embedded } = events;
+  if (!_embedded) return [];
+  const parsedEvent = _embedded.events.map((event, index) => {
     const { name, id, url, images, dates } = event;
-    let reducedName = name;
-    if (reducedName.length > 44) {
-      reducedName = `${name.slice(0, 44)}...`;
-    }
     const { venues } = event._embedded;
     const lat =
       parseFloat(venues[0].location.latitude) + 0.0002 * Math.random();
     const lng =
       parseFloat(venues[0].location.longitude) + 0.0008 * Math.random();
     return {
-      name: reducedName,
+      name,
       e_id: id,
       url: url,
       img: images[2].url,
@@ -31,7 +27,19 @@ export const eventsCleaner = events => {
       favorite: false
     };
   });
-  return parsedEvent;
+  return {
+    pageInfo: {
+      count: page.totalElements,
+      pages: page.totalPages,
+      current: page.number
+    },
+    linkInfo: {
+      next: _links.next.href,
+      first: _links.first.href,
+      last: _links.last.href
+    },
+    events: parsedEvent
+  };
 };
 
 export const cleanedUser = userInfo => {
