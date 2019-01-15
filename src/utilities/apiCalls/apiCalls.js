@@ -18,7 +18,7 @@ export const getEvents = async (lat, lng) => {
     `geoPoint=${geoCode}&` +
     `endDateTime=${unixSeven}&` +
     'radius=30&' +
-    'size=50';
+    'size=20';
   try {
     const response = await fetch(url);
     if (response.status === 200) {
@@ -49,6 +49,13 @@ export const getEventsByDate = async (lat, lng, start, end) => {
   } catch (error) {
     return { error };
   }
+};
+
+export const getEventsByPage = async url => {
+  url = `https://app.ticketmaster.com/${url}&apikey=${
+    process.env.REACT_APP_TICKET_MASTER_API_KEY
+  }`;
+  return eventsCleaner(await (await fetch(url)).json());
 };
 
 export const getEventImages = async id => {
