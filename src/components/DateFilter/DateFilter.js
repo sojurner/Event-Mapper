@@ -1,7 +1,7 @@
 import React from 'react';
 import * as moment from 'moment';
 import { connect } from 'react-redux';
-import { setEvents } from '../../actions';
+import { setEvents, setEventPageInfo, setEventLinkInfo } from '../../actions';
 import { getEventsByDate } from '../../utilities/apiCalls/apiCalls';
 
 import Calendar from 'react-calendar';
@@ -55,16 +55,25 @@ class DateFilter extends React.Component {
 
   getEventsByDate = async event => {
     event.preventDefault();
-    const { setEvents, userLocation, setDateDisplay } = this.props;
+    const {
+      setEvents,
+      setEventLinkInfo,
+      setEventPageInfo,
+      userLocation,
+      setDateDisplay
+    } = this.props;
     const { latitude, longitude } = userLocation;
     const { startDate, endDate } = this.state;
-    const result = await getEventsByDate(
+    const results = await getEventsByDate(
       latitude,
       longitude,
       startDate.unix,
       endDate.unix
     );
-    setEvents(result);
+    const { events, pageInfo, linkInfo } = results;
+    setEvents(events, pageInfo.current);
+    setEventPageInfo(pageInfo);
+    setEventLinkInfo(linkInfo);
     await this.setState({
       startDate: null,
       endDate: null
@@ -134,7 +143,9 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  setEvents: events => dispatch(setEvents(events))
+  setEvents: events => dispatch(setEvents(events)),
+  setEventPageInfo: pages => dispatch(setEventPageInfo(pages)),
+  setEventLinkInfo: links => dispatch(setEventLinkInfo(links))
 });
 
 export default connect(
