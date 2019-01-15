@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as clean from '../../utilities/helpers/helpers';
+
+import EventNavigation from '../EventNavigation/EventNavigation';
+import { eventServerCleaner } from '../../utilities/helpers/helpers';
 import * as call from '../../utilities/apiCalls/apiCalls';
 import * as invoke from '../../actions';
 
@@ -27,13 +29,14 @@ export class EventTab extends Component {
       activeUser,
       addToWatchList,
       setWatchEvent,
+      eventPages,
       watchList,
       removeFromWatchlist
     } = this.props;
     if (!event.favorite) {
       event.favorite = true;
-      setWatchEvent(event);
-      const body = clean.eventServerCleaner(activeUser, event);
+      setWatchEvent(event, eventPages.current);
+      const body = eventServerCleaner(activeUser, event);
       const response = await call.setFavorite(
         body.userObj,
         body.eventObj,
@@ -47,7 +50,7 @@ export class EventTab extends Component {
       event.favorite = false;
       const matchingEvent = watchList.find(item => item.e_id === event.e_id);
       await call.removeFromWatchlist(activeUser.id, matchingEvent.id);
-      setWatchEvent(event);
+      setWatchEvent(event, eventPages.current);
       removeFromWatchlist(matchingEvent);
       this.setState({ msgPrompt: 'Event Removed!' });
     }
@@ -62,13 +65,14 @@ export class EventTab extends Component {
       events,
       showEventInfo,
       handleModalClick,
+      eventPages,
       closePopup,
       userLocation
     } = this.props;
 
     const { msgPrompt, displayTab } = this.state;
 
-    const eventTab = events.map((event, index) => {
+    const eventTab = events[eventPages.current].map((event, index) => {
       return (
         <div
           className={!event.favorite ? 'tab-card' : 'tab-card tab-card-listed'}
@@ -77,6 +81,8 @@ export class EventTab extends Component {
           onClick={showEventInfo.bind(null, event.e_id, 'click')}
           key={`tab-${index}`}
         >
+          {msgPrompt && <div className="prompt-msg">{msgPrompt}</div>}
+
           <img alt="event" src={event.img} className="tab-img" />
           <section className="tab-info">
             <i
@@ -112,13 +118,13 @@ export class EventTab extends Component {
             }
           />
         </div>
-        {msgPrompt && <div className="prompt-msg">{msgPrompt}</div>}
         <h2 className="event-header-title">
           {userLocation.hasOwnProperty('location')
             ? userLocation.location
             : 'Events Near You'}{' '}
-          <strong>({events.length})</strong>
+          <strong>({eventPages.count})</strong>
         </h2>
+        <EventNavigation />
         <div className="tab-scroll-container">{eventTab}</div>
       </div>
     );
@@ -128,7 +134,9 @@ export class EventTab extends Component {
 export const mapStateToProps = state => ({
   userLocation: state.userLocation,
   activeUser: state.activeUser,
+  eventsPage: state.eventsPage,
   events: state.events,
+  eventPages: state.eventPages,
   watchList: state.watchList
 });
 
