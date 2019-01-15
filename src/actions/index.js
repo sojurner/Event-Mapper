@@ -18,9 +18,10 @@ export const addToWatchList = event => ({
   event
 });
 
-export const setEvents = events => ({
+export const setEvents = (events, page) => ({
   type: 'SET_EVENTS',
-  events
+  events,
+  page
 });
 
 export const setEventPageInfo = info => ({
@@ -28,9 +29,15 @@ export const setEventPageInfo = info => ({
   info
 });
 
-export const setWatchEvent = event => ({
+export const setCurrentEventPage = page => ({
+  type: 'SET_CURRENT_EVENT_PAGE',
+  page
+});
+
+export const setWatchEvent = (event, page) => ({
   type: 'SET_WATCH_EVENT',
-  event
+  event,
+  page
 });
 
 export const setEventLinkInfo = links => ({
