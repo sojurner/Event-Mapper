@@ -3,6 +3,8 @@ import { userReducer, userLocationReducer } from './userReducer';
 import { watchListReducer } from './watchListReducer';
 import {
   eventsReducer,
+  eventsPageReducer,
+  eventsLinkReducer,
   eventTargetReducer,
   popupReducer
 } from './eventsReducer';
@@ -16,6 +18,8 @@ const rootReducer = combineReducers({
   activeUser: userReducer,
   userLocation: userLocationReducer,
   targetEvent: eventTargetReducer,
+  eventPages: eventsPageReducer,
+  eventLinks: eventsLinkReducer,
   displayPopup: popupReducer,
   watchList: watchListReducer,
   mapCenter: mapCenterReducer,
