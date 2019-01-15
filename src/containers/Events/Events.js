@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Modal from 'react-responsive-modal';
 
 import * as call from '../../utilities/apiCalls/apiCalls';
-import * as clean from '../../utilities/helpers/helpers';
 import * as invoke from '../../actions';
 import EventTab from '../EventTab/EventTab';
 
@@ -15,26 +14,26 @@ export class Events extends Component {
   constructor() {
     super();
     this.state = {
-      displayTab: true,
       displayModal: false,
-      hoverMessage: '',
-      msgPrompt: ''
+      hoverMessage: ''
     };
   }
 
   async componentDidMount() {
-    const { activeUser, setWatchList } = this.props;
-    const result = await call.getUserWatchlist(activeUser.id);
-    const userWatchList = result.map(item => {
-      return { ...item, favorite: true };
-    });
-    setWatchList(userWatchList);
-    this.setEvents(userWatchList);
+    if (!this.props.watchList.length) {
+      const { activeUser, setWatchList } = this.props;
+      const result = await call.getUserWatchlist(activeUser.id);
+      const userWatchList = result.map(item => {
+        return { ...item, favorite: true };
+      });
+      setWatchList(userWatchList);
+      this.setEvents(userWatchList);
+    }
   }
 
   setEvents = list => {
-    const { events, setWatchEvent } = this.props;
-    const setEvent = events.map(event => {
+    const { events, setEvents, eventPages } = this.props;
+    const setEvent = events[eventPages.current].map(event => {
       list.forEach(item => {
         if (item.e_id === event.e_id) {
           event.favorite = !event.favorite;
@@ -42,7 +41,8 @@ export class Events extends Component {
       });
       return event;
     });
-    setWatchEvent(setEvent);
+
+    setEvents(setEvent, eventPages.current);
   };
 
   showEventInfo = (id, command) => {
@@ -50,9 +50,13 @@ export class Events extends Component {
       setTargetEvent,
       changePopupDisplay,
       setZoom,
-      setMapCenter
+      setMapCenter,
+      events,
+      eventPages
     } = this.props;
-    const targetEvent = this.props.events.find(event => event.e_id === id);
+    const targetEvent = events[eventPages.current].find(
+      event => event.e_id === id
+    );
     setTargetEvent(targetEvent);
     if (command === 'click') {
       const coordinates = {
@@ -76,60 +80,19 @@ export class Events extends Component {
       : this.setState({ displayModal: false });
   };
 
-  handleFavoriteClick = async (eve, event) => {
-    eve.stopPropagation();
-    const {
-      activeUser,
-      addToWatchList,
-      setWatchEvent,
-      watchList,
-      removeFromWatchlist
-    } = this.props;
-    if (!event.favorite) {
-      setWatchEvent(event);
-      const body = clean.eventServerCleaner(activeUser, event);
-      const response = await call.setFavorite(
-        body.userObj,
-        body.eventObj,
-        activeUser.id
-      );
-      if (!response.error) {
-        addToWatchList(response.event);
-        this.setState({ msgPrompt: 'Event Saved!' });
-      }
-    } else {
-      const matchingEvent = watchList.find(item => item.e_id === event.e_id);
-      await call.removeFromWatchlist(activeUser.id, matchingEvent.id);
-      setWatchEvent(event);
-      removeFromWatchlist(matchingEvent);
-      this.setState({ msgPrompt: 'Event Removed!' });
-    }
-
-    setTimeout(() => {
-      this.setState({ msgPrompt: '' });
-    }, 2000);
-  };
-
   handleHover = (event, hoverMessage) => {
     event.preventDefault();
     this.setState({ hoverMessage });
   };
 
-  changeTabDisplay = (event, bool) => {
-    event.preventDefault();
-    this.setState({ displayTab: !bool });
-  };
-
   render() {
-    const { hoverMessage, displayModal, msgPrompt, displayTab } = this.state;
+    const { hoverMessage, displayModal } = this.state;
 
     const { targetEvent } = this.props;
     return (
       <div className="events-container">
-        {msgPrompt && <div className="prompt-msg">{msgPrompt}</div>}
         <EventTab
           changeTabDisplay={this.changeTabDisplay}
-          displayTab={displayTab}
           handleFavoriteClick={this.handleFavoriteClick}
           showEventInfo={this.showEventInfo}
           closePopup={this.closePopup}
@@ -156,13 +119,12 @@ export const mapStateToProps = state => ({
   activeUser: state.activeUser,
   watchList: state.watchList,
   events: state.events,
+  eventPages: state.eventPages,
   targetEvent: state.targetEvent
 });
 
 export const mapDispatchToProps = dispatch => ({
-  addToWatchList: event => dispatch(invoke.addToWatchList(event)),
-  removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
-  setWatchEvent: event => dispatch(invoke.setWatchEvent(event)),
+  setEvents: (events, page) => dispatch(invoke.setEvents(events, page)),
   setWatchList: events => dispatch(invoke.setWatchList(events)),
   setTargetEvent: event => dispatch(invoke.setTargetEvent(event)),
   setMapCenter: coordinates => dispatch(invoke.setMapCenter(coordinates)),
