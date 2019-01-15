@@ -48,8 +48,8 @@ export class EventTab extends Component {
         className={displayTab ? 'tab-container' : 'tab-container tab-inactive'}
       >
         <h2 className="event-header-title">
-          {this.props.searchedLocation
-            ? this.props.searchedLocation
+          {this.props.userLocation.hasOwnProperty('location')
+            ? this.props.userLocation.location
             : 'Events Near You'}{' '}
           <strong>({events.length})</strong>
         </h2>
@@ -60,7 +60,7 @@ export class EventTab extends Component {
 }
 
 export const mapStateToProps = state => ({
-  searchedLocation: state.userLocation.location,
+  userLocation: state.userLocation,
   events: state.events,
   watchList: state.watchList
 });

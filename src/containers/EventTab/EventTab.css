@@ -5,7 +5,7 @@
   filter: invert(0.9);
   box-shadow: 2px 2px 2px 2px rgba(172, 172, 172, 0.7);
   height: 100vh;
-  width: 30rem;
+  width: 25rem;
   font-size: 0.6rem;
   animation: slideInLeft 1s cubic-bezier(0.075, 0.82, 0.165, 1); }
 
@@ -13,7 +13,7 @@
   height: 14%; }
 
 .event-header-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: left;
   padding-left: 2rem;
   font-family: caviar;
@@ -99,7 +99,11 @@ strong {
 .tab-event-name {
   letter-spacing: 2px;
   margin: 0;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden; }
 
 .tab-date {
   color: #314163; }
@@ -112,7 +116,7 @@ strong {
   position: absolute;
   overflow-y: auto;
   left: 0;
-  height: 85vh;
+  height: 90%;
   padding: 0 0 0;
   overflow-y: scroll;
   border-top: 2px solid #cccccc; }

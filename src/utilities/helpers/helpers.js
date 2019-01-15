@@ -1,6 +1,7 @@
 import * as moment from 'moment';
 
 export const eventsCleaner = events => {
+  console.log(events);
   if (!events._embedded) return;
   const parsedEvent = events._embedded.events.map((event, index) => {
     const { name, id, url, images, dates } = event;
