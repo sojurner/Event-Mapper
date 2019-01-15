@@ -18,7 +18,7 @@ export class NavBar extends Component {
           exact
           to={`/home/${id}`}
         >
-          <i class="fas fa-home" />
+          <i className="fas fa-home" />
           Home
         </NavLink>
         <NavLink
@@ -26,7 +26,7 @@ export class NavBar extends Component {
           onClick={displaySidebar}
           to={`/home/${id}/profile`}
         >
-          <i class="fas fa-user" />
+          <i className="fas fa-user" />
           Profile
         </NavLink>
         <NavLink
@@ -39,7 +39,7 @@ export class NavBar extends Component {
           <span className="watchlist-number"> ({watchlist.length})</span>
         </NavLink>
         <GoogleLogout className="nav-link logout-btn" onLogoutSuccess={logout}>
-          <i class="fas fa-sign-out-alt" />
+          <i className="fas fa-sign-out-alt" />
           Logout
         </GoogleLogout>
       </nav>
