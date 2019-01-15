@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { LoginDisplay } from '../LoginDisplay/LoginDisplay';
-import { HomeDisplay } from '../HomeDisplay/HomeDisplay';
+import HomeDisplay from '../HomeDisplay/HomeDisplay';
 import Profile from '../../containers/Profile/Profile';
 import WatchList from '../../containers/WatchList/WatchList';
 
@@ -27,13 +27,7 @@ export const Routes = ({ user, loginFail, loginSuccess, redirect }) => {
       />
       {user && (
         <nav>
-          <Route
-            exact
-            path={`/home/${user.id}`}
-            render={() => {
-              return <HomeDisplay />;
-            }}
-          />
+          <Route exact path={`/home/${user.id}`} component={HomeDisplay} />
           <Route
             exact
             path={`/home/${user.id}/watchlist`}
