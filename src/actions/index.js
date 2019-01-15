@@ -23,13 +23,23 @@ export const setEvents = events => ({
   events
 });
 
-export const setTargetEvent = event => ({
-  type: 'SET_TARGET_EVENT',
-  event
+export const setEventPageInfo = info => ({
+  type: 'SET_EVENT_PAGE_INFO',
+  info
 });
 
 export const setWatchEvent = event => ({
   type: 'SET_WATCH_EVENT',
+  event
+});
+
+export const setEventLinkInfo = links => ({
+  type: 'SET_EVENT_LINK_INFO',
+  links
+});
+
+export const setTargetEvent = event => ({
+  type: 'SET_TARGET_EVENT',
   event
 });
 
