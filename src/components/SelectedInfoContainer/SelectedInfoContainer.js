@@ -35,7 +35,7 @@ export const SelectedInfoContainer = ({
       </section>
       <img
         src={selectedImage.url}
-        alt="background image for selected event"
+        alt="background for selected event"
         className="selected-background-image"
       />
 
