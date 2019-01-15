@@ -34,17 +34,6 @@ export class Map extends Component {
     };
   }
 
-  componentDidMount() {
-    const { latitude, longitude } = this.props.userLocation;
-    this.retrieveEvents(latitude, longitude);
-  }
-
-  retrieveEvents = async (lat, lng) => {
-    if (!lat && !lng) return;
-    const events = await getEvents(lat, lng);
-    this.props.setEvents(events);
-  };
-
   changeMap = (event, style) => {
     event.preventDefault();
     const { mapType } = this.state;
@@ -76,6 +65,7 @@ export class Map extends Component {
       targetEvent,
       userLocation,
       events,
+      eventPages,
       mapCenter,
       displayPopup,
       zoom
@@ -91,7 +81,7 @@ export class Map extends Component {
     }
     const { mapType } = this.state;
 
-    const features = events.map((event, index) => {
+    const features = events[eventPages.current].map((event, index) => {
       let coordinates = [event.lng, event.lat];
       return (
         <Feature
@@ -145,8 +135,7 @@ export class Map extends Component {
 Map.propTypes = {
   latitude: PropTypes.number,
   longitude: PropTypes.number,
-  events: PropTypes.array,
-  setEvents: PropTypes.func,
+  events: PropTypes.object,
   setTargetEvent: PropTypes.func,
   setZoom: PropTypes.func,
   changePopupDisplay: PropTypes.func,
@@ -159,6 +148,7 @@ export const mapStateToProps = state => ({
   userLocation: state.userLocation,
   eventLocation: state.eventLocation,
   events: state.events,
+  eventPages: state.eventPages,
   mapCenter: state.mapCenter,
   displayPopup: state.displayPopup,
   targetEvent: state.targetEvent,
@@ -166,7 +156,6 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  setEvents: events => dispatch(actions.setEvents(events)),
   setTargetEvent: event => dispatch(actions.setTargetEvent(event)),
   setMapCenter: coordinates => dispatch(actions.setMapCenter(coordinates)),
   setZoom: zoomVal => dispatch(actions.setZoom(zoomVal)),
