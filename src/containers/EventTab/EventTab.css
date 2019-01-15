@@ -1,16 +1,19 @@
-.tab-container {
+.tab-container,
+.tab-inactive {
   z-index: 10;
   position: absolute;
   background-color: #e6e3e3;
   filter: invert(0.9);
+  transform: translate3d(0, 0, 0);
   box-shadow: 2px 2px 2px 2px rgba(172, 172, 172, 0.7);
   height: 100vh;
   width: 25rem;
   font-size: 0.6rem;
-  animation: slideInLeft 1s cubic-bezier(0.075, 0.82, 0.165, 1); }
+  animation: slideInLeft 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.55s cubic-bezier(0.075, 0.82, 0.165, 1); }
 
 .tab-inactive {
-  height: 14%; }
+  transform: translate3d(-25rem, 0, 0); }
 
 .event-header-title {
   font-size: 1.5rem;
@@ -62,11 +65,11 @@ strong {
   position: absolute;
   left: 2%;
   top: 0;
-  color: #727272;
   cursor: pointer; }
 
 .fa-bookmark:hover {
-  color: gray; }
+  color: gray;
+  text-shadow: 0.5px 0.5px 0.5px #000000; }
 
 .arrow-container {
   position: absolute;
@@ -78,17 +81,30 @@ strong {
   cursor: pointer;
   padding: 0.5rem; }
 
-.fa-chevron-left,
-.fa-chevron-right {
+.chevron-left-right-container {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  right: -4.3rem;
+  border-radius: 0 1rem 1rem 0;
+  z-index: -3;
+  top: 1rem;
+  border: 2px solid rgba(172, 172, 172, 0.7);
+  background: #e0e0e0;
+  padding: 0.5rem 1rem;
+  cursor: pointer; }
+
+.fa-chevron-circle-left,
+.fa-chevron-circle-right {
   font-weight: 600;
   font-size: 2rem;
-  color: #bdbdbd; }
+  color: #978383; }
 
-.fa-chevron-left:hover {
-  color: #676767; }
+.chevron-left-right-container:hover .fa-chevron-circle-left {
+  filter: invert(0.75); }
 
-.fa-chevron-right:hover {
-  color: #686868; }
+.chevron-left-right-container:hover .fa-chevron-circle-right {
+  filter: invert(0.75); }
 
 .active-bookmark {
   color: #343c57; }
