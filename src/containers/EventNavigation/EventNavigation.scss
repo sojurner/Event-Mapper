@@ -1,0 +1,57 @@
+.page-toolbar {
+  display: flex;
+  justify-content: center;
+}
+
+.page-navigation-contents {
+  max-width: 70%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  margin: 0 1.5rem;
+}
+
+.event-page-active,
+.event-page {
+  font-size: 1.2rem;
+  height: 2rem;
+  width: 1.2rem;
+  margin: 0 1.4rem;
+  cursor: pointer;
+  transition: 0.05s linear;
+  border-top: 0px solid black;
+  color: rgb(87, 87, 87);
+
+  text-align: center;
+  padding-top: 0.3rem;
+}
+.event-page:hover {
+  color: black;
+}
+
+.event-page-active {
+  border-top: 2px solid black;
+  padding-top: 0.2rem;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: 1rem;
+  padding: 0;
+  align-self: center;
+  cursor: pointer;
+  color: rgb(126, 126, 126);
+  transition: 0.1s ease-in;
+}
+
+.fa-chevron-left:hover,
+.fa-chevron-right:hover {
+  color: black;
+}
+
+@media only screen and (max-width: 1025px) {
+  .page-toolbar {
+    margin-top: 1rem;
+  }
+}

@@ -14,16 +14,3 @@
   height: 3rem;
   filter: brightness(100%);
 }
-
-.prompt-msg {
-  position: absolute;
-  z-index: 100;
-  animation: slideInDown 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  font-size: 1.5rem;
-  font-family: caviar;
-  left: 18rem;
-  top: 2rem;
-  color: white;
-  text-align: center;
-  width: max-content;
-}

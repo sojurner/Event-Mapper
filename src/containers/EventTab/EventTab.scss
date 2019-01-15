@@ -17,6 +17,23 @@
   transform: translate3d(-25rem, 0, 0);
 }
 
+.prompt-msg {
+  position: absolute;
+  z-index: 100;
+  animation: slideInDown 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-size: 1.5rem;
+  font-family: caviar;
+  left: 2rem;
+  top: 1rem;
+  color: white;
+  text-align: center;
+  width: max-content;
+  border: 1px solid black;
+  background: rgb(37, 36, 36);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
 .event-header-title {
   font-size: 1.5rem;
   text-align: left;
@@ -152,7 +169,7 @@ strong {
   position: absolute;
   overflow-y: auto;
   left: 0;
-  height: 90%;
+  height: 85.5%;
   padding: 0 0 0;
   overflow-y: scroll;
   border-top: 2px solid #cccccc;
@@ -202,11 +219,11 @@ strong {
     padding: 0.2rem 1rem 0 0rem;
     margin-left: 1rem;
     margin-right: 1rem;
-
     min-width: 12rem;
   }
 
   .event-header-title {
+    display: none;
     font-size: 1.4rem;
     text-align: left;
     padding-left: 2rem;
