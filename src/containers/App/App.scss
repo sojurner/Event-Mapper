@@ -59,22 +59,14 @@ button:focus {
 
 .fa-stream,
 .fa-xing {
-  position: absolute;
-  right: 0;
-  top: 0;
   font-size: 1.5rem;
   z-index: 30;
-  border-radius: 50%;
-  padding: 0.5rem;
-  margin: 1.6rem 2.1rem;
-
   cursor: pointer;
   color: #f7f7f7;
 }
 
 .fa-xing {
   font-size: 2.1rem;
-  margin: 1.4rem 2rem;
 }
 
 .fa-stream:hover {
@@ -97,8 +89,12 @@ button:focus {
   z-index: 29;
   right: 0;
   top: 0;
-  margin: 1rem 1.5rem 0 0;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translate3d(-1.5rem, 1rem, 0);
 }
 
 @font-face {
@@ -113,14 +109,12 @@ button:focus {
 
 @media only screen and (max-width: 1000px) {
   .fa-stream {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .quarter-circle-top-right {
-    height: 2rem;
-    width: 2rem;
-    margin-top: 1rem;
-    margin-right: 1.05rem;
+    height: 3rem;
+    width: 3rem;
   }
 }
 
