@@ -13,7 +13,7 @@ export class EventTab extends Component {
     super();
     this.state = {
       displayTab: true,
-      msgPrompt: ''
+      msgPrompt: { id: null, msg: '' }
     };
   }
 
@@ -44,7 +44,7 @@ export class EventTab extends Component {
       );
       if (!response.error) {
         addToWatchList(response.event);
-        this.setState({ msgPrompt: 'Event Saved!' });
+        this.setState({ msgPrompt: { id: event.e_id, msg: 'Event Saved!' } });
       }
     } else {
       event.favorite = false;
@@ -52,11 +52,11 @@ export class EventTab extends Component {
       await call.removeFromWatchlist(activeUser.id, matchingEvent.id);
       setWatchEvent(event, eventPages.current);
       removeFromWatchlist(matchingEvent);
-      this.setState({ msgPrompt: 'Event Removed!' });
+      this.setState({ msgPrompt: { id: event.e_id, msg: 'Event Removed!' } });
     }
 
     setTimeout(() => {
-      this.setState({ msgPrompt: '' });
+      this.setState({ msgPrompt: {} });
     }, 2000);
   };
 
@@ -81,7 +81,9 @@ export class EventTab extends Component {
           onClick={showEventInfo.bind(null, event.e_id, 'click')}
           key={`tab-${index}`}
         >
-          {msgPrompt && <div className="prompt-msg">{msgPrompt}</div>}
+          {msgPrompt.id === event.e_id && (
+            <div className="prompt-msg">{msgPrompt.msg}</div>
+          )}
 
           <img alt="event" src={event.img} className="tab-img" />
           <section className="tab-info">
@@ -143,7 +145,7 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => ({
   removeFromWatchlist: event => dispatch(invoke.removeFromWatchlist(event)),
   addToWatchList: event => dispatch(invoke.addToWatchList(event)),
-  setWatchEvent: event => dispatch(invoke.setWatchEvent(event))
+  setWatchEvent: (event, page) => dispatch(invoke.setWatchEvent(event, page))
 });
 
 export default connect(
