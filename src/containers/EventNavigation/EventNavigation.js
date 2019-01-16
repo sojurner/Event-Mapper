@@ -36,22 +36,27 @@ class EventNavigation extends Component {
 
   getEventsByPage = async (event, pageNum) => {
     event.preventDefault();
+    const { events, setCurrentEventPage } = this.props;
     this.setState({ currentPage: (event, pageNum) });
-    const {
-      eventLinks,
-      setEvents,
-      setEventPageInfo,
-      setEventLinkInfo
-    } = this.props;
-    const { rawLink } = eventLinks;
-    const index = rawLink.lastIndexOf('&');
-    const url = rawLink.slice(1, index - 1) + pageNum + rawLink.slice(index);
-
-    const results = await getEventsByPage(url);
-    const { events, pageInfo, linkInfo } = results;
-    setEvents(events, pageInfo.current);
-    setEventPageInfo(pageInfo);
-    setEventLinkInfo(linkInfo);
+    if (!events[pageNum]) {
+      const {
+        eventLinks,
+        setEvents,
+        setEventPageInfo,
+        setEventLinkInfo
+      } = this.props;
+      console.log('fetching');
+      const { rawLink } = eventLinks;
+      const index = rawLink.lastIndexOf('&');
+      const url = rawLink.slice(1, index - 1) + pageNum + rawLink.slice(index);
+      const results = await getEventsByPage(url);
+      const { events, pageInfo, linkInfo } = results;
+      setEvents(events, pageInfo.current);
+      setEventPageInfo(pageInfo);
+      setEventLinkInfo(linkInfo);
+    } else {
+      setCurrentEventPage(pageNum);
+    }
   };
 
   render() {
@@ -72,9 +77,6 @@ class EventNavigation extends Component {
               <span
                 key={`event-page-${num}`}
                 className={
-                  // eventPages.current === num
-                  //   ? 'event-page-active'
-                  //   : 'event-page'
                   currentPage === num ? 'event-page-active' : 'event-page'
                 }
                 onClick={event => {
@@ -101,7 +103,8 @@ class EventNavigation extends Component {
 
 const mapStateToProps = state => ({
   eventPages: state.eventPages,
-  eventLinks: state.eventLinks
+  eventLinks: state.eventLinks,
+  events: state.events
 });
 
 const mapDispatchToProps = dispatch => ({
