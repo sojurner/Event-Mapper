@@ -131,7 +131,7 @@ export const mapDispatchToProps = dispatch => ({
     dispatch(actions.setUserLocation(coordinates)),
   setTargetEvent: event => dispatch(actions.setTargetEvent(event)),
   setMapCenter: coords => dispatch(actions.setMapCenter(coords)),
-  setEvents: events => dispatch(actions.setEvents(events)),
+  setEvents: (events, page) => dispatch(actions.setEvents(events, page)),
   setEventLinkInfo: links => dispatch(actions.setEventLinkInfo(links)),
   setEventPageInfo: pages => dispatch(actions.setEventPageInfo(pages)),
   setZoom: zoomVal => dispatch(actions.setZoom(zoomVal)),
