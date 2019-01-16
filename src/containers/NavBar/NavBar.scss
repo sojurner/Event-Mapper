@@ -7,15 +7,16 @@
   top: 0;
   display: flex;
   flex-direction: column;
-  background-color: rgb(209, 209, 209);
+  background-color: rgb(34, 47, 70);
   font-family: caviar-bold;
   animation: fadeIn 0.3s linear;
-  box-shadow: 2px 2px #98989873;
-  text-shadow: 1.5px 1.5px #afafaf;
+  box-shadow: 1px 1px 1px 1px #352e2e4b;
+  text-shadow: 1px 1px 1px #505050;
+  letter-spacing: 1px;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  color: #727272;
+  color: #64737c;
   margin: 6.5rem 2rem 0 0rem;
 }
 
@@ -27,7 +28,7 @@
   width: 0;
   height: 0;
   border: 22px solid transparent;
-  border-bottom-color: rgb(209, 209, 209);
+  border-bottom-color: #223332;
   box-shadow: 2px #98989873;
 
   border-top: 0;
@@ -43,8 +44,8 @@
   text-decoration-line: none;
   font-size: 1.2rem;
   padding: 1rem 1rem 1rem 1rem;
-  color: #8a8a8a;
-  background-color: rgb(209, 209, 209);
+  color: #64737c;
+  background-color: rgb(34, 47, 70);
 }
 
 .fa-eye,
@@ -55,9 +56,9 @@
 }
 
 .nav-link:hover {
-  border-left: 4px solid #7e7e7e;
-  background-color: #c9c9c9;
-  color: #777777;
+  border-left: 4px solid #4c626b;
+  background-color: #1b2531;
+  color: #546a92;
 }
 
 .logout-btn {
@@ -65,16 +66,16 @@
   display: flex;
   padding: 1rem 0 1rem 1rem;
   text-shadow: 1.5px 1.5px #afafaf;
+  border: 1px solid rgb(39, 49, 54);
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
 
 .logout-btn:hover {
-  color: #9e4a4a;
+  color: #5a2c2c;
   font-family: caviar;
-  font-weight: 800;
   border: none;
-  background-color: #b8a6a6;
+  background-color: #2e1616;
 }
 
 .greeting {
@@ -84,7 +85,7 @@
 
 .watchlist-number {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #272626;
+  color: #99acff;
 }
 
 .fa-sign-out-alt {

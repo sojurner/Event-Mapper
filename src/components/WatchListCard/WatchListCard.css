@@ -6,35 +6,26 @@
   align-items: center;
   font-family: caviar;
   letter-spacing: 2px;
-  border-top: 2.5px solid rgba(129, 135, 150, 0.502);
-  border-bottom: 2.5px solid rgba(129, 135, 150, 0.502);
+  border-top: 3px solid #5a637a;
+  border-bottom: 3px solid #5a637a;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: #2d2929;
   cursor: pointer;
   filter: grayscale(40%);
-  height: 10rem; }
-
-.watch-list-card-container-active:after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 0;
-  height: 0;
-  border: 22px solid transparent;
-  border-left-color: #c7c7c7;
-  border-right: 0;
-  margin-top: -22px;
-  margin-right: -22px; }
-
-.watch-list-card-container {
-  background-color: #cfcfcf; }
+  height: 10rem;
+  transition: 0.2s linear; }
 
 .watch-list-card-container:hover {
   filter: grayscale(0%);
-  background-color: #b1b1b1; }
+  background-color: #5a5858; }
+
+.watch-list-card-container:hover .watch-list-card-title {
+  color: white; }
 
 .watch-list-card-container-active {
   filter: grayscale(0%);
-  background-color: #2d2929; }
+  background-color: rgba(32, 31, 61, 0.425); }
 
 .watch-list-card-title,
 .watch-list-card-title-active {
@@ -42,27 +33,23 @@
   margin: auto 0;
   text-align: center;
   font-size: 1.4rem;
-  text-shadow: 1px 1px #4f4f4f; }
+  text-shadow: 1px 1px #4f4f4f;
+  color: #a1a1a1; }
 
 .watch-list-card-title-active {
-  color: #e4e4e4; }
-
-.img-card {
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  opacity: 0.3; }
+  color: #ffffff; }
 
 @media only screen and (max-width: 1000px) {
-  .img-card {
-    height: 13em;
-    width: 17em; }
   .watch-list-card-title {
     font-size: 2em; }
   .watch-list-card-container,
   .watch-list-card-container-active {
-    padding-bottom: 2em; } }
+    display: initial;
+    min-width: 12rem;
+    line-height: 2rem;
+    text-align: center;
+    border-left: 2px solid #414852;
+    border-right: 2px solid #414852; } }
 
 @media only screen and (max-width: 750px) {
   .img-card {

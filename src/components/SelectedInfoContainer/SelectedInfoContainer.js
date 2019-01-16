@@ -11,7 +11,10 @@ export const SelectedInfoContainer = ({
   openNewTab
 }) => {
   return weather ? (
-    <div className="selected-container">
+    <div
+      className="selected-container"
+      style={{ backgroundImage: `url(${selectedImage.url})` }}
+    >
       <section className="weather-info">
         <div className="weather-container">
           <img
@@ -33,11 +36,11 @@ export const SelectedInfoContainer = ({
           </p>
         </div>
       </section>
-      <img
+      {/* <img
         src={selectedImage.url}
         alt="background for selected event"
         className="selected-background-image"
-      />
+      /> */}
 
       <div className="item-info">
         <p className="selected selected-title">{item.name}</p>

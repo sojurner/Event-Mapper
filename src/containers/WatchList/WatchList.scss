@@ -23,6 +23,7 @@
   }
 
   .favorites-list {
+    overflow-x: scroll;
     display: flex;
     max-width: none;
     height: fit-content;

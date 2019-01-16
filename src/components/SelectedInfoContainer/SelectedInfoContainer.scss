@@ -9,16 +9,11 @@
   font-family: caviar;
   letter-spacing: 2px;
   font-size: 1.1em;
+  background-blend-mode: multiply;
   display: flex;
   flex-direction: column;
-}
-
-.selected-background-image {
-  position: absolute;
-  z-index: 3;
-  width: 82%;
-  height: 100%;
-  opacity: 0.2;
+  background: #000000cc;
+  background-size: cover;
 }
 
 .weather-high,

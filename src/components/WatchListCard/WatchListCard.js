@@ -11,6 +11,7 @@ export const WatchListCard = ({ handleSelection, item, currentItem }) => {
           ? 'watch-list-card-container-active'
           : 'watch-list-card-container'
       }
+      style={{ backgroundImage: `url(${item.img})` }}
       onClick={handleSelection.bind(null, item)}
     >
       <h1
@@ -22,11 +23,6 @@ export const WatchListCard = ({ handleSelection, item, currentItem }) => {
       >
         {item.name}
       </h1>
-      <img
-        className="img-card"
-        alt="shows who is playing the event"
-        src={item.img}
-      />
     </div>
   );
 };

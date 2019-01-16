@@ -84,7 +84,7 @@ button:focus {
 .quarter-circle-top-right {
   width: 60px;
   height: 60px;
-  background: rgba(155, 150, 150, 0.753);
+  background: rgb(39, 42, 48);
   border-radius: 50%;
   z-index: 29;
   right: 0;
@@ -93,7 +93,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  border: 2px solid rgb(113, 119, 146);
   transform: translate3d(-1.5rem, 1rem, 0);
 }
 
