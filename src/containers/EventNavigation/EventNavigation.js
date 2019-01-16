@@ -45,7 +45,6 @@ class EventNavigation extends Component {
         setEventPageInfo,
         setEventLinkInfo
       } = this.props;
-      console.log('fetching');
       const { rawLink } = eventLinks;
       const index = rawLink.lastIndexOf('&');
       const url = rawLink.slice(1, index - 1) + pageNum + rawLink.slice(index);
