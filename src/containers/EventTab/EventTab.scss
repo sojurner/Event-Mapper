@@ -20,16 +20,19 @@
 .prompt-msg {
   position: absolute;
   z-index: 100;
-  animation: slideInDown 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  font-size: 1.5rem;
+  animation: fadeIn 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-size: 1.2rem;
   font-family: caviar;
-  left: 2rem;
-  top: 1rem;
-  color: white;
+  line-height: 100px;
+  vertical-align: center;
+  color: rgb(36, 36, 36);
   text-align: center;
-  width: max-content;
-  border: 1px solid black;
-  background: rgb(37, 36, 36);
+  left: 11rem;
+  bottom: 2rem;
+  width: 45%;
+  height: 60%;
+  background-blend-mode: multiply;
+  background-color: rgba(255, 255, 255, 0.973);
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
