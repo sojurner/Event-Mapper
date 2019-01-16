@@ -27,14 +27,10 @@ export class App extends Component {
   }
 
   setLatLngEvents = async () => {
-    try {
-      await navigator.geolocation.getCurrentPosition(location => {
-        this.props.setUserLocation(location.coords);
-        this.props.setMapCenter(location.coords);
-      });
-    } catch (error) {
-      this.setState({ error });
-    }
+    await navigator.geolocation.getCurrentPosition(location => {
+      this.props.setUserLocation(location.coords);
+      this.props.setMapCenter(location.coords);
+    });
   };
 
   loginSuccess = async res => {
@@ -71,8 +67,7 @@ export class App extends Component {
         <div>
           {loading && <LoadingScreen />}
           {activeUser && (
-            <div>
-              <div className={`quarter-circle-top-right`} />
+            <div className="quarter-circle-top-right">
               <i
                 className={!displaySidebar ? `fas fa-stream` : 'fab fa-xing'}
                 onClick={this.displaySidebar}
