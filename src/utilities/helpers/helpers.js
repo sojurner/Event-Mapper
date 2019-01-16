@@ -3,7 +3,7 @@ import * as moment from 'moment';
 export const eventsCleaner = events => {
   const { page, _links, _embedded } = events;
   if (!_embedded) return [];
-  const parsedEvent = _embedded.events.map((event, index) => {
+  const parsedEvent = _embedded.events.map(event => {
     const { name, id, url, images, dates } = event;
     const { venues } = event._embedded;
     const lat =
@@ -34,9 +34,7 @@ export const eventsCleaner = events => {
       current: page.number
     },
     linkInfo: {
-      next: _links.next.href,
-      first: _links.first.href,
-      last: _links.last.href
+      rawLink: _links.first.href
     },
     events: parsedEvent
   };
