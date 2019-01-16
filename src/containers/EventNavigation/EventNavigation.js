@@ -6,18 +6,46 @@ import { connect } from 'react-redux';
 import './EventNavigation.css';
 
 class EventNavigation extends Component {
-  state = {};
+  state = {
+    totalPages: [],
+    pagesToShow: [],
+    currentPage: 0
+  };
 
-  getEventsByPage = async pageNum => {
+  componentDidMount = () => {
+    const totalPages = Array.from(
+      { length: this.props.eventPages.pages },
+      (vim, kim) => kim
+    );
+    const pagesToShow = totalPages.filter(page => page <= 4);
+    this.setState({ totalPages, pagesToShow });
+  };
+
+  handlePageChange = next => {
+    const { totalPages } = this.state;
+    const pagesToShow = totalPages.filter(page => {
+      if (next < 4) {
+        return page <= 4;
+      }
+      if (next >= 4) {
+        return page >= next - 2 && page <= next + 2;
+      }
+    });
+    this.setState({ pagesToShow });
+  };
+
+  getEventsByPage = async (event, pageNum) => {
+    event.preventDefault();
+    this.setState({ currentPage: (event, pageNum) });
     const {
       eventLinks,
       setEvents,
       setEventPageInfo,
       setEventLinkInfo
     } = this.props;
-    const { next } = eventLinks;
-    const index = next.lastIndexOf('&');
-    const url = next.slice(1, index - 1) + pageNum + next.slice(index);
+    const { rawLink } = eventLinks;
+    const index = rawLink.lastIndexOf('&');
+    const url = rawLink.slice(1, index - 1) + pageNum + rawLink.slice(index);
 
     const results = await getEventsByPage(url);
     const { events, pageInfo, linkInfo } = results;
@@ -28,34 +56,43 @@ class EventNavigation extends Component {
 
   render() {
     const { eventPages } = this.props;
+    const { pagesToShow, currentPage } = this.state;
     return (
       <div className="page-toolbar">
         <i
           className="fas fa-chevron-left"
-          onClick={this.getEventsByPage.bind(null, eventPages.current - 1)}
+          onClick={event => {
+            this.getEventsByPage(event, eventPages.current - 1);
+            this.handlePageChange(currentPage - 1);
+          }}
         />
         <div className="page-navigation-contents">
-          {Array.from({ length: eventPages.pages }, (vim, kim) => kim).map(
-            num => {
-              return (
-                <span
-                  key={`event-page-${num}`}
-                  className={
-                    eventPages.current === num
-                      ? 'event-page-active'
-                      : 'event-page'
-                  }
-                  onClick={this.getEventsByPage.bind(null, num)}
-                >
-                  {num}
-                </span>
-              );
-            }
-          )}
+          {pagesToShow.map(num => {
+            return (
+              <span
+                key={`event-page-${num}`}
+                className={
+                  // eventPages.current === num
+                  //   ? 'event-page-active'
+                  //   : 'event-page'
+                  currentPage === num ? 'event-page-active' : 'event-page'
+                }
+                onClick={event => {
+                  this.getEventsByPage(event, num);
+                  this.handlePageChange(num);
+                }}
+              >
+                {num}
+              </span>
+            );
+          })}
         </div>
         <i
           className="fas fa-chevron-right"
-          onClick={this.getEventsByPage.bind(null, eventPages.current + 1)}
+          onClick={event => {
+            this.getEventsByPage(event, currentPage + 1);
+            this.handlePageChange(currentPage + 1);
+          }}
         />
       </div>
     );
