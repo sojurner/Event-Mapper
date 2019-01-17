@@ -45,6 +45,11 @@
   transition: 0.1s ease-in;
 }
 
+.chevron-left-hide,
+.chevron-right-hide {
+  display: none;
+}
+
 .fa-chevron-left:hover,
 .fa-chevron-right:hover {
   color: black;
