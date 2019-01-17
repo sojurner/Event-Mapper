@@ -143,7 +143,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  setEvents: events => dispatch(setEvents(events)),
+  setEvents: (events, page) => dispatch(setEvents(events, page)),
   setEventPageInfo: pages => dispatch(setEventPageInfo(pages)),
   setEventLinkInfo: links => dispatch(setEventLinkInfo(links))
 });

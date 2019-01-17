@@ -13,12 +13,27 @@ class EventNavigation extends Component {
   };
 
   componentDidMount = () => {
-    const totalPages = Array.from(
-      { length: this.props.eventPages.pages },
-      (vim, kim) => kim
-    );
+    const { pages } = this.props.eventPages;
+    const totalPages = Array.from({ length: pages }, (vim, kim) => kim);
     const pagesToShow = totalPages.filter(page => page <= 4);
     this.setState({ totalPages, pagesToShow });
+  };
+
+  static getDerivedStateFromProps = (props, state) => {
+    if (state.totalPages.length !== props.eventPages.pages) {
+      const totalPages = Array.from(
+        { length: props.eventPages.pages },
+        (vim, kim) => kim
+      );
+      const pagesToShow = totalPages.filter(page => page <= 4);
+      return {
+        totalPages,
+        pagesToShow,
+        currentPage: 0
+      };
+    }
+
+    return null;
   };
 
   handlePageChange = next => {
@@ -50,6 +65,7 @@ class EventNavigation extends Component {
       const url = rawLink.slice(1, index - 1) + pageNum + rawLink.slice(index);
       const results = await getEventsByPage(url);
       const { events, pageInfo, linkInfo } = results;
+      console.log(pageInfo);
       setEvents(events, pageInfo.current);
       setEventPageInfo(pageInfo);
       setEventLinkInfo(linkInfo);
