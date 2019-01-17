@@ -6,7 +6,6 @@ import ReactMapboxGl, { Feature, Layer } from 'react-mapbox-gl';
 import { UserLocation } from '../../components/UserLocation/UserLocation';
 import { EventPopup } from '../../components/EventPopup/EventPopup';
 import * as actions from '../../actions/index.js';
-import { getEvents } from '../../utilities/apiCalls/apiCalls';
 
 import mapPin from '../../images/location-point.png';
 import './Map.css';
