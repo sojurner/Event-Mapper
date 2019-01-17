@@ -45,6 +45,7 @@ class EventNavigation extends Component {
       if (next >= 4) {
         return page >= next - 2 && page <= next + 2;
       }
+      return page;
     });
     this.setState({ pagesToShow });
   };
@@ -76,11 +77,15 @@ class EventNavigation extends Component {
 
   render() {
     const { eventPages } = this.props;
-    const { pagesToShow, currentPage } = this.state;
+    const { pagesToShow, currentPage, totalPages } = this.state;
     return (
       <div className="page-toolbar">
         <i
-          className="fas fa-chevron-left"
+          className={
+            currentPage === totalPages[0]
+              ? 'chevron-left-hide'
+              : 'fas fa-chevron-left'
+          }
           onClick={event => {
             this.getEventsByPage(event, eventPages.current - 1);
             this.handlePageChange(currentPage - 1);
@@ -105,7 +110,11 @@ class EventNavigation extends Component {
           })}
         </div>
         <i
-          className="fas fa-chevron-right"
+          className={
+            currentPage === totalPages[totalPages.length - 1]
+              ? 'chevron-right-hide'
+              : 'fas fa-chevron-right'
+          }
           onClick={event => {
             this.getEventsByPage(event, currentPage + 1);
             this.handlePageChange(currentPage + 1);
