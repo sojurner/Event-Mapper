@@ -93,41 +93,6 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        Array [
-          <Unknown
-            anchor="bottom"
-            coordinates={
-              Array [
-                "-105.010166",
-                "39.74724",
-              ]
-            }
-          >
-            <i
-              className="fas fa-map-pin"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />
-          </Unknown>,
-          <Unknown
-            anchor="bottom"
-            coordinates={
-              Array [
-                "-105.010166",
-                "39.74724",
-              ]
-            }
-          >
-            <i
-              className="fas fa-map-pin"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />
-          </Unknown>,
-        ],
-        false,
         <Connect(EventTab)
           closePopup={[Function]}
           handleModalClick={[Function]}
@@ -169,91 +134,23 @@ ShallowWrapper {
           styles={Object {}}
         >
           <EventModal
-            handleFavoriteClick={[Function]}
             handleHover={[Function]}
             hoverMessage=""
-            targetEvent={Object {}}
           />
         </Modal>,
       ],
+      "className": "events-container",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "event-0",
-        "nodeType": "function",
-        "props": Object {
-          "anchor": "bottom",
-          "children": <i
-            className="fas fa-map-pin"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          />,
-          "coordinates": Array [
-            "-105.010166",
-            "39.74724",
-          ],
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "fas fa-map-pin",
-            "onClick": [Function],
-            "onMouseEnter": [Function],
-            "onMouseLeave": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "i",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": "event-1",
-        "nodeType": "function",
-        "props": Object {
-          "anchor": "bottom",
-          "children": <i
-            className="fas fa-map-pin"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          />,
-          "coordinates": Array [
-            "-105.010166",
-            "39.74724",
-          ],
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "fas fa-map-pin",
-            "onClick": [Function],
-            "onMouseEnter": [Function],
-            "onMouseLeave": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "i",
-        },
-        "type": [Function],
-      },
-      false,
-      Object {
-        "instance": null,
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "changeTabDisplay": undefined,
           "closePopup": [Function],
+          "handleFavoriteClick": undefined,
           "handleModalClick": [Function],
           "showEventInfo": [Function],
         },
@@ -270,10 +167,8 @@ ShallowWrapper {
           "blockScroll": true,
           "center": true,
           "children": <EventModal
-            handleFavoriteClick={[Function]}
             handleHover={[Function]}
             hoverMessage=""
-            targetEvent={Object {}}
           />,
           "classNames": Object {},
           "classes": Object {
@@ -308,10 +203,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "handleFavoriteClick": [Function],
+            "handleFavoriteClick": undefined,
             "handleHover": [Function],
             "hoverMessage": "",
-            "targetEvent": Object {},
+            "targetEvent": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -329,41 +224,6 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          Array [
-            <Unknown
-              anchor="bottom"
-              coordinates={
-                Array [
-                  "-105.010166",
-                  "39.74724",
-                ]
-              }
-            >
-              <i
-                className="fas fa-map-pin"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-              />
-            </Unknown>,
-            <Unknown
-              anchor="bottom"
-              coordinates={
-                Array [
-                  "-105.010166",
-                  "39.74724",
-                ]
-              }
-            >
-              <i
-                className="fas fa-map-pin"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-              />
-            </Unknown>,
-          ],
-          false,
           <Connect(EventTab)
             closePopup={[Function]}
             handleModalClick={[Function]}
@@ -405,91 +265,23 @@ ShallowWrapper {
             styles={Object {}}
           >
             <EventModal
-              handleFavoriteClick={[Function]}
               handleHover={[Function]}
               hoverMessage=""
-              targetEvent={Object {}}
             />
           </Modal>,
         ],
+        "className": "events-container",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "event-0",
-          "nodeType": "function",
-          "props": Object {
-            "anchor": "bottom",
-            "children": <i
-              className="fas fa-map-pin"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />,
-            "coordinates": Array [
-              "-105.010166",
-              "39.74724",
-            ],
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "className": "fas fa-map-pin",
-              "onClick": [Function],
-              "onMouseEnter": [Function],
-              "onMouseLeave": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "i",
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "event-1",
-          "nodeType": "function",
-          "props": Object {
-            "anchor": "bottom",
-            "children": <i
-              className="fas fa-map-pin"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />,
-            "coordinates": Array [
-              "-105.010166",
-              "39.74724",
-            ],
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "className": "fas fa-map-pin",
-              "onClick": [Function],
-              "onMouseEnter": [Function],
-              "onMouseLeave": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "i",
-          },
-          "type": [Function],
-        },
-        false,
-        Object {
-          "instance": null,
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "changeTabDisplay": undefined,
             "closePopup": [Function],
+            "handleFavoriteClick": undefined,
             "handleModalClick": [Function],
             "showEventInfo": [Function],
           },
@@ -506,10 +298,8 @@ ShallowWrapper {
             "blockScroll": true,
             "center": true,
             "children": <EventModal
-              handleFavoriteClick={[Function]}
               handleHover={[Function]}
               hoverMessage=""
-              targetEvent={Object {}}
             />,
             "classNames": Object {},
             "classes": Object {
@@ -544,10 +334,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "handleFavoriteClick": [Function],
+              "handleFavoriteClick": undefined,
               "handleHover": [Function],
               "hoverMessage": "",
-              "targetEvent": Object {},
+              "targetEvent": undefined,
             },
             "ref": null,
             "rendered": null,
@@ -672,43 +462,6 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        Array [
-          <Unknown
-            anchor="bottom"
-            coordinates={
-              Array [
-                "-105.010166",
-                "39.74724",
-              ]
-            }
-          >
-            <i
-              className="fas fa-map-pin"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />
-          </Unknown>,
-          <Unknown
-            anchor="bottom"
-            coordinates={
-              Array [
-                "-105.010166",
-                "39.74724",
-              ]
-            }
-          >
-            <i
-              className="fas fa-map-pin"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />
-          </Unknown>,
-        ],
-        <EventPopup
-          targetEvent={Object {}}
-        />,
         <Connect(EventTab)
           closePopup={[Function]}
           handleModalClick={[Function]}
@@ -750,101 +503,23 @@ ShallowWrapper {
           styles={Object {}}
         >
           <EventModal
-            handleFavoriteClick={[Function]}
             handleHover={[Function]}
             hoverMessage=""
-            targetEvent={Object {}}
           />
         </Modal>,
       ],
+      "className": "events-container",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "event-0",
-        "nodeType": "function",
-        "props": Object {
-          "anchor": "bottom",
-          "children": <i
-            className="fas fa-map-pin"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          />,
-          "coordinates": Array [
-            "-105.010166",
-            "39.74724",
-          ],
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "fas fa-map-pin",
-            "onClick": [Function],
-            "onMouseEnter": [Function],
-            "onMouseLeave": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "i",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": "event-1",
-        "nodeType": "function",
-        "props": Object {
-          "anchor": "bottom",
-          "children": <i
-            className="fas fa-map-pin"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          />,
-          "coordinates": Array [
-            "-105.010166",
-            "39.74724",
-          ],
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "fas fa-map-pin",
-            "onClick": [Function],
-            "onMouseEnter": [Function],
-            "onMouseLeave": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "i",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "targetEvent": Object {},
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "changeTabDisplay": undefined,
           "closePopup": [Function],
+          "handleFavoriteClick": undefined,
           "handleModalClick": [Function],
           "showEventInfo": [Function],
         },
@@ -861,10 +536,8 @@ ShallowWrapper {
           "blockScroll": true,
           "center": true,
           "children": <EventModal
-            handleFavoriteClick={[Function]}
             handleHover={[Function]}
             hoverMessage=""
-            targetEvent={Object {}}
           />,
           "classNames": Object {},
           "classes": Object {
@@ -899,10 +572,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "handleFavoriteClick": [Function],
+            "handleFavoriteClick": undefined,
             "handleHover": [Function],
             "hoverMessage": "",
-            "targetEvent": Object {},
+            "targetEvent": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -920,43 +593,6 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          Array [
-            <Unknown
-              anchor="bottom"
-              coordinates={
-                Array [
-                  "-105.010166",
-                  "39.74724",
-                ]
-              }
-            >
-              <i
-                className="fas fa-map-pin"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-              />
-            </Unknown>,
-            <Unknown
-              anchor="bottom"
-              coordinates={
-                Array [
-                  "-105.010166",
-                  "39.74724",
-                ]
-              }
-            >
-              <i
-                className="fas fa-map-pin"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-              />
-            </Unknown>,
-          ],
-          <EventPopup
-            targetEvent={Object {}}
-          />,
           <Connect(EventTab)
             closePopup={[Function]}
             handleModalClick={[Function]}
@@ -998,101 +634,23 @@ ShallowWrapper {
             styles={Object {}}
           >
             <EventModal
-              handleFavoriteClick={[Function]}
               handleHover={[Function]}
               hoverMessage=""
-              targetEvent={Object {}}
             />
           </Modal>,
         ],
+        "className": "events-container",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "event-0",
-          "nodeType": "function",
-          "props": Object {
-            "anchor": "bottom",
-            "children": <i
-              className="fas fa-map-pin"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />,
-            "coordinates": Array [
-              "-105.010166",
-              "39.74724",
-            ],
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "className": "fas fa-map-pin",
-              "onClick": [Function],
-              "onMouseEnter": [Function],
-              "onMouseLeave": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "i",
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "event-1",
-          "nodeType": "function",
-          "props": Object {
-            "anchor": "bottom",
-            "children": <i
-              className="fas fa-map-pin"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />,
-            "coordinates": Array [
-              "-105.010166",
-              "39.74724",
-            ],
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "className": "fas fa-map-pin",
-              "onClick": [Function],
-              "onMouseEnter": [Function],
-              "onMouseLeave": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "i",
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "targetEvent": Object {},
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "changeTabDisplay": undefined,
             "closePopup": [Function],
+            "handleFavoriteClick": undefined,
             "handleModalClick": [Function],
             "showEventInfo": [Function],
           },
@@ -1109,10 +667,8 @@ ShallowWrapper {
             "blockScroll": true,
             "center": true,
             "children": <EventModal
-              handleFavoriteClick={[Function]}
               handleHover={[Function]}
               hoverMessage=""
-              targetEvent={Object {}}
             />,
             "classNames": Object {},
             "classes": Object {
@@ -1147,10 +703,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "handleFavoriteClick": [Function],
+              "handleFavoriteClick": undefined,
               "handleHover": [Function],
               "hoverMessage": "",
-              "targetEvent": Object {},
+              "targetEvent": undefined,
             },
             "ref": null,
             "rendered": null,

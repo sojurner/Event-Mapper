@@ -1,0 +1,1432 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventNavigation should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventNavigation
+    eventLinks={
+      Object {
+        "rawLink": "/discovery&.com",
+      }
+    }
+    eventPages={
+      Object {
+        "count": 8,
+        "current": 0,
+        "pages": 5,
+      }
+    }
+    events={
+      Object {
+        "0": Array [
+          Object {
+            "address": "1000 Chopper Cir Denver, CO 80204",
+            "date": "Sat, Feb 9, 2019 1:00 PM",
+            "distance": 1.92,
+            "e_id": "Z7r9jZ1Ae3dfV",
+            "favorite": false,
+            "img": "https://s1.ticketm.net/dam/a/05d/6645d1c2-7141-4b3f-9fa2-69216822405d_861791_RETINA_LANDSCAPE_16_9.jpg",
+            "lat": 39.7351304442424,
+            "lng": -105.02036884142098,
+            "name": "Monster Jam",
+            "unix": "2019-02-09T20:00:00Z",
+            "url": "http://www.ticketsnow.com/InventoryBrowse/TicketList.aspx?PID=2483534",
+            "venue_name": "Pepsi Center",
+          },
+          Object {
+            "address": "1000 Chopper Cir Denver, CO 80204",
+            "date": "Sat, Feb 9, 2019 1:00 PM",
+            "distance": 1.92,
+            "e_id": "Z7r9jZ1Ae3dfV",
+            "favorite": false,
+            "img": "https://s1.ticketm.net/dam/a/05d/6645d1c2-7141-4b3f-9fa2-69216822405d_861791_RETINA_LANDSCAPE_16_9.jpg",
+            "lat": 39.7351304442424,
+            "lng": -105.02036884142098,
+            "name": "Monster Jam",
+            "unix": "2019-02-09T20:00:00Z",
+            "url": "http://www.ticketsnow.com/InventoryBrowse/TicketList.aspx?PID=2483534",
+            "venue_name": "Pepsi Center",
+          },
+          Object {
+            "address": "1000 Chopper Cir Denver, CO 80204",
+            "date": "Sat, Feb 9, 2019 1:00 PM",
+            "distance": 1.92,
+            "e_id": "Z7r9jZ1Ae3dfV",
+            "favorite": false,
+            "img": "https://s1.ticketm.net/dam/a/05d/6645d1c2-7141-4b3f-9fa2-69216822405d_861791_RETINA_LANDSCAPE_16_9.jpg",
+            "lat": 39.7351304442424,
+            "lng": -105.02036884142098,
+            "name": "Monster Jam",
+            "unix": "2019-02-09T20:00:00Z",
+            "url": "http://www.ticketsnow.com/InventoryBrowse/TicketList.aspx?PID=2483534",
+            "venue_name": "Pepsi Center",
+          },
+        ],
+      }
+    }
+    setCurrentEventPage={[MockFunction]}
+    setEventLinkInfo={[MockFunction]}
+    setEventPageInfo={[MockFunction]}
+    setEvents={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <i
+          className="chevron-left-hide"
+          onClick={[Function]}
+        />,
+        <div
+          className="page-navigation-contents"
+        >
+          <span
+            className="event-page-active"
+            onClick={[Function]}
+          >
+            0
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            1
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            2
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            3
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            4
+          </span>
+        </div>,
+        <i
+          className="fas fa-chevron-right"
+          onClick={[Function]}
+        />,
+      ],
+      "className": "page-toolbar",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "chevron-left-hide",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "i",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="event-page-active"
+              onClick={[Function]}
+            >
+              0
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              1
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              2
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              3
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              4
+            </span>,
+          ],
+          "className": "page-navigation-contents",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "event-page-0",
+            "nodeType": "host",
+            "props": Object {
+              "children": 0,
+              "className": "event-page-active",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 0,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-1",
+            "nodeType": "host",
+            "props": Object {
+              "children": 1,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 1,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-2",
+            "nodeType": "host",
+            "props": Object {
+              "children": 2,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 2,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-3",
+            "nodeType": "host",
+            "props": Object {
+              "children": 3,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 3,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-4",
+            "nodeType": "host",
+            "props": Object {
+              "children": 4,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 4,
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "fas fa-chevron-right",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "i",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <i
+            className="chevron-left-hide"
+            onClick={[Function]}
+          />,
+          <div
+            className="page-navigation-contents"
+          >
+            <span
+              className="event-page-active"
+              onClick={[Function]}
+            >
+              0
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              1
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              2
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              3
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              4
+            </span>
+          </div>,
+          <i
+            className="fas fa-chevron-right"
+            onClick={[Function]}
+          />,
+        ],
+        "className": "page-toolbar",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "chevron-left-hide",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "i",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="event-page-active"
+                onClick={[Function]}
+              >
+                0
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                1
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                2
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                3
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                4
+              </span>,
+            ],
+            "className": "page-navigation-contents",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "event-page-0",
+              "nodeType": "host",
+              "props": Object {
+                "children": 0,
+                "className": "event-page-active",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 0,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-1",
+              "nodeType": "host",
+              "props": Object {
+                "children": 1,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 1,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-2",
+              "nodeType": "host",
+              "props": Object {
+                "children": 2,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 2,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-3",
+              "nodeType": "host",
+              "props": Object {
+                "children": 3,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 3,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-4",
+              "nodeType": "host",
+              "props": Object {
+                "children": 4,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 4,
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fas fa-chevron-right",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "i",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`EventNavigation should match snapshot when current page is last page 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventNavigation
+    eventLinks={
+      Object {
+        "rawLink": "/discovery&.com",
+      }
+    }
+    eventPages={
+      Object {
+        "count": 8,
+        "current": 0,
+        "pages": 5,
+      }
+    }
+    events={
+      Object {
+        "0": Array [
+          Object {
+            "address": "1000 Chopper Cir Denver, CO 80204",
+            "date": "Sat, Feb 9, 2019 1:00 PM",
+            "distance": 1.92,
+            "e_id": "Z7r9jZ1Ae3dfV",
+            "favorite": false,
+            "img": "https://s1.ticketm.net/dam/a/05d/6645d1c2-7141-4b3f-9fa2-69216822405d_861791_RETINA_LANDSCAPE_16_9.jpg",
+            "lat": 39.7351304442424,
+            "lng": -105.02036884142098,
+            "name": "Monster Jam",
+            "unix": "2019-02-09T20:00:00Z",
+            "url": "http://www.ticketsnow.com/InventoryBrowse/TicketList.aspx?PID=2483534",
+            "venue_name": "Pepsi Center",
+          },
+          Object {
+            "address": "1000 Chopper Cir Denver, CO 80204",
+            "date": "Sat, Feb 9, 2019 1:00 PM",
+            "distance": 1.92,
+            "e_id": "Z7r9jZ1Ae3dfV",
+            "favorite": false,
+            "img": "https://s1.ticketm.net/dam/a/05d/6645d1c2-7141-4b3f-9fa2-69216822405d_861791_RETINA_LANDSCAPE_16_9.jpg",
+            "lat": 39.7351304442424,
+            "lng": -105.02036884142098,
+            "name": "Monster Jam",
+            "unix": "2019-02-09T20:00:00Z",
+            "url": "http://www.ticketsnow.com/InventoryBrowse/TicketList.aspx?PID=2483534",
+            "venue_name": "Pepsi Center",
+          },
+          Object {
+            "address": "1000 Chopper Cir Denver, CO 80204",
+            "date": "Sat, Feb 9, 2019 1:00 PM",
+            "distance": 1.92,
+            "e_id": "Z7r9jZ1Ae3dfV",
+            "favorite": false,
+            "img": "https://s1.ticketm.net/dam/a/05d/6645d1c2-7141-4b3f-9fa2-69216822405d_861791_RETINA_LANDSCAPE_16_9.jpg",
+            "lat": 39.7351304442424,
+            "lng": -105.02036884142098,
+            "name": "Monster Jam",
+            "unix": "2019-02-09T20:00:00Z",
+            "url": "http://www.ticketsnow.com/InventoryBrowse/TicketList.aspx?PID=2483534",
+            "venue_name": "Pepsi Center",
+          },
+        ],
+      }
+    }
+    setCurrentEventPage={[MockFunction]}
+    setEventLinkInfo={[MockFunction]}
+    setEventPageInfo={[MockFunction]}
+    setEvents={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <i
+          className="fas fa-chevron-left"
+          onClick={[Function]}
+        />,
+        <div
+          className="page-navigation-contents"
+        >
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            0
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            1
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            2
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            3
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            4
+          </span>
+        </div>,
+        <i
+          className="fas fa-chevron-right"
+          onClick={[Function]}
+        />,
+      ],
+      "className": "page-toolbar",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "fas fa-chevron-left",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "i",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              0
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              1
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              2
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              3
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              4
+            </span>,
+          ],
+          "className": "page-navigation-contents",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "event-page-0",
+            "nodeType": "host",
+            "props": Object {
+              "children": 0,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 0,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-1",
+            "nodeType": "host",
+            "props": Object {
+              "children": 1,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 1,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-2",
+            "nodeType": "host",
+            "props": Object {
+              "children": 2,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 2,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-3",
+            "nodeType": "host",
+            "props": Object {
+              "children": 3,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 3,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-4",
+            "nodeType": "host",
+            "props": Object {
+              "children": 4,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 4,
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "fas fa-chevron-right",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "i",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <i
+            className="fas fa-chevron-left"
+            onClick={[Function]}
+          />,
+          <div
+            className="page-navigation-contents"
+          >
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              0
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              1
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              2
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              3
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              4
+            </span>
+          </div>,
+          <i
+            className="fas fa-chevron-right"
+            onClick={[Function]}
+          />,
+        ],
+        "className": "page-toolbar",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fas fa-chevron-left",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "i",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                0
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                1
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                2
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                3
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                4
+              </span>,
+            ],
+            "className": "page-navigation-contents",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "event-page-0",
+              "nodeType": "host",
+              "props": Object {
+                "children": 0,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 0,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-1",
+              "nodeType": "host",
+              "props": Object {
+                "children": 1,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 1,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-2",
+              "nodeType": "host",
+              "props": Object {
+                "children": 2,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 2,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-3",
+              "nodeType": "host",
+              "props": Object {
+                "children": 3,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 3,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-4",
+              "nodeType": "host",
+              "props": Object {
+                "children": 4,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 4,
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fas fa-chevron-right",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "i",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`EventNavigation should match snapshot when current page is not 0 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventNavigation
+    eventLinks={
+      Object {
+        "rawLink": "/discovery&.com",
+      }
+    }
+    eventPages={
+      Object {
+        "count": 8,
+        "current": 0,
+        "pages": 5,
+      }
+    }
+    events={
+      Object {
+        "0": Array [
+          Object {
+            "address": "1000 Chopper Cir Denver, CO 80204",
+            "date": "Sat, Feb 9, 2019 1:00 PM",
+            "distance": 1.92,
+            "e_id": "Z7r9jZ1Ae3dfV",
+            "favorite": false,
+            "img": "https://s1.ticketm.net/dam/a/05d/6645d1c2-7141-4b3f-9fa2-69216822405d_861791_RETINA_LANDSCAPE_16_9.jpg",
+            "lat": 39.7351304442424,
+            "lng": -105.02036884142098,
+            "name": "Monster Jam",
+            "unix": "2019-02-09T20:00:00Z",
+            "url": "http://www.ticketsnow.com/InventoryBrowse/TicketList.aspx?PID=2483534",
+            "venue_name": "Pepsi Center",
+          },
+          Object {
+            "address": "1000 Chopper Cir Denver, CO 80204",
+            "date": "Sat, Feb 9, 2019 1:00 PM",
+            "distance": 1.92,
+            "e_id": "Z7r9jZ1Ae3dfV",
+            "favorite": false,
+            "img": "https://s1.ticketm.net/dam/a/05d/6645d1c2-7141-4b3f-9fa2-69216822405d_861791_RETINA_LANDSCAPE_16_9.jpg",
+            "lat": 39.7351304442424,
+            "lng": -105.02036884142098,
+            "name": "Monster Jam",
+            "unix": "2019-02-09T20:00:00Z",
+            "url": "http://www.ticketsnow.com/InventoryBrowse/TicketList.aspx?PID=2483534",
+            "venue_name": "Pepsi Center",
+          },
+          Object {
+            "address": "1000 Chopper Cir Denver, CO 80204",
+            "date": "Sat, Feb 9, 2019 1:00 PM",
+            "distance": 1.92,
+            "e_id": "Z7r9jZ1Ae3dfV",
+            "favorite": false,
+            "img": "https://s1.ticketm.net/dam/a/05d/6645d1c2-7141-4b3f-9fa2-69216822405d_861791_RETINA_LANDSCAPE_16_9.jpg",
+            "lat": 39.7351304442424,
+            "lng": -105.02036884142098,
+            "name": "Monster Jam",
+            "unix": "2019-02-09T20:00:00Z",
+            "url": "http://www.ticketsnow.com/InventoryBrowse/TicketList.aspx?PID=2483534",
+            "venue_name": "Pepsi Center",
+          },
+        ],
+      }
+    }
+    setCurrentEventPage={[MockFunction]}
+    setEventLinkInfo={[MockFunction]}
+    setEventPageInfo={[MockFunction]}
+    setEvents={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <i
+          className="fas fa-chevron-left"
+          onClick={[Function]}
+        />,
+        <div
+          className="page-navigation-contents"
+        >
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            0
+          </span>
+          <span
+            className="event-page-active"
+            onClick={[Function]}
+          >
+            1
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            2
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            3
+          </span>
+          <span
+            className="event-page"
+            onClick={[Function]}
+          >
+            4
+          </span>
+        </div>,
+        <i
+          className="fas fa-chevron-right"
+          onClick={[Function]}
+        />,
+      ],
+      "className": "page-toolbar",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "fas fa-chevron-left",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "i",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              0
+            </span>,
+            <span
+              className="event-page-active"
+              onClick={[Function]}
+            >
+              1
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              2
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              3
+            </span>,
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              4
+            </span>,
+          ],
+          "className": "page-navigation-contents",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "event-page-0",
+            "nodeType": "host",
+            "props": Object {
+              "children": 0,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 0,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-1",
+            "nodeType": "host",
+            "props": Object {
+              "children": 1,
+              "className": "event-page-active",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 1,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-2",
+            "nodeType": "host",
+            "props": Object {
+              "children": 2,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 2,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-3",
+            "nodeType": "host",
+            "props": Object {
+              "children": 3,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 3,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "event-page-4",
+            "nodeType": "host",
+            "props": Object {
+              "children": 4,
+              "className": "event-page",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": 4,
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "fas fa-chevron-right",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "i",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <i
+            className="fas fa-chevron-left"
+            onClick={[Function]}
+          />,
+          <div
+            className="page-navigation-contents"
+          >
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              0
+            </span>
+            <span
+              className="event-page-active"
+              onClick={[Function]}
+            >
+              1
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              2
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              3
+            </span>
+            <span
+              className="event-page"
+              onClick={[Function]}
+            >
+              4
+            </span>
+          </div>,
+          <i
+            className="fas fa-chevron-right"
+            onClick={[Function]}
+          />,
+        ],
+        "className": "page-toolbar",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fas fa-chevron-left",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "i",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                0
+              </span>,
+              <span
+                className="event-page-active"
+                onClick={[Function]}
+              >
+                1
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                2
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                3
+              </span>,
+              <span
+                className="event-page"
+                onClick={[Function]}
+              >
+                4
+              </span>,
+            ],
+            "className": "page-navigation-contents",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "event-page-0",
+              "nodeType": "host",
+              "props": Object {
+                "children": 0,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 0,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-1",
+              "nodeType": "host",
+              "props": Object {
+                "children": 1,
+                "className": "event-page-active",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 1,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-2",
+              "nodeType": "host",
+              "props": Object {
+                "children": 2,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 2,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-3",
+              "nodeType": "host",
+              "props": Object {
+                "children": 3,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 3,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "event-page-4",
+              "nodeType": "host",
+              "props": Object {
+                "children": 4,
+                "className": "event-page",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 4,
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fas fa-chevron-right",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "i",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
