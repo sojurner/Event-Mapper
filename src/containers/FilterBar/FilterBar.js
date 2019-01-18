@@ -58,8 +58,10 @@ export class FilterBar extends Component {
       setEventPageInfo,
       setZoom,
       changePopupDisplay,
-      setMapCenter
+      setMapCenter,
+      resetEvents
     } = this.props;
+    await resetEvents();
     changePopupDisplay(false);
     const response = await getEvents(latitude, longitude);
     const { events, pageInfo, linkInfo } = response;
@@ -135,7 +137,8 @@ export const mapDispatchToProps = dispatch => ({
   setEventLinkInfo: links => dispatch(actions.setEventLinkInfo(links)),
   setEventPageInfo: pages => dispatch(actions.setEventPageInfo(pages)),
   setZoom: zoomVal => dispatch(actions.setZoom(zoomVal)),
-  changePopupDisplay: bool => dispatch(actions.changePopupDisplay(bool))
+  changePopupDisplay: bool => dispatch(actions.changePopupDisplay(bool)),
+  resetEvents: () => dispatch(actions.resetEvents())
 });
 
 export default connect(
