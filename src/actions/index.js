@@ -50,6 +50,10 @@ export const setTargetEvent = event => ({
   event
 });
 
+export const resetEvents = () => ({
+  type: 'RESET_EVENTS'
+});
+
 export const removeFromWatchlist = event => ({
   type: 'REMOVE_FROM_WATCH_LIST',
   event

@@ -9,6 +9,9 @@ export const eventsReducer = (state = {}, action) => {
         action.event;
       return state;
 
+    case 'RESET_EVENTS':
+      return state;
+
     default:
       return state;
   }
