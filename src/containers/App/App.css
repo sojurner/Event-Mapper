@@ -47,22 +47,6 @@ button:focus {
 .main-container {
   display: flex; }
 
-.fa-stream,
-.fa-xing {
-  font-size: 1.5rem;
-  z-index: 30;
-  cursor: pointer;
-  color: #f7f7f7; }
-
-.fa-xing {
-  font-size: 2.1rem; }
-
-.fa-stream:hover {
-  color: #d3d3d3; }
-
-.fa-xing:hover {
-  color: #d3d3d3; }
-
 .dark {
   color: white; }
 
