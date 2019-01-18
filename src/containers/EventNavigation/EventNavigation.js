@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import './EventNavigation.css';
 
-class EventNavigation extends Component {
+export class EventNavigation extends Component {
   state = {
     totalPages: [],
     pagesToShow: [],
@@ -50,29 +50,32 @@ class EventNavigation extends Component {
     this.setState({ pagesToShow });
   };
 
-  getEventsByPage = async (event, pageNum) => {
+  getEventsByPage = (event, pageNum) => {
     event.preventDefault();
     const { events, setCurrentEventPage } = this.props;
     this.setState({ currentPage: (event, pageNum) });
     if (!events[pageNum]) {
-      const {
-        eventLinks,
-        setEvents,
-        setEventPageInfo,
-        setEventLinkInfo
-      } = this.props;
-      const { rawLink } = eventLinks;
-      const index = rawLink.lastIndexOf('&');
-      const url = rawLink.slice(1, index - 1) + pageNum + rawLink.slice(index);
-      const results = await getEventsByPage(url);
-      const { events, pageInfo, linkInfo } = results;
-      console.log(pageInfo);
-      setEvents(events, pageInfo.current);
-      setEventPageInfo(pageInfo);
-      setEventLinkInfo(linkInfo);
+      this.fetchEventsByPage(pageNum);
     } else {
       setCurrentEventPage(pageNum);
     }
+  };
+
+  fetchEventsByPage = async pageNum => {
+    const { eventLinks } = this.props;
+    const { rawLink } = eventLinks;
+    const index = rawLink.lastIndexOf('&');
+    const url = rawLink.slice(1, index - 1) + pageNum + rawLink.slice(index);
+    const results = await getEventsByPage(url);
+    this.dispatchEventActions(results);
+  };
+
+  dispatchEventActions = results => {
+    const { events, pageInfo, linkInfo } = results;
+    const { setEvents, setEventPageInfo, setEventLinkInfo } = this.props;
+    setEvents(events, pageInfo.current);
+    setEventPageInfo(pageInfo);
+    setEventLinkInfo(linkInfo);
   };
 
   render() {
@@ -125,13 +128,13 @@ class EventNavigation extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   eventPages: state.eventPages,
   eventLinks: state.eventLinks,
   events: state.events
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setCurrentEventPage: page => dispatch(actions.setCurrentEventPage(page)),
   setEvents: (events, current) => dispatch(actions.setEvents(events, current)),
   setEventLinkInfo: links => dispatch(actions.setEventLinkInfo(links)),
