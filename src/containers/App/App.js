@@ -16,7 +16,6 @@ export class App extends Component {
     this.state = {
       user: null,
       loading: false,
-      displaySidebar: false,
       redirect: false,
       error: null
     };
@@ -49,15 +48,11 @@ export class App extends Component {
   };
 
   logout = () => {
-    this.setState({ user: null, redirect: false, displaySidebar: false });
-  };
-
-  displaySidebar = () => {
-    this.setState({ displaySidebar: !this.state.displaySidebar });
+    this.setState({ user: null, redirect: false });
   };
 
   render() {
-    const { redirect, displaySidebar, loading, error } = this.state;
+    const { redirect, loading, error } = this.state;
     const { activeUser } = this.props;
     if (error) {
       return <div>{error.error}</div>;
@@ -66,22 +61,9 @@ export class App extends Component {
       <Router>
         <div>
           {loading && <LoadingScreen />}
-          {activeUser && (
-            <div className="quarter-circle-top-right">
-              <i
-                className={!displaySidebar ? `fas fa-stream` : 'fab fa-xing'}
-                onClick={this.displaySidebar}
-              />
-            </div>
-          )}
-          {displaySidebar && (
-            <NavBar displaySidebar={this.displaySidebar} logout={this.logout} />
-          )}
+          {activeUser && <NavBar logout={this.logout} />}
           <Routes
             redirect={redirect}
-            changeMap={this.changeMap}
-            displaySidebar={this.displaySidebar}
-            stateSidebar={displaySidebar}
             user={activeUser}
             loginSuccess={this.loginSuccess}
             loginFail={this.loginFail}

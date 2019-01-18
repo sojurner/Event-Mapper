@@ -1,4 +1,5 @@
-.nav-container {
+.nav-container,
+.nav-container-hide {
   height: 19rem;
   width: 14rem;
   position: absolute;
@@ -18,6 +19,12 @@
   border-bottom-right-radius: 0.5rem;
   color: #64737c;
   margin: 6.5rem 2rem 0 0rem;
+  opacity: 1;
+  transition: 0.2s linear;
+}
+
+.nav-container-hide {
+  opacity: 0;
 }
 
 .nav-container:after {
@@ -53,6 +60,23 @@
 .fa-home {
   margin-right: 0.6rem;
   font-size: 1.3rem;
+}
+
+.fa-stream,
+.fa-xing {
+  font-size: 1.5rem;
+  z-index: 30;
+  cursor: pointer;
+  color: #f7f7f7;
+}
+
+.fa-xing {
+  font-size: 2.1rem;
+}
+
+.fa-stream:hover,
+.fa-xing:hover {
+  color: #d3d3d3;
 }
 
 .nav-link:hover {
