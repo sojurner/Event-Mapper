@@ -41,36 +41,7 @@ export class Events extends Component {
       });
       return event;
     });
-
     setEvents(setEvent, eventPages.current);
-  };
-
-  showEventInfo = (id, command) => {
-    const {
-      setTargetEvent,
-      changePopupDisplay,
-      setZoom,
-      setMapCenter,
-      events,
-      eventPages
-    } = this.props;
-    const targetEvent = events[eventPages.current].find(
-      event => event.e_id === id
-    );
-    setTargetEvent(targetEvent);
-    if (command === 'click') {
-      const coordinates = {
-        latitude: targetEvent.lat,
-        longitude: targetEvent.lng
-      };
-      setMapCenter(coordinates);
-      setZoom([14]);
-    }
-    changePopupDisplay(true);
-  };
-
-  closePopup = () => {
-    this.props.changePopupDisplay(false);
   };
 
   handleModalClick = (event, order) => {
@@ -91,13 +62,7 @@ export class Events extends Component {
     const { targetEvent } = this.props;
     return (
       <div className="events-container">
-        <EventTab
-          changeTabDisplay={this.changeTabDisplay}
-          handleFavoriteClick={this.handleFavoriteClick}
-          showEventInfo={this.showEventInfo}
-          closePopup={this.closePopup}
-          handleModalClick={this.handleModalClick}
-        />
+        <EventTab handleModalClick={this.handleModalClick} />
         <Modal
           open={displayModal}
           onClose={event => this.handleModalClick(event)}
@@ -125,11 +90,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   setEvents: (events, page) => dispatch(invoke.setEvents(events, page)),
-  setWatchList: events => dispatch(invoke.setWatchList(events)),
-  setTargetEvent: event => dispatch(invoke.setTargetEvent(event)),
-  setMapCenter: coordinates => dispatch(invoke.setMapCenter(coordinates)),
-  changePopupDisplay: bool => dispatch(invoke.changePopupDisplay(bool)),
-  setZoom: zoomVal => dispatch(invoke.setZoom(zoomVal))
+  setWatchList: events => dispatch(invoke.setWatchList(events))
 });
 
 export default connect(
