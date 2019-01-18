@@ -26,8 +26,8 @@ export class App extends Component {
     this.setLatLngEvents();
   }
 
-  setLatLngEvents = async () => {
-    await navigator.geolocation.getCurrentPosition(location => {
+  setLatLngEvents = () => {
+    navigator.geolocation.getCurrentPosition(location => {
       this.props.setUserLocation(location.coords);
       this.props.setMapCenter(location.coords);
     });
