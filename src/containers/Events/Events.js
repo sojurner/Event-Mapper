@@ -14,7 +14,6 @@ export class Events extends Component {
   constructor() {
     super();
     this.state = {
-      displayModal: false,
       hoverMessage: ''
     };
   }
@@ -41,43 +40,7 @@ export class Events extends Component {
       });
       return event;
     });
-
     setEvents(setEvent, eventPages.current);
-  };
-
-  showEventInfo = (id, command) => {
-    const {
-      setTargetEvent,
-      changePopupDisplay,
-      setZoom,
-      setMapCenter,
-      events,
-      eventPages
-    } = this.props;
-    const targetEvent = events[eventPages.current].find(
-      event => event.e_id === id
-    );
-    setTargetEvent(targetEvent);
-    if (command === 'click') {
-      const coordinates = {
-        latitude: targetEvent.lat,
-        longitude: targetEvent.lng
-      };
-      setMapCenter(coordinates);
-      setZoom([14]);
-    }
-    changePopupDisplay(true);
-  };
-
-  closePopup = () => {
-    this.props.changePopupDisplay(false);
-  };
-
-  handleModalClick = (event, order) => {
-    event.stopPropagation();
-    order === 'open'
-      ? this.setState({ displayModal: true })
-      : this.setState({ displayModal: false });
   };
 
   handleHover = (event, hoverMessage) => {
@@ -86,21 +49,15 @@ export class Events extends Component {
   };
 
   render() {
-    const { hoverMessage, displayModal } = this.state;
+    const { hoverMessage } = this.state;
 
-    const { targetEvent } = this.props;
+    const { targetEvent, setModalView, displayModal } = this.props;
     return (
       <div className="events-container">
-        <EventTab
-          changeTabDisplay={this.changeTabDisplay}
-          handleFavoriteClick={this.handleFavoriteClick}
-          showEventInfo={this.showEventInfo}
-          closePopup={this.closePopup}
-          handleModalClick={this.handleModalClick}
-        />
+        <EventTab />
         <Modal
           open={displayModal}
-          onClose={event => this.handleModalClick(event)}
+          onClose={event => setModalView(event, false)}
           center
         >
           <EventModal
@@ -120,16 +77,15 @@ export const mapStateToProps = state => ({
   watchList: state.watchList,
   events: state.events,
   eventPages: state.eventPages,
-  targetEvent: state.targetEvent
+  targetEvent: state.targetEvent,
+  displayModal: state.displayModal
 });
 
 export const mapDispatchToProps = dispatch => ({
   setEvents: (events, page) => dispatch(invoke.setEvents(events, page)),
   setWatchList: events => dispatch(invoke.setWatchList(events)),
-  setTargetEvent: event => dispatch(invoke.setTargetEvent(event)),
-  setMapCenter: coordinates => dispatch(invoke.setMapCenter(coordinates)),
-  changePopupDisplay: bool => dispatch(invoke.changePopupDisplay(bool)),
-  setZoom: zoomVal => dispatch(invoke.setZoom(zoomVal))
+  setModalView: (event, command) =>
+    dispatch(invoke.setModalView(event, command))
 });
 
 export default connect(

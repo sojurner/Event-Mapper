@@ -30,3 +30,14 @@
   font-size: 1.5rem;
   line-height: 2rem;
 }
+
+.fa-eye {
+  color: rgb(211, 229, 245);
+  text-align: right;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.fa-eye:hover {
+  color: white;
+}

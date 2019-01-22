@@ -44,6 +44,7 @@ export const Routes = ({ user, loginFail, loginSuccess, redirect }) => {
 
 Routes.propTypes = {
   user: PropTypes.object,
-  login: PropTypes.func,
+  loginFail: PropTypes.func,
+  loginSuccess: PropTypes.func,
   redirect: PropTypes.bool
 };

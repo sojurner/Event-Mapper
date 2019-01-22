@@ -77,3 +77,12 @@ export const setMapCenter = coords => ({
   type: 'SET_MAP_CENTER',
   coords
 });
+
+export const setModalView = (event, command) => {
+  event.stopPropagation();
+
+  return {
+    type: 'SET_MODAL_VIEW',
+    command
+  };
+};

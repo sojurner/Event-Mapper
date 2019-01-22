@@ -24,3 +24,12 @@
   font-weight: 800;
   font-size: 1.5rem;
   line-height: 2rem; }
+
+.fa-eye {
+  color: #d3e5f5;
+  text-align: right;
+  cursor: pointer;
+  transition: 0.2s linear; }
+
+.fa-eye:hover {
+  color: white; }
