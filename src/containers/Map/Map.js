@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ReactMapboxGl, { Feature, Layer } from 'react-mapbox-gl';
 
 import { UserLocation } from '../../components/UserLocation/UserLocation';
-import { EventPopup } from '../../components/EventPopup/EventPopup';
+import EventPopup from '../../components/EventPopup/EventPopup';
 import * as actions from '../../actions/index.js';
 
 import mapPin from '../../images/location-point.png';
@@ -61,7 +61,6 @@ export class Map extends Component {
 
   render() {
     const {
-      targetEvent,
       userLocation,
       events,
       eventPages,
@@ -112,12 +111,7 @@ export class Map extends Component {
           containerStyle={{ height: '100vh', width: '100vw' }}
           flyToOptions={{ speed: 0.8 }}
         >
-          {displayPopup && (
-            <EventPopup
-              className="event-popup-container"
-              targetEvent={targetEvent}
-            />
-          )}
+          {displayPopup && <EventPopup className="event-popup-container" />}
           <UserLocation
             lng={userLocation.longitude || longitude}
             lat={userLocation.latitude || latitude}
@@ -158,6 +152,8 @@ export const mapDispatchToProps = dispatch => ({
   setTargetEvent: event => dispatch(actions.setTargetEvent(event)),
   setMapCenter: coordinates => dispatch(actions.setMapCenter(coordinates)),
   setZoom: zoomVal => dispatch(actions.setZoom(zoomVal)),
+  setModalView: (event, command) =>
+    dispatch(actions.setModalView(event, command)),
   changePopupDisplay: bool => dispatch(actions.changePopupDisplay(bool))
 });
 
