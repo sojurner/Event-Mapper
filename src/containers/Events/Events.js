@@ -14,7 +14,6 @@ export class Events extends Component {
   constructor() {
     super();
     this.state = {
-      displayModal: false,
       hoverMessage: ''
     };
   }
@@ -44,28 +43,21 @@ export class Events extends Component {
     setEvents(setEvent, eventPages.current);
   };
 
-  handleModalClick = (event, order) => {
-    event.stopPropagation();
-    order === 'open'
-      ? this.setState({ displayModal: true })
-      : this.setState({ displayModal: false });
-  };
-
   handleHover = (event, hoverMessage) => {
     event.preventDefault();
     this.setState({ hoverMessage });
   };
 
   render() {
-    const { hoverMessage, displayModal } = this.state;
+    const { hoverMessage } = this.state;
 
-    const { targetEvent } = this.props;
+    const { targetEvent, setModalView, displayModal } = this.props;
     return (
       <div className="events-container">
-        <EventTab handleModalClick={this.handleModalClick} />
+        <EventTab />
         <Modal
           open={displayModal}
-          onClose={event => this.handleModalClick(event)}
+          onClose={event => setModalView(event, false)}
           center
         >
           <EventModal
@@ -85,12 +77,15 @@ export const mapStateToProps = state => ({
   watchList: state.watchList,
   events: state.events,
   eventPages: state.eventPages,
-  targetEvent: state.targetEvent
+  targetEvent: state.targetEvent,
+  displayModal: state.displayModal
 });
 
 export const mapDispatchToProps = dispatch => ({
   setEvents: (events, page) => dispatch(invoke.setEvents(events, page)),
-  setWatchList: events => dispatch(invoke.setWatchList(events))
+  setWatchList: events => dispatch(invoke.setWatchList(events)),
+  setModalView: (event, command) =>
+    dispatch(invoke.setModalView(event, command))
 });
 
 export default connect(
