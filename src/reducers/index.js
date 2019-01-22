@@ -13,6 +13,7 @@ import {
   mapDisplayReducer,
   mapCenterReducer
 } from './mapReducer';
+import { modalReducer } from './modalReducer';
 
 const rootReducer = combineReducers({
   activeUser: userReducer,
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   mapCenter: mapCenterReducer,
   events: eventsReducer,
   zoom: mapZoomReducer,
+  displayModal: modalReducer,
   fullMapDisplay: mapDisplayReducer
 });
 
