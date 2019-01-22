@@ -12,9 +12,11 @@ class EventTabCard extends React.Component {
       events,
       eventPages
     } = this.props;
+
     const targetEvent = events[eventPages.current].find(
       event => event.e_id === id
     );
+
     setTargetEvent(targetEvent);
     if (command === 'click') {
       const coordinates = {
@@ -33,7 +35,7 @@ class EventTabCard extends React.Component {
       eventPages,
       changePopupDisplay,
       msgPrompt,
-      handleModalClick,
+      setModalView,
       handleFavoriteClick
     } = this.props;
 
@@ -64,7 +66,7 @@ class EventTabCard extends React.Component {
             <p className="tab-contents tab-date">{event.date}</p>
             <p
               className="view-modal"
-              onClick={event => handleModalClick(event, 'open')}
+              onClick={event => setModalView(event, true)}
             >
               View Details
             </p>
@@ -84,6 +86,8 @@ export const mapDispatchToProps = dispatch => ({
   changePopupDisplay: bool => dispatch(invoke.changePopupDisplay(bool)),
   setMapCenter: coordinates => dispatch(invoke.setMapCenter(coordinates)),
   setZoom: zoomVal => dispatch(invoke.setZoom(zoomVal)),
+  setModalView: (event, command) =>
+    dispatch(invoke.setModalView(event, command)),
   setTargetEvent: event => dispatch(invoke.setTargetEvent(event))
 });
 
