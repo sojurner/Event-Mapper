@@ -3,6 +3,13 @@ import { connect } from 'react-redux';
 import * as invoke from '../../actions';
 
 class EventTabCard extends React.Component {
+  constructor(props) {
+    super();
+    this.scrollRefs = props.events[props.eventPages.current].map(event =>
+      React.createRef()
+    );
+  }
+
   showEventInfo = (id, command) => {
     const {
       setTargetEvent,
@@ -42,6 +49,8 @@ class EventTabCard extends React.Component {
     const eventTabCard = events[eventPages.current].map((event, index) => {
       return (
         <div
+          id={event.e_id}
+          ref={ref => (this.scrollRefs[index] = ref)}
           className={!event.favorite ? 'tab-card' : 'tab-card tab-card-listed'}
           onMouseEnter={this.showEventInfo.bind(null, event.e_id, 'hover')}
           onMouseLeave={() => changePopupDisplay(false)}
