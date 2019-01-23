@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as invoke from '../../actions';
+import './EventTabCard.css';
 
 class EventTabCard extends React.Component {
   constructor(props) {
@@ -69,9 +70,11 @@ class EventTabCard extends React.Component {
           id={event.e_id}
           ref={ref => (this.scrollRefs[index] = ref)}
           className={
-            !event.favorite && event.e_id !== this.state.eventId
-              ? 'tab-card'
-              : 'tab-card tab-card-listed'
+            event.favorite && event.e_id === this.state.eventId
+              ? 'tab-card tab-card-listed tab-card-scrolled'
+              : event.e_id === this.state.eventId
+              ? 'tab-card tab-card-scrolled'
+              : 'tab-card'
           }
           onMouseEnter={this.showEventInfo.bind(null, event.e_id, 'hover')}
           onMouseLeave={() => changePopupDisplay(false)}
