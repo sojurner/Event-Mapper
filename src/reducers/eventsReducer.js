@@ -54,3 +54,13 @@ export const popupReducer = (state = false, action) => {
       return state;
   }
 };
+
+export const eventScrollReducer = (state = null, action) => {
+  switch (action.type) {
+    case 'SET_SCROLL_ITEM':
+      return action.id;
+
+    default:
+      return state;
+  }
+};
