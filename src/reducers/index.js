@@ -6,7 +6,8 @@ import {
   eventsPageReducer,
   eventsLinkReducer,
   eventTargetReducer,
-  popupReducer
+  popupReducer,
+  eventScrollReducer
 } from './eventsReducer';
 import {
   mapZoomReducer,
@@ -19,12 +20,13 @@ const rootReducer = combineReducers({
   activeUser: userReducer,
   userLocation: userLocationReducer,
   targetEvent: eventTargetReducer,
+  eventScrollItem: eventScrollReducer,
   eventPages: eventsPageReducer,
   eventLinks: eventsLinkReducer,
-  displayPopup: popupReducer,
-  watchList: watchListReducer,
-  mapCenter: mapCenterReducer,
   events: eventsReducer,
+  watchList: watchListReducer,
+  displayPopup: popupReducer,
+  mapCenter: mapCenterReducer,
   zoom: mapZoomReducer,
   displayModal: modalReducer,
   fullMapDisplay: mapDisplayReducer

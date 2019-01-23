@@ -46,10 +46,12 @@ export class Map extends Component {
       setTargetEvent,
       setZoom,
       changePopupDisplay,
-      setMapCenter
+      setMapCenter,
+      setScrollItem
     } = this.props;
     const coordinates = { latitude: event.lat, longitude: event.lng };
     setTargetEvent(event);
+    setScrollItem(event.e_id);
     changePopupDisplay(true);
     setZoom([16]);
     setMapCenter(coordinates);
@@ -154,7 +156,8 @@ export const mapDispatchToProps = dispatch => ({
   setZoom: zoomVal => dispatch(actions.setZoom(zoomVal)),
   setModalView: (event, command) =>
     dispatch(actions.setModalView(event, command)),
-  changePopupDisplay: bool => dispatch(actions.changePopupDisplay(bool))
+  changePopupDisplay: bool => dispatch(actions.changePopupDisplay(bool)),
+  setScrollItem: id => dispatch(actions.setScrollItem(id))
 });
 
 export default connect(
