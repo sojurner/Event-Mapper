@@ -4,11 +4,28 @@ import * as invoke from '../../actions';
 
 class EventTabCard extends React.Component {
   constructor(props) {
-    super();
+    super(props);
+    this.state = {
+      eventId: props.eventScrollItem
+    };
+
     this.scrollRefs = props.events[props.eventPages.current].map(event =>
       React.createRef()
     );
   }
+
+  componentDidUpdate = () => {
+    const { eventScrollItem } = this.props;
+    if (eventScrollItem !== this.state.eventId) {
+      this.setState({ eventId: eventScrollItem });
+      this.scrollIntoView(eventScrollItem);
+    }
+  };
+
+  scrollIntoView = id => {
+    const targetEvent = this.scrollRefs.find(ref => ref.id === id);
+    targetEvent.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  };
 
   showEventInfo = (id, command) => {
     const {
@@ -51,7 +68,11 @@ class EventTabCard extends React.Component {
         <div
           id={event.e_id}
           ref={ref => (this.scrollRefs[index] = ref)}
-          className={!event.favorite ? 'tab-card' : 'tab-card tab-card-listed'}
+          className={
+            !event.favorite && event.e_id !== this.state.eventId
+              ? 'tab-card'
+              : 'tab-card tab-card-listed'
+          }
           onMouseEnter={this.showEventInfo.bind(null, event.e_id, 'hover')}
           onMouseLeave={() => changePopupDisplay(false)}
           onClick={this.showEventInfo.bind(null, event.e_id, 'click')}
@@ -88,7 +109,8 @@ class EventTabCard extends React.Component {
 }
 
 export const mapStateToProps = state => ({
-  events: state.events
+  events: state.events,
+  eventScrollItem: state.eventScrollItem
 });
 
 export const mapDispatchToProps = dispatch => ({
