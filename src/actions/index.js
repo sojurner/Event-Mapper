@@ -86,3 +86,8 @@ export const setModalView = (event, command) => {
     command
   };
 };
+
+export const setScrollItem = id => ({
+  type: 'SET_SCROLL_ITEM',
+  id
+});
