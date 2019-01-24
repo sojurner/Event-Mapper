@@ -20,10 +20,13 @@
   color: #64737c;
   margin: 6.5rem 2rem 0 0rem;
   opacity: 1;
-  transition: 0.2s linear; }
+  transition: 0.2s linear;
+}
 
 .nav-container-hide {
-  opacity: 0; }
+  opacity: 0;
+  z-index: 0;
+}
 
 .nav-container:after {
   content: '';
@@ -37,42 +40,50 @@
   box-shadow: 2px #98989873;
   border-top: 0;
   margin-left: -22px;
-  margin-top: -22px; }
+  margin-top: -22px;
+}
 
 .active {
-  background-color: #c2c2c2; }
+  background-color: #c2c2c2;
+}
 
 .nav-link {
   text-decoration-line: none;
   font-size: 1.2rem;
   padding: 1rem 1rem 1rem 1rem;
   color: #64737c;
-  background-color: #222f46; }
+  background-color: #222f46;
+}
 
 .fa-eye,
 .fa-user,
 .fa-home {
   margin-right: 0.6rem;
-  font-size: 1.3rem; }
+  font-size: 1.3rem;
+}
 
 .fa-stream,
 .fa-xing {
   font-size: 1.5rem;
   z-index: 30;
   cursor: pointer;
-  color: #f7f7f7; }
+  color: #f7f7f7;
+}
 
 .fa-xing {
-  font-size: 2.1rem; }
+  font-size: 2.1rem;
+}
 
 .fa-stream:hover,
 .fa-xing:hover {
-  color: #d3d3d3; }
+  color: #d3d3d3;
+}
 
 .nav-link:hover {
   border-left: 4px solid #4c626b;
   background-color: #1b2531;
-  color: #546a92; }
+  color: #546a92;
+}
 
 .logout-btn {
   cursor: pointer;
@@ -81,30 +92,39 @@
   text-shadow: 1.5px 1.5px #afafaf;
   border: 1px solid #273136;
   border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem; }
+  border-bottom-right-radius: 0.5rem;
+}
 
 .logout-btn:hover {
   color: #5a2c2c;
   font-family: caviar;
   border: none;
-  background-color: #2e1616; }
+  background-color: #2e1616;
+}
 
 .greeting {
   margin: 2rem auto 0.5rem auto;
-  font-size: 2rem; }
+  font-size: 2rem;
+}
 
 .watchlist-number {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #99acff; }
+  color: #99acff;
+}
 
 .fa-sign-out-alt {
   padding-right: 0.5rem;
-  font-size: 1.7rem; }
+  font-size: 1.7rem;
+}
 
 @media only screen and (max-width: 1000px) {
   .nav-container {
-    width: 12rem; } }
+    width: 12rem;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .nav-container {
-    width: 9rem; } }
+    width: 9rem;
+  }
+}
