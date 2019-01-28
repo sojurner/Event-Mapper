@@ -62,7 +62,7 @@ export class EventTab extends Component {
   };
 
   render() {
-    const { showEventInfo, eventPages, closePopup, userLocation } = this.props;
+    const { eventPages, userLocation } = this.props;
     const { msgPrompt, displayTab } = this.state;
 
     return (
@@ -86,8 +86,6 @@ export class EventTab extends Component {
         </h2>
         <EventNavigation />
         <EventTabCard
-          showEventInfo={showEventInfo}
-          closePopup={closePopup}
           msgPrompt={msgPrompt}
           handleFavoriteClick={this.handleFavoriteClick}
           eventPages={eventPages}
