@@ -93,11 +93,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(EventTab)
-          closePopup={[Function]}
-          handleModalClick={[Function]}
-          showEventInfo={[Function]}
-        />,
+        <Connect(EventTab) />,
         <Modal
           animationDuration={500}
           blockScroll={true}
@@ -129,7 +125,6 @@ ShallowWrapper {
           onEscKeyDown={null}
           onExited={null}
           onOverlayClick={null}
-          open={false}
           showCloseIcon={true}
           styles={Object {}}
         >
@@ -147,13 +142,7 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {
-          "changeTabDisplay": undefined,
-          "closePopup": [Function],
-          "handleFavoriteClick": undefined,
-          "handleModalClick": [Function],
-          "showEventInfo": [Function],
-        },
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -193,7 +182,7 @@ ShallowWrapper {
           "onEscKeyDown": null,
           "onExited": null,
           "onOverlayClick": null,
-          "open": false,
+          "open": undefined,
           "showCloseIcon": true,
           "styles": Object {},
         },
@@ -224,11 +213,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(EventTab)
-            closePopup={[Function]}
-            handleModalClick={[Function]}
-            showEventInfo={[Function]}
-          />,
+          <Connect(EventTab) />,
           <Modal
             animationDuration={500}
             blockScroll={true}
@@ -260,7 +245,6 @@ ShallowWrapper {
             onEscKeyDown={null}
             onExited={null}
             onOverlayClick={null}
-            open={false}
             showCloseIcon={true}
             styles={Object {}}
           >
@@ -278,13 +262,7 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {
-            "changeTabDisplay": undefined,
-            "closePopup": [Function],
-            "handleFavoriteClick": undefined,
-            "handleModalClick": [Function],
-            "showEventInfo": [Function],
-          },
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -324,7 +302,7 @@ ShallowWrapper {
             "onEscKeyDown": null,
             "onExited": null,
             "onOverlayClick": null,
-            "open": false,
+            "open": undefined,
             "showCloseIcon": true,
             "styles": Object {},
           },
@@ -462,11 +440,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(EventTab)
-          closePopup={[Function]}
-          handleModalClick={[Function]}
-          showEventInfo={[Function]}
-        />,
+        <Connect(EventTab) />,
         <Modal
           animationDuration={500}
           blockScroll={true}
@@ -498,7 +472,6 @@ ShallowWrapper {
           onEscKeyDown={null}
           onExited={null}
           onOverlayClick={null}
-          open={false}
           showCloseIcon={true}
           styles={Object {}}
         >
@@ -516,13 +489,7 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {
-          "changeTabDisplay": undefined,
-          "closePopup": [Function],
-          "handleFavoriteClick": undefined,
-          "handleModalClick": [Function],
-          "showEventInfo": [Function],
-        },
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -562,7 +529,7 @@ ShallowWrapper {
           "onEscKeyDown": null,
           "onExited": null,
           "onOverlayClick": null,
-          "open": false,
+          "open": undefined,
           "showCloseIcon": true,
           "styles": Object {},
         },
@@ -593,11 +560,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(EventTab)
-            closePopup={[Function]}
-            handleModalClick={[Function]}
-            showEventInfo={[Function]}
-          />,
+          <Connect(EventTab) />,
           <Modal
             animationDuration={500}
             blockScroll={true}
@@ -629,7 +592,6 @@ ShallowWrapper {
             onEscKeyDown={null}
             onExited={null}
             onOverlayClick={null}
-            open={false}
             showCloseIcon={true}
             styles={Object {}}
           >
@@ -647,13 +609,7 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {
-            "changeTabDisplay": undefined,
-            "closePopup": [Function],
-            "handleFavoriteClick": undefined,
-            "handleModalClick": [Function],
-            "showEventInfo": [Function],
-          },
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -693,7 +649,7 @@ ShallowWrapper {
             "onEscKeyDown": null,
             "onExited": null,
             "onOverlayClick": null,
-            "open": false,
+            "open": undefined,
             "showCloseIcon": true,
             "styles": Object {},
           },

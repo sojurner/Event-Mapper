@@ -50,8 +50,8 @@ export class Events extends Component {
 
   render() {
     const { hoverMessage } = this.state;
-
     const { targetEvent, setModalView, displayModal } = this.props;
+
     return (
       <div className="events-container">
         <EventTab />

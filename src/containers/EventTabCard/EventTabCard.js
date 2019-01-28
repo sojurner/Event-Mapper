@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as invoke from '../../actions';
 import './EventTabCard.css';
 
-class EventTabCard extends React.Component {
+export class EventTabCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -69,13 +69,7 @@ class EventTabCard extends React.Component {
         <div
           id={event.e_id}
           ref={ref => (this.scrollRefs[index] = ref)}
-          className={
-            event.favorite && event.e_id === this.state.eventId
-              ? 'tab-card tab-card-listed tab-card-scrolled'
-              : event.e_id === this.state.eventId
-              ? 'tab-card tab-card-scrolled'
-              : 'tab-card'
-          }
+          className={event.favorite ? 'tab-card tab-card-listed' : 'tab-card'}
           onMouseEnter={this.showEventInfo.bind(null, event.e_id, 'hover')}
           onMouseLeave={() => changePopupDisplay(false)}
           onClick={this.showEventInfo.bind(null, event.e_id, 'click')}
