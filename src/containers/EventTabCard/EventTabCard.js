@@ -83,9 +83,7 @@ export class EventTabCard extends React.Component {
           <section className="tab-info">
             <i
               className={
-                !event.favorite
-                  ? 'fas fa-bookmark'
-                  : 'fas fa-bookmark active-bookmark'
+                !event.favorite ? 'far fa-star' : 'fas fa-star active-bookmark'
               }
               onClick={eve => handleFavoriteClick(eve, event)}
             />

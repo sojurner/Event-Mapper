@@ -44,9 +44,11 @@ export const SelectedInfoContainer = ({
 
       <div className="item-info">
         <p className="selected selected-title">{item.name}</p>
-        <p className="selected selected-date">
-          {item.date} @ {item.venue_name}
-        </p>
+        <section className="selected-date-venue">
+          <p className="selected selected-date">{item.date}</p>
+          <p className="at-sign">@</p>
+          <p className="selected selected-venue">{item.venue_name}</p>
+        </section>
         <p className="selected selected-address">{item.address}</p>
         <p className="selected selected-distance">
           Distance: {item.distance} miles

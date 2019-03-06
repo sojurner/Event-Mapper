@@ -47,7 +47,7 @@
   display: flex;
   // border: 0 2px 2px 2px solid black;
   box-shadow: 1px 1px 1px 1px #28222253;
-  border: 2px solid #7c7c7c;
+  border: 2px solid #161616;
   border-top: 0;
   border-radius: 0rem 0rem 1.5rem 1.5rem;
   padding: 0.5rem;
@@ -69,20 +69,43 @@
 }
 
 .selected-title {
+  font-family: codec;
   margin: 0.5em 0 0 0;
   text-shadow: 3px 3px #4f4f4f;
-
   font-size: 4em;
   font-weight: 800;
   color: #f1f1f1;
 }
 
+.selected-date-venue {
+  display: flex;
+  flex-direction: row;
+  min-height: 8rem;
+  justify-content: flex-start;
+}
+
 .selected-date {
+  max-width: 20rem;
   font-weight: 600;
   text-shadow: 3px 3px #4f4f4f;
-  margin: 0.5em 0;
   font-size: 2.5em;
-  color: #b6b6b6;
+  color: #f5aa09;
+}
+
+.at-sign {
+  font-size: 4em;
+  margin-right: 2rem;
+  align-self: center;
+  font-weight: 600;
+  color: #855d07;
+}
+
+.selected-venue {
+  font-weight: 600;
+  text-shadow: 3px 3px #4f4f4f;
+  font-size: 2.5em;
+  align-self: center;
+  color: #f5aa09;
 }
 
 .selected-distance {
@@ -98,25 +121,26 @@
   font-size: 2em;
   text-shadow: 2px 2px #4f4f4f;
   font-weight: 800;
-  color: #d0cfc1;
+  color: #f0a780;
 }
 
 .selected-remove {
   font-family: caviar;
   font-weight: 800;
+  border: 1px solid black;
   background: transparent;
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
   letter-spacing: 1.3px;
   border-radius: 1rem;
-  border-color: #383535;
   cursor: pointer;
   margin: 1rem;
   color: rgb(211, 211, 211);
+  transition: 0.2s linear;
 }
 
 .selected-remove:hover {
-  background-color: rgb(90, 90, 90);
+  background-color: rgb(113, 79, 79);
   color: rgb(190, 170, 170);
 }
 
@@ -130,15 +154,15 @@
   letter-spacing: 1.3px;
   border: 1px solid black;
   border-radius: 1rem;
-  border-color: #383535;
+  transition: 0.2s linear;
   cursor: pointer;
   text-decoration: none;
   color: rgb(211, 211, 211);
 }
 
 .selected-link:hover {
-  color: rgb(168, 196, 212);
-  background-color: rgb(90, 90, 90);
+  color: rgb(16, 45, 62);
+  background-color: rgb(80, 103, 116);
 }
 
 .loading-gif {
