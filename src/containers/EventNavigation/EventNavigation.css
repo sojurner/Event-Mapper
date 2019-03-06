@@ -13,9 +13,9 @@
 .event-page-active,
 .event-page {
   font-size: 1.2rem;
-  height: 2rem;
-  width: 1.2rem;
-  margin: 0 1.4rem;
+  min-width: 2rem;
+  height: 1.6rem;
+  margin: 0 0.5rem;
   cursor: pointer;
   transition: 0.05s linear;
   border-top: 0px solid black;
@@ -27,8 +27,11 @@
   color: black; }
 
 .event-page-active {
-  border-top: 2px solid black;
-  padding-top: 0.2rem; }
+  background: white;
+  border-radius: 50%;
+  min-width: 2rem;
+  height: 1.6rem;
+  padding-bottom: 0.5rem; }
 
 .fa-chevron-left,
 .fa-chevron-right {

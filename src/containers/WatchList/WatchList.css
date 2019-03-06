@@ -11,7 +11,7 @@
   font-size: 0.6rem;
   height: 100%;
   border-right: 3px solid darkgray;
-  background-color: #aaaaaa;
+  background-color: #30333c;
   overflow: auto;
   animation: slideInLeft 1s cubic-bezier(0.19, 1, 0.22, 1); }
 

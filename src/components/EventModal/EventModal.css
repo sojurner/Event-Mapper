@@ -15,53 +15,18 @@
   display: flex;
   flex-direction: column; }
 
+.event-venue,
 .event-name {
-  font-family: caviar-bold;
+  font-family: codec; }
+
+.event-name {
   color: #c2c2c2;
-  font-size: 4.5rem;
+  font-size: 4rem;
   z-index: 2;
   text-shadow: 2px 2px #1a1a1a;
-  text-align: center;
+  text-align: left;
   padding: 0rem 2rem;
   margin: 1rem auto 0 auto; }
-
-.modal-link-details {
-  display: flex; }
-
-.modal-link {
-  display: inline-block;
-  width: 7.5rem;
-  font-weight: 800;
-  background: transparent;
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
-  letter-spacing: 1.3px;
-  border: 1px solid black;
-  border-radius: 1rem;
-  border-color: #383535;
-  background: #595959;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  text-decoration: none;
-  color: lightgray;
-  align-self: center;
-  margin-left: 5rem; }
-
-.modal-link:hover {
-  color: #a8c4d4;
-  background-color: #656464; }
-
-.modal-address-date {
-  display: inline-block; }
-
-.styles_modal__gNwvD {
-  border-radius: 1rem;
-  background-color: #1d1d1d;
-  border: 1.5px solid #797979; }
-
-.event-modal-contents {
-  padding: 0 2rem;
-  z-index: 2; }
 
 .event-venue {
   font-size: 2.8rem;
@@ -96,6 +61,44 @@
   grid-column: 2/3;
   grid-row: 1/ 4;
   border-radius: 1rem; }
+
+.modal-link-details {
+  display: flex; }
+
+.modal-link {
+  display: inline-block;
+  width: max-content;
+  font-weight: 800;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 1.3px;
+  border: 1px solid black;
+  border-radius: 1rem;
+  border-color: #383535;
+  background: #595959;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: lightgray;
+  align-self: center;
+  margin-left: 5rem; }
+
+.modal-link:hover {
+  color: #a8c4d4;
+  background-color: #656464; }
+
+.modal-address-date {
+  display: inline-block; }
+
+.styles_modal__gNwvD {
+  border-radius: 1rem;
+  background-color: #1d1d1d;
+  border: 1.5px solid #797979; }
+
+.event-modal-contents {
+  padding: 0 2rem;
+  z-index: 2; }
 
 .styles_closeIcon__1QwbI {
   cursor: pointer;
