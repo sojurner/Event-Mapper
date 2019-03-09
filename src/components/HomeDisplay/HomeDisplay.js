@@ -16,8 +16,13 @@ export class HomeDisplay extends React.Component {
   };
 
   componentDidMount() {
-    const { latitude, longitude } = this.props.userLocation;
-    this.retrieveEvents(latitude, longitude);
+    const { location } = this.props;
+    if (location.hasOwnProperty('latitude')) {
+      const { latitude, longitude } = location;
+      this.retrieveEvents(latitude, longitude);
+    } else {
+      this.retrieveEvents(39.7392, -104.9903);
+    }
   }
 
   retrieveEvents = async (lat, lng) => {
@@ -35,7 +40,6 @@ export class HomeDisplay extends React.Component {
       setEventPageInfo(pageInfo);
       setEventLinkInfo(linkInfo);
     }
-
     this.setState({ loading: false });
   };
 
@@ -46,10 +50,10 @@ export class HomeDisplay extends React.Component {
         {this.state.loading ? (
           <LoadingScreen />
         ) : (
-          <React.Fragment>
+          <>
             <Events />
             <Map />
-          </React.Fragment>
+          </>
         )}
       </div>
     );
