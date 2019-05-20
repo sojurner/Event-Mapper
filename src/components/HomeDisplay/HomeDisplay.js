@@ -16,9 +16,8 @@ export class HomeDisplay extends React.Component {
   };
 
   componentDidMount() {
-    const { location } = this.props;
-    if (location.hasOwnProperty('latitude')) {
-      const { latitude, longitude } = location;
+    if (this.props.location) {
+      const { latitude, longitude } = this.props.location;
       this.retrieveEvents(latitude, longitude);
     } else {
       this.retrieveEvents(39.7392, -104.9903);
