@@ -115,8 +115,8 @@ export class Map extends Component {
         >
           {displayPopup && <EventPopup className="event-popup-container" />}
           <UserLocation
-            lng={userLocation.longitude || longitude}
-            lat={userLocation.latitude || latitude}
+            lng={longitude}
+            lat={latitude}
           />
           <Layer type="symbol" id="marker" layout={layout} images={images}>
             {features}
