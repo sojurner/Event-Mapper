@@ -79,7 +79,7 @@ export class EventTab extends Component {
           />
         </div>
         <h2 className="event-header-title">
-          {userLocation.hasOwnProperty('location')
+          {userLocation
             ? userLocation.location
             : 'Events Near You'}{' '}
           <strong>({eventPages.count})</strong>
