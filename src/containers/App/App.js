@@ -25,11 +25,27 @@ export class App extends Component {
     this.setLatLngEvents();
   }
 
-  setLatLngEvents = () => {
-    navigator.geolocation.getCurrentPosition(location => {
-      this.props.setUserLocation(location.coords);
-      this.props.setMapCenter(location.coords);
-    });
+  setLatLngEvents = async () => {
+    const { setMapCenter, setUserLocation } = this.props;
+    if (navigator.geolocation) {
+      var options = {
+        enableHighAccuracy: true,
+        timeout: 1000,
+        maximumAge: 0
+      };
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          setUserLocation(position.coords);
+          setMapCenter(position.coords);
+        },
+        error => {
+          const coords = { latitude: 39.7392, longitude: -104.9903 };
+          setUserLocation(coords);
+          setMapCenter(coords);
+        },
+        options
+      );
+    }
   };
 
   loginSuccess = async res => {
