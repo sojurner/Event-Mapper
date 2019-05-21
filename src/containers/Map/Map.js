@@ -70,15 +70,8 @@ export class Map extends Component {
       displayPopup,
       zoom
     } = this.props;
-    let latitude;
-    let longitude;
-    if (userLocation) {
-      latitude = userLocation.latitude;
-      longitude = userLocation.longitude;
-    } else {
-      latitude = 39.7392;
-      longitude = -104.9903;
-    }
+    const { latitude, longitude } = userLocation;
+
     const { mapType } = this.state;
 
     const features = events[eventPages.current].map((event, index) => {
@@ -114,10 +107,7 @@ export class Map extends Component {
           flyToOptions={{ speed: 0.8 }}
         >
           {displayPopup && <EventPopup className="event-popup-container" />}
-          <UserLocation
-            lng={longitude}
-            lat={latitude}
-          />
+          <UserLocation lng={longitude} lat={latitude} />
           <Layer type="symbol" id="marker" layout={layout} images={images}>
             {features}
           </Layer>
