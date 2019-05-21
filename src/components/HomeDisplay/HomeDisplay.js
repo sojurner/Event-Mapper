@@ -16,18 +16,15 @@ export class HomeDisplay extends React.Component {
   };
 
   componentDidMount() {
-    if (this.props.location.hasOwnProperty('longitude')) {
-      const { latitude, longitude } = this.props.location;
+    if (this.props.userLocation) {
+      const { latitude, longitude } = this.props.userLocation;
       this.retrieveEvents(latitude, longitude);
-      console.log('location retrieved')
     } else {
       this.retrieveEvents(39.7392, -104.9903);
-      console.log('default location')
     }
   }
 
   retrieveEvents = async (lat, lng) => {
-    if (!lat && !lng) return;
     const {
       events,
       setEvents,
